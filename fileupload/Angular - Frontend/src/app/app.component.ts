@@ -53,7 +53,7 @@ myInputVariable2: ElementRef;
     this.changeImage = true;
   }
 
-  changedImage(event:Event) {
+  changedImage(event:HTMLInputEvent) {
     this.selectedFile = event.target.files[0];
   }
 
@@ -61,7 +61,7 @@ myInputVariable2: ElementRef;
     this.changeImage2 = true;
   }
 
-  changedImage2(event:Event) {
+  changedImage2(event:HTMLInputEvent) {
     this.selectedFile2 = event.target.files[0];
   }
   
@@ -104,11 +104,15 @@ myInputVariable2: ElementRef;
 	});
   }
 
-  selectFile(event:Event) {
+  selectFile(event:HTMLInputEvent) {
     this.selectedFiles = event.target.files;
   }
 
-  selectFile2(event:Event) {
+  selectFile2(event:HTMLInputEvent) {
     this.selectedFiles2 = event.target.files;
   }
+}
+
+interface HTMLInputEvent extends Event {
+    target: HTMLInputElement & EventTarget;
 }

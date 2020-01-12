@@ -19,8 +19,8 @@ export class AppComponent {
   currentFileUpload: File;
   currentFileUpload2: File;
   progress: { percentage: number } = { percentage: 0 };
-  selectedFile = null;
-  selectedFile2 = null;
+  selectedFile : File= null;
+  selectedFile2 : File= null;
   changeImage = false;
   changeImage2 = false;
   saved = false;
@@ -42,26 +42,26 @@ myInputVariable2: ElementRef;
 
     this.uploadService.download(this.nbCl).subscribe(event => {
 		if (event instanceof HttpResponse) {
-			const blob = (event as HttpResponse<any>).body;
+			const blob = (event as HttpResponse<Blob>).body;
   FileSaver.saveAs(blob, 'files.txt');
 			this.enViewFile = false;
 		}
 	});
   }
 
-  change($event) {
+  change($event:Event) {
     this.changeImage = true;
   }
 
-  changedImage(event) {
+  changedImage(event:Event) {
     this.selectedFile = event.target.files[0];
   }
 
-  change2($event) {
+  change2($event:Event) {
     this.changeImage2 = true;
   }
 
-  changedImage2(event) {
+  changedImage2(event:Event) {
     this.selectedFile2 = event.target.files[0];
   }
   
@@ -104,11 +104,11 @@ myInputVariable2: ElementRef;
 	});
   }
 
-  selectFile(event) {
+  selectFile(event:Event) {
     this.selectedFiles = event.target.files;
   }
 
-  selectFile2(event) {
+  selectFile2(event:Event) {
     this.selectedFiles2 = event.target.files;
   }
 }

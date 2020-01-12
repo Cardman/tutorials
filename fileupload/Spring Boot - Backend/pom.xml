@@ -6,6 +6,7 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath/>
 	</parent>
+	<packaging>jar</packaging>
 	<groupId>fileupload</groupId>
 	<artifactId>fileupload</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -46,6 +47,25 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!--plugin>
+	<artifactId>maven-resources-plugin</artifactId>
+	<executions>
+		<execution>
+			<id>copy-resources</id>
+			<phase>validate</phase>
+			<goals><goal>copy-resources</goal></goals>
+			<configuration>
+				<outputDirectory>${build.directory}/classes/static/</outputDirectory >
+				<resources>
+					<resource>
+						<directory>../Angular - Frontend/dist</directory>
+					</resource>
+				</resources>
+			</configuration>
+		</execution>
+	</executions>
+</plugin-->
+
 		</plugins>
 	</build>
 

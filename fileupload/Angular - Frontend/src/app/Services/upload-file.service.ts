@@ -16,7 +16,7 @@ export class UploadFileService {
     data.append('file2', file2);
     data.append('s2', ' bonjour');
 
-    const newRequest = new HttpRequest('POST', 'http://localhost:8080/savefile', data, {
+    const newRequest = new HttpRequest('POST', '/savefile', data, {
       reportProgress: true,
       responseType: 'text'
     });
@@ -30,7 +30,7 @@ export class UploadFileService {
 
     data.append('s2', nbCl);
 
-    const newRequest = new HttpRequest('POST', 'http://localhost:8080/downloadlist', data, {
+    const newRequest = new HttpRequest('POST', '/downloadlist', data, {
       reportProgress: true,
       responseType: 'blob'
     });
@@ -46,7 +46,7 @@ export class UploadFileService {
 
     data.append('s2', nbCl);
 
-    const newRequest = new HttpRequest('POST', 'http://localhost:8080/clearList', data, {
+    const newRequest = new HttpRequest('POST', '/clearList', data, {
       reportProgress: true,
       responseType: 'text'
     });

@@ -3,8 +3,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.5.RELEASE</version>
-		<relativePath/>
+		<version>1.5.9.RELEASE</version>
 	</parent>
 	<packaging>jar</packaging>
 	<groupId>fileupload</groupId>
@@ -29,42 +28,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+<dependency>
+			<groupId>com.devglan</groupId>
+	<artifactId>filepupload-app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-		<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>2.3.2</version>
-            <configuration>
-              <source>${java.version}</source>
-              <target>${java.version}</target>
-            </configuration>
-          </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!--plugin>
-	<artifactId>maven-resources-plugin</artifactId>
-	<executions>
-		<execution>
-			<id>copy-resources</id>
-			<phase>validate</phase>
-			<goals><goal>copy-resources</goal></goals>
-			<configuration>
-				<outputDirectory>${build.directory}/classes/static/</outputDirectory >
-				<resources>
-					<resource>
-						<directory>../Angular - Frontend/dist</directory>
-					</resource>
-				</resources>
-			</configuration>
-		</execution>
-	</executions>
-</plugin-->
 
 		</plugins>
 	</build>

@@ -34,7 +34,6 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import com.blog.example.FileUpload.Save.component.Count;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
 @Controller
 public class FileUploader {
 

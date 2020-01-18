@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { User } from '../models/user.model';
 
+import {Observable} from 'rxjs';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,18 +15,17 @@ export class UserService {
 
   constructor(private http:HttpClient) {}
 
-  //private userUrl = 'http://localhost:8080/user-portal/user';
   private userUrl = '/api';
 
-  public getUsers() {
+  public getUsers():Observable<User[]> {
     return this.http.get<User[]>(this.userUrl);
   }
 
-  public deleteUser(user) {
+  public deleteUser(user):Observable<Object> {
     return this.http.delete(this.userUrl + "/"+ user.id);
   }
 
-  public createUser(user) {
+  public createUser(user):Observable<User> {
     return this.http.post<User>(this.userUrl, user);
   }
 

@@ -18,10 +18,10 @@ import static org.junit.Assert.assertNull;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
-public class UserPortalApplicationTests {
+public class UserControllerTests {
 
 	@Autowired
-	private UserService userService;
+	private UserController userController;
 	private int idOne;
 	private int idTwo;
 	@Before
@@ -30,60 +30,49 @@ public class UserPortalApplicationTests {
 		newUser.setFirstName("testUser");
 		newUser.setLastName("123456");
 		newUser.setEmail("testUser@mail.com");
-		idOne = userService.create(newUser).getId(); 
+		idOne = userController.create(newUser).getId(); 
 		newUser = new User();
 		newUser.setFirstName("testAdmin");
 		newUser.setLastName("123456");
 		newUser.setEmail("testAdmin@mail.com");
-		idTwo = userService.create(newUser).getId(); 
+		idTwo = userController.create(newUser).getId(); 
 
     }
 	@Test
 	public void findById1Test() {
-		User user=userService.findById(idOne);
+		User user=userController.findOne(idOne);
         assertNotNull(user);
 	}
 	@Test
 	public void findById2Test() {
-        User admin=userService.findById(idTwo);
+        User admin=userController.findOne(idTwo);
         assertEquals(admin.getEmail(),"testAdmin@mail.com");
-        assertEquals(admin.getFirstName(),"testAdmin");
-        assertEquals(admin.getLastName(),"123456");
 	}
 	@Test
 	public void findAllTest() {
-        assertEquals(2,userService.findAll().size());
+        assertEquals(2,userController.findAll().size());
 	}
 	@Test
 	public void delete1Test() {
-        assertEquals(2,userService.findAll().size());
-        User admin=userService.delete(idOne);
-		assertEquals(1,userService.findAll().size());
+        assertEquals(2,userController.findAll().size());
+        User admin=userController.delete(idOne);
+		assertEquals(1,userController.findAll().size());
         assertEquals(admin.getEmail(),"testUser@mail.com");
 	}
 	@Test
 	public void delete2Test() {
-        assertEquals(2,userService.findAll().size());
-        User admin=userService.delete(Math.max(idOne,idTwo)+1);
-		assertEquals(2,userService.findAll().size());
+        assertEquals(2,userController.findAll().size());
+        User admin=userController.delete(Math.max(idOne,idTwo)+1);
+		assertEquals(2,userController.findAll().size());
         assertNull(admin);
 	}
 	@Test
 	public void update1Test() {
-        User admin=userService.findById(idTwo);
+        User admin=userController.findOne(idTwo);
 		admin.setEmail("testAdmin2@mail.com");
-		userService.update(admin);
-        User adminMod=userService.findById(admin.getId());
+		userController.update(admin);
+        User adminMod=userController.findOne(admin.getId());
 		assertEquals(adminMod.getEmail(),"testAdmin2@mail.com");
-		assertEquals(2,userService.findAll().size());
-	}
-	@Test
-	public void update2Test() {
-        User admin=userService.findById(idTwo);
-		admin.setId(3);
-		userService.update(admin);
-        User adminMod=userService.findById(admin.getId());
-		assertEquals(adminMod.getId(),3);
-		assertEquals(3,userService.findAll().size());
+		assertEquals(2,userController.findAll().size());
 	}
 }

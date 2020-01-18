@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping({"/api"})
 public class UserController {
@@ -30,7 +29,7 @@ public class UserController {
 
     @DeleteMapping(path ={"/{id}"})
     public User delete(@PathVariable("id") int id) {
-        return userService.delete(id);
+		return userService.delete(id);
     }
 
     @GetMapping

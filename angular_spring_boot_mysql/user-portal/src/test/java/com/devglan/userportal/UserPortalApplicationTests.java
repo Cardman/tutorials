@@ -86,4 +86,14 @@ public class UserPortalApplicationTests {
 		assertEquals(adminMod.getId(),3);
 		assertEquals(3,userService.findAll().size());
 	}
+	@Test
+	public void updateIdTest() {
+		int newId = Math.max(idTwo,idOne)+1;
+        userService.updateUser(newId,idTwo);
+		User adminMod=userService.findById(newId);
+		assertEquals(adminMod.getId(),newId);
+		assertEquals(2,userService.findAll().size());
+		User user=userService.findById(idOne);
+        assertNotNull(user);
+	}
 }

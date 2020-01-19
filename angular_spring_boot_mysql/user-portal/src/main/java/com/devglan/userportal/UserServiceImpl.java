@@ -1,6 +1,7 @@
 package com.devglan.userportal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,4 +41,9 @@ public class UserServiceImpl implements UserService {
 		repository.save(user);
         return null;
     }
+	@Transactional(readOnly=false)
+	public void updateUser(int newId, int oldId){
+		repository.updateUser(newId,oldId);
+	}
+
 }

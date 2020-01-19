@@ -13,7 +13,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let user of users">
-    <td class="hidden">{{user.id}}</td>
+    <td class="hidden"><a [routerLink]="['/edit', user.id]">{{user.id}}</a></td>
     <td>{{user.firstName}}</td>
     <td>{{user.lastName}}</td>
     <td>{{user.email}}</td>

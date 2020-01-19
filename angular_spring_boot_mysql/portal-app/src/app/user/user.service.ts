@@ -24,7 +24,12 @@ export class UserService {
   public deleteUser(user):Observable<Object> {
     return this.http.delete(this.userUrl + "/"+ user.id);
   }
-
+  public getUser(id):Observable<User> {
+    return this.http.get<User>(this.userUrl+ "/"+ id);
+  }
+  public updateUser(user):Observable<User> {
+    return this.http.put<User>(this.userUrl, user);
+  }
   public createUser(user):Observable<User> {
     return this.http.post<User>(this.userUrl, user);
   }

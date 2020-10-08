@@ -58,12 +58,20 @@ class CustList:
                 continue
             return i_
         return cls.INDEX_NOT_FOUND_ELT
+    def __iter__(self):
+        return iter(self.list)
     def peter(cls,positif):
         if positif > 0:
             return 2*positif
     getFirstPrintableCharIndex = classmethod(getFirstPrintableCharIndex)
     getLastPrintableCharIndex = classmethod(getLastPrintableCharIndex)
     peter = classmethod(peter)
+
+class MyNumber:
+    def __init__(self,value):
+        self.value = value
+    def __bool__(self):
+        return self.value >= 0
 
 list = CustList()
 list.add(2)
@@ -74,6 +82,10 @@ print("len=",list.size())
 list.add(4)
 print("len=",list.size())
 for e in list.getList():
+    print(e)
+print("\n")
+print("iter\n")
+for e in list:
     print(e)
 print("\n")
 print(list.get(0))
@@ -105,5 +117,14 @@ print(CustList.peter(0));
 ma_chaine=str(input("Saisie"))
 print(ma_chaine,CustList.getFirstPrintableCharIndex(ma_chaine))
 print(ma_chaine,CustList.getLastPrintableCharIndex(ma_chaine))
-
+myNb = MyNumber(1)
+if myNb:
+	print("Vrai")
+else:
+	print("Faux")
+myNb2 = MyNumber(-1)
+if myNb2:
+	print("Vrai")
+else:
+	print("Faux")
 

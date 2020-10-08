@@ -73,58 +73,59 @@ class MyNumber:
     def __bool__(self):
         return self.value >= 0
 
-list = CustList()
-list.add(2)
-for e in list.getList():
-    print(e)
-print("\n")
-print("len=",list.size())
-list.add(4)
-print("len=",list.size())
-for e in list.getList():
-    print(e)
-print("\n")
-print("iter\n")
-for e in list:
-    print(e)
-print("\n")
-print(list.get(0))
-print(list.get(1))
-print("\n")
-list.set(0,3)
-print(list.get(0))
-print(list.get(1))
-print("\n")
-list.insert(1,5)
-print("\n")
-print(list.get(0))
-print(list.get(1))
-print(list.get(2))
-print("\n")
-print("len=",list.size())
-print(list.removed(1))
-print("len=",list.size())
-print("\n")
-print(list.get(0))
-print(list.get(1))
-print("SIZE_EMPTY=",CustList.SIZE_EMPTY)
+if __name__ == "__main__":
+	list = CustList()
+	list.add(2)
+	for e in list.getList():
+		print(e)
+	print("\n")
+	print("len=",list.size())
+	list.add(4)
+	print("len=",list.size())
+	for e in list.getList():
+		print(e)
+	print("\n")
+	print("iter\n")
+	for e in list:
+		print(e)
+	print("\n")
+	print(list.get(0))
+	print(list.get(1))
+	print("\n")
+	list.set(0,3)
+	print(list.get(0))
+	print(list.get(1))
+	print("\n")
+	list.insert(1,5)
+	print("\n")
+	print(list.get(0))
+	print(list.get(1))
+	print(list.get(2))
+	print("\n")
+	print("len=",list.size())
+	print(list.removed(1))
+	print("len=",list.size())
+	print("\n")
+	print(list.get(0))
+	print(list.get(1))
+	print("SIZE_EMPTY=",CustList.SIZE_EMPTY)
 
-print(list);
-print(repr(list));
-print(list.toStr());
-print(CustList.peter(2));
-print(CustList.peter(0));
-ma_chaine=str(input("Saisie"))
-print(ma_chaine,CustList.getFirstPrintableCharIndex(ma_chaine))
-print(ma_chaine,CustList.getLastPrintableCharIndex(ma_chaine))
-myNb = MyNumber(1)
-if myNb:
-	print("Vrai")
-else:
-	print("Faux")
-myNb2 = MyNumber(-1)
-if myNb2:
-	print("Vrai")
-else:
-	print("Faux")
+	print(list);
+	print(repr(list));
+	print(list.toStr());
+	print(CustList.peter(2));
+	print(CustList.peter(0));
+	ma_chaine=str(input("Saisie"))
+	print(ma_chaine,CustList.getFirstPrintableCharIndex(ma_chaine))
+	print(ma_chaine,CustList.getLastPrintableCharIndex(ma_chaine))
+	myNb = MyNumber(1)
+	if myNb:
+		print("Vrai")
+	else:
+		print("Faux")
+	myNb2 = MyNumber(-1)
+	if myNb2:
+		print("Vrai")
+	else:
+		print("Faux")
 

@@ -49,19 +49,20 @@ class ItRevList:
         self.position -= 1
         return self.list[self.position]
 
-list = CustList()
-list.add(2)
-for e in list.getList():
-    print(e)
-print("\n")
-print("len=",list.size())
-list.add(4)
-print("len=",list.size())
-for e in list.getList():
-    print(e)
-print("\n")
-print("iter\n")
-for e in list:
-    print(e)
-print(time.localtime())
+if __name__ == "__main__":
+	list = CustList()
+	list.add(2)
+	for e in list.getList():
+		print(e)
+	print("\n")
+	print("len=",list.size())
+	list.add(4)
+	print("len=",list.size())
+	for e in list.getList():
+		print(e)
+	print("\n")
+	print("iter\n")
+	for e in list:
+		print(e)
+	print(time.localtime())
 

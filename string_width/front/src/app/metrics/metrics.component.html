@@ -1,0 +1,32 @@
+<div class="col-md-6">
+  <h2 class="text-center">Calculate font</h2>
+<form>
+  <div class="form-group">
+    <label for="size">Size:</label>
+    <input type="number" [(ngModel)]="metrics.size" placeholder="Size" name="size" class="form-control" id="size">
+  </div>
+
+  <div class="form-group">
+    <label for="str">String:</label>
+    <input [(ngModel)]="metrics.str" placeholder="String" name="str" class="form-control" id="str">
+  </div>
+  <div class="form-group">
+    <label for="bold">Bold:</label>
+    <input type="checkbox" [(ngModel)]="metrics.bold" placeholder="Bold" name="bold" class="form-control" id="bold">
+  </div>
+  <div class="form-group">
+    <label for="italic">Italic:</label>
+    <input type="checkbox" [(ngModel)]="metrics.italic" placeholder="Italic" name="italic" class="form-control" id="italic">
+  </div>
+
+  <div class="form-group">
+    <label for="font">Font:</label>
+    <select [(ngModel)]="metrics.font" placeholder="Font" name="font" class="form-control" id="font">
+	<option *ngFor="let f of fontNames" [ngValue]="f">{{f}}</option>
+	</select>
+  </div>
+
+  <button class="btn btn-success" (click)="stringWidth()">Create</button>
+  {{result}}
+</form>
+</div>

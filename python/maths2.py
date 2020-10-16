@@ -3,6 +3,8 @@ import random
 import sys
 
 class Ints:
+
+
     def modCust(cls,_one,_two):
         return _one - _two * cls.quotCust(_one, _two)
 

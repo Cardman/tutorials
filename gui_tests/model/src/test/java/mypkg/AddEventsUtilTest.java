@@ -61,6 +61,28 @@ public class AddEventsUtilTest {
 		Assert.assertEquals("second",b.button);
 		Assert.assertTrue(b.action instanceof EcActionPopupSecond);
 	}
+	@Test
+	public void thread(){
+		IntManagerThread man = new SampleManagerThread();
+		CustRunnableImpl i_ = new CustRunnableImpl();
+		SampleRes res_ = new SampleRes();
+		i_.res = res_;
+		CustRunnable th = i_;
+		man.directLaunch(th);
+		Assert.assertEquals("done",res_.text);
+	}
+	@Test
+	public void changeTitle(){
+		IntManagerThread man = new SampleManagerThread();
+		CustRunnableImpl i_ = new CustRunnableImpl();
+		SampleRes res_ = new SampleRes();
+		i_.res = res_;
+		EcActionResult ear = new EcActionResult();
+		ear.w = res_;
+		ear.intManager = man;
+		ear.act();
+		Assert.assertEquals("done",res_.text);
+	}
 }
 
 class SampleCheck1 implements IntLabel{
@@ -71,6 +93,12 @@ class SampleCheck1 implements IntLabel{
 class SampleCheck2 implements IntLabel{
 	public boolean isSelected(){
 		return false;
+	}
+}
+class SampleRes implements IntDisplayLabel{
+	String text;
+	public void setText(String _text){
+		text = _text;
 	}
 }
 class SampleButton implements IntButton{
@@ -85,25 +113,7 @@ class SampleButton implements IntButton{
 	public void addAction(EcAction act){
 		action = act;
 	}
-	/*public void addActionListener(Object act){
-		action = act;
-	}*/
 }
-
-
-/*class SampleAddEvents implements AddEvents{
-	public ButtonContent createButtonContent(String label){
-		ButtonContent b = new ButtonContent();
-		b.text = label;
-		return b;
-	}
-	public void addFirst(IntWindow instance, IntButton button){
-		((SampleButton)button).addActionListener(1);
-	}
-	public void addSecond(IntWindow instance, IntButton button){
-		((SampleButton)button).addActionListener(2);
-	}
-}*/
 
 class SampleWindow implements IntWindow {
 	List<String> events = new ArrayList<String>();

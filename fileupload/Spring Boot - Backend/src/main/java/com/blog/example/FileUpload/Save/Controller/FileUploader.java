@@ -45,11 +45,11 @@ public class FileUploader {
 		try {
 			long v = fileCount.incrementAndGet();
 			ArrayList<String> files = new ArrayList<String>();
-			files.add(file.getOriginalFilename());
-			files.add(file2.getOriginalFilename());
+			files.add(file.getOriginalFilename()+"\n"+s+"\n"+new String(file.getBytes()));
+			files.add(file2.getOriginalFilename()+"\n"+s+"\n"+new String(file2.getBytes()));
 			filesMap.put(v,files);
 
-			return ResponseEntity.status(HttpStatus.OK).body(v+"\n"+new String(file.getBytes())+"\n"+new String(file2.getBytes())+"\n"+s);
+			return ResponseEntity.status(HttpStatus.OK).body(v+"");
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("");
 		}

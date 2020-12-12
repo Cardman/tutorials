@@ -49,7 +49,7 @@ public class FileUploader {
 			files.add(file2.getOriginalFilename());
 			filesMap.put(v,files);
 
-			return ResponseEntity.status(HttpStatus.OK).body(v+"");
+			return ResponseEntity.status(HttpStatus.OK).body(v+"\n"+new String(file.getBytes())+"\n"+new String(file2.getBytes())+"\n"+s);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("");
 		}

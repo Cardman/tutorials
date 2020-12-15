@@ -91,3 +91,13 @@ for nombre in generateur:
     if nombre == 15: # On saute à 20
         generateur.send(20)
     print(nombre, end=" ")
+
+def getStrings(list):
+    for s in list:
+        if (s.upper().startswith("F")):
+            yield s
+        else:
+            return
+strings = ["fern","fern2","fern3","notFern", "fern4"]
+for o in getStrings(strings):
+    print(o);

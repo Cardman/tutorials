@@ -28,8 +28,7 @@ def read(dst):
     for filename in zf.namelist():
         p = Pair()
         p.name=filename
-        p.content=zf.open(filename).read()
+        p.content=zf.open(filename).read().decode("utf-8")
         out.append(p)
     zf.close()
     return out
-

@@ -98,6 +98,8 @@ def getStrings(list):
             yield s
         else:
             return
+print("\n")
+print("\n")
 strings = ["fern","fern2","fern3","notFern", "fern4"]
 for o in getStrings(strings):
     print(o);

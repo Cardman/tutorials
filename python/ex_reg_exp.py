@@ -14,3 +14,12 @@ print(Counter(words).most_common(3))
 print(Counter(words))
 print(Fichiers.lire("mots.txt").split(" "))
 print(";".join(Fichiers.lire("mots.txt").split(" ")))
+
+import re
+chaine = ""
+expression = r"^0[0-9]([ .-]?[0-9]{2}){4}$"
+print(re.search(expression, ""))
+print(re.search(expression, "01-23-45-67-89"))
+print(re.search(expression, "01-23-45-6789"))
+print(re.search(expression, "01-23-45-678"))
+print(re.search(expression, "01-23-45-67890"))

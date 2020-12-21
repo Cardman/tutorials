@@ -32,4 +32,4 @@ class Ints:
     modCust = classmethod(modCust)
     quotCust = classmethod(quotCust)
 
-print(Ints.quotCust(7,3))#2
+#print(Ints.quotCust(7,3))#2

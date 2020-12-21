@@ -1,4 +1,5 @@
 import unittest
+import sys
 from maths2 import Ints
 
 class RandomTest(unittest.TestCase):
@@ -20,6 +21,21 @@ class RandomTest(unittest.TestCase):
     def test_quotCust6(self):
         self.assertIsInstance(Ints.quotCust(-28,7),int)
         self.assertEqual(-4,Ints.quotCust(-28,7))
+    def test_quotCust7(self):
+        self.assertIsInstance(Ints.quotCust(23,7),int)
+        self.assertEqual(3,Ints.quotCust(23,7))
+    def test_quotCust8(self):
+        self.assertIsInstance(Ints.quotCust(0,-sys.maxsize - 1),int)
+        self.assertEqual(0,Ints.quotCust(0,-sys.maxsize - 1))
+    def test_quotCust9(self):
+        self.assertIsInstance(Ints.quotCust(-1,-sys.maxsize - 1),int)
+        self.assertEqual(1,Ints.quotCust(-1,-sys.maxsize - 1))
+    def test_quotCust10(self):
+        self.assertIsInstance(Ints.quotCust(-sys.maxsize - 1,1),int)
+        self.assertEqual(sys.maxsize + 1,Ints.quotCust(-sys.maxsize - 1,1))
+    def test_quotCust11(self):
+        self.assertIsInstance(Ints.quotCust(-sys.maxsize - 1,-1),int)
+        self.assertEqual(-sys.maxsize-1,Ints.quotCust(-sys.maxsize - 1,-1))
     def test_modCust1(self):
         self.assertIsInstance(Ints.modCust(7,3),int)
         self.assertEqual(1,Ints.modCust(7,3))
@@ -38,5 +54,8 @@ class RandomTest(unittest.TestCase):
     def test_modCust6(self):
         self.assertIsInstance(Ints.modCust(-28,7),int)
         self.assertEqual(0,Ints.modCust(-28,7))
+    def test_modCust7(self):
+        self.assertIsInstance(Ints.modCust(23,7),int)
+        self.assertEqual(2,Ints.modCust(23,7))
 
 unittest.main()

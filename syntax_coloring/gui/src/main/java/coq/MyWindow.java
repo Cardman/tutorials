@@ -3,6 +3,8 @@ package coq;
 import javax.swing.*;
 import javax.swing.text.*;
 import java.util.*;
+import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Color;
@@ -10,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.event.CaretEvent;
 
 public class MyWindow {
 
@@ -17,18 +21,50 @@ public class MyWindow {
 	public JFrame frame = new JFrame();
 	public JScrollPane jsp = new JScrollPane(ta);
 	public Split spl = new SplitImpl();
+	public JLabel status = new JLabel("lci");
 	public MyWindow(){
+		ta.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
+		setTabSize(4);
+
+
 		jsp.setPreferredSize(new Dimension(512,512));
-		frame.getContentPane().add(jsp);
+		JPanel pan = new JPanel();
+		pan.setLayout(new BoxLayout(pan,BoxLayout.PAGE_AXIS));
+		pan.add(jsp);
+		pan.add(status);
+		frame.getContentPane().add(pan);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ta.getDocument().putProperty(DefaultEditorKit.EndOfLineStringProperty, "\n");
 		Highlighter h = new Highlighter();
 		h.ta = ta;
 		h.spl = spl;
+		h.status = status;
 		ta.getDocument().addDocumentListener(h);
+		ta.addCaretListener(new CaretListener() {
+			
+			@Override
+			public void caretUpdate(CaretEvent _e) {
+				FileMetrics m = FileMetricsCore.processLinesTabs(ta.getText(),4);
+				int i = ta.getCaretPosition();
+				int l = m.getRowFile(i);
+				int c = m.getColFile(i,l);
+				status.setText("lci"+l+","+c);
+			}
+		});
 	}
-
+	private void setTabSize(int tabSize) {
+		FontMetrics fm = ta.getFontMetrics(ta.getFont());
+		int charWidth = fm.charWidth('#');
+		int tabWidth = charWidth * tabSize;
+		TabStop[] tabs = new TabStop[100];
+		for (int j = 0; j < tabs.length; j++) {
+			tabs[j] = new TabStop((j + 1) * tabWidth);
+		}
+		SimpleAttributeSet attributes = new SimpleAttributeSet();
+		StyleConstants.setTabSet(attributes, new TabSet(tabs));
+		ta.getStyledDocument().setParagraphAttributes(0, ta.getDocument().getLength(), attributes, false);
+	}
 	public void init(){
 		frame.setVisible(true);
 	}
@@ -38,7 +74,8 @@ class Highlighter implements DocumentListener {
 
 	public JTextPane ta;
 	public Split spl;
-    public void insertUpdate(final DocumentEvent e) {
+	public JLabel status;
+    public void insertUpdate(DocumentEvent e) {
         highlight(e.getDocument(),e.getOffset(),e.getLength());
     }
 

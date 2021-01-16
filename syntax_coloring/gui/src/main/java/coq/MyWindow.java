@@ -49,7 +49,7 @@ public class MyWindow {
 				int i = ta.getCaretPosition();
 				int l = m.getRowFile(i);
 				int c = m.getColFile(i,l);
-				status.setText("lci"+l+","+c);
+				status.setText("lci"+l+","+c+","+i);
 			}
 		});
 	}

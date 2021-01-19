@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.text.*;
 import java.util.*;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.FontMetrics;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -12,6 +11,7 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.CaretListener;
@@ -72,8 +72,6 @@ public class MyWindow {
 
 			 }
 		 });
-		 InputMap im = ta.getInputMap(JComponent.WHEN_FOCUSED);
-		 ActionMap am = ta.getActionMap();
 		tabSize.addChangeListener(new ChangeListener() {
             
             @Override
@@ -88,33 +86,33 @@ public class MyWindow {
             }
         });
         tabSize.setValue(4);
-		 im.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), "Undo");
-		 im.put(KeyStroke.getKeyStroke(KeyEvent.VK_Y, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), "Redo");
-
-		 am.put("Undo", new AbstractAction() {
+		ta.registerKeyboardAction(new AbstractAction() {
 			 @Override
 			 public void actionPerformed(ActionEvent e) {
 				 try {
-					 if (undoManager.canUndo()) {
+					 /*if (undoManager.canUndo()) {
 						 undoManager.undo();
-					 }
+					 }*/
+					 undoManager.undo();
 				 } catch (CannotUndoException exp) {
 					
 				 }
 			 }
-		 });
-		 am.put("Redo", new AbstractAction() {
+		 }, KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_MASK), JComponent.WHEN_FOCUSED);
+		ta.registerKeyboardAction( new AbstractAction() {
 			 @Override
 			 public void actionPerformed(ActionEvent e) {
 				 try {
-					 if (undoManager.canRedo()) {
+					 /*if (undoManager.canRedo()) {
 						 undoManager.redo();
-					 }
+					 }*/
+					 undoManager.redo();
 				 } catch (CannotUndoException exp) {
 					
 				 }
 			 }
-		 });
+		 }, KeyStroke.getKeyStroke(KeyEvent.VK_Y, InputEvent.CTRL_MASK), JComponent.WHEN_FOCUSED);
+
 
 	}
 	private void setTabSize(int tabSize) {

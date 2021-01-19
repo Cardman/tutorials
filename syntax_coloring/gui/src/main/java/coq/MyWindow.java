@@ -35,8 +35,6 @@ public class MyWindow {
 	public MyWindow(){
 		ta.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
 		setTabSize(4);
-
-
 		jsp.setPreferredSize(new Dimension(512,512));
 		JPanel pan = new JPanel();
 		pan.setLayout(new BoxLayout(pan,BoxLayout.PAGE_AXIS));

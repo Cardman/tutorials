@@ -67,9 +67,7 @@ public class MyWindow {
 		 doc.addUndoableEditListener(new UndoableEditListener() {
 			 @Override
 			 public void undoableEditHappened(UndoableEditEvent e) {
-
 				 undoManager.addEdit(e.getEdit());
-
 			 }
 		 });
 		tabSize.addChangeListener(new ChangeListener() {

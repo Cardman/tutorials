@@ -4,16 +4,24 @@ import javax.swing.*;
 import javax.swing.text.*;
 import java.util.*;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.FontMetrics;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoManager;
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
 
 public class MyWindow {
 
@@ -21,7 +29,9 @@ public class MyWindow {
 	public JFrame frame = new JFrame();
 	public JScrollPane jsp = new JScrollPane(ta);
 	public Split spl = new SplitImpl();
+	public JSpinner tabSize = new JSpinner();
 	public JLabel status = new JLabel("lci");
+	public UndoManager undoManager = new UndoManager();
 	public MyWindow(){
 		ta.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
 		setTabSize(4);
@@ -30,6 +40,7 @@ public class MyWindow {
 		jsp.setPreferredSize(new Dimension(512,512));
 		JPanel pan = new JPanel();
 		pan.setLayout(new BoxLayout(pan,BoxLayout.PAGE_AXIS));
+		pan.add(tabSize);
 		pan.add(jsp);
 		pan.add(status);
 		frame.getContentPane().add(pan);
@@ -45,13 +56,66 @@ public class MyWindow {
 			
 			@Override
 			public void caretUpdate(CaretEvent _e) {
-				FileMetrics m = FileMetricsCore.processLinesTabs(ta.getText(),4);
+				FileMetrics m = FileMetricsCore.processLinesTabs(ta.getText(), (Integer) tabSize.getValue());
 				int i = ta.getCaretPosition();
 				int l = m.getRowFile(i);
 				int c = m.getColFile(i,l);
 				status.setText("lci"+l+","+c+","+i);
 			}
 		});
+		Document doc = ta.getDocument();
+		 doc.addUndoableEditListener(new UndoableEditListener() {
+			 @Override
+			 public void undoableEditHappened(UndoableEditEvent e) {
+
+				 undoManager.addEdit(e.getEdit());
+
+			 }
+		 });
+		 InputMap im = ta.getInputMap(JComponent.WHEN_FOCUSED);
+		 ActionMap am = ta.getActionMap();
+		tabSize.addChangeListener(new ChangeListener() {
+            
+            @Override
+            public void stateChanged(ChangeEvent _e) {
+                // TODO Auto-generated method stub
+                int value_ = (Integer) tabSize.getValue();
+                if (value_ < 0) {
+                    return;
+                }
+                setTabSize(value_);
+                
+            }
+        });
+        tabSize.setValue(4);
+		 im.put(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), "Undo");
+		 im.put(KeyStroke.getKeyStroke(KeyEvent.VK_Y, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()), "Redo");
+
+		 am.put("Undo", new AbstractAction() {
+			 @Override
+			 public void actionPerformed(ActionEvent e) {
+				 try {
+					 if (undoManager.canUndo()) {
+						 undoManager.undo();
+					 }
+				 } catch (CannotUndoException exp) {
+					
+				 }
+			 }
+		 });
+		 am.put("Redo", new AbstractAction() {
+			 @Override
+			 public void actionPerformed(ActionEvent e) {
+				 try {
+					 if (undoManager.canRedo()) {
+						 undoManager.redo();
+					 }
+				 } catch (CannotUndoException exp) {
+					
+				 }
+			 }
+		 });
+
 	}
 	private void setTabSize(int tabSize) {
 		FontMetrics fm = ta.getFontMetrics(ta.getFont());

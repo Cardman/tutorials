@@ -74,7 +74,6 @@ public class MyWindow {
             
             @Override
             public void stateChanged(ChangeEvent _e) {
-                // TODO Auto-generated method stub
                 int value_ = (Integer) tabSize.getValue();
                 if (value_ < 0) {
                     return;

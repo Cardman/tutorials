@@ -110,8 +110,6 @@ public class MyWindow {
 				 }
 			 }
 		 }, KeyStroke.getKeyStroke(KeyEvent.VK_Y, InputEvent.CTRL_MASK), JComponent.WHEN_FOCUSED);
-
-
 	}
 	private void setTabSize(int tabSize) {
 		FontMetrics fm = ta.getFontMetrics(ta.getFont());

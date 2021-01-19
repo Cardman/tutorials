@@ -73,7 +73,7 @@ public class MyWindow {
             @Override
             public void stateChanged(ChangeEvent _e) {
                 int value_ = (Integer) tabSize.getValue();
-                if (value_ < 0) {
+                if (value_ <= 0) {
                     return;
                 }
                 setTabSize(value_);

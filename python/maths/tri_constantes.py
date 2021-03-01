@@ -8,3 +8,7 @@ class IndexConstants:
     SECOND_INDEX = 1
     ONE_ELEMENT = 1
     SIZE_EMPTY = 0
+class LinearDirection:
+    NONE = 0
+    LEFT = 1
+    RIGHT = 2

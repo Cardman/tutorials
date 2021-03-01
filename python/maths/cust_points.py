@@ -10,6 +10,8 @@ class Point:
         return _obj.y == self.y
     def distanceCarree(cls,one,two):
         return (one.x - two.x) * (one.x - two.x) + (one.y - two.y) * (one.y - two.y);
+    def __repr__(self):
+        return str(self.x)+","+str(self.y)
 
     distanceCarree = classmethod(distanceCarree)
 

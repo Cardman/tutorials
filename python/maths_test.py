@@ -57,5 +57,38 @@ class RandomTest(unittest.TestCase):
     def test_modCust7(self):
         self.assertIsInstance(Ints.modCust(23,7),int)
         self.assertEqual(2,Ints.modCust(23,7))
+    def test_quotCustQuick1(self):
+        self.assertIsInstance(Ints.quotCustQuick(7,3),int)
+        self.assertEqual(2,Ints.quotCustQuick(7,3))
+    def test_quotCustQuick2(self):
+        self.assertIsInstance(Ints.quotCustQuick(-23,-7),int)
+        self.assertEqual(4,Ints.quotCustQuick(-23,-7))
+    def test_quotCustQuick3(self):
+        self.assertIsInstance(Ints.quotCustQuick(-23,7),int)
+        self.assertEqual(-4,Ints.quotCustQuick(-23,7))
+    def test_quotCustQuick4(self):
+        self.assertIsInstance(Ints.quotCustQuick(23,-7),int)
+        self.assertEqual(-3,Ints.quotCustQuick(23,-7))
+    def test_quotCustQuick5(self):
+        self.assertIsInstance(Ints.quotCustQuick(-28,-7),int)
+        self.assertEqual(4,Ints.quotCustQuick(-28,-7))
+    def test_quotCustQuick6(self):
+        self.assertIsInstance(Ints.quotCustQuick(-28,7),int)
+        self.assertEqual(-4,Ints.quotCustQuick(-28,7))
+    def test_quotCustQuick7(self):
+        self.assertIsInstance(Ints.quotCustQuick(23,7),int)
+        self.assertEqual(3,Ints.quotCustQuick(23,7))
+    def test_quotCustQuick8(self):
+        self.assertIsInstance(Ints.quotCustQuick(0,-sys.maxsize - 1),int)
+        self.assertEqual(0,Ints.quotCustQuick(0,-sys.maxsize - 1))
+    def test_quotCustQuick9(self):
+        self.assertIsInstance(Ints.quotCustQuick(-1,-sys.maxsize - 1),int)
+        self.assertEqual(1,Ints.quotCustQuick(-1,-sys.maxsize - 1))
+    def test_quotCustQuick10(self):
+        self.assertIsInstance(Ints.quotCustQuick(-sys.maxsize - 1,1),int)
+        self.assertEqual(sys.maxsize + 1,Ints.quotCustQuick(-sys.maxsize - 1,1))
+    def test_quotCustQuick11(self):
+        self.assertIsInstance(Ints.quotCustQuick(-sys.maxsize - 1,-1),int)
+        self.assertEqual(-sys.maxsize-1,Ints.quotCustQuick(-sys.maxsize - 1,-1))
 
 unittest.main()

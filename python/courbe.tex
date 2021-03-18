@@ -1,0 +1,16 @@
+\documentclass{article}
+
+\usepackage[mathletters]{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[Tl]{fontenc}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[scale=2]
+\clip (-1.7,-1.7) rectangle ( 1.7,1.7) ;
+\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
+\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};
+\draw[color=blue] plot[smooth] file {courbe.table};
+\end{tikzpicture}
+\end{document}

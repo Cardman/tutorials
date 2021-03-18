@@ -265,3 +265,11 @@ a.update(b)
 print(a)
 print()
 print(MaCollec.concat(1,2,3,4,5,6))
+print()
+mapre=[1,2]
+masec=[3,4]
+print(mapre+masec)
+print([0]*10)
+print(10*[0])
+print([1,2]*10)
+print(10*[1,2])

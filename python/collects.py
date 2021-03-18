@@ -199,6 +199,12 @@ class MaCollec:
         return MonIter(self.ls)
     def __reversed__(self):
         return MonIterInv(self.ls)
+    @staticmethod
+    def concat(*mesArgs):
+        out=""
+        for a in mesArgs:
+            out += str(a)+";"
+        return out
 class MonIter:
     def __init__(self,ls):
         self.ls=ls
@@ -250,3 +256,12 @@ for p in [(i, x) for i,x in enumerate([15,25,32,41])]:
 
 print()
 print(MaCmp.utilcmp(val=MaCmp(nb=12)))
+print()
+print("string"[-1])
+print()
+a = {'a', 'b', 'c'}
+b = {'d', 'e', 'f'}
+a.update(b)
+print(a)
+print()
+print(MaCollec.concat(1,2,3,4,5,6))

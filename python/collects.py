@@ -273,3 +273,17 @@ print([0]*10)
 print(10*[0])
 print([1,2]*10)
 print(10*[1,2])
+
+import numpy as np
+from scipy import linalg
+A = np.array( [(1,2), (3,4)] )
+print(3*A)
+print(A+10)
+print(A.T)
+print(A*A)
+print(A**2)
+print(A.dot(A))
+print(1/A)
+print(linalg.inv(A))
+A = np.array( [(0,0), (0,0)] )
+#print(linalg.inv(A))#Erreur

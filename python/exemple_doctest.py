@@ -14,3 +14,4 @@ def composition(f, g):
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
+#python exemple_doctest.py -v

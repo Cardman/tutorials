@@ -167,10 +167,12 @@ thistuple = ("apple", "banana", "cherry")
 y = list(thistuple)
 y.append("orange")
 thistuple = tuple(y)
+print(thistuple)
 thistuple = ("apple", "banana", "cherry")
 y = list(thistuple)
 y.remove("apple")
 thistuple = tuple(y)
+print(thistuple)
 
 fruits = ("apple", "banana", "cherry")
 (green, yellow, red) = fruits

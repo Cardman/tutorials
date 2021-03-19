@@ -1,6 +1,5 @@
 package mypkg;
 
-import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class MyButton extends MyComponent implements IntButton{

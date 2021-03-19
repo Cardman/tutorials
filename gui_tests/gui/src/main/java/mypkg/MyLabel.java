@@ -1,6 +1,5 @@
 package mypkg;
 
-import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class MyLabel extends MyComponent implements IntDisplayLabel{

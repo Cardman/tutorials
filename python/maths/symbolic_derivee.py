@@ -253,8 +253,7 @@ class MathAdvAfUnaryParts :
         
 
 
-    def loop(self, _offset, _string,\
-               _d) :
+    def loop(self, _offset, _string, _d) :
         curChar_ = _string[self.current];
         if ((self.current +_offset) not in _d.operatorsIndexes) :
             self.current+=1;
@@ -583,8 +582,7 @@ class MaOperationNode :
         return None
 
     @staticmethod
-    def createOperationNodeAndChild( _index,\
-                                                 _op) :
+    def createOperationNodeAndChild( _index, _op) :
         created_ = MaOperationNode.createOperationNode(_index, _op);
         if (isinstance(created_,MethodMaOperation)) :
             created_.calculateChs();
@@ -592,8 +590,7 @@ class MaOperationNode :
         return created_;
     
     @staticmethod
-    def createOperationNode( _index,\
-                                                   _op) :
+    def createOperationNode( _index, _op) :
         if (len(_op.opers) == 0) :
             return MaOperationNode.processLeaf(_index,  _op);
         
@@ -1293,8 +1290,7 @@ class MaParser :
         return _i+1;
     
     @staticmethod
-    def getOperationsSequence( _offset,  _string,\
-                                                       _d) :
+    def getOperationsSequence( _offset,  _string, _d) :
         len_ = len(_string);
         i_ = 0;
         while (i_ < len_ and MathExpUtil.isWhitespace(_string[i_])) :

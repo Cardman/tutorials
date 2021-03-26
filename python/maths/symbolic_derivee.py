@@ -87,6 +87,8 @@ class MaDelimiters :
         self.numbers=[]
         self.nbParts=[]
         self.varParts=[]
+        self.varNames=""
+        self.varFcts={}
 
 class MaError :
     def __init__(self):
@@ -169,6 +171,8 @@ class MaOperationsSequence :
         self.kind=-1
         self.offset=0
         self.cst=0
+        self.varNames=[]
+        self.varFcts={}
 
     def setupValue(self, _string,  _offset) :
         self.parts = {0:_string}
@@ -381,6 +385,10 @@ class MaOperationNode :
         while (current_ is not None) :
             if isinstance(current_, IdMaOperation):
                 str_ += "("
+            if isinstance(current_, FctMaOperation):
+                str_ += current_.fctname+"("
+            if isinstance(current_, UnaryMaOperation):
+                str_ += current_.oper
             op_ = None;
             if isinstance(current_, MethodMaOperation):
                 op_ = current_.first;
@@ -403,6 +411,8 @@ class MaOperationNode :
                 parCur_ = current_.par
                 if isinstance(parCur_, IdMaOperation):
                     str_ += ")"
+                if isinstance(parCur_, FctMaOperation):
+                    str_ += ")"
                 if parCur_ is None or parCur_ is root_:
                     current_ = None
                     continue
@@ -410,6 +420,105 @@ class MaOperationNode :
                 
         
         return str_;
+    
+    @staticmethod
+    def wrapped(cur,destpar):
+        if isinstance(cur,VariableMaOperation):
+            return cur
+        if isinstance(cur,ConstantMaOperation):
+            return cur
+        if isinstance(cur,IdMaOperation):
+            return cur
+        if isinstance(cur,UnaryMaOperation):
+            return cur
+        if isinstance(cur,FctMaOperation):
+            return cur
+        if isinstance(destpar,IdMaOperation):
+            return cur
+        if isinstance(destpar,UnaryMaOperation):
+            operLoc = MaOperationsSequence()
+            res=IdMaOperation(cur.indexExp,operLoc)
+            res.append(cur)
+            return res
+        if isinstance(destpar,NumericMaOperation):
+            if cur.oper == "+" and destpar.oper != "+":
+                operLoc = MaOperationsSequence()
+                res=IdMaOperation(cur.indexExp,operLoc)
+                res.append(cur)
+                return res
+            if cur.oper == "-" or cur.oper == ":":
+                operLoc = MaOperationsSequence()
+                res=IdMaOperation(cur.indexExp,operLoc)
+                res.append(cur)
+                return res
+            if destpar.oper == ":":
+                operLoc = MaOperationsSequence()
+                res=IdMaOperation(cur.indexExp,operLoc)
+                res.append(cur)
+                return res
+        return cur
+
+    def getExecutableNodesRepl(self,repl) :
+        current_ = self;
+        if isinstance(current_, VariableMaOperation):
+            varName_ = current_.nb
+            if varName_ in repl:
+                return repl[varName_].getExecutableNodes()
+        exp_ = MaOperationNode.createExecOperationNode(current_);
+        expRoot_ = exp_;
+        while (current_ is not None) :
+            op_ = None;
+            if isinstance(current_, MethodMaOperation):
+                op_ = current_.first;
+            if (MaOperationNode.hasToCreateExec(exp_, op_)) :
+                if isinstance(op_, VariableMaOperation):
+                    varName_ = op_.nb
+                    if varName_ in repl:
+                        exp_.append(MaOperationNode.wrapped(repl[varName_].getExecutableNodes(),exp_))
+                        loc_ = MaOperationNode.createExecOperationNode(op_);
+                        loc_.par = exp_
+                        exp_ = loc_;
+                        current_ = op_;
+                        continue;
+                loc_ = MaOperationNode.createExecOperationNode(op_);
+                exp_.append(loc_);
+                exp_ = loc_;
+                current_ = op_;
+                continue;
+            
+            while (current_ is not None) :
+                op_ = current_.nextSib;
+                par_ = exp_.par;
+                if (MaOperationNode.hasToCreateExec(par_, op_)) :
+                    if isinstance(op_, VariableMaOperation):
+                        varName_ = op_.nb
+                        if varName_ in repl:
+                            par_.append(MaOperationNode.wrapped(repl[varName_].getExecutableNodes(),par_))
+                            loc_ = MaOperationNode.createExecOperationNode(op_);
+                            loc_.par = exp_
+                            exp_ = loc_;
+                            current_ = op_;
+                            continue;
+                    loc_ = MaOperationNode.createExecOperationNode(op_);
+                    par_.append(loc_);
+                    exp_ = loc_;
+                    current_ = op_;
+                    break;
+                
+                if (par_ is None) :
+                    current_ = None;
+                    continue;
+                
+                op_ = current_.par;
+                if (op_ is self) :
+                    current_ = None;
+                    continue;
+                
+                current_ = op_;
+                exp_ = par_;
+            
+        
+        return expRoot_;
 
     def getExecutableNodes(self) :
         current_ = self;
@@ -469,6 +578,8 @@ class MaOperationNode :
             return UnaryMaOperation(_root.indexExp,_root.operats)
         if isinstance(_root, NumericMaOperation):
             return NumericMaOperation(_root.indexExp,_root.operats)
+        if isinstance(_root, FctMaOperation):
+            return FctMaOperation(_root.indexExp,_root.operats)
         return None
 
     @staticmethod
@@ -524,6 +635,8 @@ class MaOperationNode :
 
     @staticmethod
     def procFct( _index,    _op) :
+        if len(_op.fct.strip()) > 0:
+            return FctMaOperation(_index,  _op);
         return IdMaOperation(_index,  _op);
 
     def calculate(self, _error, _del):
@@ -593,12 +706,45 @@ class VariableMaOperation(MaOperationNode) :
     def __init__(self, _indexInEl,  _op):
         super().__init__(_indexInEl, _op)
         keys_ = list(_op.parts.keys())
-        self.nb=_op.parts[keys_[0]]
+        self.nb=_op.parts[keys_[0]].strip()
 
     def calculate(self, _error, _del) :
        operLoc =  MaOperationsSequence()
-       operLoc.setupValue("1", 0);
+       if self.nb == self.operats.varNames:
+           operLoc.setupValue("1", 0);
+       else:
+           operLoc.setupValue("0", 0);
        self.res=ConstantMaOperation(self.indexExp,operLoc)
+
+class FctMaOperation(MethodMaOperation):
+    def __init__(self, _indexInEl,  _op):
+        super().__init__(_indexInEl, _op)
+        self.fctname = _op.fct
+
+    def calculate(self, _error, _del) :
+        chidren_ = self.getChildren();
+        len_ = len(chidren_);
+        if (len_ != 1) :
+            _error.setOffset(self.indexExp); 
+            return;
+        if self.fctname not in self.operats.varFcts:
+            _error.setOffset(self.indexExp); 
+            return
+        expDer = self.operats.varFcts[self.fctname]
+        calc = MaParser.analyzeCalculateQuick(expDer,_error,self.operats.varNames,self.operats.varFcts);
+        repl = {self.operats.varNames:self.first}
+        operLoc = MaOperationsSequence()
+        operLoc.opers[0]="*"
+        contProdOne = NumericMaOperation(self.indexExp,operLoc)
+        contProdOne.append(MaOperationNode.wrapped(self.first.res,contProdOne))
+        contProdOne.append(MaOperationNode.wrapped(calc.getExecutableNodesRepl(repl),contProdOne))
+        self.res=contProdOne
+
+    def calculateChs(self) :
+        vs_ = self.operats.parts;
+        vs_.pop(min(list(self.operats.parts.keys())));
+        for k,v in vs_.items():
+            self.chs[k] = v
 
 class IdMaOperation(MethodMaOperation):
     def __init__(self, _indexInEl,  _op):
@@ -611,27 +757,21 @@ class IdMaOperation(MethodMaOperation):
             fch = self.first
             sch = fch.nextSib
             operLoc = MaOperationsSequence()
-            compoEnv = IdMaOperation(self.indexExp,operLoc)
-            compoEnv.append(sch.res)
-            operLoc = MaOperationsSequence()
             compo = IdMaOperation(self.indexExp,operLoc)
             compo.append(fch.res)
             compo.append(sch.getExecutableNodes())
             operLoc = MaOperationsSequence()
             operLoc.opers[0]="*"
             contProdOne = NumericMaOperation(self.indexExp,operLoc)
-            contProdOne.append(compoEnv)
-            contProdOne.append(compo)
+            contProdOne.append(MaOperationNode.wrapped(sch.res,contProdOne))
+            contProdOne.append(MaOperationNode.wrapped(compo,contProdOne))
             self.res=contProdOne
             return;
         if (len_ != 1) :
             _error.setOffset(self.indexExp); 
             return;
         fch = self.first
-        operLoc = MaOperationsSequence()
-        compoEnv = IdMaOperation(self.indexExp,operLoc)
-        compoEnv.append(fch.res)
-        self.res=compoEnv
+        self.res=MaOperationNode.wrapped(fch.res,self)
 
     def calculateChs(self) :
         vs_ = self.operats.parts;
@@ -652,11 +792,7 @@ class UnaryMaOperation(MethodMaOperation):
             _error.setOffset(self.indexExp); 
             return;
         fch = self.first
-        operLoc = MaOperationsSequence()
-        operLoc.opers[0]=self.operats.opers[min(list(self.operats.opers.keys()))]
-        cont = UnaryMaOperation(self.indexExp,operLoc)
-        cont.append(fch.res)
-        self.res=cont
+        self.res=MaOperationNode.wrapped(fch.res,self)
 
     def calculateChs(self) :
         vs_ = self.operats.parts;
@@ -680,8 +816,9 @@ class NumericMaOperation(MethodMaOperation):
             operLoc = MaOperationsSequence()
             operLoc.opers[0]=self.operats.opers[min(list(self.operats.opers.keys()))]
             cont = NumericMaOperation(self.indexExp,operLoc)
-            cont.append(fch.res)
-            cont.append(sch.res)
+            cont.oper = self.oper
+            cont.append(MaOperationNode.wrapped(fch.res,cont))
+            cont.append(MaOperationNode.wrapped(sch.res,cont))
             self.res=cont
             return;
         if (_oper == "*") :
@@ -690,13 +827,13 @@ class NumericMaOperation(MethodMaOperation):
             operLoc = MaOperationsSequence()
             operLoc.opers[0]="*"
             contProdOne = NumericMaOperation(self.indexExp,operLoc)
-            contProdOne.append(fch.getExecutableNodes())
-            contProdOne.append(sch.res)
+            contProdOne.append(MaOperationNode.wrapped(fch.getExecutableNodes(),contProdOne))
+            contProdOne.append(MaOperationNode.wrapped(sch.res,contProdOne))
             operLoc = MaOperationsSequence()
             operLoc.opers[0]="*"
             contProdTwo = NumericMaOperation(self.indexExp,operLoc)
-            contProdTwo.append(fch.res)
-            contProdTwo.append(sch.getExecutableNodes())
+            contProdTwo.append(MaOperationNode.wrapped(fch.res,contProdTwo))
+            contProdTwo.append(MaOperationNode.wrapped(sch.getExecutableNodes(),contProdTwo))
             operLoc = MaOperationsSequence()
             operLoc.opers[0]="+"
             contSum = NumericMaOperation(self.indexExp,operLoc)
@@ -710,31 +847,28 @@ class NumericMaOperation(MethodMaOperation):
             operLoc = MaOperationsSequence()
             operLoc.opers[0]="*"
             contProdOne = NumericMaOperation(self.indexExp,operLoc)
-            contProdOne.append(fch.getExecutableNodes())
-            contProdOne.append(sch.res)
+            contProdOne.append(MaOperationNode.wrapped(fch.getExecutableNodes(),contProdOne))
+            contProdOne.append(MaOperationNode.wrapped(sch.res,contProdOne))
             operLoc = MaOperationsSequence()
             operLoc.opers[0]="*"
             contProdTwo = NumericMaOperation(self.indexExp,operLoc)
-            contProdTwo.append(fch.res)
-            contProdTwo.append(sch.getExecutableNodes())
+            contProdTwo.append(MaOperationNode.wrapped(fch.res,contProdTwo))
+            contProdTwo.append(MaOperationNode.wrapped(sch.getExecutableNodes(),contProdTwo))
             operLoc = MaOperationsSequence()
             operLoc.opers[0]="-"
             contSum = NumericMaOperation(self.indexExp,operLoc)
             contSum.append(contProdTwo)
             contSum.append(contProdOne)
             operLoc = MaOperationsSequence()
-            contId= IdMaOperation(self.indexExp,operLoc)
-            contId.append(contSum)
-            operLoc = MaOperationsSequence()
             operLoc.opers[0]="*"
             contProd = NumericMaOperation(self.indexExp,operLoc)
-            contProd.append(sch.getExecutableNodes())
-            contProd.append(sch.getExecutableNodes())
+            contProd.append(MaOperationNode.wrapped(sch.getExecutableNodes(),contProd))
+            contProd.append(MaOperationNode.wrapped(sch.getExecutableNodes(),contProd))
             operLoc = MaOperationsSequence()
             operLoc.opers[0]=":"
             contRatio = NumericMaOperation(self.indexExp,operLoc)
-            contRatio.append(contId)
-            contRatio.append(contProd)
+            contRatio.append(MaOperationNode.wrapped(contSum,contRatio))
+            contRatio.append(MaOperationNode.wrapped(contProd,contRatio))
             self.res=contRatio
             return;
         _error.setOffset(self.indexExp);    
@@ -832,8 +966,13 @@ class MaParser :
 #    }
 #
     @staticmethod
-    def analyzeCalculate( _el, _err, _varNames) :
+    def analyzeCalculate( _el, _err, _varNames, _varFcts) :
+        if len(_varNames) == 0:
+            return None
+        if MathExpUtil.isDigit(_varNames[0]):
+            return None
         d_ = MaParser.checkSyntax(_el, _err,_varNames);
+        d_.varFcts = _varFcts
         if (_err.offset > -1) :
             return None;
         
@@ -852,6 +991,29 @@ class MaParser :
             return None;
         
         return op_.res;
+
+    @staticmethod
+    def analyzeCalculateQuick( _el, _err, _varNames, _varFcts) :
+        if len(_varNames) == 0:
+            return None
+        if MathExpUtil.isDigit(_varNames[0]):
+            return None
+        d_ = MaParser.checkSyntax(_el, _err,_varNames);
+        d_.varFcts = _varFcts
+        if (_err.offset > -1) :
+            return None;
+        
+        opTwo_ = MaParser.getOperationsSequence(0, _el, d_);
+        op_ = MaOperationNode.createOperationNodeAndChild(0, opTwo_);
+        if (op_ == None) :
+            _err.setOffset(0);
+            return None;
+        
+        MaParser.getSortedDescNodes(op_, _err, d_);
+        if (_err.offset > -1) :
+            return None;
+        
+        return op_;
     
 
     @staticmethod
@@ -959,6 +1121,7 @@ class MaParser :
     @staticmethod
     def checkSyntax(_string, _error, _varNames) :
         d_ = MaDelimiters();
+        d_.varNames = _varNames
         len_ = len(_string);
         i_ = 0;
         while i_ < len_ :
@@ -977,7 +1140,7 @@ class MaParser :
     def loop(_string, _error, _d, _len, _m, _varNames) :
         curChar_ = _string[_m.index]
         if MathExpUtil.isWordChar(curChar_) :
-            _m.index=(MaParser.processWordChar(_string, _d, _len, _m.index, curChar_,_varNames))
+            _m.index=(MaParser.processWordChar(_string, _d, _len, _m.index, curChar_))
             return;
 
         if curChar_ == MatCommonCst.DOT and MaParser.charIsDig(_string,_m) :
@@ -1027,8 +1190,8 @@ class MaParser :
         return _d;
 
     @staticmethod
-    def processWordChar(_string, _d, _len, _from, _curChar, _varNames) :
-        if (MaParser.isDigitFirst(_string, _len, _from, _curChar, _varNames)) :
+    def processWordChar(_string, _d, _len, _from, _curChar) :
+        if (MaParser.isDigitFirst(_string, _len, _from, _curChar)) :
             return MaParser.addNumberInfo(_d, _from, _from, _string);
         var_ = MatVariableInfo()
         var_.firstChar=(_from);
@@ -1040,7 +1203,7 @@ class MaParser :
         return i_;
 
     @staticmethod
-    def isDigitFirst(_string, _len, _from, _curChar, _varNames) :
+    def isDigitFirst(_string, _len, _from, _curChar) :
         if not MathExpUtil.isDigit(_curChar):
             return False;
         i_ = _from+1;
@@ -1049,13 +1212,7 @@ class MaParser :
             if (not MathExpUtil.isWordChar(ch_)) :
                 break;
             i_+=1;
-        endWord_ = i_;
-        i_ = MaParser.skipWhite(_string, _len, i_);
-        if MathExpUtil.charIs(_string, _len, i_, '/'[0]) or MathExpUtil.charIs(_string, _len, i_, '.'[0]): 
-            return True;
-        if MathExpUtil.charIs(_string,_len,i_,'('[0]):
-            return False;
-        return _string[_from:endWord_] not in _varNames;
+        return True;
 
     @staticmethod
     def skipWhite(_string, _len, _from) :
@@ -1145,6 +1302,8 @@ class MaParser :
         
         if (i_ >= len_) :
             op_ = MaOperationsSequence();
+            op_.varNames = _d.varNames
+            op_.varFcts = _d.varFcts
             op_.opers=({});
             op_.setupValue(_string,0);
             return op_;
@@ -1161,6 +1320,8 @@ class MaParser :
                     break;
                 
                 op_ = MaOperationsSequence();
+                op_.varNames = _d.varNames
+                op_.varFcts = _d.varFcts
                 op_.kind=(MatConstType.LOC_VAR);
                 op_.opers=({});
                 op_.setupValue(v.name,i_);
@@ -1171,6 +1332,8 @@ class MaParser :
             end_ = _d.numbers.index( _offset + lastPrintChar_ + 1);
             if (MaParser.delimits(begin_, end_)) :
                 op_ = MaOperationsSequence();
+                op_.varNames = _d.varNames
+                op_.varFcts = _d.varFcts
                 op_.cst=(begin_//2);
                 op_.kind=(MatConstType.NUMBER);
                 op_.opers=({});
@@ -1183,6 +1346,8 @@ class MaParser :
             mat_.loop(_offset, _string, _d);
         
         op_ = MaOperationsSequence();
+        op_.varNames = _d.varNames
+        op_.varFcts = _d.varFcts
         op_.prio=mat_.prio;
         op_.opers=mat_.opers;
         op_.fct=mat_.fct;
@@ -1196,11 +1361,29 @@ class MaParser :
 
 
 
-
+# datader = {"ln":"1:x","exp":"exp(x)"}
 # err_ = MaError()
-# result = MaParser.analyzeCalculate("x:(x+1)",err_,["x"])
+# result = MaParser.analyzeCalculate("x*y",err_,"x",datader)
 # print(result.exportValue())
-# result = MaParser.analyzeCalculate("1:x",err_,["x"])
+# result2=MaParser.analyzeCalculate(result.exportValue(),err_,"y",datader)
+# print(result2.exportValue())
+# result = MaParser.analyzeCalculate("x*y",err_,"y",datader)
 # print(result.exportValue())
-# result = MaParser.analyzeCalculate("(x*x,x+1)",err_,["x"])
+# result2=MaParser.analyzeCalculate(result.exportValue(),err_,"x",datader)
+# print(result2.exportValue())
+# result = MaParser.analyzeCalculate("1:x",err_,"x",datader)
+# print(result.exportValue())
+# result = MaParser.analyzeCalculate("(x*x,x+1)",err_,"x",datader)
+# print(result.exportValue())
+# result = MaParser.analyzeCalculate("ln(x)",err_,"x",datader)
+# print(result.exportValue())
+# result = MaParser.analyzeCalculate("ln(x*x)",err_,"x",datader)
+# print(result.exportValue())
+# result = MaParser.analyzeCalculate("exp(x*x)",err_,"x",datader)
+# print(result.exportValue())
+# result = MaParser.analyzeCalculate("1:ln(x)",err_,"x",datader)
+# print(result.exportValue())
+# result = MaParser.analyzeCalculate("(1:x,ln(x))",err_,"x",datader)
+# print(result.exportValue())
+# result = MaParser.analyzeCalculate("(ln(x),1:x)",err_,"x",datader)
 # print(result.exportValue())

@@ -719,9 +719,7 @@ class FctMaOperation(MethodMaOperation):
         self.fctname = _op.fct
 
     def calculate(self, _error, _del) :
-        chidren_ = self.getChildren();
-        len_ = len(chidren_);
-        if (len_ != 1) :
+        if (self.first is None or self.first.nextSib is not None) :
             _error.setOffset(self.indexExp); 
             return;
         if self.fctname not in self.operats.varFcts:
@@ -751,10 +749,8 @@ class IdMaOperation(MethodMaOperation):
         super().__init__(_indexInEl, _op)
 
     def calculate(self, _error, _del) :
-        chidren_ = self.getChildren();
-        len_ = len(chidren_);
-        if (len_ == 2) :
-            fch = self.first
+        fch = self.first
+        if fch is not None and fch.nextSib is not None and fch.nextSib.nextSib is None:
             sch = fch.nextSib
             operLoc = MaOperationsSequence()
             compo = IdMaOperation(self.indexExp,operLoc)
@@ -767,7 +763,7 @@ class IdMaOperation(MethodMaOperation):
             contProdOne.append(MaOperationNode.wrapped(compo,contProdOne))
             self.res=contProdOne
             return;
-        if (len_ != 1) :
+        if (self.first is None or self.first.nextSib is not None) :
             _error.setOffset(self.indexExp); 
             return;
         fch = self.first
@@ -786,9 +782,7 @@ class UnaryMaOperation(MethodMaOperation):
         self.oper =_op.opers[keys_[0]]
 
     def calculate(self, _error, _del) :
-        chidren_ = self.getChildren();
-        len_ = len(chidren_);
-        if (len_ != 1) :
+        if (self.first is None or self.first.nextSib is not None) :
             _error.setOffset(self.indexExp); 
             return;
         fch = self.first

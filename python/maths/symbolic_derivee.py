@@ -729,6 +729,9 @@ class FctMaOperation(MethodMaOperation):
             return
         expDer = self.operats.varFcts[self.fctname]
         calc = MaParser.analyzeCalculateQuick(expDer,_error,self.operats.varNames,self.operats.varFcts);
+        if calc is None:
+            _error.setOffset(self.indexExp); 
+            return
         repl = {self.operats.varNames:self.first}
         operLoc = MaOperationsSequence()
         operLoc.opers[0]="*"

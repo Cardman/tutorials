@@ -19,11 +19,7 @@ class Delaunay:
         if len(pts) < 3 :
             return None
         if len(pts) == 3 :
-            vOne_ = Vecteur(pts[0], pts[1]);
-            vTwo_ = Vecteur(pts[0], pts[2]);
-            if vOne_.det(vTwo_) == 0 :
-                return None
-            self.triangles.append(Triangle(pts[0], pts[1], pts[2]));
+            self.tryAddTriangle(pts[0], pts[1], pts[2])
             return None
         extendedEdge_ = Delaunay.getExtendedEdge(pts);
         xMax_ = extendedEdge_.y.x
@@ -49,10 +45,17 @@ class Delaunay:
             for t in badTriangles_:
                 self.triangles.remove(t);
             for e in edges_:
-                self.triangles.append(Triangle(e.x, e.y, c));
+                self.tryAddTriangle(e.x, e.y, c)
         badTriangles_ = self.filterTriangles(superTriangle_);
         for b in badTriangles_:
             self.triangles.remove(b);
+
+    def tryAddTriangle(self,_first,_second,_third):
+        vOne_ = Vecteur(_first, _second);
+        vTwo_ = Vecteur(_first, _third);
+        if vOne_.det(vTwo_) == 0 :
+            return None
+        self.triangles.append(Triangle(_first, _second, _third));
 
     @staticmethod
     def getEdgesFromBadTriangles(_badTriangles) :

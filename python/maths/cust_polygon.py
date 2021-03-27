@@ -1,11 +1,6 @@
-from fractions import Fraction
-import random
-import sys
 from cust_points import Point
-from arete import Arete
-from site_info import SiteInfo
 from vecteur import Vecteur
-from tri_constantes import *
+from tri_constantes import LinearDirection
 #import math
 
 class Polygone:
@@ -20,7 +15,7 @@ class Polygone:
     def getConvexHull(self,_sortie) :
         cust_ = self.pts[0]
         for p in self.pts :
-            if self.hasToRedef(cust_, p) :
+            if Polygone.hasToRedef(cust_, p) :
                 cust_ = p
         endPoint_ = self.pts[0]
         nbVertices_ = len(self.pts);
@@ -34,17 +29,19 @@ class Polygone:
                     b_ = _sortie.pts[len(_sortie.pts)-1];
                     affineSegment_ = Vecteur(b_, endPoint_)
                     affinePoint_ = Vecteur(self.pts[j], endPoint_)
-                    currentSide_ = self.getSide(affineSegment_, affinePoint_)
+                    currentSide_ = Polygone.getSide(affineSegment_, affinePoint_)
                     if currentSide_ == LinearDirection.LEFT :
                         endPoint_ = self.pts[j]
             cust_ = endPoint_
         return _sortie
 
 
-    def hasToRedef(cls,_cust,_p) :
+    @staticmethod
+    def hasToRedef(_cust,_p) :
         return _p.x < _cust.x or (_p.x == _cust.x and _p.y < _cust.y)
 
-    def getSide(cls,_a,_b):
+    @staticmethod
+    def getSide(_a,_b):
         x_ = _a.det(_b)
         if x_ < 0 :
             return LinearDirection.LEFT
@@ -54,8 +51,6 @@ class Polygone:
     def __repr__(self):
         return str(self.pts)
 
-    getSide = classmethod(getSide)
-    hasToRedef = classmethod(hasToRedef)
 
 if __name__ == "__main__":
     polygone=Polygone()

@@ -1,5 +1,3 @@
-from fractions import Fraction
-from tri_constantes import TriConstantes
 from site_info import SiteInfo
 from vecteur import Vecteur
 

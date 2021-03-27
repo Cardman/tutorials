@@ -26,6 +26,11 @@ if __name__ == "__main__":
         trix = [t.one.x,t.two.x,t.three.x,t.one.x]
         triy = [t.one.y,t.two.y,t.three.y,t.one.y]
         plt.plot(trix, triy,color='#004000')
+    for (k,v) in delaunay.aretes.items():
+        for a in v:
+            arx=[a.x.x,a.y.x]
+            ary=[a.x.y,a.y.y]
+            plt.plot(arx, ary,color='#400040')
     plt.plot(first, second, 'ro')
     plt.plot(firstCenter, secondCenter, 'bo')
     plt.axis([-1, 4, -1, 4])

@@ -1,8 +1,7 @@
-from fractions import Fraction
 from vecteur import Vecteur
 from site_info import SiteInfo
 from site_point import SitePoint
-from tri_constantes import *
+from tri_constantes import IndexConstants
 from functools import cmp_to_key;
 
 class Arete:
@@ -50,41 +49,45 @@ class Arete:
             return True;
         if (_other.containsPoint(self.y)) :
             return True;
-        return lookForIntersectEdges(self,_points);
+        return Arete.lookForIntersectEdges(_points);
 
-    def lookForIntersectEdges(cls, _points) :
+    @staticmethod
+    def lookForIntersectEdges(_points) :
         index_ = IndexConstants.FIRST_INDEX;
         for p in _points :
             others_ = []
             if index_ <= IndexConstants.SECOND_INDEX :
-                next_ = cls.getNext(index_)
+                next_ = Arete.getNext(index_)
                 nextOthOne_ = IndexConstants.SECOND_INDEX + IndexConstants.ONE_ELEMENT
                 nextOthTwo_ = nextOthOne_ + IndexConstants.ONE_ELEMENT
             else :
-                next_ = cls.getNext2(index_);
+                next_ = Arete.getNext2(index_);
                 nextOthOne_ = IndexConstants.FIRST_INDEX
                 nextOthTwo_ = IndexConstants.SECOND_INDEX
-            sites_ = cls.getSites(_points, p, others_, next_, nextOthOne_, nextOthTwo_)
-            if cls.noIntersect(sites_) :
+            sites_ = Arete.getSites(_points, p, others_, next_, nextOthOne_, nextOthTwo_)
+            if Arete.noIntersect(sites_) :
                 return False;
             index_+=1;
         return True;
 
-    def getNext2(cls,  _index) :
+    @staticmethod
+    def getNext2(_index) :
         if _index == IndexConstants.SECOND_INDEX + IndexConstants.ONE_ELEMENT :
             next_ = _index + IndexConstants.ONE_ELEMENT;
         else :
             next_ = _index - IndexConstants.ONE_ELEMENT;
         return next_;
 
-    def getNext(cls,  _index) :
+    @staticmethod
+    def getNext( _index) :
         if _index == IndexConstants.FIRST_INDEX :
             next_ = IndexConstants.SECOND_INDEX;
         else :
             next_ = IndexConstants.FIRST_INDEX;
         return next_;
 
-    def getSites(cls,  _points,  _p,  _others, _next, _nextOthOne, _nextOthTwo) :
+    @staticmethod
+    def getSites(_points,  _p,  _others, _next, _nextOthOne, _nextOthTwo) :
         o_ = _points[_next]
         _others.append(_points[_nextOthOne])
         _others.append(_points[_nextOthTwo])
@@ -94,7 +97,8 @@ class Arete:
             sites_.append(SitePoint(n, _p, v_));
         return sorted(sites_,key=cmp_to_key(SiteInfo.compare))
 
-    def noIntersect(cls, _sites) :
+    @staticmethod
+    def noIntersect(_sites) :
         return _sites[0].info.nb >= SiteInfo.QUAD_THREE or _sites[len(_sites)-1].info.nb < SiteInfo.QUAD_THREE;
 
     def intersect(self,_other): 
@@ -120,10 +124,7 @@ class Arete:
         one_ = Vecteur(self.x, _c)
         two_ = Vecteur(self.y, _c)
         return one_.det(two_) == 0 and one_.scal(two_) <= 0
+    def __repr__(self):
+        return str(self.x)+";"+str(self.y)
 
-    lookForIntersectEdges = classmethod(lookForIntersectEdges)
-    getSites = classmethod(getSites)
-    noIntersect = classmethod(noIntersect)
-    getNext = classmethod(getNext)
-    getNext2 = classmethod(getNext2)
 

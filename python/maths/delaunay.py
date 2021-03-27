@@ -1,15 +1,12 @@
-from fractions import Fraction
-import random
-import sys
 from cust_points import Point
 from arete import Arete
 from site_info import SiteInfo
 from site_point import SitePoint
 from vecteur import Vecteur
-from tri_constantes import *
+from tri_constantes import IndexConstants,TriConstantes
 from cust_polygon import Polygone
 from cust_triangles import Triangle
-from functools import cmp_to_key;
+from functools import cmp_to_key,reduce;
 
 class Delaunay:
     def __init__(self):
@@ -28,7 +25,7 @@ class Delaunay:
                 return None
             self.triangles.append(Triangle(pts[0], pts[1], pts[2]));
             return None
-        extendedEdge_ = self.getExtendedEdge(pts);
+        extendedEdge_ = Delaunay.getExtendedEdge(pts);
         xMax_ = extendedEdge_.y.x
         xMin_ = extendedEdge_.x.x
         yMax_ =  extendedEdge_.y.y
@@ -36,6 +33,7 @@ class Delaunay:
         self.loopMain(pts, xMax_, xMin_, yMax_, yMin_);
         self.enveloppe = self.enveloppe.getConvex()
         self.ptsSuiv = self.calculateNextPoints()
+        self.aretes = self.evaluateEdges()
         return None
     
     def loopMain(self, _points, _xMax, _xMin, _yMax, _yMin) :
@@ -47,7 +45,7 @@ class Delaunay:
         for c in _points:
             self.enveloppe.pts.append(c);
             badTriangles_ = self.filterTriangles2(c);
-            edges_ = self.getEdgesFromBadTriangles(badTriangles_);
+            edges_ = Delaunay.getEdgesFromBadTriangles(badTriangles_);
             for t in badTriangles_:
                 self.triangles.remove(t);
             for e in edges_:
@@ -56,24 +54,27 @@ class Delaunay:
         for b in badTriangles_:
             self.triangles.remove(b);
 
-    def getEdgesFromBadTriangles(cls, _badTriangles) :
+    @staticmethod
+    def getEdgesFromBadTriangles(_badTriangles) :
         edges_ = []
         for t in _badTriangles:
             for e in t.aretes() :
-                if cls.addEdge(_badTriangles, t, e):
+                if Delaunay.addEdge(_badTriangles, t, e):
                     edges_.append(e);
         return edges_;
     
-    def addEdge(cls, _badTriangles, _triangle, _edge) :
+    @staticmethod
+    def addEdge(_badTriangles, _triangle, _edge) :
         addEdge_ = True;
         for o in _badTriangles :
             if o is not _triangle :
-                if cls.foundSameEdge(_edge, o) :
+                if Delaunay.foundSameEdge(_edge, o) :
                     addEdge_ = False;
                     break;
         return addEdge_;
 
-    def foundSameEdge(cls, _edge, _o) :
+    @staticmethod
+    def foundSameEdge(_edge, _o) :
         break_ = False
         for e_ in _o.aretes():
             if _edge.meme(e_) :
@@ -87,7 +88,9 @@ class Delaunay:
                 badTriangles_.append(t)
             
         return badTriangles_
-    def getExtendedEdge(cls, _points) :
+
+    @staticmethod
+    def getExtendedEdge(_points) :
         xMax_ = _points[0].x
         xMin_ = _points[0].x
         yMax_ = _points[0].y
@@ -110,10 +113,11 @@ class Delaunay:
     def filterTriangles(self, _superTriangle) :
         badTriangles_ = []
         for b in self.triangles :
-            if self.hasToRemove(_superTriangle, b) :
+            if Delaunay.hasToRemove(_superTriangle, b) :
                 badTriangles_.append(b);
         return badTriangles_;
-    def hasToRemove(cls, _superTriangle, _b) :
+    @staticmethod
+    def hasToRemove(_superTriangle, _b) :
         remove_ = False;
         for s in _superTriangle.pts():
             for p in _b.pts():
@@ -151,9 +155,27 @@ class Delaunay:
                     first_ = eTwo_;
                 else :
                     first_ = eOne_;
-            self.putPts(id_, p, next_, first_);
+            Delaunay.putPts(id_, p, next_, first_);
         return id_;
     
+    def evaluateEdges(self) :
+        id_ = {}
+        for (k,v) in self.ptsSuiv.items() :
+            k_ = k;
+            v_ = v;
+            p_ = Polygone();
+            self.fetchCircumCenters(k_, v_, p_);
+            edges_ = []
+            len_ = len(p_.pts);
+            for i in range(len_):
+                one_ = p_.pts[i];
+                two_ = p_.pts[(i+1)%len_];
+                e_ = Arete(one_, two_);
+                edges_.append(e_);
+            id_[k_]= edges_;
+        
+        return id_;
+
     def isContainedHull(self,_k) :
         contained_ = False;
         for c in self.enveloppe.pts:
@@ -162,7 +184,8 @@ class Delaunay:
                 break;
         return contained_;
 
-    def putPts(cls,_id, _p, _next, _first) :
+    @staticmethod
+    def putPts(_id, _p, _next, _first) :
         sites_ = []
         v_ = Vecteur(_p, _first);
         for n in _next:
@@ -175,11 +198,11 @@ class Delaunay:
     def feedListPt(self,_list) :
         for t in self.triangles:
             for p in t.pts() :
-                if not(self.isFoundPoint(p, _list)):
+                if not(Delaunay.isFoundPoint(p, _list)):
                     _list.append(p);
     def feedMapping(self, _p, _all,_allKeys) :
         for t in self.triangles :
-            if not(self.isFoundPoint(_p, t.pts())) :
+            if not(Delaunay.isFoundPoint(_p, t.pts())) :
                 continue;
             for n in t.pts():
                 if n is _p :
@@ -189,7 +212,8 @@ class Delaunay:
                 else :
                     _all[n] = 1
                     _allKeys.append(n)
-    def isFoundPoint(cls, _p, _points) :
+    @staticmethod
+    def isFoundPoint(_p, _points) :
         found_ = False;
         for n in _points:
             if n is _p:
@@ -198,13 +222,34 @@ class Delaunay:
         
         return found_
 
-    getExtendedEdge = classmethod(getExtendedEdge)
-    getEdgesFromBadTriangles = classmethod(getEdgesFromBadTriangles)
-    addEdge = classmethod(addEdge)
-    foundSameEdge = classmethod(foundSameEdge)
-    hasToRemove = classmethod(hasToRemove)
-    isFoundPoint = classmethod(isFoundPoint)
-    putPts = classmethod(putPts)
+    def fetchCircumCenters(self, _k, _v, _p) :
+        len_ = len(_v);
+        for i in range(len_):
+            one_ = _v[i];
+            two_ = _v[(i + 1) % len_];
+            for t in self.triangles:
+                nbPoints_ = Delaunay.getNbPoints(_k, one_, two_, t);
+                if (nbPoints_ == 3) :
+                    c_ = t.centreCirconscrit();
+                    _p.pts.append(c_);
+                    break;
+
+    @staticmethod
+    def getNbPoints(_k, _one, _two, _t) :
+        nbPoints_ = 0;
+        for p in _t.pts() :
+            if (p is _k) :
+                nbPoints_+=1
+
+            if (p is _one) :
+                nbPoints_+=1
+
+            if (p is _two) :
+                nbPoints_+=1
+
+        
+        return nbPoints_
+
 
 if __name__ == "__main__":
     liste=[]
@@ -219,3 +264,4 @@ if __name__ == "__main__":
     print(delaunay.triangles)
     print(delaunay.enveloppe)
     print(delaunay.ptsSuiv)
+    print(delaunay.aretes)

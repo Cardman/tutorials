@@ -1,9 +1,6 @@
 from fractions import Fraction
-import random
-import sys
 from cust_points import Point
 from arete import Arete
-from site_info import SiteInfo
 #import math
 
 class Triangle:

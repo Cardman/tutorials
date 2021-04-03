@@ -10,7 +10,14 @@
 <a routerLink="/users2">List Users 2</a>
 <a style="margin-left:10px" routerLink="/users2/add">Add User 2</a>
 <br/>
+<!--a routerLink="/selection_liste">Selection liste</a-->
+<br/>
 <router-outlet></router-outlet>
+<br/>
+<selection_liste (newItemEvent)="majListe($event)"></selection_liste>
+<ol>
+  <li *ngFor="let item of selection_ls">{{item}}</li>
+</ol>
 <br/>
 <monselecteur></monselecteur>
 </div>

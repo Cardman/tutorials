@@ -5,11 +5,11 @@ import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styles: []
+  selector: 'app-user-2',
+  templateUrl: './user-2.component.html',
+  styleUrls: ['./user-2.component.css']
 })
-export class UserComponent implements OnInit {
+export class User2Component implements OnInit {
 
   users: User[];
 

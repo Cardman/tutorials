@@ -3,7 +3,7 @@ import { Router,ActivatedRoute,ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
-import { UserService } from './user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   templateUrl: './edit-user.component.html'

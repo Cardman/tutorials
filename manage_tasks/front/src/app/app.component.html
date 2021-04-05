@@ -2,5 +2,5 @@
 <h1>Upload and Download File</h1>
 
 <button class="btn btn-primary" (click)="upload()">Save File</button>
-<button class="btn btn-primary" (click)="reset()">Reset</button>
+<button class="btn btn-primary" *ngFor="let c of nbCls" (click)="reset(c)">Reset {{c}}</button>
 <br/>

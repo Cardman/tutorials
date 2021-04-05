@@ -4,7 +4,40 @@
     Welcome to {{title}}!
   </h1>
 </div>
+<button (click)="useLanguage('en')">en</button>
+<button (click)="useLanguage('de')">de</button>
+<div>
+    <h1>{{ 'demo.title' | translate }}</h1>
 
+    <!-- translation: translation pipe -->
+    <p>{{ 'demo.text' | translate }}</p>
+
+    <!-- translation: directive (key as attribute)-->
+    <p [translate]="'demo.text'"></p>
+
+    <!-- translation: directive (key as content of element) -->
+    <p translate>demo.text</p>
+<!-- translation with parameters: translation pipe -->
+<p>{{ 'demo.greeting' | translate:{'name':'Andreas'} }}</p>
+
+<!-- translation: directive (key as attribute) -->
+<p [translate]="'demo.greeting'" [translateParams]="{name: 'Andreas'}"></p>
+
+<!-- translation: directive (key as content of element)-->
+<p translate [translateParams]="{name: 'Andreas'}">demo.greeting</p>
+<!--h2>ngx-translate-messageformat-compiler demo</h2>
+
+<ul>
+    <li translate [translateParams]="{ count: 0 }">pluralization.things</li>
+    <li translate [translateParams]="{ count: 1 }">pluralization.things</li>
+    <li>{{'pluralization.things' | translate:"{ count: 2 }"}}</li>
+</ul>
+<ul>
+    <li translate [translateParams]="{ gender: 'female', name: 'Sarah' }">pluralization.people</li>
+    <li translate [translateParams]="{ gender: 'male', name: 'Peter' }">pluralization.people</li>
+    <li>{{'pluralization.people' | translate:"{ name: 'Sarah + Peter' }"}}</li>
+</ul-->
+</div>
 <a routerLink="/users">List Users</a>
 <a style="margin-left:10px" routerLink="/add">Add User</a><hr/>
 <a routerLink="/users2">List Users 2</a>

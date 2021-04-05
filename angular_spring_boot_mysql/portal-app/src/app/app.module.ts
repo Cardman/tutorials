@@ -45,11 +45,11 @@ import {EditUser2Component} from './user2/edit-user-2.component';
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-            /*,
+            ,
             compiler: {
                 provide: TranslateCompiler,
                 useClass: TranslateMessageFormatCompiler
-            }*/
+            }
 
     })
   ],

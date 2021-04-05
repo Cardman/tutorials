@@ -4,6 +4,7 @@
       <div class="form-group" *ngFor="let hobbyControl of getHobbies().controls; let i = index">
         <input type="text" class="form-control" [formControlName]="i">
         <control-messages [control]="hobbyControl" [glob]="false"></control-messages>
+        <button type="button" class="btn btn-success" (click)="onRemHobby(hobbyControl)">Supprimer un hobby</button>
       </div>
       <button type="button" class="btn btn-success" (click)="onAddHobby()">Ajouter un hobby</button>
       <control-messages [control]="getHobbies()" [glob]="true"></control-messages>

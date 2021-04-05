@@ -19,9 +19,9 @@ export class SelectionListeComponent implements OnInit {
   ngOnInit():void {
     this.userForm = this.formBuilder.group({
       //hobbies: [this.formBuilder.array([]),this.count]
-      hobbies: this.formBuilder.array([])
+      hobbies: this.formBuilder.array([],this.count)
     });
-    this.userForm.get('hobbies').setValidators(this.count);
+    //this.userForm.get('hobbies').setValidators(this.count);
   }
   getHobbies(): FormArray {
     return this.userForm.get('hobbies') as FormArray;
@@ -34,6 +34,16 @@ export class SelectionListeComponent implements OnInit {
   onAddHobby():void {
     const hob = this.formBuilder.control(null, this.content)
     this.getHobbies().push(hob);
+  }
+  onRemHobby(ct:AbstractControl):void {
+    var hobs = this.getHobbies();
+    var len = hobs.length;
+    for (var i = 0; i < len; i++){
+        if (hobs.at(i) === ct){
+            hobs.removeAt(i);
+            break;
+        }
+    }
   }
 
   count(ct:AbstractControl):ValidationErrors {

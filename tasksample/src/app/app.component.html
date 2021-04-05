@@ -1,0 +1,21 @@
+<button type="button" (click)="onStart()">Start</button>
+<button type="button" (click)="onStop()">Stop</button>
+ {{ secondes }}
+
+ <p>
+			You can drag-n-drop files onto the hit target.
+			( <strong>PNG files not allowed</strong> )
+		</p>
+		<file-uploader
+			(fileAdd)="handleFileAdd( $event )">
+		</file-uploader>
+		
+		<p>
+								<a (click)="showList( 'friends' )">Friends</a>
+								&nbsp;|&nbsp;
+								<a (click)="showList( 'enemies' )">Enemies</a>
+							</p>
+							<div [ngSwitch]="list">
+								<friend-list *ngSwitchCase =" 'friends' "></friend-list>
+								<enemy-list *ngSwitchCase =" 'enemies' "></enemy-list>
+							</div>

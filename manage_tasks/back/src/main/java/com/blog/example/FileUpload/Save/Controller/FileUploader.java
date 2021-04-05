@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 
 import org.springframework.core.io.InputStreamResource;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -37,6 +38,9 @@ import com.blog.example.FileUpload.Save.component.Count;
 @Controller
 public class FileUploader {
 
+    @Autowired
+    private SimpMessagingTemplate simpMessagingTemplate;
+
 	private AtomicLong fileCount = new AtomicLong(0);
 	private ConcurrentHashMap<Long,ArrayList<String>> filesMap = new ConcurrentHashMap<Long,ArrayList<String>>();
 
@@ -46,12 +50,13 @@ public class FileUploader {
 			final long v = fileCount.incrementAndGet();
 			filesMap.put(v,new ArrayList<String>());
 			Runnable r = () -> {
+				simpMessagingTemplate.convertAndSend("/socket-publisher","begin "+v);
 				while (filesMap.containsKey(v)){
 					try {
 						Thread.sleep(1000);
 					}catch(Exception e){}
 				}
-				
+				simpMessagingTemplate.convertAndSend("/socket-publisher","end "+v);
 			};
 			ResponseEntity<String> out = ResponseEntity.status(HttpStatus.OK).body(v+"");
 			new Thread(r).start();

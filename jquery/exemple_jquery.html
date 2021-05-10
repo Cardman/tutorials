@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    
+    $("p").filter("[class='cl1']").each(function(){
+        $(this).html("<button>"+$(this).index()+"</button>");
+    });
+    const encoded = encodeURI("hello world");
+    $("p").filter("[class='cl1']").children("button").each(function(){
+        $(this).click(function(){
+            window.location.href = "https://www.google.com/search?q="+encoded;
+            //alert($(this).text()+'-'+$("body").find("*").length);
+        });
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Return the text content of all p elements</button>
+
+<p class='cl1'>This is a paragraph.</p>
+<p class='cl1'>This is <b>another</b> paragraph.</p>
+<p class='cl2'>This is a paragraph.</p>
+<p class='cl2'>This is <b>another</b> paragraph.</p>
+
+</body>
+</html>

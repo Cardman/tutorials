@@ -1,0 +1,9 @@
+{
+"errs":{
+"absent_ct":"no one",
+"absent":"absent",
+"bad_count":"{{nb}} controllers",
+"too_short":"{{nb}} chars",
+"same_letter":"{{nb}}"
+}
+}

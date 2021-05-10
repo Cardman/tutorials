@@ -1,0 +1,15 @@
+<ngx-flyout [(open)]="openFlyout">
+        <!--ul>
+            <li>Menu 1</li>
+            <li>Menu 2</li>
+            <li>Menu 3</li>
+        </ul-->
+<selection_liste_env (closeFyout)="fermer($event)"></selection_liste_env>
+    </ngx-flyout>
+ 
+    <button (click)="toggleSidebar()">
+        Toggle Flyout
+    </button>
+<div>
+{{user.name}}-{{user.age}}
+<div>

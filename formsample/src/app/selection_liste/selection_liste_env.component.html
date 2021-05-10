@@ -1,0 +1,10 @@
+{{ digits | digitcount:'zero' }}
+{{ digits | digitcount:'zero':'zero' }}
+{{ digits | digitcount }}
+<selection_liste (newItemEvent)="majListe($event)" (newItemEvent2)="majListe2($event)" (closeFyout)="onCloseFlyout()"></selection_liste>
+<ol>
+  <li *ngFor="let item of selection_ls">{{item}}</li>
+</ol>
+<ol>
+  <li *ngFor="let item of selection_ls2">{{item}}</li>
+</ol>

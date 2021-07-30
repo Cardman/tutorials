@@ -1,0 +1,14 @@
+﻿@model ChoixResto.ViewModels.AccueilViewModel
+@{
+    ViewBag.Title = "Bonjour";
+}
+<div>
+    Je suis la vue index
+</div>
+<ul>
+    <li>@Model.Message</li>
+    <li>@Model.Date.ToString("dd/MM/yyyy")</li>
+    <li>@Model.Resto.Nom</li>
+    <li>@Model.Resto.Telephone</li>
+</ul>
+

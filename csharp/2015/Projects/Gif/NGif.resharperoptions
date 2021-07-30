@@ -1,0 +1,14 @@
+<Configuration>
+  <CompletionStatisticsManager />
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean />
+  </SettingsComponent>
+  <RecentFilesTracker>
+    <RecentFilesTracker>
+      <TrackedFile location="G:\Visual Studio Projects\Gif\Components\AnimatedGifEncoder.cs" offset="8232" line="244" column="0" />
+      <TrackedFile location="G:\Visual Studio Projects\Gif\Example\ExampleMain.cs" offset="0" line="-1" column="-1" />
+    </RecentFilesTracker>
+  </RecentFilesTracker>
+</Configuration>

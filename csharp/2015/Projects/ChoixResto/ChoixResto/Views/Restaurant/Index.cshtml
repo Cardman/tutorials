@@ -1,0 +1,52 @@
+﻿<!-- List<ChoixResto.Models.Resto> -->
+@* de 1 + 1 == 2 aux derniers commentaires *@
+@model ChoixResto.Controllers.WelcomeForm
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liste des restaurants</title>
+    <link type="text/css" href="../../Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Téléphone</th>
+            <th>Modifier</th>
+        </tr>
+        @foreach (var resto in Model.welcome.Bdd)
+        {
+            <tr>
+                <td>@resto.Nom</td>
+                <td>@resto.Telephone</td>
+                <td>@Html.ActionLink("Modifier " + resto.Nom, "ModifierRestaurant", new { id = resto.Id })</td>
+            </tr>
+        }
+    </table>
+    <br/>
+    @Html.ActionLink("Créer un restaurent", "CreerRestaurant")
+    @using (Html.BeginForm("CreerSondage", "Restaurant"))
+    {
+        <input type="submit" value="Créer un sondage" />
+    }
+    <br/>
+    @using (Html.BeginForm("AccederSondage", "Restaurant"))
+    {
+        @Html.DropDownList("Id", Model.sel)
+        @Html.TextBoxFor(model => model.welcome.Prenom);
+        <input type="submit" value="Accéder" />
+    }
+    <br/>
+    @using (Html.BeginForm("AccederResultatSondage", "Restaurant"))
+    {
+        @Html.DropDownList("Id", Model.sel)
+        <input type="submit" value="Accéder résultat" />
+    }
+</body>
+</html>

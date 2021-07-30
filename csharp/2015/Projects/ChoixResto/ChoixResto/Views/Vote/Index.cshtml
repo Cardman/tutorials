@@ -1,0 +1,25 @@
+﻿@model ChoixResto.Models.Votes
+
+Cochez les restos
+<br/>
+@Model.Utilisateur.Prenom
+<br/>
+@using (Html.BeginForm("Index2","Vote"))
+{
+    @Model.Err()
+    <br/>
+    var Index = 0;
+    foreach (var v in Model.Restos)
+    {
+        @Html.CheckBoxFor(Model => Model.Restos[Index].EstSelectionne)
+        @Html.HiddenFor(Model => Model.Restos[Index].Id);
+        @v.NomEtTelephone
+        Index++;
+        <br/>
+    }
+    @Html.HiddenFor(Model => Model.Utilisateur.Id);
+    @Html.HiddenFor(Model => Model.IdSondage);
+    <input type="submit" value="Voter" />
+}
+<br/>
+@Html.ActionLink("Retour","Retour", "Vote")

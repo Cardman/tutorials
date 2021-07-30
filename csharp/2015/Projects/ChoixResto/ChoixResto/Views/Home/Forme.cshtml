@@ -1,0 +1,36 @@
+﻿@model ChoixResto.ViewModels.AccueilViewModel
+<style type="text/css">
+    table {
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid black;
+    }
+</style>
+<h2>Forme</h2>
+<div>Je suis la vue index</div>
+<!--<input type="text" id="nom" value="@Model.Resto.Nom" />
+<input type="text" id="telephone" value="@Model.Resto.Telephone" />-->
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { target = "_blank" }))
+{
+    @Html.TextBoxFor(model => model.Resto.Nom, new { style = "color:red", @class = "ma-css" })
+    @Html.TextBox("nom", Model.Resto.Nom, new { style = "color:red", @class = "ma-css" })
+    @Html.TextBox("telephone", Model.Resto.Telephone)
+    @Html.Label("estMajeur", "Cochez la case si vous êtes <strong>majeur</strong>")
+    @Html.CheckBox("estMajeur", true)
+    @Html.DropDownList("RestoChoisi", (SelectList)ViewBag.ListeDesRestos)
+}
+@Html.ActionLink("Modifier le restaurant", "ModifierRestaurant", "Restaurant", new { id = Model.Resto.Id }, null)
+<input type="submit" value="Envoyer" />
+<br/>
+@{ 
+    var pas = "../Accueil/Connexion";
+}
+Avant Liste<br/>
+@Html.Action("AfficheListeRestaurant")
+<br/>
+Apres Liste<br/>
+<br/>
+@Html.Partial(@pas, Model)
+

@@ -1,0 +1,20 @@
+﻿@model ChoixResto.ViewModels.AccueilViewModel
+
+@{
+    ViewBag.Title = "Bonjour2";
+}
+
+<h2>Bonjour2</h2>
+
+<div>Je suis la vue index</div>
+@{
+    DayOfWeek jour = Model.Date.DayOfWeek;
+    if (jour == DayOfWeek.Saturday || jour == DayOfWeek.Sunday)
+    {
+        <p>Bon week-end @jour</p>
+    }
+    else
+    {
+        <p>Bonne semaine @jour</p>
+    }
+}

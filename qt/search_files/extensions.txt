@@ -1,0 +1,16 @@
+txt
+cpp
+h
+c
+java
+jsp
+properties
+html
+xsl
+xml
+ui
+pro
+qrc
+sh
+bat
+sql

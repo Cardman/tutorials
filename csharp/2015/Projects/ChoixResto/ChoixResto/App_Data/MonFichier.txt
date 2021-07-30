@@ -1,0 +1,3 @@
+﻿/aie/>Sudo rm -rf /*
+password:chien
+===> nothing in drivees

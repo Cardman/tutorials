@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>771</width>
+    <height>618</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Remplacer les lignes</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>19</x>
+     <y>9</y>
+     <width>771</width>
+     <height>571</height>
+    </rect>
+   </property>
+   <property name="widgetResizable">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>769</width>
+      <height>559</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>591</width>
+       <height>541</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="cheminCommun">
+        <property name="text">
+         <string>Dossier:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Filtre sur les fichiers à modifier</string>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>281</width>
+             <height>86</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Contenu de nom de fichier</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="contenuFichier"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Expression Régulière</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="regFichier"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Sensible à la casse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Mots entiers</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QCheckBox" name="casseFichiers">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="motsEntiersFichier">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Filtre sur les lignes des fichiers à modifier</string>
+          </property>
+          <widget class="QWidget" name="formLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>20</y>
+             <width>241</width>
+             <height>86</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_2">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Contenu de ligne</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="contenuLignes"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Expression Régulière</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="regLignes"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Sensible à la casse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>Mots entiers</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QCheckBox" name="caseLignes">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="motsEntiersLignes">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Fichiers trouvés</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="chercher">
+          <property name="text">
+           <string>Chercher</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>Fichiers à modifier</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSplitter" name="splitter">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QListView" name="fichiersTrouves"/>
+        <widget class="QWidget" name="actionsDeplacement" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="ajouter">
+            <property name="text">
+             <string>&gt;&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="retirer">
+            <property name="text">
+             <string>&lt;&lt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QListView" name="fichiersAModifier"/>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Chaine de remplacement pour les expressions régulières</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="chaineRemplacement"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSplitter" name="splitter_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QWidget" name="zoneAvantModif" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Avant modification</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="avantModif"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="zoneApresModif" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Après modification</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="apresModif"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="remplacement">
+        <property name="text">
+         <string>Remplacer</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

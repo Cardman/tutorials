@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/ressources">
+        <file alias="qt_fr">qt_fr.qm</file>
+        <file alias="echappements">echappements.txt</file>
+        <file alias="extensions">extensions.txt</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>875</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Recherche de fichiers et de lignes</string>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>29</x>
+      <y>10</y>
+      <width>811</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>809</width>
+       <height>639</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>20</y>
+      <width>821</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>210</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Filtres sur les lignes</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>20</y>
+         <width>581</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Filtre sur les lignes des fichiers</string>
+       </property>
+       <widget class="QWidget" name="formLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>69</x>
+          <y>29</y>
+          <width>401</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+         </property>
+         <property name="rowWrapPolicy">
+          <enum>QFormLayout::WrapLongRows</enum>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Expression régulière</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="regLignes"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Contenu</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="contenuLignes"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Sensible à la casse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QCheckBox" name="casseLignes">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Mots entiers</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QCheckBox" name="motsEntierLignes">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Filtres sur le nom</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>311</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Filtre sur les noms de fichiers</string>
+       </property>
+       <widget class="QWidget" name="formLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>271</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout_2">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+         </property>
+         <property name="rowWrapPolicy">
+          <enum>QFormLayout::WrapLongRows</enum>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Expression régulière</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="regFichiers"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Contenu</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="contenuNomFichier"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Sensible à la casse</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QCheckBox" name="casseNomsFichiers">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Mots entiers</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QCheckBox" name="motsEntierFichiers">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>20</y>
+         <width>431</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Filtre sur les extensions de fichiers</string>
+       </property>
+       <widget class="QWidget" name="horizontalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>401</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Nouvelle</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="champExtension"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QListView" name="extensionsBase">
+             <property name="selectionMode">
+              <enum>QAbstractItemView::SingleSelection</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QPushButton" name="boutonAjouterExtension">
+             <property name="text">
+              <string>=&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="boutonSupprimerExtension">
+             <property name="text">
+              <string>&lt;=</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListView" name="extensionsPrisesEnCompte"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Filtres sur les infos</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>441</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Filtre sur la date de modification du fichier</string>
+       </property>
+       <widget class="QWidget" name="formLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>401</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout_3">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+         </property>
+         <property name="rowWrapPolicy">
+          <enum>QFormLayout::WrapLongRows</enum>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Date au plus tôt</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="dateAuPlusTot"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Date au plus tard</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="dateAuPlusTard"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Intervalle de temps par rapport à aujourd'hui</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="intervalleTemps">
+           <property name="minimum">
+            <number>-1</number>
+           </property>
+           <property name="value">
+            <number>-1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>0</y>
+         <width>291</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Filtre sur la taille du fichier</string>
+       </property>
+       <widget class="QWidget" name="formLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>251</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout_4">
+         <property name="fieldGrowthPolicy">
+          <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+         </property>
+         <property name="rowWrapPolicy">
+          <enum>QFormLayout::WrapLongRows</enum>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Nombre minimum d'octets</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="minOctets"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Nombre maximum d'octets</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="maxOctets"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Dossier à parcourir</string>
+      </attribute>
+      <widget class="QLineEdit" name="champDossier">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>50</y>
+         <width>671</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="parcourir">
+       <property name="geometry">
+        <rect>
+         <x>550</x>
+         <y>20</y>
+         <width>93</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Parcourir...</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>20</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Dossier de recherche</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>150</y>
+         <width>231</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Rang de récursivité</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="rangRecursivite">
+       <property name="geometry">
+        <rect>
+         <x>419</x>
+         <y>150</y>
+         <width>47</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupeFichiers">
+     <property name="title">
+      <string>Fichiers résultants</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QTextEdit" name="fichiers"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QGroupBox" name="groupeLignes">
+     <property name="title">
+      <string>Lignes de fichiers résultants</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="etiquetteDossier">
+        <property name="text">
+         <string>Dossier:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSplitter" name="splitter">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QListView" name="fichiersResultants"/>
+        <widget class="QTextEdit" name="lignesFichier"/>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="afficheExpReg">
+        <property name="text">
+         <string>N'afficher que les lignes correspondant à l'expression régulière</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>875</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuRecherche_de_lignes_et_de_fichiers">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <widget class="QMenu" name="menuSauvegarderResultats">
+     <property name="title">
+      <string>Sauvegarder résultats</string>
+     </property>
+     <addaction name="actionNomsDeFichiersSeuls"/>
+     <addaction name="actionNomsDeFichiersEtLignes"/>
+    </widget>
+    <addaction name="actionSauvegarderParametres"/>
+    <addaction name="menuSauvegarderResultats"/>
+    <addaction name="separator"/>
+    <addaction name="actionChargerParametres"/>
+   </widget>
+   <widget class="QMenu" name="menuChercher">
+    <property name="title">
+     <string>Chercher</string>
+    </property>
+    <addaction name="actionAPartirDuSysteme"/>
+    <addaction name="actionAPartirDesNomsDeFichiersTrouves"/>
+    <addaction name="actionAPartirDesLignesDesFichiers"/>
+    <addaction name="separator"/>
+    <addaction name="actionRemplacer"/>
+   </widget>
+   <addaction name="menuRecherche_de_lignes_et_de_fichiers"/>
+   <addaction name="menuChercher"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSauvegarderParametres">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Sauvegarder paramètres</string>
+   </property>
+  </action>
+  <action name="actionChargerParametres">
+   <property name="text">
+    <string>Charger paramètres</string>
+   </property>
+  </action>
+  <action name="actionNomsDeFichiersSeuls">
+   <property name="text">
+    <string>Lignes correspondant à l'expression régulière et  noms de fichiers</string>
+   </property>
+  </action>
+  <action name="actionNomsDeFichiersEtLignes">
+   <property name="text">
+    <string>Noms de fichiers et lignes</string>
+   </property>
+  </action>
+  <action name="actionAPartirDuSysteme">
+   <property name="text">
+    <string>A partir du système</string>
+   </property>
+  </action>
+  <action name="actionAPartirDesNomsDeFichiersTrouves">
+   <property name="text">
+    <string>A partir des noms de fichiers trouvés</string>
+   </property>
+  </action>
+  <action name="actionPar_expresion_r_guli_re">
+   <property name="text">
+    <string>Par expresion régulière</string>
+   </property>
+  </action>
+  <action name="actionPar_cha_ne_ordinaire">
+   <property name="text">
+    <string>Par chaîne ordinaire</string>
+   </property>
+  </action>
+  <action name="actionAPartirDesLignesDesFichiers">
+   <property name="text">
+    <string>A partir des lignes des fichiers</string>
+   </property>
+  </action>
+  <action name="actionRemplacer">
+   <property name="text">
+    <string>Remplacer...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

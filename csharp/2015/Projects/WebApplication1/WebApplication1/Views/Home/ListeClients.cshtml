@@ -1,0 +1,20 @@
+﻿<body>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Age</th>
+        </tr>
+        @foreach (var client in ViewData["Clients"] as List<WebApplication1.Models.Client>)
+        {
+            <tr>
+                <td>@client.Nom</td>
+                @if (client.Age < 10)
+                {
+                    <td>@client.Age bébé 2</td>
+                    continue;
+                }
+                <td>@client.Age</td>
+            </tr>
+        }
+    </table>
+</body>

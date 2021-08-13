@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.TestPropertySource;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -17,7 +19,9 @@ import static org.junit.Assert.assertNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
+@TestPropertySource(locations = "classpath:application-test.properties")
+@Sql(scripts={"/drop_schema.sql","/create_schema.sql"})
+@Sql(scripts={"/insert_data.sql"})
 public class UserControllerTests {
 
 	@Autowired
@@ -26,27 +30,32 @@ public class UserControllerTests {
 	private int idTwo;
 	@Before
 	public void initDb() {
-		User newUser = new User();
-		newUser.setFirstName("testUser");
-		newUser.setLastName("123456");
-		newUser.setEmail("testUser@mail.com");
-		idOne = userController.create(newUser).getId(); 
-		newUser = new User();
-		newUser.setFirstName("testAdmin");
-		newUser.setLastName("123456");
-		newUser.setEmail("testAdmin@mail.com");
-		idTwo = userController.create(newUser).getId(); 
+		idOne = 1; 
+		idTwo = 2; 
 
     }
 	@Test
 	public void findById1Test() {
 		User user=userController.findOne(idOne);
         assertNotNull(user);
+		assertEquals(2,userController.findAll().size());
+	}
+	@Test
+	public void create() {
+		User newUser = new User();
+		newUser.setId(3);
+		newUser.setFirstName("testAdmin2");
+		newUser.setLastName("123456");
+		newUser.setEmail("testAdmin2@mail.com");
+		userController.create(newUser); 
+		assertEquals(3,userController.findAll().size());
+		assertEquals(3,newUser.getId());
 	}
 	@Test
 	public void findById2Test() {
         User admin=userController.findOne(idTwo);
         assertEquals(admin.getEmail(),"testAdmin@mail.com");
+		assertEquals(2,userController.findAll().size());
 	}
 	@Test
 	public void findAllTest() {

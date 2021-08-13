@@ -1,21 +1,14 @@
 package com.devglan.userportal;
 
-import javax.persistence.*;
+public class UserCriteria {
 
-@Entity
-@Table(name = "user")
-public class User {
-
-    @Id
-    @Column
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column
-    private String firstName;
-    @Column
-    private String lastName;
-    @Column
-    private String email;
+
+    private String firstName="";
+
+    private String lastName="";
+
+    private String email="";
 
     public int getId() {
         return id;

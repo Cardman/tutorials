@@ -32,6 +32,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> findByCriteria(UserCriteria criteria) {
+        return repository.findByCriteria(criteria);
+    }
+
+    @Override
     public User findById(int id) {
         return repository.findOne(id);
     }

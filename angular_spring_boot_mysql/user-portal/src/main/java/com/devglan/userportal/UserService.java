@@ -9,6 +9,7 @@ public interface UserService {
     User delete(int id);
 
     List<User> findAll();
+    List<User> findByCriteria(UserCriteria criteria);
 
     User findById(int id);
 

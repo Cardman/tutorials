@@ -14,6 +14,9 @@ public interface UserRepository extends Repository<User, Integer> {
 
     User findOne(int id);
 
+    @Query(value = "select u from User u where u.id>=:#{#c.id} and u.firstName like %:#{#c.firstName}% and u.lastName like %:#{#c.lastName}% and u.email like %:#{#c.email}%")
+    List<User> findByCriteria(@Param("c") UserCriteria criteria);
+
     User save(User user);
 	
 	//@Transactional

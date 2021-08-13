@@ -10,6 +10,9 @@ public interface UserService {
 
     List<User> findAll();
     List<User> findByCriteria(UserCriteria criteria);
+    List<User> findByCriteria(UserCriteria2 criteria);
+    List<CountName> groupFirst(Long count);
+    List<CountName> groupLast(Long count);
 
     User findById(int id);
 

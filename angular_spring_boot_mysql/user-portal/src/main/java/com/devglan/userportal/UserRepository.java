@@ -17,6 +17,15 @@ public interface UserRepository extends Repository<User, Integer> {
     @Query(value = "select u from User u where u.id>=:#{#c.id} and u.firstName like %:#{#c.firstName}% and u.lastName like %:#{#c.lastName}% and u.email like %:#{#c.email}%")
     List<User> findByCriteria(@Param("c") UserCriteria criteria);
 
+    @Query(value = "select u from User u where u.id in (:#{#c.id}) and u.firstName in (:#{#c.firstName}) and u.lastName in (:#{#c.lastName}) and u.email in (:#{#c.email})")
+    List<User> findByCriteria(@Param("c") UserCriteria2 criteria);
+
+    @Query(value = "select new com.devglan.userportal.CountName(u.firstName,count(u)) from User u group by u.firstName having count(u)>=:#{#c} order by u.firstName asc")
+    List<CountName> groupFirst(@Param("c") long count);
+
+    @Query(value = "select new com.devglan.userportal.CountName(u.lastName,count(u)) from User u group by u.lastName having count(u)>=:#{#c}")
+    List<CountName> groupLast(@Param("c") long count);
+
     User save(User user);
 	
 	//@Transactional

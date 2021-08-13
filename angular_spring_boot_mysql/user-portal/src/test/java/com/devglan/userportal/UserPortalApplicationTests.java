@@ -1,5 +1,7 @@
 package com.devglan.userportal;
 
+import java.util.Arrays;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.After;
@@ -49,6 +51,37 @@ public class UserPortalApplicationTests {
 	public void findByCriteria() {
 		assertEquals(2,userService.findByCriteria(new UserCriteria()).size());
 		assertEquals(2,userService.findAll().size());
+	}
+	@Test
+	public void findByCriteria2() {
+		UserCriteria2 cr = new UserCriteria2();
+		cr.setId(Arrays.asList(1,2));
+		cr.setFirstName(Arrays.asList("testAdmin","testUser"));
+		cr.setLastName(Arrays.asList("123456"));
+		cr.setEmail(Arrays.asList("testAdmin@mail.com","testUser@mail.com"));
+		assertEquals(2,userService.findByCriteria(cr).size());
+		assertEquals(2,userService.findAll().size());
+	}
+	@Test
+	public void groupFirst() {
+		List<CountName> counts = userService.groupFirst(0L);
+		assertEquals(2,counts.size());
+		assertEquals(1L,(long)counts.get(0).getCount());
+		assertEquals("testAdmin",counts.get(0).getName());
+		assertEquals(1L,(long)counts.get(1).getCount());
+		assertEquals("testUser",counts.get(1).getName());
+		assertEquals(2,userService.groupFirst(1L).size());
+		assertEquals(0,userService.groupFirst(2L).size());
+	}
+	@Test
+	public void groupLast() {
+		List<CountName> counts = userService.groupLast(0L);
+		assertEquals(1,counts.size());
+		assertEquals(2L,(long)counts.get(0).getCount());
+		assertEquals("123456",counts.get(0).getName());
+		assertEquals(1,userService.groupLast(1L).size());
+		assertEquals(1,userService.groupLast(2L).size());
+		assertEquals(0,userService.groupLast(3L).size());
 	}
 	@Test
 	public void findById1Test() {

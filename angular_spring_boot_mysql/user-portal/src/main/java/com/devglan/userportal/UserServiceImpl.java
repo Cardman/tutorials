@@ -37,6 +37,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> findByCriteria(UserCriteria2 criteria) {
+        return repository.findByCriteria(criteria);
+    }
+
+    @Override
+    public List<CountName> groupFirst(Long count) {
+        return repository.groupFirst(count);
+    }
+
+    @Override
+    public List<CountName> groupLast(Long count) {
+        return repository.groupLast(count);
+    }
+
+    @Override
     public User findById(int id) {
         return repository.findOne(id);
     }

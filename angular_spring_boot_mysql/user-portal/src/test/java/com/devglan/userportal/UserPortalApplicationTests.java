@@ -39,7 +39,6 @@ public class UserPortalApplicationTests {
 	@Test
 	public void create() {
 		User newUser = new User();
-		newUser.setId(3);
 		newUser.setFirstName("testAdmin2");
 		newUser.setLastName("123456");
 		newUser.setEmail("testAdmin2@mail.com");

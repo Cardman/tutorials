@@ -35,8 +35,8 @@ public class UserPortalApplicationSecTests {
 		newUser.setFirstName("testAdmin2");
 		newUser.setLastName("123456");
 		newUser.setEmail("testAdmin2@mail.com");
-		userService.createTwo(newUser); 
-		//System.out.println(newUser.getId());
+		userService.create(newUser); 
+		assertEquals(3,newUser.getId());
 		assertEquals(3,userService.findAll().size());
 		//assertSame(res,newUser);
 		//assertEquals(3,res.getId());
@@ -45,20 +45,20 @@ public class UserPortalApplicationSecTests {
 		assertEquals("testAdmin2@mail.com",res.getEmail());*/
 	}
 
-	//@Test
+	@Test
 	public void create2() {
 		User newUser = new User();
 		newUser.setFirstName("testAdmin2");
 		newUser.setLastName("123456");
 		newUser.setEmail("testAdmin2@mail.com");
 		userService.create(newUser); 
-		//System.out.println(newUser.getId());
+		assertEquals(3,newUser.getId());
 		newUser = new User();
 		newUser.setFirstName("testAdmin3");
 		newUser.setLastName("123456");
 		newUser.setEmail("testAdmin2@mail.com");
 		userService.create(newUser); 
-		//System.out.println(newUser.getId());
+		assertEquals(4,newUser.getId());
 		assertEquals(4,userService.findAll().size());
 		//assertEquals(3,res.getId());
 		/*assertEquals("testAdmin2",res.getFirstName());

@@ -4,7 +4,7 @@ export class User {
   firstName: string;
   lastName: string;
   email: string;
-  last: Date;
+  last: Date=new Date();
 }
 export class UserCriteria {
 

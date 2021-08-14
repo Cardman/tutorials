@@ -9,7 +9,7 @@ public class User {
 
     @Id
     @Column
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue//(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
     private String firstName;

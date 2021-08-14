@@ -6,8 +6,8 @@ public class CountName {
 
     private String name="";
 
-    public CountName(){
-    }
+    /*public CountName(){
+    }*/
     public CountName(String name, long count){
         setName(name);
         setCount(count);

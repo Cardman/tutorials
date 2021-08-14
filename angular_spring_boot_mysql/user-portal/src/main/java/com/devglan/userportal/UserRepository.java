@@ -27,6 +27,11 @@ public interface UserRepository extends Repository<User, Integer> {
     List<CountName> groupLast(@Param("c") long count);
 
     User save(User user);
+
+    @Modifying
+    @Query(value = "insert into user (first_name,last_name,email) values(:#{#c.firstName},:#{#c.lastName},:#{#c.email})",
+            nativeQuery = true)
+    void saveTwo(@Param("c") User user);
 	
 	//@Transactional
     @Modifying

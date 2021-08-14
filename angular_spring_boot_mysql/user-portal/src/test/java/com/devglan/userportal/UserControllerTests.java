@@ -41,6 +41,11 @@ public class UserControllerTests {
 		assertEquals(2,userController.findAll().size());
 	}
 	@Test
+	public void findByCriteria() {
+		assertEquals(2,userController.findByCriteria(new UserCriteria()).size());
+		assertEquals(2,userController.findAll().size());
+	}
+	@Test
 	public void create() {
 		User newUser = new User();
 		newUser.setId(3);

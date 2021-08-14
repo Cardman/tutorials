@@ -10,6 +10,13 @@
     <th>Email</th>
     <th>Action</th>
   </tr>
+  <tr>
+    <th class="hidden"></th>
+    <th><input [(ngModel)]="firstName" placeholder="First name" name="firstName" class="form-control" id="firstName"></th>
+    <th><input [(ngModel)]="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName"></th>
+    <th><input [(ngModel)]="email" placeholder="Email" name="email" class="form-control" id="email"></th>
+    <th><button class="btn btn-primary" (click)="getUsersBy()">Refresh</button></th>
+  </tr>
   </thead>
   <tbody>
   <tr *ngFor="let user of users">

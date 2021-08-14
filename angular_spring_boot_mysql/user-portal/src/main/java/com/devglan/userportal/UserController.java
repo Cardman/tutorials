@@ -31,6 +31,10 @@ public class UserController {
     public User delete(@PathVariable("id") int id) {
 		return userService.delete(id);
     }
+    @PostMapping(path={"/filter"})
+    public List<User> findByCriteria(@RequestBody UserCriteria criteria) {
+        return userService.findByCriteria(criteria);
+    }
 
     @GetMapping
     public List<User> findAll(){

@@ -53,6 +53,16 @@ public class UserPortalApplicationTests {
 		assertEquals(2,userService.findAll().size());
 	}
 	@Test
+	public void findByCriteria3() {
+		UserCriteria criteria = new UserCriteria();
+		criteria.setId(1);
+		criteria.setFirstName("test");
+		criteria.setLastName("123456");
+		criteria.setEmail("@mail.com");
+		assertEquals(2,userService.findByCriteria(criteria).size());
+		assertEquals(2,userService.findAll().size());
+	}
+	@Test
 	public void findByCriteria2() {
 		UserCriteria2 cr = new UserCriteria2();
 		cr.setId(Arrays.asList(1,2));

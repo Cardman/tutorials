@@ -17,6 +17,12 @@ public interface UserRepository extends Repository<User, Integer> {
     @Query(value = "select u from User u where u.id>=:#{#c.id} and u.firstName like %:#{#c.firstName}% and u.lastName like %:#{#c.lastName}% and u.email like %:#{#c.email}%")
     List<User> findByCriteria(@Param("c") UserCriteria criteria);
 
+    @Query(value = "select u from User u where u.id>=:#{#c.id} and u.firstName like %:#{#c.firstName}% and u.lastName like %:#{#c.lastName}% and u.email like %:#{#c.email}% and u.last = :#{#c.last}")
+    List<User> findByCriteriaDate(@Param("c") UserCriteria criteria);
+
+    @Query(value = "select u from User u where u.id>=:#{#c.id} and u.firstName like %:#{#c.firstName}% and u.lastName like %:#{#c.lastName}% and u.email like %:#{#c.email}% and u.last between :#{#c.last} and :#{#c.lastPlusOneDay}")
+    List<User> findByCriteriaDateRange(@Param("c") UserCriteria criteria);
+
     @Query(value = "select u from User u where u.id in (:#{#c.id}) and u.firstName in (:#{#c.firstName}) and u.lastName in (:#{#c.lastName}) and u.email in (:#{#c.email})")
     List<User> findByCriteria(@Param("c") UserCriteria2 criteria);
 

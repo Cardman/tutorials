@@ -15,5 +15,6 @@ export class UserCriteria {
     lastName: string='';
 
     email: string='';
+    last: Date=null;
 
 }

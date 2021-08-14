@@ -1,5 +1,9 @@
 package com.devglan.userportal;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+
 public class UserCriteria {
 
     private int id;
@@ -9,6 +13,8 @@ public class UserCriteria {
     private String lastName="";
 
     private String email="";
+
+    private Date last;
 
     public int getId() {
         return id;
@@ -40,5 +46,20 @@ public class UserCriteria {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Date getLast() {
+        return last;
+    }
+
+    public Date getLastPlusOneDay() {
+        //LocalDateTime ldt = LocalDateTime.ofInstant(last.toInstant(), ZoneId.systemDefault()).plusDays(1);
+        //return Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant());
+        return new Date(last.getTime()+24L*60L*60L*1000L);
+        //return Date.from(LocalDateTime.from(last.toInstant()).plusDays(1).toInstant());
+    }
+
+    public void setLast(Date last) {
+        this.last = last;
     }
 }

@@ -5,9 +5,10 @@ import java.util.List;
 public interface UserService {
 
     User create(User user);
-    //User createTwo(User user);
+    User createTwo(User user);
 
     User delete(int id);
+    void deleteWhere(User user);
 
     List<User> findAll();
     List<User> findByCriteria(UserCriteria criteria);

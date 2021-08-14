@@ -12,11 +12,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository repository;
 
-    /*@Override
+    @Override
     public User createTwo(User user) {
         repository.saveTwo(user);
         return user;
-    }*/
+    }
 
     @Override
     public User create(User user) {
@@ -32,6 +32,10 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public void deleteWhere(User user){
+        repository.deleteWhere(user);
+    }
     @Override
     public List<User> findAll() {
         return repository.findAll();

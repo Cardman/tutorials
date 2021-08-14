@@ -1,12 +1,19 @@
 package com.devglan.userportal;
 
 import org.springframework.data.repository.Repository;
+import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.data.jpa.repository.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface UserRepository extends Repository<User, Integer> {
+
+    @Transactional
+    @Modifying
+    @Query(value = "delete from User u where u.id =:#{#c.id}")
+    void deleteWhere(@Param("c") User user);
 
     void delete(User user);
 
@@ -34,6 +41,7 @@ public interface UserRepository extends Repository<User, Integer> {
 
     User save(User user);
 
+    @Transactional
     @Modifying
     @Query(value = "insert into user (first_name,last_name,email) values(:#{#c.firstName},:#{#c.lastName},:#{#c.email})",
             nativeQuery = true)

@@ -35,7 +35,8 @@ public class UserPortalApplicationSecTests {
 		newUser.setFirstName("testAdmin2");
 		newUser.setLastName("123456");
 		newUser.setEmail("testAdmin2@mail.com");
-		userService.create(newUser); 
+		userService.createTwo(newUser); 
+		//System.out.println(newUser.getId());
 		assertEquals(3,userService.findAll().size());
 		//assertSame(res,newUser);
 		//assertEquals(3,res.getId());

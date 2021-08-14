@@ -126,6 +126,13 @@ public class UserPortalApplicationTests {
         assertNull(admin);
 	}
 	@Test
+	public void deleteWhere() {
+		User admin=userService.findById(idTwo);
+        assertEquals(2,userService.findAll().size());
+        userService.deleteWhere(admin);
+		assertEquals(1,userService.findAll().size());
+	}
+	@Test
 	public void update1Test() {
         User admin=userService.findById(idTwo);
 		admin.setEmail("testAdmin2@mail.com");

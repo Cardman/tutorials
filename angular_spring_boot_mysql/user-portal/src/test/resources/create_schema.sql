@@ -3,4 +3,5 @@ id int not null,
 first_name varchar(64),
 last_name varchar(64),
 email varchar(64),
+last_modif timestamp,
 primary key(id));

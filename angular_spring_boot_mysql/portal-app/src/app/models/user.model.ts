@@ -4,6 +4,7 @@ export class User {
   firstName: string;
   lastName: string;
   email: string;
+  last: Date;
 }
 export class UserCriteria {
 

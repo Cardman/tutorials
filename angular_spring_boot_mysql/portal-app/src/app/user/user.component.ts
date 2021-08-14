@@ -31,7 +31,8 @@ export class UserComponent implements OnInit {
   parseDate(dateString: string): Date {
     if (dateString) {
         //return moment(dateString,'yyyy-MM-dd HH:mm:ss').toDate();
-        return new Date(dateString);
+        let d = new Date(dateString);
+        return new Date(d.getTime() + d.getTimezoneOffset() * 60000);
     }
     return null;
 }

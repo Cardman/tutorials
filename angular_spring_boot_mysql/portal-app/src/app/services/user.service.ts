@@ -25,16 +25,17 @@ export class UserService {
     return this.http.post<User[]>(this.userUrl+"/filter", criteria);
   }
 
-  public deleteUser(user):Observable<Object> {
+  public deleteUser(user:User):Observable<Object> {
     return this.http.delete(this.userUrl + "/"+ user.id);
   }
-  public getUser(id):Observable<User> {
+  public getUser(id:number):Observable<User> {
     return this.http.get<User>(this.userUrl+ "/"+ id);
   }
-  public updateUser(user):Observable<User> {
+  public updateUser(user:User):Observable<User> {
+    user.last = new Date();
     return this.http.put<User>(this.userUrl, user);
   }
-  public createUser(user):Observable<User> {
+  public createUser(user:User):Observable<User> {
     return this.http.post<User>(this.userUrl, user);
   }
 

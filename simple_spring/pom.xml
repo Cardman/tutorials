@@ -17,6 +17,7 @@
     <modules>
         <module>dep</module>
         <module>user-portal</module>
+        <module>user-portal2</module>
     </modules>
 
 </project>

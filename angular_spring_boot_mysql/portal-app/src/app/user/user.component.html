@@ -1,6 +1,8 @@
 <div class="col-md-6">
 <h2> User Details</h2>
 
+<input [(ngModel)]="range" placeholder="Range" name="range" class="form-control" id="range"/>
+<button class="btn btn-primary" (click)="getUsersBy2()">Refresh by range</button>
 <table class="table table-striped">
   <thead>
   <tr>
@@ -13,10 +15,10 @@
   </tr>
   <tr>
     <th class="hidden"></th>
-    <th><input [(ngModel)]="firstName" placeholder="First name" name="firstName" class="form-control" id="firstName"></th>
-    <th><input [(ngModel)]="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName"></th>
-    <th><input [(ngModel)]="email" placeholder="Email" name="email" class="form-control" id="email"></th>
-    <th><input type="date" [value]="last | date:'yyyy-MM-dd'" (input)="last=parseDate($event.target.value)" placeholder="Last Date" name="last" class="form-control" id="last"></th>
+    <th><input [(ngModel)]="firstName" placeholder="First name" name="firstName" class="form-control" id="firstName"/></th>
+    <th><input [(ngModel)]="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName"/></th>
+    <th><input [(ngModel)]="email" placeholder="Email" name="email" class="form-control" id="email"/></th>
+    <th><input type="date" [value]="last | date:'yyyy-MM-dd'" (input)="last=parseDate($event.target.value)" placeholder="Last Date" name="last" class="form-control" id="last"/></th>
     <th><button class="btn btn-primary" (click)="getUsersBy()">Refresh</button></th>
   </tr>
   </thead>

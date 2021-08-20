@@ -18,3 +18,11 @@ export class UserCriteria {
     last: Date=null;
 
 }
+
+export class UserCriteria3 {
+
+    begin: Date=null;
+    end: Date=null;
+    onlyNullFlag: boolean=false;
+
+}

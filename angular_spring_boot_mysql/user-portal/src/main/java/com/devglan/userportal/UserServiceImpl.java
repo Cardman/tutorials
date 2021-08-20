@@ -12,17 +12,21 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository repository;
 
-    @Override
+    /*@Override
     public User createTwo(User user) {
         repository.saveTwo(user);
         return user;
-    }
+    }*/
 
     @Override
     public User create(User user) {
         return repository.save(user);
     }
 
+    @Override
+    public List<User> findByCriteriaBet(UserCriteria3 criteria){
+        return repository.findByCriteriaBet(criteria);
+    }
     @Override
     public User delete(int id) {
         User user = findById(id);

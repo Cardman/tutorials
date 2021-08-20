@@ -36,6 +36,10 @@ public class UserController {
         return userService.findByCriteria(criteria);
     }
 
+    @PostMapping(path={"/filter2"})
+    public List<User> findByCriteriaBet(@RequestBody UserCriteria3 criteria) {
+        return userService.findByCriteriaBet(criteria);
+    }
     @GetMapping
     public List<User> findAll(){
         return userService.findAll();

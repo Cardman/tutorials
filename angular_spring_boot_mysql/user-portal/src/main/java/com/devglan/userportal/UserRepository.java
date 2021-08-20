@@ -24,6 +24,9 @@ public interface UserRepository extends Repository<User, Integer> {
     @Query(value = "select u from User u where u.id>=:#{#c.id} and u.firstName like %:#{#c.firstName}% and u.lastName like %:#{#c.lastName}% and u.email like %:#{#c.email}%")
     List<User> findByCriteria(@Param("c") UserCriteria criteria);
 
+    @Query(value = "select u from User u where :#{#c.onlyNullFlag}=1 and u.last is null or :#{#c.onlyNullFlag}=0 and (:#{#c.beginFlag}=1 or u.last>= :#{#c.begin}) and (:#{#c.endFlag}=1 or u.last<= :#{#c.end})")
+    List<User> findByCriteriaBet(@Param("c") UserCriteria3 criteria);
+
     @Query(value = "select u from User u where u.id>=:#{#c.id} and u.firstName like %:#{#c.firstName}% and u.lastName like %:#{#c.lastName}% and u.email like %:#{#c.email}% and u.last = :#{#c.last}")
     List<User> findByCriteriaDate(@Param("c") UserCriteria criteria);
 
@@ -41,11 +44,11 @@ public interface UserRepository extends Repository<User, Integer> {
 
     User save(User user);
 
-    @Transactional
+    /*@Transactional
     @Modifying
     @Query(value = "insert into user (first_name,last_name,email) values(:#{#c.firstName},:#{#c.lastName},:#{#c.email})",
             nativeQuery = true)
-    void saveTwo(@Param("c") User user);
+    void saveTwo(@Param("c") User user);*/
 	
 	//@Transactional
     @Modifying

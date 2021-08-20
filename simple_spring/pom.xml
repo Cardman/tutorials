@@ -15,6 +15,7 @@
 	</parent>
 
     <modules>
+        <module>dep</module>
         <module>user-portal</module>
     </modules>
 

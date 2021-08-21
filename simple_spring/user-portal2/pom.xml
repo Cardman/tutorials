@@ -49,7 +49,7 @@
          <goal>launch4j</goal>
        </goals>
        <configuration>
-         <headerType>console</headerType>
+         <headerType>gui</headerType>
          <jar>${project.build.directory}/${project.build.finalName}.${project.packaging}</jar>
          <outfile>${project.build.directory}/${project.build.finalName}.exe</outfile>
          <downloadUrl>http://java.com/download</downloadUrl>

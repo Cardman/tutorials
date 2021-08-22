@@ -22,13 +22,23 @@ public class SocketRest {
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> sendMessage(@RequestBody  Map<String, String> message){
-        if(message.containsKey("message")){
-            if(message.containsKey("toId") && message.get("toId")!=null && !message.get("toId").equals("")){
-                this.simpMessagingTemplate.convertAndSend("/socket-publisher/"+message.get("toId"),message);
-                this.simpMessagingTemplate.convertAndSend("/socket-publisher/"+message.get("fromId"),message);
-            }else{
-                this.simpMessagingTemplate.convertAndSend("/socket-publisher",message);
+        Thread th = new Thread(() -> {
+            if(message.containsKey("message")){
+                if(message.containsKey("toId") && message.get("toId")!=null && !message.get("toId").equals("")){
+                    this.simpMessagingTemplate.convertAndSend("/socket-publisher/"+message.get("toId"),message);
+                    this.simpMessagingTemplate.convertAndSend("/socket-publisher/"+message.get("fromId"),message);
+                }else{
+                    this.simpMessagingTemplate.convertAndSend("/socket-publisher",message);
+                }
             }
+        });
+        th.start();
+        try {
+            th.join();
+        } catch (Exception e) {
+            return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);
+        }
+        if(message.containsKey("message")){
             return new ResponseEntity<>(message, new HttpHeaders(), HttpStatus.OK);
         }
         return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);

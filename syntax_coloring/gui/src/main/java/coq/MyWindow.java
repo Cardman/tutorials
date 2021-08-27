@@ -58,7 +58,12 @@ public class MyWindow {
 				int i = ta.getCaretPosition();
 				int l = m.getRowFile(i);
 				int c = m.getColFile(i,l);
-				status.setText("lci"+l+","+c+","+i);
+				String selected = ta.getSelectedText();
+				if (selected == null){
+					status.setText("lci"+l+","+c+","+i);
+					return;
+				}
+				status.setText("lci"+l+","+c+","+i+":"+selected.length());
 			}
 		});
 		Document doc = ta.getDocument();

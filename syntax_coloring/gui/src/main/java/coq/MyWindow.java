@@ -126,11 +126,12 @@ public class MyWindow {
     }
 }
 interface Check{
-	void ch(javax.swing.undo.UndoableEdit e);
+	javax.swing.undo.UndoableEdit ch(javax.swing.undo.UndoableEdit e);
 }
 class Check2 implements Check{
 	@Override
-	public void ch(javax.swing.undo.UndoableEdit e){
+	public javax.swing.undo.UndoableEdit ch(javax.swing.undo.UndoableEdit e){
+		return e;
 	}
 }
 //class Highlighter implements DocumentListener {

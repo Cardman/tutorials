@@ -19,6 +19,7 @@ import javax.swing.event.CaretEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.UndoManager;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
@@ -32,6 +33,8 @@ public class MyWindow {
 	public JSpinner tabSize = new JSpinner();
 	public JLabel status = new JLabel("lci");
 	public UndoManager undoManager = new UndoManager();
+		UndoAction undoAction = new UndoAction();
+		RedoAction redoAction=new RedoAction();
 	public MyWindow(){
 		ta.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
 		setTabSize(4);
@@ -48,8 +51,9 @@ public class MyWindow {
 		Highlighter h = new Highlighter();
 		h.ta = ta;
 		h.spl = spl;
-		h.status = status;
-		ta.getDocument().addDocumentListener(h);
+		h.undoManager = undoManager;
+		Document doc = ta.getDocument();
+		doc.addDocumentListener(h);
 		ta.addCaretListener(new CaretListener() {
 			
 			@Override
@@ -66,13 +70,8 @@ public class MyWindow {
 				status.setText("lci"+l+","+c+","+i+":"+selected.length());
 			}
 		});
-		Document doc = ta.getDocument();
-		 doc.addUndoableEditListener(new UndoableEditListener() {
-			 @Override
-			 public void undoableEditHappened(UndoableEditEvent e) {
-				 undoManager.addEdit(e.getEdit());
-			 }
-		 });
+		 //doc.addUndoableEditListener(undoManager);
+		 doc.addUndoableEditListener(h);
 		tabSize.addChangeListener(new ChangeListener() {
             
             @Override
@@ -86,32 +85,8 @@ public class MyWindow {
             }
         });
         tabSize.setValue(4);
-		ta.registerKeyboardAction(new AbstractAction() {
-			 @Override
-			 public void actionPerformed(ActionEvent e) {
-				 try {
-					 /*if (undoManager.canUndo()) {
-						 undoManager.undo();
-					 }*/
-					 undoManager.undo();
-				 } catch (CannotUndoException exp) {
-					
-				 }
-			 }
-		 }, KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_MASK), JComponent.WHEN_FOCUSED);
-		ta.registerKeyboardAction( new AbstractAction() {
-			 @Override
-			 public void actionPerformed(ActionEvent e) {
-				 try {
-					 /*if (undoManager.canRedo()) {
-						 undoManager.redo();
-					 }*/
-					 undoManager.redo();
-				 } catch (CannotUndoException exp) {
-					
-				 }
-			 }
-		 }, KeyStroke.getKeyStroke(KeyEvent.VK_Y, InputEvent.CTRL_MASK), JComponent.WHEN_FOCUSED);
+		ta.registerKeyboardAction(undoAction, KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_DOWN_MASK), JComponent.WHEN_FOCUSED);
+		ta.registerKeyboardAction( redoAction, KeyStroke.getKeyStroke(KeyEvent.VK_Y, InputEvent.CTRL_DOWN_MASK), JComponent.WHEN_FOCUSED);
 	}
 	private void setTabSize(int tabSize) {
 		FontMetrics fm = ta.getFontMetrics(ta.getFont());
@@ -128,22 +103,77 @@ public class MyWindow {
 	public void init(){
 		frame.setVisible(true);
 	}
-}
+	private static final String UNDO = "undo";
+	private static final String REDO = "redo";
+	class RedoAction extends AbstractAction {
+ 
+ 
+        public void actionPerformed(ActionEvent ae) {
+		try{//if (!undoManager.canRedo()){return;}
+            undoManager.redo();setEnabled(undoManager.canRedo());undoAction.setEnabled(undoManager.canUndo());}catch(Exception e){e.printStackTrace();}
+        }
 
-class Highlighter implements DocumentListener {
+    } // end ConsoleTextEditor.RedoAction
+ 
+ 
+    class UndoAction extends AbstractAction {
+  
+        public void actionPerformed(ActionEvent ae) {
+		try{//if (!undoManager.canUndo()){return;}
+            undoManager.undo();redoAction.setEnabled(undoManager.canRedo());setEnabled(undoManager.canUndo());}catch(Exception e){e.printStackTrace();}
+        }
+ 
+    }
+}
+interface Check{
+	void ch(javax.swing.undo.UndoableEdit e);
+}
+class Check2 implements Check{
+	@Override
+	public void ch(javax.swing.undo.UndoableEdit e){
+	}
+}
+//class Highlighter implements DocumentListener {
+class Highlighter implements DocumentListener,UndoableEditListener {
+//UndoableEditListener
 
 	public JTextPane ta;
 	public Split spl;
-	public JLabel status;
+	/*public JLabel status;
+		MyWindow.UndoAction undoAction;
+		MyWindow.RedoAction redoAction;*/
+		boolean store = true;
+		UndoManager undoManager;
+		Check ch = new Check2();
     public void insertUpdate(DocumentEvent e) {
+	try{
+	 ch.ch((javax.swing.undo.UndoableEdit)e);
+	 //applyHighlighting();
         highlight(e.getDocument(),e.getOffset(),e.getLength());
+		}catch(Exception f){}
     }
+	@Override
+	 public void undoableEditHappened(UndoableEditEvent e) {
+	 /*if (!store){
+	 return;
+	 }*/
+	 try {
+	 javax.swing.undo.UndoableEdit ed = e.getEdit();
+	 //System.out.println(store);
+		 undoManager.addEdit(ed);
+		 }catch(Exception f){}
+	 }
 
     public void removeUpdate(DocumentEvent e) {
-        highlight(e.getDocument(), e.getOffset(), 0);
+	try{ 
+		ch.ch((javax.swing.undo.UndoableEdit)e);
+		//applyHighlighting();
+		highlight(e.getDocument(), e.getOffset(), 0);
+		}catch(Exception f){}
     }
 
-    public void changedUpdate(DocumentEvent e) {}
+    public void changedUpdate(DocumentEvent e) {
+	}
 
     private void highlight(Document doc, int offset, int length) {
         //Edit the color only when the EDT is ready
@@ -155,14 +185,16 @@ class Highlighter implements DocumentListener {
     }
 
     private void applyHighlighting() {
+	store =false;
 		String text = ta.getText();
-        ta.getStyledDocument().setCharacterAttributes(0,text.length(),StyleContext.getDefaultStyleContext().getEmptySet(), true);
+		StyleContext style = StyleContext.getDefaultStyleContext();
+        ta.getStyledDocument().setCharacterAttributes(0,text.length(),style.getEmptySet(), true);
 		List<SegmentPart> ls = spl.dels(text);
 		for (SegmentPart s:ls){
-			StyleContext style = StyleContext.getDefaultStyleContext();
 			AttributeSet textStyle = style.addAttribute(style.getEmptySet(),StyleConstants.Foreground,new Color(s.red,s.green,s.blue));
 			textStyle = style.addAttribute(textStyle,StyleConstants.FontSize, s.size);
 			ta.getStyledDocument().setCharacterAttributes(s.begin,(s.end - s.begin),textStyle, false);
 		}
+		store = true;
     }
 }

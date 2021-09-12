@@ -71,8 +71,9 @@ public class CustSoundRecorder {
     /**
      * Entry to run the program
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception {
          if (args.length < 1){
+             mixers();
              return;
          }
          CustSoundRecorder recorder = new CustSoundRecorder();
@@ -102,13 +103,13 @@ public class CustSoundRecorder {
 			  Mixer m = AudioSystem.getMixer(info);
 			  Line.Info[] lineInfos = m.getSourceLineInfo();
 			  for (Line.Info lineInfo:lineInfos){
-				   System.out.println (info.getName()+"-<=--"+lineInfo);
+				   System.out.println (info.getName()+"-<=--"+lineInfo+":"+AudioSystem.isLineSupported(lineInfo));
 				   Line line = m.getLine(lineInfo);
 				   System.out.println("\t---<=--"+line);
 			  }
 			  lineInfos = m.getTargetLineInfo();
 			  for (Line.Info lineInfo:lineInfos){
-				   System.out.println (m+"-=>--"+lineInfo);
+				   System.out.println (m+"-=>--"+lineInfo+":"+AudioSystem.isLineSupported(lineInfo));
 				   Line line = m.getLine(lineInfo);
 				   System.out.println("\t--=>---"+line);
 

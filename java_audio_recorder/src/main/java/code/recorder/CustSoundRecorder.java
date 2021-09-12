@@ -12,7 +12,7 @@ public class CustSoundRecorder {
     static final long RECORD_TIME = 60000;  // 1 minute
  
     // path of the wav file
-    File wavFile = new File("E:/Test/RecordAudio.wav");
+    //File wavFile = new File("E:/Test/RecordAudio.wav");
  
     // format of audio file
     AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
@@ -37,16 +37,8 @@ public class CustSoundRecorder {
     /**
      * Captures the sound and record into a WAV file
      */
-    boolean startRecord(String file) {
+    int startRecord(String file, AudioFormat format, DataLine.Info info) {
         try {
-            AudioFormat format = getAudioFormat();
-            DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
- 
-            // checks if system supports the data line
-            if (!AudioSystem.isLineSupported(info)) {
-                System.out.println("Line not supported");
-                return false;
-            }
             line = (TargetDataLine) AudioSystem.getLine(info);
             line.open(format);
             line.start();
@@ -60,10 +52,10 @@ public class CustSoundRecorder {
  
             // start recording
             AudioSystem.write(ais, fileType, new File(file));
-            return true;
+            return 1;
         } catch (Exception ioe) {
             ioe.printStackTrace();
-            return false;
+            return 0;
         }
     }
  
@@ -84,15 +76,24 @@ public class CustSoundRecorder {
              return;
          }
          CustSoundRecorder recorder = new CustSoundRecorder();
- 
+         recorder.launch(args);
+    }
+    int launch(String[] args){
+         AudioFormat format = getAudioFormat();
+         DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
+            // checks if system supports the data line
+         if (!AudioSystem.isLineSupported(info)) {
+                System.out.println("Line not supported");
+                return -1;
+         }
         // creates a new thread that waits for a specified
         // of time before stopping
-        Thread stopper = new Thread(new WaitForEnd(recorder));
+        Thread stopper = new Thread(new WaitForEnd(this));
  
         stopper.start();
  
         // start recording
-        recorder.startRecord(args[0]);
+        return startRecord(args[0],format,info);
     }
 }
 

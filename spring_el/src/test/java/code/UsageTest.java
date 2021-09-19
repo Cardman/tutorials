@@ -10,9 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import java.util.List;
+import java.util.Set;
+
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -56,5 +57,17 @@ public class UsageTest{
     @Test
     public void prodMap2() {
         assertEquals(6, usageInt.oper(Config.MULT,3));
+    }
+    @Test
+    public void filter() {
+        Set<String> strings = usageInt.countFilter();
+        assertEquals(1, strings.size());
+        assertTrue(strings.contains(Config.SUM));
+    }
+    @Test
+    public void filterList() {
+        List<IntBean> strings = usageInt.countFilterList();
+        assertEquals(1, strings.size());
+        assertTrue(strings.get(0) instanceof SumBean);
     }
 }

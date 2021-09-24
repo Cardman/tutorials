@@ -1,0 +1,11 @@
+*
+!sub1
+!sub1/pom.xml
+!sub1/src
+!sub1/src/**
+!sub2
+!sub2/pom.xml
+!sub2/src
+!sub2/src/**
+!pom.xml
+!.gitignore

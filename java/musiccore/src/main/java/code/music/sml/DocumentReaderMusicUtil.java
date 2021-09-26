@@ -11,6 +11,7 @@ import code.sml.Element;
 import code.sml.ElementList;
 import code.util.CollCapacity;
 import code.util.EqList;
+import code.util.core.StringUtil;
 import code.util.StringList;
 public final class DocumentReaderMusicUtil {
     private static final String PARTS = "parts";
@@ -42,31 +43,31 @@ public final class DocumentReaderMusicUtil {
     }
 
     private static void getEvolvedNote(EvolvedNote _object, String _fieldName, Element _element) {
-        if (StringList.quickEq(_fieldName, VALUE)) {
+        if (StringUtil.quickEq(_fieldName, VALUE)) {
             _object.setValue(getGamme(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, LEVEL)) {
+        if (StringUtil.quickEq(_fieldName, LEVEL)) {
             _object.setLevel(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, DIESE)) {
+        if (StringUtil.quickEq(_fieldName, DIESE)) {
             _object.setDiese(DocumentReaderCoreUtil.getBoolean(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, PAUSE)) {
+        if (StringUtil.quickEq(_fieldName, PAUSE)) {
             _object.setPause(DocumentReaderCoreUtil.getBoolean(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, DURATION_NUM)) {
+        if (StringUtil.quickEq(_fieldName, DURATION_NUM)) {
             _object.setDurationNum(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, DURATION_DEN)) {
+        if (StringUtil.quickEq(_fieldName, DURATION_DEN)) {
             _object.setDurationDen(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, DYNAMIC)) {
+        if (StringUtil.quickEq(_fieldName, DYNAMIC)) {
             _object.setDynamic(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
@@ -83,27 +84,27 @@ public final class DocumentReaderMusicUtil {
     }
 
     private static void getEvolvedPart(EvolvedPart _object, String _fieldName, Element _element) {
-        if (StringList.quickEq(_fieldName, PHRASES)) {
+        if (StringUtil.quickEq(_fieldName, PHRASES)) {
             _object.setPhrases(getListEvolvedPhrase(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, INSTRUMENT)) {
+        if (StringUtil.quickEq(_fieldName, INSTRUMENT)) {
             _object.setInstrument(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, CHANNEL)) {
+        if (StringUtil.quickEq(_fieldName, CHANNEL)) {
             _object.setChannel(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, NAME)) {
+        if (StringUtil.quickEq(_fieldName, NAME)) {
             _object.setName(DocumentReaderCoreUtil.getString(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, NUMERATOR)) {
+        if (StringUtil.quickEq(_fieldName, NUMERATOR)) {
             _object.setNumerator(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, DENOMINATOR)) {
+        if (StringUtil.quickEq(_fieldName, DENOMINATOR)) {
             _object.setDenominator(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
@@ -120,15 +121,15 @@ public final class DocumentReaderMusicUtil {
     }
 
     private static void getEvolvedPhrase(EvolvedPhrase _object, String _fieldName, Element _element) {
-        if (StringList.quickEq(_fieldName, NOTES)) {
+        if (StringUtil.quickEq(_fieldName, NOTES)) {
             _object.setNotes(getListEvolvedNote(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, NUMERATOR)) {
+        if (StringUtil.quickEq(_fieldName, NUMERATOR)) {
             _object.setNumerator(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, DENOMINATOR)) {
+        if (StringUtil.quickEq(_fieldName, DENOMINATOR)) {
             _object.setDenominator(DocumentReaderCoreUtil.getInteger(_element));
             return;
         }
@@ -150,11 +151,11 @@ public final class DocumentReaderMusicUtil {
     }
 
     private static void getEvolvedScore(EvolvedScore _object, String _fieldName, Element _element) {
-        if (StringList.quickEq(_fieldName, PARTS)) {
+        if (StringUtil.quickEq(_fieldName, PARTS)) {
             _object.setParts(getListEvolvedPart(_element));
             return;
         }
-        if (StringList.quickEq(_fieldName, NAME)) {
+        if (StringUtil.quickEq(_fieldName, NAME)) {
             _object.setName(DocumentReaderCoreUtil.getString(_element));
             return;
         }
@@ -162,7 +163,7 @@ public final class DocumentReaderMusicUtil {
 
     private static Gamme getGamme(Element _elt) {
         for (Gamme e: Gamme.values()) {
-            if (StringList.quickEq(e.name(),_elt.getAttribute(VALUE))) {
+            if (StringUtil.quickEq(e.name(),_elt.getAttribute(VALUE))) {
                 return e;
             }
         }

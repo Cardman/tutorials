@@ -2,6 +2,7 @@ package code.music.core;
 import code.music.enums.Gamme;
 import code.util.CustList;
 import code.util.StringList;
+import code.util.core.StringUtil;
 import code.util.ints.Displayable;
 import code.util.ints.Equallable;
 import jm.constants.Pitches;
@@ -86,7 +87,7 @@ public final class EvolvedNote implements Equallable<EvolvedNote>, Displayable {
         double duration_ = note.getDuration();
         BigDecimal durationCopy_ = BigDecimal.valueOf(duration_);
         durationDen = 1;
-        while (durationCopy_.remainder(BigDecimal.ONE).signum() != CustList.SIZE_EMPTY) {
+        while (durationCopy_.remainder(BigDecimal.ONE).signum() != 0) {
             durationCopy_ = durationCopy_.multiply(BigDecimal.valueOf(2));
             durationDen *= 2;
         }
@@ -215,11 +216,11 @@ public final class EvolvedNote implements Equallable<EvolvedNote>, Displayable {
         if (_displayDoubleValue_) {
             time_ = Double.toString(getDouble(durationNum, durationDen));
         } else {
-            time_ = StringList.concat(Integer.toString(durationNum),SEPARATOR,Integer.toString(durationDen));
+            time_ = StringUtil.concat(Integer.toString(durationNum),SEPARATOR,Integer.toString(durationDen));
         }
         String dyn_ = Integer.toString(dynamic);
         if (pause) {
-            return StringList.concat(SYMBOL_PAUSE,time_,SEPARATOR_TIME,dyn_);
+            return StringUtil.concat(SYMBOL_PAUSE,time_,SEPARATOR_TIME,dyn_);
         }
         String diese_;
         if (diese) {
@@ -227,7 +228,7 @@ public final class EvolvedNote implements Equallable<EvolvedNote>, Displayable {
         } else {
             diese_ = EMPTY_STRING;
         }
-        return StringList.concat(value.name(),diese_,Integer.toString(level),SEPARATOR_TIME,time_,SEPARATOR_TIME,dyn_);
+        return StringUtil.concat(value.name(),diese_,Integer.toString(level),SEPARATOR_TIME,time_,SEPARATOR_TIME,dyn_);
     }
 
     public void afterLoad() {

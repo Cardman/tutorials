@@ -15,7 +15,11 @@ public final class BuildingScore {
             for (MetaPhrase h: p.getPhrases()) {
                 AbstractPhrase phrase_ = _fact.newPhrase(h);
                 for (MetaNote n: h.getNotes()) {
-                    phrase_.add(_fact, n, infos_);
+                    if (n.isPause()) {
+                        phrase_.add(n);
+                    } else {
+                        phrase_.add(n, infos_);
+                    }
                 }
                 part_.add(phrase_);
             }

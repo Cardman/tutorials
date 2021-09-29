@@ -1,6 +1,5 @@
 package code.music.impl;
 
-import code.music.core.AbstractMusicFactory;
 import code.music.core.AbstractPhrase;
 import code.music.core.MetaNote;
 import code.music.core.MetaPhrase;
@@ -17,8 +16,12 @@ public final class EvolvedPhrase implements AbstractPhrase {
         phrase.setNumerator(_phrase.getNumerator());
         phrase.setDenominator(_phrase.getDenominator());
     }
-    public void add(AbstractMusicFactory _fact, MetaNote _e, IdMap<Gamme,Integer> _tr) {
-        phrase.add(((EvolvedNote)_fact.newNote(_e,_tr)).getNote());
+    public void add(MetaNote _e, IdMap<Gamme, Integer> _tr) {
+        phrase.add(new EvolvedNote(_e,_tr).getNote());
+    }
+
+    public void add(MetaNote _e) {
+        phrase.add(new EvolvedNote(_e).getNote());
     }
 
     public Phrase getPhrase() {

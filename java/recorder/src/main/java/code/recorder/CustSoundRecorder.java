@@ -165,7 +165,8 @@ public class CustSoundRecorder {
 			setState();
 			recordSong.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent a){
-					if (fileSave.getText().trim().isEmpty()){
+					final String fileTxt = fileSave.getText().trim();
+					if (fileTxt.isEmpty()){
 						return;
 					}
 					new Thread(new Runnable(){
@@ -178,7 +179,7 @@ public class CustSoundRecorder {
 								// start capturing
 								AudioInputStream ais = new AudioInputStream(currentLine);
 								// start recording
-								AudioSystem.write(ais, fileType, new File(fileSave.getText()));
+								AudioSystem.write(ais, fileType, new File(fileTxt));
 							} catch (Exception e) {
 							}
 						}

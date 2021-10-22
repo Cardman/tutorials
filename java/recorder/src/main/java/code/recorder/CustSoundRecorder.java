@@ -90,10 +90,13 @@ public class CustSoundRecorder {
 		AudioFormat currentFormat;
 		TargetDataLine currentLine;
 		DataLine.Info currentInfo;
+		JLabel status = new JLabel();
 		AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
+		JFrame frame;
+		JPanel container;
 		public void run(){
-			JFrame frame = new JFrame("Recorder");
-			JPanel container = new JPanel();
+			frame = new JFrame("Recorder");
+			container = new JPanel();
 			container.setLayout(new BoxLayout(container,BoxLayout.PAGE_AXIS));
 			JPanel group = new JPanel();
 			alignTopLeft(group);
@@ -167,20 +170,31 @@ public class CustSoundRecorder {
 				public void actionPerformed(ActionEvent a){
 					final String fileTxt = fileSave.getText().trim();
 					if (fileTxt.isEmpty()){
+						status.setText("Error");
+						frame.pack();
 						return;
 					}
+					status.setText("");
+					frame.pack();
 					new Thread(new Runnable(){
 						public void run(){
 							try {
-								currentLine.open(currentFormat);
-								currentLine.start();
 								recordSong.setEnabled(false);
 								stopSong.setEnabled(true);
+								currentLine = (TargetDataLine)AudioSystem.getLine(currentInfo);
+								currentLine.open(currentFormat);
+								currentLine.start();
 								// start capturing
 								AudioInputStream ais = new AudioInputStream(currentLine);
 								// start recording
 								AudioSystem.write(ais, fileType, new File(fileTxt));
 							} catch (Exception e) {
+								SwingUtilities.invokeLater(new Runnable(){
+									public void run(){
+										status.setText("Error");
+										frame.pack();
+									}
+								});
 							}
 						}
 					}).start();
@@ -193,12 +207,16 @@ public class CustSoundRecorder {
 					recordSong.setEnabled(true);
 					stopSong.setEnabled(false);
 					currentLine = null;
+					status.setText("");
+					frame.pack();
 				}
 			});
 			buttons.add(recordSong);
 			buttons.add(stopSong);
 			container.add(group);
 			container.add(buttons);
+			alignTopLeft(status);
+			container.add(status);
 			frame.setContentPane(container);
 			frame.pack();
 			frame.setVisible(true);
@@ -218,24 +236,15 @@ public class CustSoundRecorder {
 			if (currentLine != null && currentLine.isActive()){
 				return false;
 			}
-			try {
-				TargetDataLine ret = (TargetDataLine)AudioSystem.getLine(info);
-				currentLine = ret;
-				currentFormat = format;
-				return true;
-			} catch (Exception e){
-				return false;
-			}
+			currentInfo = info;
+			currentFormat = format;
+			return true;
 		}
 		boolean okStop(){
 			if (currentLine == null) {
 				return false;
 			}
-			if (!currentLine.isActive()){
-				return false;
-			}
-			currentLine = null;
-			return true;
+			return currentLine.isActive();
 		}
 	}
 	static void alignAddedTopLeft(JComponent par,JComponent compo){

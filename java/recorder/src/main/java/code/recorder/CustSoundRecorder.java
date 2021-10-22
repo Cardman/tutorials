@@ -2,6 +2,10 @@ package code.recorder;
 
 import javax.sound.sampled.*;
 import java.io.*;
+import javax.swing.*;
+import java.awt.Component;
+import java.awt.event.*;
+import javax.swing.event.*;
  
 /**
  * A sample program is to demonstrate how to record sound in Java
@@ -72,13 +76,174 @@ public class CustSoundRecorder {
      * Entry to run the program
      */
     public static void main(String[] args)throws Exception {
-         if (args.length < 1){
-             mixers();
-             return;
-         }
-         CustSoundRecorder recorder = new CustSoundRecorder();
-         recorder.launch(args);
+		SwingUtilities.invokeLater(new GrRecorderTache());
     }
+	private static class GrRecorderTache implements Runnable{
+		JSlider rate;
+		JSlider size;
+		JSlider channel;
+		JCheckBox signed;
+		JCheckBox bigEndian;
+		JTextField fileSave;
+		JButton recordSong;
+		JButton stopSong;
+		AudioFormat currentFormat;
+		TargetDataLine currentLine;
+		DataLine.Info currentInfo;
+		AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
+		public void run(){
+			JFrame frame = new JFrame("Recorder");
+			JPanel container = new JPanel();
+			container.setLayout(new BoxLayout(container,BoxLayout.PAGE_AXIS));
+			JPanel group = new JPanel();
+			alignTopLeft(group);
+			group.setLayout(new BoxLayout(group,BoxLayout.LINE_AXIS));
+			JPanel labels = new JPanel();
+			labels.setLayout(new BoxLayout(labels,BoxLayout.PAGE_AXIS));
+			alignTopLeft(labels);
+			JPanel inputs = new JPanel();
+			inputs.setLayout(new BoxLayout(inputs,BoxLayout.PAGE_AXIS));
+			alignTopLeft(inputs);
+			group.add(labels);
+			group.add(inputs);
+			alignAddedTopLeft(labels,new JLabel("rate"));
+			rate = new JSlider(8000,32000,16000);
+			rate.addChangeListener(new ChangeListener(){
+				public void stateChanged(ChangeEvent e) {
+					setState();
+				}
+			});
+			alignTopLeft(rate);
+			inputs.add(rate);
+			alignAddedTopLeft(labels,new JLabel("size"));
+			size = new JSlider(1,32,8);
+			size.addChangeListener(new ChangeListener(){
+				public void stateChanged(ChangeEvent e) {
+					setState();
+				}
+			});
+			alignTopLeft(size);
+			inputs.add(size);
+			alignAddedTopLeft(labels,new JLabel("channels"));
+			channel = new JSlider(1,8,2);
+			channel.addChangeListener(new ChangeListener(){
+				public void stateChanged(ChangeEvent e) {
+					setState();
+				}
+			});
+			alignTopLeft(channel);
+			inputs.add(channel);
+			alignAddedTopLeft(labels,new JLabel("signed"));
+			signed = new JCheckBox();
+			signed.setSelected(true);
+			signed.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent a){
+					setState();
+				}
+			});
+			alignTopLeft(signed);
+			inputs.add(signed);
+			alignAddedTopLeft(labels,new JLabel("big endian"));
+			bigEndian = new JCheckBox();
+			bigEndian.setSelected(true);
+			bigEndian.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent a){
+					setState();
+				}
+			});
+			alignTopLeft(bigEndian);
+			inputs.add(bigEndian);
+			alignAddedTopLeft(labels,new JLabel("file save"));
+			fileSave = new JTextField();
+			alignTopLeft(fileSave);
+			inputs.add(fileSave);
+			JPanel buttons = new JPanel();
+			buttons.setLayout(new BoxLayout(buttons,BoxLayout.LINE_AXIS));
+			alignTopLeft(buttons);
+			recordSong = new JButton("record");
+			stopSong = new JButton("stop");
+			setState();
+			recordSong.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent a){
+					if (fileSave.getText().trim().isEmpty()){
+						return;
+					}
+					new Thread(new Runnable(){
+						public void run(){
+							try {
+								currentLine.open(currentFormat);
+								currentLine.start();
+								recordSong.setEnabled(false);
+								stopSong.setEnabled(true);
+								// start capturing
+								AudioInputStream ais = new AudioInputStream(currentLine);
+								// start recording
+								AudioSystem.write(ais, fileType, new File(fileSave.getText()));
+							} catch (Exception e) {
+							}
+						}
+					}).start();
+				}
+			});
+			stopSong.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent a){
+					currentLine.stop();
+					currentLine.close();
+					recordSong.setEnabled(true);
+					stopSong.setEnabled(false);
+				}
+			});
+			buttons.add(recordSong);
+			buttons.add(stopSong);
+			container.add(group);
+			container.add(buttons);
+			frame.setContentPane(container);
+			frame.pack();
+			frame.setVisible(true);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		}
+		void setState(){
+			recordSong.setEnabled(okRecord());
+			stopSong.setEnabled(okStop());
+		}
+		boolean okRecord(){
+			AudioFormat format = new AudioFormat(rate.getValue(), size.getValue(),
+                                             channel.getValue(), signed.isSelected(), bigEndian.isSelected());
+			DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
+			if (!AudioSystem.isLineSupported(info)) {
+				return false;
+			}
+			if (currentLine != null && currentLine.isActive()){
+				return false;
+			}
+			try {
+				TargetDataLine ret = (TargetDataLine)AudioSystem.getLine(info);
+				currentLine = ret;
+				currentFormat = format;
+				return true;
+			} catch (Exception e){
+				return false;
+			}
+		}
+		boolean okStop(){
+			if (currentLine == null) {
+				return false;
+			}
+			if (!currentLine.isActive()){
+				return false;
+			}
+			currentLine = null;
+			return true;
+		}
+	}
+	static void alignAddedTopLeft(JComponent par,JComponent compo){
+		alignTopLeft(compo);
+		par.add(compo);
+	}
+	static void alignTopLeft(JComponent compo){
+		compo.setAlignmentX(Component.LEFT_ALIGNMENT);
+		compo.setAlignmentY(Component.TOP_ALIGNMENT);
+	}
     int launch(String[] args){
          AudioFormat format = getAudioFormat();
          DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);

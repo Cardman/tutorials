@@ -191,6 +191,7 @@ public class CustSoundRecorder {
 					currentLine.close();
 					recordSong.setEnabled(true);
 					stopSong.setEnabled(false);
+					currentLine = null;
 				}
 			});
 			buttons.add(recordSong);

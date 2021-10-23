@@ -204,9 +204,8 @@ public class CustSoundRecorder {
 				public void actionPerformed(ActionEvent a){
 					currentLine.stop();
 					currentLine.close();
-					recordSong.setEnabled(true);
-					stopSong.setEnabled(false);
 					currentLine = null;
+					setState();
 					status.setText("");
 					frame.pack();
 				}

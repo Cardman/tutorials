@@ -191,6 +191,7 @@ public class CustSoundRecorder {
 							} catch (Exception e) {
 								SwingUtilities.invokeLater(new Runnable(){
 									public void run(){
+										setState();
 										status.setText("Error");
 										frame.pack();
 									}

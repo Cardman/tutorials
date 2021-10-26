@@ -110,7 +110,7 @@ public class CustSoundRecorder {
 			group.add(labels);
 			group.add(inputs);
 			alignAddedTopLeft(labels,new JLabel("rate"));
-			rate = new JSlider(8000,128000,16000);
+			rate = new JSlider(8000,128000,44100);
 			rate.addChangeListener(new ChangeListener(){
 				public void stateChanged(ChangeEvent e) {
 					setState();

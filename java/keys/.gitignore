@@ -1,0 +1,13 @@
+*
+!src
+!src/**
+!domain
+!domain/pom.xml
+!domain/src
+!domain/src/**
+!implem
+!implem/pom.xml
+!implem/src
+!implem/src/**
+!pom.xml
+!.gitignore

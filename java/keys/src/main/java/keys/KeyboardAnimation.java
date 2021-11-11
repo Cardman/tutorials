@@ -70,7 +70,7 @@ public class KeyboardAnimation
 			pressedKeys.put(key, moveDelta);
 		SwingUtilities.invokeLater(new Runnable(){
 			public void run(){
-				status.setText(pressedKeys.toString());
+				status.setText(pressedKeys.keySet().toString());
 			}
 		});
 	}

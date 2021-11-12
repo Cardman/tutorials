@@ -33,8 +33,15 @@ public class KeyboardAnimation
 		//  Separate the key identifier from the modifiers of the KeyStroke
 
 		int offset = keyStroke.lastIndexOf(" ");
-		String key = offset == -1 ? keyStroke :  keyStroke.substring( offset + 1 );
-		String modifiers = keyStroke.replace(key, "");
+		String modifiers;
+		String key;
+		if (offset == -1){
+			key = keyStroke;
+			modifiers = "";
+		} else {
+			key = keyStroke.substring( offset + 1 );
+			modifiers = keyStroke.substring(0, offset+1);
+		}
 
 		//  Get the InputMap and ActionMap of the component
 
@@ -60,14 +67,13 @@ public class KeyboardAnimation
 
 	//  Invoked whenever a key is pressed or released
 
-	private void handleKeyEvent(String key, Point moveDelta)
+	private void handleKeyEvent(String key, int modifier,Point moveDelta)
 	{
 		//  Keep track of which keys are pressed
-
 		if (moveDelta == null)
-			pressedKeys.remove( key );
+			pressedKeys.remove( key+modifier );
 		else
-			pressedKeys.put(key, moveDelta);
+			pressedKeys.put(key+modifier, moveDelta);
 		SwingUtilities.invokeLater(new Runnable(){
 			public void run(){
 				status.setText(pressedKeys.keySet().toString());
@@ -91,7 +97,7 @@ public class KeyboardAnimation
 
 		public void actionPerformed(ActionEvent e)
 		{
-			handleKeyEvent((String)getValue(NAME), moveDelta);
+			handleKeyEvent((String)getValue(NAME), e.getModifiers(),moveDelta);
 		}
 	}
 

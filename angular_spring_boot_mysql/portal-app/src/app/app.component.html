@@ -4,8 +4,13 @@
     Welcome to {{title}}!
   </h1>
 </div>
+<gg><span my_attr="">La la la la</span></gg>
 <button (click)="useLanguage('en')">en</button>
 <button (click)="useLanguage('de')">de</button>
+<select>
+<option value='0'>{{ 'demo.greeting' | translate:{'name':'Andreas'} }}</option>
+<option value='1'>{{ 'demo.greeting' | translate:{'name':'Andrea'} }}</option>
+</select>
 <div>
     <h1>{{ 'demo.title' | translate }}</h1>
 

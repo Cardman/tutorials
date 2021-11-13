@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {SelectionListeService} from './services/selection_liste.service';
 import {TranslateService} from '@ngx-translate/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

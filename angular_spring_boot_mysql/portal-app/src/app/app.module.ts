@@ -5,6 +5,7 @@ import {SelecteurModule} from './selecteur/selecteur.module'
 import {SelectionListeModule} from './selection_liste/selection_liste.module'
 
 import { AppComponent } from './app.component';
+import { GenialComponent } from './genial/genial.component';
 import { UserComponent } from './user/user.component';
 import { User2Component } from './user2/user-2.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -29,7 +30,8 @@ import {EditUser2Component} from './user2/edit-user-2.component';
     EditUserComponent,
     User2Component,
     AddUser2Component,
-    EditUser2Component
+    EditUser2Component,
+    GenialComponent
   ],
   imports: [
     BrowserModule,

@@ -97,6 +97,7 @@ public class KeyboardAnimation
 
 		public void actionPerformed(ActionEvent e)
 		{
+			System.out.println(e.getActionCommand());
 			handleKeyEvent((String)getValue(NAME), e.getModifiers(),moveDelta);
 		}
 	}

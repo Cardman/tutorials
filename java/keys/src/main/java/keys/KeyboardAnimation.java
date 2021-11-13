@@ -120,6 +120,8 @@ public class KeyboardAnimation
 
 		animation.addAction("control LEFT", -5,  0);
 		animation.addAction("V",  5,  5);
+		animation.addAction("shift V",  5,  5);
+		animation.addAction("alt V",  5,  5);
 
 		JLabel label2 = new JLabel( new ColorIcon(Color.GREEN, 40, 40) );
 		label2.setAlignmentX(Component.LEFT_ALIGNMENT);

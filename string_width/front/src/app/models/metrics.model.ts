@@ -5,3 +5,7 @@ export class Metrics {
   bold:boolean;
   italic:boolean;
 }
+export class Dimension{
+  width:number;
+  height:number;
+}

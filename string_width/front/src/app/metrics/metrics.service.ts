@@ -24,5 +24,8 @@ export class MetricsService {
   public stringWidth(metrics:Metrics):Observable<any> {
     return this.http.post<Metrics>(this.metricsUrl, metrics);
   }
+  public stringDim(metrics:Metrics):Observable<any> {
+    return this.http.post<Metrics>(this.metricsUrl+"/dim", metrics);
+  }
 
 }

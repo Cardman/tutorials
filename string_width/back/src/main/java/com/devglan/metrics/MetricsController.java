@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Arrays;
+import javax.swing.*;
 
 @RestController
 @RequestMapping({"/api"})
@@ -35,6 +36,30 @@ public class MetricsController {
         }
         FontMetrics fm = g.getFontMetrics(f_);
         return fm.stringWidth(metrics.getStr());
+    }
+    @PostMapping("/dim")
+    public Dimension stringDim(@RequestBody Metrics metrics){
+        BufferedImage image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = image.createGraphics();
+        Font f_;
+        if (metrics.isBold()) {
+            if (metrics.isItalic()) {
+                f_ = new Font(metrics.getFont(),Font.BOLD+Font.ITALIC,metrics.getSize());
+            } else {
+                f_ = new Font(metrics.getFont(),Font.BOLD,metrics.getSize());
+            }
+        } else {
+            if (metrics.isItalic()) {
+                f_ = new Font(metrics.getFont(),Font.ITALIC,metrics.getSize());
+            } else {
+                f_ = new Font(metrics.getFont(),Font.PLAIN,metrics.getSize());
+            }
+        }
+		JPanel p = new JPanel();
+		JLabel lab = new JLabel(metrics.getStr());
+		lab.setFont(f_);
+		p.add(lab);
+        return p.getPreferredSize();
     }
 
 }

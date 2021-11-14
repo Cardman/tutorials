@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Metrics } from '../models/metrics.model';
+import { Metrics, Dimension } from '../models/metrics.model';
 import { MetricsService } from './metrics.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class MetricsComponent implements OnInit {
 
   metrics: Metrics = new Metrics();
   result: number = 0;
+  resultDim: Dimension = new Dimension();
   fontNames: string[] = [];
 
   constructor(private router: Router, private metricsService: MetricsService) {
@@ -30,6 +31,13 @@ export class MetricsComponent implements OnInit {
 		this.result=data as number;
         });
 
-  };
+  }
+  stringDim(): void {
+    this.metricsService.stringDim(this.metrics)
+        .subscribe( data => {
+		this.resultDim=data as Dimension;
+        });
+
+  }
 
 }

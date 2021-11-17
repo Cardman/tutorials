@@ -1,4 +1,7 @@
 *
-!/*.*
+!/.gitignore
+!/*.json
+!/*.js
+!/*.xml
 !/src
 !/src/**

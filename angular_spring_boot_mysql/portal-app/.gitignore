@@ -3,5 +3,5 @@
 !/*.json
 !/*.js
 !/*.xml
-!/src
+!/src/
 !/src/**

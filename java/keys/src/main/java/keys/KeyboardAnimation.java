@@ -14,7 +14,7 @@ public class KeyboardAnimation
 
 	private JComponent component;
 	private JLabel status;
-	private Map<String, Point> pressedKeys = new HashMap<String, Point>();
+	private Map<String, Long> pressedKeys = new HashMap<String, Long>();
 
 	public KeyboardAnimation(JLabel status,JComponent component, int delay)
 	{
@@ -42,6 +42,8 @@ public class KeyboardAnimation
 			key = keyStroke.substring( offset + 1 );
 			modifiers = keyStroke.substring(0, offset+1);
 		}
+		
+		Holder h = new Holder();
 
 		//  Get the InputMap and ActionMap of the component
 
@@ -50,7 +52,8 @@ public class KeyboardAnimation
 
 		//  Create Action and add binding for the pressed key
 
-		Action pressedAction = new AnimationAction(key, new Point(deltaX, deltaY));
+		AnimationActionSimple pressedAction = new AnimationActionSimple(key, new Point(deltaX, deltaY));
+		pressedAction.holder = h;
 		String pressedKey = modifiers + PRESSED + key;
 		KeyStroke pressedKeyStroke = KeyStroke.getKeyStroke(pressedKey);
 		inputMap.put(pressedKeyStroke, pressedKey);
@@ -58,7 +61,8 @@ public class KeyboardAnimation
 
 		//  Create Action and add binding for the released key
 
-		Action releasedAction = new AnimationAction(key, null);
+		AnimationActionSimple releasedAction = new AnimationActionSimple(key, null);
+		releasedAction.holder = h;
 		String releasedKey = modifiers + RELEASED + key;
 		KeyStroke releasedKeyStroke = KeyStroke.getKeyStroke(releasedKey);
 		inputMap.put(releasedKeyStroke, releasedKey);
@@ -67,16 +71,17 @@ public class KeyboardAnimation
 
 	//  Invoked whenever a key is pressed or released
 
-	private void handleKeyEvent(String key, int modifier,Point moveDelta)
+	private void handleKeyEvent(String key, int modifier,Point moveDelta, final long delta)
 	{
 		//  Keep track of which keys are pressed
 		if (moveDelta == null)
 			pressedKeys.remove( key+modifier );
 		else
-			pressedKeys.put(key+modifier, moveDelta);
+			pressedKeys.put(key+modifier, delta);
+		final String conc = key+modifier;
 		SwingUtilities.invokeLater(new Runnable(){
 			public void run(){
-				status.setText(pressedKeys.keySet().toString());
+				status.setText(conc+";"+ delta+":"+pressedKeys.keySet().toString());
 			}
 		});
 	}
@@ -87,6 +92,7 @@ public class KeyboardAnimation
 	private class AnimationAction extends AbstractAction implements ActionListener
 	{
 		private Point moveDelta;
+		private long time;
 
 		public AnimationAction(String key, Point moveDelta)
 		{
@@ -97,11 +103,50 @@ public class KeyboardAnimation
 
 		public void actionPerformed(ActionEvent e)
 		{
-			System.out.println(e.getActionCommand());
-			handleKeyEvent((String)getValue(NAME), e.getModifiers(),moveDelta);
+			if (moveDelta == null) {
+				System.out.println(e.getActionCommand());
+				handleKeyEvent((String)getValue(NAME), e.getModifiers(),moveDelta,System.currentTimeMillis()-time);
+			} else {
+				time = System.currentTimeMillis();
+				System.out.println(e.getActionCommand());
+				handleKeyEvent((String)getValue(NAME), e.getModifiers(),moveDelta,0);
+			}
 		}
 	}
 
+	private class AnimationActionSimple extends AbstractAction implements ActionListener
+	{
+		private String key;
+		private Point moveDelta;
+		private long time;
+		private Holder holder;
+
+		public AnimationActionSimple(String key, Point moveDelta)
+		{
+			this.key = key;
+			this.moveDelta = moveDelta;
+		}
+
+		public void actionPerformed(ActionEvent e)
+		{
+			holder.actionPerformed(moveDelta);
+			handleKeyEvent(key, e.getModifiers(),moveDelta,holder.delta);
+		}
+	}
+
+	private class Holder{
+		private long time;
+		private long delta;
+		public void actionPerformed(Point moveDelta)
+		{
+			if (moveDelta == null) {
+				delta = System.currentTimeMillis()-time;
+				time = 0;
+			} else if (time==0) {
+				time = System.currentTimeMillis();
+			}
+		}
+	}
 	public static void main(String[] args)
 	{
 		JPanel contentPane = new JPanel();

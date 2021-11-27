@@ -22,7 +22,7 @@ public class MockFileTest{
 		doReturn(true).when(sample).renameTo(any(File.class));
 		doReturn(false).when(sample).renameTo(null);
 		doReturn(new String[]{"one","two"}).when(sample).list();
-		doReturn(-123456789123456789L).when(sample).lastModified();
+		doReturn(-123456789123456789L).doReturn(-62135769600000L).when(sample).lastModified();
 		doReturn(979999999999999999L).when(sample).length();
 		doReturn("PC").when(sample).getParent();
 		doReturn("_____").when(sample).getName();
@@ -35,6 +35,7 @@ public class MockFileTest{
 		assertFalse(mkfile.renameTo(new MockFile(null)));
 		assertEquals(2, mkfile.list().length);
 		assertEquals(-123456789123456789L, mkfile.lastModified());
+		assertEquals(-62135769600000L, mkfile.lastModified());
 		assertEquals(979999999999999999L, mkfile.length());
 		assertEquals("PC", mkfile.getParent());
 		assertEquals("PC:/______________", mkfile.getAbsolutePath());

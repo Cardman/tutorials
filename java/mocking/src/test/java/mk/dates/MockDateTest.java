@@ -26,11 +26,11 @@ public class MockDateTest{
 		Date date = mock(Date.class);
 		TimeZone tz = TimeZone.getDefault();
 		tz = spy(tz);
-		doReturn(25*3600).doReturn(25*3600).doReturn(26*3600).doReturn(26*3600).when(tz).getOffset(anyLong());
+		doReturn(25*3600*1000).doReturn(25*3600*1000).doReturn(26*3600*1000).doReturn(26*3600*1000).when(tz).getOffset(anyLong());
 		MockDate mk = new MockDate(date,tz);
-		assertEquals(25*3600,mk.timeZone(0));
-		assertEquals(25*3600,mk.timeZone(1));
-		assertEquals(26*3600,mk.timeZone(2));
-		assertEquals(26*3600,mk.timeZone(3));
+		assertEquals(25*3600*1000,mk.timeZone(0));
+		assertEquals(25*3600*1000,mk.timeZone(1));
+		assertEquals(26*3600*1000,mk.timeZone(2));
+		assertEquals(26*3600*1000,mk.timeZone(3));
 	}
 }

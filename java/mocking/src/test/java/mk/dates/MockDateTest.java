@@ -2,7 +2,7 @@ package mk.dates;
 
 
 import java.util.TimeZone;
-
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
@@ -22,6 +22,19 @@ public class MockDateTest{
 	}
 
 	@Test
+	public void formatMock(){
+		Date date = new Date(-152000);
+		TimeZone tz = mock(TimeZone.class);
+		MockDateDef mk = new MockDateDef(date,tz);
+		mk = spy(mk);
+		doReturn(25*3600*1000L).doReturn(25*3600*1000L).doReturn(26*3600*1000L).doReturn(26*3600*1000L).when(mk).timeZone(anyLong());
+		assertEquals(25*3600*1000,mk.timeZone(0));
+		assertEquals(25*3600*1000,mk.timeZone(1));
+		assertEquals(26*3600*1000,mk.timeZone(2));
+		assertEquals(26*3600*1000,mk.timeZone(3));
+	}
+
+	@Test
 	public void timeZone(){
 		Date date = mock(Date.class);
 		TimeZone tz = TimeZone.getDefault();
@@ -33,4 +46,20 @@ public class MockDateTest{
 		assertEquals(26*3600*1000,mk.timeZone(2));
 		assertEquals(26*3600*1000,mk.timeZone(3));
 	}
+}
+
+
+class MockDateDef implements AbsMockDate{
+	private final Date date;
+	private final TimeZone zone;
+	public MockDateDef(Date date,TimeZone zone){
+		this.date = date;
+		this.zone = zone;
+	}
+	public String format(String _format) {
+        return new SimpleDateFormat(_format).format(date);
+    }
+	public long timeZone(long _millis) {
+        return zone.getOffset(_millis);
+    }
 }

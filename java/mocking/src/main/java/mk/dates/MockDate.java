@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 
 import java.util.Date;
 
-public final class MockDate{
+public final class MockDate implements AbsMockDate{
 	private final Date date;
 	private final TimeZone zone;
 	public MockDate(Date date,TimeZone zone){
@@ -18,4 +18,9 @@ public final class MockDate{
 	public long timeZone(long _millis) {
         return zone.getOffset(_millis);
     }
+}
+
+interface AbsMockDate{
+	public String format(String _format);
+	public long timeZone(long _millis);
 }

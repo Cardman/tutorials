@@ -1,6 +1,12 @@
 *
 !/src/
 !/src/**
+!/accord/
+!/accord/pom.xml
+!/accord/src/
+!/accord/src/main/
+!/accord/src/main/java/
+!/accord/src/main/java/**
 !/domain/
 !/domain/pom.xml
 !/domain/src/

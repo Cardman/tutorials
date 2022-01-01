@@ -1,6 +1,7 @@
 package code.finder.gui;
 
-import code.finder.core.RegExpPart;
+import code.finder.core.FinderCore;
+import code.finder.core.ValidPatt;
 import code.finder.gui.events.ResultSystem;
 import code.finder.gui.events.SelectFolder;
 import code.gui.*;
@@ -15,7 +16,6 @@ import code.util.StringList;
 import code.util.StringMap;
 import code.util.core.StringUtil;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class WindowFinder extends GroupFrame {
@@ -126,12 +126,12 @@ public final class WindowFinder extends GroupFrame {
 
     private StringMap<Integer> filterFiles(StringList _files) {
         StringMap<Integer> out_ = new StringMap<Integer>();
-        StringList content_ = filterList(linesContent.getText());
-        Pattern pattern_ = patternOrNull(linesRegExp.getText());
+        StringList content_ = FinderCore.filterList(linesContent.getText());
+        ValidPatt pattern_ = FinderCore.patternOrNull(linesRegExp.getText());
         for (String f: _files) {
             String cont_ = StreamTextFile.contentsOfFile(f,getFileCoreStream(),getStreams());
             if (cont_ != null) {
-                int nbMatches_ = nbMatches(content_, cont_, pattern_);
+                int nbMatches_ = FinderCore.nbMatches(content_, cont_, pattern_);
                 if (nbMatches_ > 0) {
                     out_.addEntry(f,nbMatches_);
                 }
@@ -180,41 +180,15 @@ public final class WindowFinder extends GroupFrame {
         StringList files_ = StreamTextFile.allSortedFiles(path_, getFileCoreStream());
         return filterFiles(path_, files_);
     }
-    private static int nbMatches(StringList _contents, String _input, Pattern _regExp) {
-        int index_ = 0;
-        int nb_ = 0;
-        while (true) {
-            CustList<RegExpPart> contentParts_ = extrContentString(_contents, _input, index_);
-            int content_;
-            if (contentParts_.isEmpty()) {
-                int nex_ = _input.indexOf('\n', index_);
-                if (nex_ > -1) {
-                    content_ = nex_ +1;
-                } else {
-                    content_ = _input.length();
-                }
-            } else {
-                content_ = contentParts_.last().getEnd()+1;
-            }
-            CustList<RegExpPart> regExpParts_ = extrRegExpString(_regExp, _input, index_);
-            int regExp_ = nextIndexRegExp(regExpParts_, _input, index_);
-            int next_ = Math.max(content_,regExp_);
-            if (next_ >= _input.length()) {
-                break;
-            }
-            if (!contentParts_.isEmpty() || !regExpParts_.isEmpty()) {
-                nb_++;
-            }
 
-            index_ = next_;
-        }
-        return nb_;
-    }
     private StringList filterFiles(String _path, StringList _files) {
-        Pattern pattern_ = patternOrNull();
+        ValidPatt pattern_ = patternOrNull();
         StringList out_ = new StringList();
+        if (pattern_ == null) {
+            return out_;
+        }
         for (String n: _files) {
-            if (ko(n, _path,pattern_)) {
+            if (ko(n, _path,pattern_.getPattern())) {
                 continue;
             }
             out_.add(n);
@@ -222,23 +196,9 @@ public final class WindowFinder extends GroupFrame {
         return out_;
     }
 
-    private Pattern patternOrNull() {
+    private ValidPatt patternOrNull() {
         String nameRegExp_ = namesRegExp.getText().trim();
-        return patternOrNull(nameRegExp_);
-    }
-
-    private static Pattern patternOrNull(String _regExp) {
-        Pattern pattern_;
-        if (_regExp.isEmpty()) {
-            pattern_ = null;
-        } else {
-            try {
-                pattern_ = Pattern.compile(_regExp);
-            } catch (Exception e) {
-                pattern_ = null;
-            }
-        }
-        return pattern_;
+        return FinderCore.patternOrNull(nameRegExp_);
     }
 
     private boolean ko(String _name, String _path, Pattern _patt) {
@@ -264,91 +224,6 @@ public final class WindowFinder extends GroupFrame {
         return rel_;
     }
 
-    private static CustList<RegExpPart> extrContentString(StringList _contents, String _input, int _from) {
-        CustList<RegExpPart> res_ = new CustList<RegExpPart>();
-        int indexContent_ = 0;
-        int index_ = 0;
-        while (true) {
-            RegExpPart regExpPart_ = tryRegExpPart(_contents, _input, _from, index_, indexContent_);
-            if (regExpPart_ == null) {
-                int next_ = _input.indexOf('\n', index_+_from);
-                if (next_>-1&&_contents.isValidIndex(indexContent_)) {
-                    return new CustList<RegExpPart>();
-                }
-                break;
-            }
-            res_.add(regExpPart_);
-            indexContent_++;
-            index_ = regExpPart_.getEnd()-_from+1;
-        }
-        return res_;
-    }
-    private static RegExpPart tryRegExpPart(StringList _contents, String _input, int _from, int _index, int _indexContent) {
-        int next_ = _input.indexOf('\n', _index+_from);
-        if (next_ < 0 || !_contents.isValidIndex(_indexContent)) {
-            return null;
-        }
-        String curr_ = _input.substring(_index+_from,next_);
-        if (!StringUtil.match(curr_,_contents.get(_indexContent))) {
-            return null;
-        }
-        return new RegExpPart(curr_,_from+_index,next_);
-    }
-    private static int nextIndexRegExp(CustList<RegExpPart> _res, String _input, int _from) {
-        int next_ = _input.indexOf('\n', _from);
-        if (_res.isEmpty()) {
-            if (next_ > -1) {
-                return next_+1;
-            }
-            return _from;
-        }
-        return _res.last().getEnd()+1;
-    }
-    private static CustList<RegExpPart> extrRegExpString(Pattern _patt, String _input, int _from) {
-        CustList<RegExpPart> res_ = new CustList<RegExpPart>();
-        if (_patt == null) {
-            return res_;
-        }
-        Matcher matcher_ = _patt.matcher(_input.substring(_from));
-        while (matcher_.find()) {
-            String group_ = matcher_.group();
-            res_.add(new RegExpPart(group_,matcher_.start(),matcher_.end()));
-        }
-        return res_;
-    }
-
-    private static StringList filterList(String _filter) {
-        StringList out_ = new StringList();
-        if (_filter.isEmpty()) {
-            return out_;
-        }
-        StringBuilder str_ = new StringBuilder();
-        boolean esc_ = false;
-        int i = 0;
-        int len_ = _filter.length();
-        while (i < len_) {
-            char ch_ = _filter.charAt(i);
-            if (esc_) {
-                esc_ = false;
-                if (ch_ == 'n') {
-                    out_.add(str_.toString());
-                    str_.delete(0,str_.length());
-                } else {
-                    str_.append(ch_);
-                }
-                i++;
-                continue;
-            }
-            if (ch_ == '\\') {
-                esc_ = true;
-            } else {
-                str_.append(ch_);
-            }
-            i++;
-        }
-        out_.add(str_.toString());
-        return out_;
-    }
     @Override
     public void quit() {
         exit();

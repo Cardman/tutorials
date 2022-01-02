@@ -70,6 +70,11 @@ public class FinderCoreTest {
     public void nbMatches13() {
         assertEquals(0, nbMatches("HEL\nLO","","?"));
     }
+
+    @Test
+    public void nbMatches14() {
+        assertEquals(1, nbMatches("HEL\\nLO","*\\\\*",""));
+    }
     private static int nbMatches(String _input, String _content, String _regex) {
         return FinderCore.nbMatches(FinderCore.filterList(_content),_input,FinderCore.patternOrNull(_regex));
     }

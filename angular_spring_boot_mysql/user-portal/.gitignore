@@ -1,24 +1,20 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+*
+!/.gitignore
+!/pom.xml
+!/src/
+!/src/main/
+!/src/main/java/
+!/src/main/java/**/
+!/src/main/java/**/*.java
+!/src/main/resources/
+!/src/main/resources/**/
+!/src/main/resources/**/*.properties
+!/src/main/resources/**/*.sql
+!/src/test/
+!/src/test/java/
+!/src/test/java/**/
+!/src/test/java/**/*.java
+!/src/test/resources/
+!/src/test/resources/**/
+!/src/test/resources/**/*.properties
+!/src/test/resources/**/*.sql

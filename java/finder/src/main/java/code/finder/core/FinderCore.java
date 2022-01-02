@@ -12,30 +12,34 @@ public final class FinderCore {
 
     public final int index;
     public final String pattern;
-    public final int nbMatch;
-    private FinderCore(int _index, String _pattern, int _nbMatch){
+    public final CustList<RegExpPart> nbContMatch;
+    public final CustList<RegExpPart> nbRegexMatch;
+    private FinderCore(int _index, String _pattern, CustList<RegExpPart> _nbContMatch, CustList<RegExpPart> _nbRegexMatch){
         this.index = _index;
         this.pattern = _pattern;
-        this.nbMatch = _nbMatch;
+        this.nbContMatch = _nbContMatch;
+        this.nbRegexMatch = _nbRegexMatch;
     }
     public static FinderCore nbMatches(StringList _contents, String _input, ValidPatt _regExp) {
         if (!_regExp.isValid()) {
-            return new FinderCore(_regExp.getIndex(), _regExp.getPatt(), 0);
+            return new FinderCore(_regExp.getIndex(), _regExp.getPatt(), new CustList<RegExpPart>(), new CustList<RegExpPart>());
         }
+        CustList<RegExpPart> allContent_ = new CustList<RegExpPart>();
+        CustList<RegExpPart> allRegex_ = new CustList<RegExpPart>();
         Pattern pattern_ = _regExp.getPattern();
         int index_ = 0;
-        int nb_ = 0;
         while (true) {
             CustList<RegExpPart> contentParts_ = extrContentString(_contents, _input, index_);
             ResultFinderLine resContent_ = ResultFinderLine.result(contentParts_, _contents.isEmpty(), index_, _input);
             CustList<RegExpPart> regExpParts_ = extrRegExpString(pattern_, _input, index_);
             ResultFinderLine resRegExp_ = ResultFinderLine.result(regExpParts_, pattern_ == null, index_, _input);
             if (resContent_.isValid()&&resRegExp_.isValid()) {
-                nb_ += contentParts_.size() + regExpParts_.size();
+                allContent_.addAllElts(contentParts_);
+                allRegex_.addAllElts(regExpParts_);
             }
             int next_ = Math.max(resContent_.getNext(),resRegExp_.getNext());
             if (next_ >= _input.length()) {
-                return new FinderCore(-1,"",nb_);
+                return new FinderCore(-1,"", allContent_, allRegex_);
             }
             index_ = next_;
         }

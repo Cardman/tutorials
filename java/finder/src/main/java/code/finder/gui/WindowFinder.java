@@ -133,7 +133,7 @@ public final class WindowFinder extends GroupFrame {
             String cont_ = StreamTextFile.contentsOfFile(f,getFileCoreStream(),getStreams());
             if (cont_ != null) {
                 FinderCore finderCore_ = FinderCore.nbMatches(content_, cont_, pattern_);
-                int nbMatches_ = finderCore_.nbMatch;
+                int nbMatches_ = finderCore_.nbContMatch.size() + finderCore_.nbRegexMatch.size();
                 if (nbMatches_ > 0) {
                     out_.addEntry(f,nbMatches_);
                 } else if (finderCore_.index >= 0){

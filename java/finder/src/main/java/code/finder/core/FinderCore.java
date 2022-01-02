@@ -6,14 +6,21 @@ import code.util.core.StringUtil;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public final class FinderCore {
 
-    private FinderCore(){
+    public final int index;
+    public final String pattern;
+    public final int nbMatch;
+    private FinderCore(int _index, String _pattern, int _nbMatch){
+        this.index = _index;
+        this.pattern = _pattern;
+        this.nbMatch = _nbMatch;
     }
-    public static int nbMatches(StringList _contents, String _input, ValidPatt _regExp) {
-        if (_regExp == null) {
-            return 0;
+    public static FinderCore nbMatches(StringList _contents, String _input, ValidPatt _regExp) {
+        if (!_regExp.isValid()) {
+            return new FinderCore(_regExp.getIndex(), _regExp.getPatt(), 0);
         }
         Pattern pattern_ = _regExp.getPattern();
         int index_ = 0;
@@ -28,7 +35,7 @@ public final class FinderCore {
             }
             int next_ = Math.max(resContent_.getNext(),resRegExp_.getNext());
             if (next_ >= _input.length()) {
-                return nb_;
+                return new FinderCore(-1,"",nb_);
             }
             index_ = next_;
         }
@@ -41,8 +48,8 @@ public final class FinderCore {
         }
         try {
             return new ValidPatt(Pattern.compile(_regExp));
-        } catch (Exception e) {
-            return null;
+        } catch (PatternSyntaxException e) {
+            return new ValidPatt(e.getIndex(),e.getPattern());
         }
     }
 
@@ -51,20 +58,20 @@ public final class FinderCore {
         int indexContent_ = 0;
         int index_ = _from;
         while (true) {
-            RegExpPart regExpPart_ = tryRegExpPart(_contents, _input, indexContent_, index_);
+            if (!_contents.isValidIndex(indexContent_)) {
+                return res_;
+            }
+            RegExpPart regExpPart_ = tryContentPart(_input, index_, _contents.get(indexContent_));
             if (regExpPart_ == null) {
-                if (_contents.isValidIndex(indexContent_)) {
-                    return new CustList<RegExpPart>();
-                }
-                break;
+                return new CustList<RegExpPart>();
             }
             res_.add(regExpPart_);
             indexContent_++;
             index_ = regExpPart_.getEnd()+1;
         }
-        return res_;
     }
-    private static RegExpPart tryRegExpPart(StringList _contents, String _input, int _indexContent, int _fromIndex) {
+
+    private static RegExpPart tryContentPart(String _input, int _fromIndex, String _filter) {
         int next_ = _input.indexOf('\n', _fromIndex);
         int end_;
         String curr_;
@@ -75,10 +82,7 @@ public final class FinderCore {
             end_ = next_;
             curr_ = _input.substring(_fromIndex,next_);
         }
-        if (!_contents.isValidIndex(_indexContent)) {
-            return null;
-        }
-        if (!StringUtil.match(curr_,_contents.get(_indexContent))) {
+        if (!StringUtil.match(curr_, _filter)) {
             return null;
         }
         return new RegExpPart(curr_, _fromIndex,end_);
@@ -92,7 +96,7 @@ public final class FinderCore {
         Matcher matcher_ = _patt.matcher(_input.substring(_from));
         while (matcher_.find()) {
             String group_ = matcher_.group();
-            res_.add(new RegExpPart(group_,matcher_.start(),matcher_.end()));
+            res_.add(new RegExpPart(group_,matcher_.start(),matcher_.end()-1));
         }
         return res_;
     }

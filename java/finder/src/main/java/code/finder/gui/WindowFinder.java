@@ -128,12 +128,16 @@ public final class WindowFinder extends GroupFrame {
         StringMap<Integer> out_ = new StringMap<Integer>();
         StringList content_ = FinderCore.filterList(linesContent.getText());
         ValidPatt pattern_ = FinderCore.patternOrNull(linesRegExp.getText());
+        linesRegExp.setToolTipText("");
         for (String f: _files) {
             String cont_ = StreamTextFile.contentsOfFile(f,getFileCoreStream(),getStreams());
             if (cont_ != null) {
-                int nbMatches_ = FinderCore.nbMatches(content_, cont_, pattern_);
+                FinderCore finderCore_ = FinderCore.nbMatches(content_, cont_, pattern_);
+                int nbMatches_ = finderCore_.nbMatch;
                 if (nbMatches_ > 0) {
                     out_.addEntry(f,nbMatches_);
+                } else if (finderCore_.index >= 0){
+                    linesRegExp.setToolTipText(finderCore_.pattern+','+finderCore_.index);
                 }
             }
         }

@@ -10,19 +10,15 @@ import java.util.regex.PatternSyntaxException;
 
 public final class FinderCore {
 
-    public final int index;
-    public final String pattern;
     public final CustList<RegExpPart> nbContMatch;
     public final CustList<RegExpPart> nbRegexMatch;
-    private FinderCore(int _index, String _pattern, CustList<RegExpPart> _nbContMatch, CustList<RegExpPart> _nbRegexMatch){
-        this.index = _index;
-        this.pattern = _pattern;
+    private FinderCore(CustList<RegExpPart> _nbContMatch, CustList<RegExpPart> _nbRegexMatch){
         this.nbContMatch = _nbContMatch;
         this.nbRegexMatch = _nbRegexMatch;
     }
     public static FinderCore nbMatches(StringList _contents, String _input, ValidPatt _regExp) {
         if (!_regExp.isValid()) {
-            return new FinderCore(_regExp.getIndex(), _regExp.getPatt(), new CustList<RegExpPart>(), new CustList<RegExpPart>());
+            return new FinderCore(new CustList<RegExpPart>(), new CustList<RegExpPart>());
         }
         CustList<RegExpPart> allContent_ = new CustList<RegExpPart>();
         CustList<RegExpPart> allRegex_ = new CustList<RegExpPart>();
@@ -39,7 +35,7 @@ public final class FinderCore {
             }
             int next_ = Math.max(resContent_.getNext(),resRegExp_.getNext());
             if (next_ >= _input.length()) {
-                return new FinderCore(-1,"", allContent_, allRegex_);
+                return new FinderCore(allContent_, allRegex_);
             }
             index_ = next_;
         }

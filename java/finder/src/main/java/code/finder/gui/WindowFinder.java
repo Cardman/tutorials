@@ -129,6 +129,9 @@ public final class WindowFinder extends GroupFrame {
         StringList content_ = FinderCore.filterList(linesContent.getText());
         ValidPatt pattern_ = FinderCore.patternOrNull(linesRegExp.getText());
         linesRegExp.setToolTipText("");
+        if (!pattern_.isValid()) {
+            linesRegExp.setToolTipText(pattern_.getPatt() +','+ pattern_.getIndex());
+        }
         for (String f: _files) {
             String cont_ = StreamTextFile.contentsOfFile(f,getFileCoreStream(),getStreams());
             if (cont_ != null) {
@@ -136,8 +139,6 @@ public final class WindowFinder extends GroupFrame {
                 int nbMatches_ = finderCore_.nbContMatch.size() + finderCore_.nbRegexMatch.size();
                 if (nbMatches_ > 0) {
                     out_.addEntry(f,nbMatches_);
-                } else if (finderCore_.index >= 0){
-                    linesRegExp.setToolTipText(finderCore_.pattern+','+finderCore_.index);
                 }
             }
         }

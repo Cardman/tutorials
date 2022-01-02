@@ -49,9 +49,9 @@ public final class FinderCore {
     private static CustList<RegExpPart> extrContentString(StringList _contents, String _input, int _from) {
         CustList<RegExpPart> res_ = new CustList<RegExpPart>();
         int indexContent_ = 0;
-        int index_ = 0;
+        int index_ = _from;
         while (true) {
-            RegExpPart regExpPart_ = tryRegExpPart(_contents, _input, _from, index_, indexContent_);
+            RegExpPart regExpPart_ = tryRegExpPart(_contents, _input, indexContent_, index_);
             if (regExpPart_ == null) {
                 if (_contents.isValidIndex(indexContent_)) {
                     return new CustList<RegExpPart>();
@@ -64,14 +64,16 @@ public final class FinderCore {
         }
         return res_;
     }
-    private static RegExpPart tryRegExpPart(StringList _contents, String _input, int _from, int _index, int _indexContent) {
-        int fromIndex_ = _index + _from;
-        int next_ = _input.indexOf('\n', fromIndex_);
+    private static RegExpPart tryRegExpPart(StringList _contents, String _input, int _indexContent, int _fromIndex) {
+        int next_ = _input.indexOf('\n', _fromIndex);
+        int end_;
         String curr_;
         if (next_ < 0) {
-            curr_ = _input.substring(fromIndex_);
+            end_ = _input.length()-1;
+            curr_ = _input.substring(_fromIndex);
         } else {
-            curr_ = _input.substring(fromIndex_,next_);
+            end_ = next_;
+            curr_ = _input.substring(_fromIndex,next_);
         }
         if (!_contents.isValidIndex(_indexContent)) {
             return null;
@@ -79,7 +81,7 @@ public final class FinderCore {
         if (!StringUtil.match(curr_,_contents.get(_indexContent))) {
             return null;
         }
-        return new RegExpPart(curr_, fromIndex_,next_);
+        return new RegExpPart(curr_, _fromIndex,end_);
     }
 
     private static CustList<RegExpPart> extrRegExpString(Pattern _patt, String _input, int _from) {

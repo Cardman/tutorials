@@ -11,5 +11,4 @@ export class AppComponent {
   onClick($event:number){
 	this.state = $event;
   }
-  
 }

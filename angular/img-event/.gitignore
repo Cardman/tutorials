@@ -12,6 +12,7 @@
 !/src/**/*.json
 !/src/**/*.ico
 !/src/**/*.wav
+!/src/**/*.svg
 !/e2e/
 !/e2e/**/
 !/e2e/**/*.ts
@@ -20,6 +21,7 @@
 !/e2e/**/*.html
 !/e2e/**/*.json
 !/e2e/**/*.ico
+!/e2e/**/*.svg
 !/lib/
 !/lib/**/
 !/lib/**/*.js

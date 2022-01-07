@@ -5,3 +5,4 @@ L {{90+x}} {{30+y}}
 L {{90+x}} {{90+y}}
 L {{10+x}} {{90+y}}
 L {{10+x}} {{10+y}}" [attr.fill]="'yellow'" (click)="clk()"/>
+<svg:line attr.x1="{{10+x}}" attr.y1="{{90+y}}" attr.x2="{{70+x}}" attr.y2="{{30+y}}" [attr.stroke]="'black'"/>

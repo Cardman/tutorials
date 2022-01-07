@@ -25,14 +25,14 @@ fill="red"/>
 <br/>
 <svg width="200" height="200">
 <rect  x="0" y="0" width="200" height="200" fill="blue" (click)="onClick(0)"/>
-<g svgpath2 [nb]="1" (newItemEvent)="onClick($event)"></g>
-<g svgpath4 [nb]="2" (newItemEvent)="onClick($event)"></g>
-<g svgpath2 [nb]="3" [x]="100" (newItemEvent)="onClick($event)"></g>
-<g svgpath4 [nb]="4" [x]="100" (newItemEvent)="onClick($event)"></g>
-<g svgpath2 [nb]="5" [y]="100" (newItemEvent)="onClick($event)"></g>
-<g svgpath4 [nb]="6" [y]="100" (newItemEvent)="onClick($event)"></g>
-<g svgpath2 [nb]="7" [x]="100" [y]="100" (newItemEvent)="onClick($event)"></g>
-<g svgpath4 [nb]="8" [x]="100" [y]="100" (newItemEvent)="onClick($event)"></g>
+<g svgpath2 [nb]="1" (newItemEvent)="onClick($event)" [attr.transform]="'rotate(-90 50 50)'"></g>
+<g svgpath4 [nb]="2" (newItemEvent)="onClick($event)" [attr.transform]="'rotate(-90 50 50)'"></g>
+<g svgpath2 [nb]="3" [x]="100" (newItemEvent)="onClick($event)" [attr.transform]="'rotate(-90 150 50)'"></g>
+<g svgpath4 [nb]="4" [x]="100" (newItemEvent)="onClick($event)" [attr.transform]="'rotate(-90 150 50)'"></g>
+<g svgpath2 [nb]="5" [y]="100" (newItemEvent)="onClick($event)" [attr.transform]="'rotate(-90 50 150)'"></g>
+<g svgpath4 [nb]="6" [y]="100" (newItemEvent)="onClick($event)" [attr.transform]="'rotate(-90 50 150)'"></g>
+<g svgpath2 [nb]="7" [x]="100" [y]="100" (newItemEvent)="onClick($event)" [attr.transform]="'rotate(-90 150 150)'"></g>
+<g svgpath4 [nb]="8" [x]="100" [y]="100" (newItemEvent)="onClick($event)" [attr.transform]="'rotate(-90 150 150)'"></g>
 </svg>
 <br/>
 {{tempo}}

@@ -8,6 +8,8 @@ import { RightKeyComponent } from './right-key/right-key.component';
 import { CenterKeyComponent } from './center-key/center-key.component';
 import { BlackKeyComponent } from './black-key/black-key.component';
 import { UpperKeyComponent } from './upper-key/upper-key.component';
+import { LinesComponent } from './lines/lines.component';
+import { PartComponent } from './part/part.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { UpperKeyComponent } from './upper-key/upper-key.component';
     CenterKeyComponent,
     BlackKeyComponent,
     UpperKeyComponent,
+    LinesComponent,
+    PartComponent,
     AppComponent
   ],
   imports: [

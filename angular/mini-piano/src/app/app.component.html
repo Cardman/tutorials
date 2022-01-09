@@ -1,3 +1,5 @@
+<part [heightNote]="heightNote" [off]="off" [diese]="diese==='#'" [nbDash]="nbDash"></part>
+<br/>
 <svg width="580" height="100">
 <svg *ngFor="let t of [].constructor(4);let index = index">
 <g left_key [nb]="1+12*index" [x]="0+140*index" (newItemEvent)="onClick($event)"></g>
@@ -16,4 +18,5 @@
 <g upper_key [nb]="49" [x]="560" (newItemEvent)="onClick($event)"></g>
 </svg>
 <br/>
-{{state}}
+{{state}}<br/>
+{{octave}}

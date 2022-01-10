@@ -21,13 +21,21 @@ export class AppComponent {
 	this.octave = NoteUtils.octave($event);
   }
   saveLast():void{
-    let res = AppComponent.svgNote(this.state);
+    let lines = `<svg>`;
+	for (let i = 0; i < 5; i++){
+		lines+=`<path d="M 0 ${i*16+64} L 40 ${i*16+64}" stroke="black" fill="transparent"/>`;
+	}
+	for (let i = 0; i < 5; i++){
+		lines+=`<path d="M 0 ${i*16+192} L 40 ${i*16+192}" stroke="black" fill="transparent"/>`;
+	}
+    lines += `</svg>`;
+	let res = AppComponent.svgNote(this.state,lines);
 	if (res){
 	  var blob = new Blob([`<svg xmlns="http://www.w3.org/2000/svg" xmlns:_xmlns="xmlns">`+res+`</svg>`], {type: "text/plain;charset=utf-8"});
 	  saveAs(blob,this.state+'.svg');
 	}
   }
-  static svgNote(note:number):string{
+  static svgNote(note:number,lines:string):string{
 	if (note < 0){
 		return "";
 	}
@@ -36,6 +44,7 @@ export class AppComponent {
 	let nbDash = NoteUtils.ndDash(note);
 	let off = NoteUtils.isDiese(note)?10:0;
 	let svgFile = `<svg width="40" height="320">`;
+	svgFile += lines;
 	if (diese){
 		svgFile += `<text x="0" y="${heightNote}">#</text>`;
 	}

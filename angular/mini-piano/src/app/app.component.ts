@@ -12,6 +12,7 @@ export class AppComponent {
   state = -1;
   octave = -1;
   tempo=1.0;
+  saveLines:boolean = false;
   onClick($event:number){
     let audio = new Audio();
 	audio.src = "../assets/sounds/"+($event+15)+".wav";
@@ -21,14 +22,18 @@ export class AppComponent {
 	this.octave = NoteUtils.octave($event);
   }
   saveLast():void{
-    let lines = `<svg>`;
-	for (let i = 0; i < 5; i++){
-		lines+=`<path d="M 0 ${i*16+64} L 40 ${i*16+64}" stroke="black" fill="transparent"/>`;
+    let lines = '';
+	if (this.saveLines){
+		lines += `<svg>`;
+		for (let i = 0; i < 5; i++){
+			lines+=`<path d="M 0 ${i*16+64} L 40 ${i*16+64}" stroke="black" fill="transparent"/>`;
+		}
+		for (let i = 0; i < 5; i++){
+			lines+=`<path d="M 0 ${i*16+192} L 40 ${i*16+192}" stroke="black" fill="transparent"/>`;
+		}
+		lines += `</svg>`;
+	
 	}
-	for (let i = 0; i < 5; i++){
-		lines+=`<path d="M 0 ${i*16+192} L 40 ${i*16+192}" stroke="black" fill="transparent"/>`;
-	}
-    lines += `</svg>`;
 	let res = AppComponent.svgNote(this.state,lines);
 	if (res){
 	  var blob = new Blob([`<svg xmlns="http://www.w3.org/2000/svg" xmlns:_xmlns="xmlns">`+res+`</svg>`], {type: "text/plain;charset=utf-8"});

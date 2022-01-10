@@ -1,7 +1,7 @@
 <svg width="512" height="320">
 <g lines [y]="64"></g>
 <g lines [y]="192"></g>
-<g *ngIf="heightNote&gt;-1">
+<g *ngIf="note&gt;-1">
 <text *ngIf="diese" [attr.x]="0" [attr.y]="heightNote">#</text>
 <svg *ngIf="nbDash===1">
 <svg:path attr.d="M {{2+off}} {{heightNote}} L {{28+off}} {{heightNote}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>

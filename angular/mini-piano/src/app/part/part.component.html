@@ -1,25 +1,25 @@
 <svg [attr.width]="NoteUtils.WIDTH" [attr.height]="320">
-<g lines [y]="64"></g>
-<g lines [y]="192"></g>
+<g lines [y]="NoteUtils.OFFSET_UPPER_LINES"></g>
+<g lines [y]="NoteUtils.OFFSET_LOWER_LINES"></g>
 <g *ngIf="note&gt;-1">
 <text *ngIf="diese" [attr.x]="0" [attr.y]="heightNote">#</text>
-<svg *ngIf="nbDash===1">
-<svg:path attr.d="M {{2+off}} {{heightNote}} L {{28+off}} {{heightNote}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
+<svg *ngIf="nbDash===NoteUtils.ONE_DASH">
+<svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+off}} {{heightNote}} L {{NoteUtils.NOTE_RIGHT_ROW+off}} {{heightNote}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
 </svg>
-<svg *ngIf="nbDash===1.5">
-<svg:path attr.d="M {{2+off}} {{heightNote+8}} L {{28+off}} {{heightNote+8}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
+<svg *ngIf="nbDash===NoteUtils.ONE_HALF_DASH_UPP">
+<svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+off}} {{heightNote+NoteUtils.RADIUS_NOTE}} L {{NoteUtils.NOTE_RIGHT_ROW+off}} {{heightNote+NoteUtils.RADIUS_NOTE}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
 </svg>
-<svg *ngIf="nbDash===-1.5">
-<svg:path attr.d="M {{2+off}} {{heightNote-8}} L {{28+off}} {{heightNote-8}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
+<svg *ngIf="nbDash===NoteUtils.ONE_HALF_DASH_LOW">
+<svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+off}} {{heightNote-NoteUtils.RADIUS_NOTE}} L {{NoteUtils.NOTE_RIGHT_ROW+off}} {{heightNote-NoteUtils.RADIUS_NOTE}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
 </svg>
-<svg *ngIf="nbDash===-2">
-<svg:path attr.d="M {{2+off}} {{heightNote}} L {{28+off}} {{heightNote}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
-<svg:path attr.d="M {{2+off}} {{heightNote-16}} L {{28+off}} {{heightNote-16}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
+<svg *ngIf="nbDash===NoteUtils.TWO_DASHES_LOW">
+<svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+off}} {{heightNote}} L {{NoteUtils.NOTE_RIGHT_ROW+off}} {{heightNote}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
+<svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+off}} {{heightNote-NoteUtils.LINE_SPACE}} L {{NoteUtils.NOTE_RIGHT_ROW+off}} {{heightNote-NoteUtils.LINE_SPACE}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
 </svg>
-<svg *ngIf="nbDash===2">
-<svg:path attr.d="M {{2+off}} {{heightNote}} L {{28+off}} {{heightNote}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
-<svg:path attr.d="M {{2+off}} {{heightNote+16}} L {{28+off}} {{heightNote+16}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
+<svg *ngIf="nbDash===NoteUtils.TWO_DASHES_UPP">
+<svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+off}} {{heightNote}} L {{NoteUtils.NOTE_RIGHT_ROW+off}} {{heightNote}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
+<svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+off}} {{heightNote+NoteUtils.LINE_SPACE}} L {{NoteUtils.NOTE_RIGHT_ROW+off}} {{heightNote+NoteUtils.LINE_SPACE}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
 </svg>
-<circle [attr.cx]="12+off" [attr.cy]="heightNote" r="8"/>
-<svg:path attr.d="M {{20+off}} {{heightNote}} L {{20+off}} {{heightNote-32}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/></g>
+<circle [attr.cx]="NoteUtils.CENTER_NOTE+off" [attr.cy]="heightNote" [attr.r]="NoteUtils.RADIUS_NOTE"/>
+<svg:path attr.d="M {{NoteUtils.VERT_BAR+off}} {{heightNote}} L {{NoteUtils.VERT_BAR+off}} {{heightNote-32}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/></g>
 </svg>

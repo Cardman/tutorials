@@ -2,18 +2,18 @@
 <br/>
 <svg width="580" height="100">
 <svg *ngFor="let t of [].constructor(4);let index = index">
-<g left_key [nb]="1+12*index" [x]="0+140*index" (newItemEvent)="onClick($event)"></g>
-<g black_key [nb]="2+12*index" [x]="0+140*index" (newItemEvent)="onClick($event)"></g>
-<g center_key [nb]="3+12*index" [x]="20+140*index" (newItemEvent)="onClick($event)"></g>
-<g black_key [nb]="4+12*index" [x]="20+140*index" (newItemEvent)="onClick($event)"></g>
-<g right_key [nb]="5+12*index" [x]="40+140*index" (newItemEvent)="onClick($event)"></g>
-<g left_key [nb]="6+12*index" [x]="60+140*index" (newItemEvent)="onClick($event)"></g>
-<g black_key [nb]="7+12*index" [x]="60+140*index"(newItemEvent)="onClick($event)"></g>
-<g center_key [nb]="8+12*index" [x]="80+140*index" (newItemEvent)="onClick($event)"></g>
-<g black_key [nb]="9+12*index" [x]="80+140*index" (newItemEvent)="onClick($event)"></g>
-<g center_key [nb]="10+12*index" [x]="100+140*index" (newItemEvent)="onClick($event)"></g>
-<g black_key [nb]="11+12*index" [x]="100+140*index" (newItemEvent)="onClick($event)"></g>
-<g right_key [nb]="12+12*index" [x]="120+140*index" (newItemEvent)="onClick($event)"></g>
+<g left_key [nb]="NoteUtils.REGULS[0]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="0+140*index" (newItemEvent)="onClick($event)"></g>
+<g black_key [nb]="NoteUtils.DIESES[0]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="0+140*index" (newItemEvent)="onClick($event)"></g>
+<g center_key [nb]="NoteUtils.REGULS[1]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="20+140*index" (newItemEvent)="onClick($event)"></g>
+<g black_key [nb]="NoteUtils.DIESES[1]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="20+140*index" (newItemEvent)="onClick($event)"></g>
+<g right_key [nb]="NoteUtils.REGULS[2]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="40+140*index" (newItemEvent)="onClick($event)"></g>
+<g left_key [nb]="NoteUtils.REGULS[3]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="60+140*index" (newItemEvent)="onClick($event)"></g>
+<g black_key [nb]="NoteUtils.DIESES[2]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="60+140*index"(newItemEvent)="onClick($event)"></g>
+<g center_key [nb]="NoteUtils.REGULS[4]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="80+140*index" (newItemEvent)="onClick($event)"></g>
+<g black_key [nb]="NoteUtils.DIESES[3]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="80+140*index" (newItemEvent)="onClick($event)"></g>
+<g center_key [nb]="NoteUtils.REGULS[5]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="100+140*index" (newItemEvent)="onClick($event)"></g>
+<g black_key [nb]="NoteUtils.DIESES[4]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="100+140*index" (newItemEvent)="onClick($event)"></g>
+<g right_key [nb]="NoteUtils.REGULS[6]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="120+140*index" (newItemEvent)="onClick($event)"></g>
 </svg>
 <g upper_key [nb]="49" [x]="560" (newItemEvent)="onClick($event)"></g>
 </svg>

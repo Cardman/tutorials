@@ -1,5 +1,7 @@
 export class NoteUtils{
-    static readonly NOTES_PER_OCTAVE = 12;
+    static readonly REGULS = [1, 3, 5, 6, 8, 10, 12];
+    static readonly DIESES = [2, 4, 7, 9, 11];
+    static readonly NOTES_PER_OCTAVE = NoteUtils.REGULS.length + NoteUtils.DIESES.length;
     static readonly LEFT = 0;
     static readonly RIGHT = 512;
     static readonly WIDTH = 512;
@@ -21,8 +23,6 @@ export class NoteUtils{
 	static readonly ONE_HALF_DASH_UPP = 1.5;
 	static readonly TWO_DASHES_LOW = -2.0;
 	static readonly TWO_DASHES_UPP = 2.0;
-    static readonly REGULS = [1, 3, 5, 6, 8, 10, 12];
-    static readonly DIESES = [2, 4, 7, 9, 11];
 	static readonly DO_POS = 1 + 2 * NoteUtils.NOTES_PER_OCTAVE;
 	static readonly DO_DIESE_POS = 1 + NoteUtils.DO_POS;
 	static readonly LOW_DO_POS = 1;
@@ -30,14 +30,14 @@ export class NoteUtils{
 	static readonly LOW_RE_POS = NoteUtils.LOW_DO_DIESE_POS+1;
 	static readonly LOW_RE_DIESE_POS = 1+NoteUtils.LOW_RE_POS;
 	static readonly LOW_MI_POS = NoteUtils.LOW_RE_DIESE_POS+1;
-	static readonly UPP_LA_POS = 10 + 3 * NoteUtils.NOTES_PER_OCTAVE;
+	static readonly UPP_LA_POS = NoteUtils.DO_POS + NoteUtils.NOTES_PER_OCTAVE + 9;
 	static readonly UPP_LA_DIESE_POS = 1 + NoteUtils.UPP_LA_POS;
 	static readonly UPP_SI_POS = NoteUtils.UPP_LA_DIESE_POS+1;
 	static readonly UPP_DO_POS = NoteUtils.UPP_SI_POS+1;
     static height(note:number):number{
         let diff = NoteUtils.isDiese(note)?-1:0;
         let doUppLowPos = NoteUtils.posNoDiese(NoteUtils.DO_POS);
-        let siLowUpPos = NoteUtils.posNoDiese(2 * NoteUtils.NOTES_PER_OCTAVE);
+        let siLowUpPos = NoteUtils.posNoDiese(NoteUtils.DO_POS-1);
         let adj = NoteUtils.posNoDiese(note);
         if (adj >= doUppLowPos) {
             return NoteUtils.OFFSET_DO_UPP_LOW - (adj - doUppLowPos) * NoteUtils.RADIUS_NOTE;

@@ -12,6 +12,7 @@ import { UpperKeyComponent } from './upper-key/upper-key.component';
 import { LineComponent } from './line/line.component';
 import { LinesComponent } from './lines/lines.component';
 import { PartComponent } from './part/part.component';
+import { NoteComponent } from './note/note.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PartComponent } from './part/part.component';
     LineComponent,
     LinesComponent,
     PartComponent,
+    NoteComponent,
     AppComponent
   ],
   imports: [

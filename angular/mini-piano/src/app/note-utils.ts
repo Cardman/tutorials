@@ -27,6 +27,7 @@ export class NoteUtils{
     static readonly VERT_BAR = NoteUtils.CENTER_NOTE+NoteUtils.RADIUS_NOTE;
     static readonly NOTE_LEFT_ROW = NoteUtils.CENTER_NOTE-NoteUtils.RADIUS_NOTE-2;
     static readonly NOTE_RIGHT_ROW = NoteUtils.CENTER_NOTE+NoteUtils.RADIUS_NOTE+8;
+    static readonly NOTE_SPACE = NoteUtils.NOTE_RIGHT_ROW+4;
 	static readonly NO_DASH = 0.0;
 	static readonly ONE_DASH = 1.0;
 	static readonly ONE_HALF_DASH_LOW = -1.5;

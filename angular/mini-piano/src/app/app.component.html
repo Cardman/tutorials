@@ -1,6 +1,6 @@
-<part [note]="state"></part>
+<part [notesOnScreen]="notesOnScreen"></part>
 <br/>
-<svg width="NoteUtils.WHITE_KEY_WIDTH*((NoteUtils.MAX_OCT-NoteUtils.MIN_OCT)*NoteUtils.REGULS.length+1)" height="NoteUtils.WHITE_KEY_HEIGHT">
+<svg [attr.width]="NoteUtils.WHITE_KEY_WIDTH*((NoteUtils.MAX_OCT-NoteUtils.MIN_OCT)*NoteUtils.REGULS.length+1)" [attr.height]="NoteUtils.WHITE_KEY_HEIGHT">
 <svg *ngFor="let t of [].constructor(NoteUtils.MAX_OCT-NoteUtils.MIN_OCT);let index = index">
 <g left_key [nb]="NoteUtils.REGULS[0]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="NoteUtils.WHITE_KEY_WIDTH*NoteUtils.REGULS.length*index" (newItemEvent)="onClick($event)"></g>
 <g black_key [nb]="NoteUtils.DIESES[0]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="NoteUtils.WHITE_KEY_WIDTH*NoteUtils.REGULS.length*index" (newItemEvent)="onClick($event)"></g>
@@ -20,6 +20,7 @@
 <br/>
 <input class="form-control" type="checkbox" [(ngModel)]="saveLines"/>__<br/>
 <svg class="link" (click)="saveLast()" width="50" height="16"><text x="0" y="16">SVG</text></svg><br/>
+<svg class="link" (click)="res()" width="50" height="16"><text x="0" y="16">=&gt;0</text></svg><br/>
 {{state}}<br/>
 {{octave}}<br/>
 {{tempo}}

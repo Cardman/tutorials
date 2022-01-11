@@ -7,10 +7,12 @@ export class NoteUtils{
     static readonly WIDTH = 512;
     static readonly LINES_NB = 5;
     static readonly RADIUS_NOTE = 8;
+    static readonly OFF_NOTE = 10;
     static readonly LINE_SPACE = 2 * NoteUtils.RADIUS_NOTE;
     static readonly HEIGHT_LINES = (NoteUtils.LINES_NB - 1) * NoteUtils.LINE_SPACE;
     static readonly OFFSET_UPPER_LINES = 64;
     static readonly OFFSET_LOWER_LINES = NoteUtils.OFFSET_UPPER_LINES + NoteUtils.HEIGHT_LINES + 64;
+    static readonly BOTTOM_LOWER_LINES = NoteUtils.OFFSET_LOWER_LINES + NoteUtils.HEIGHT_LINES;
     static readonly OFFSET_DO_UPP_LOW = NoteUtils.OFFSET_UPPER_LINES + NoteUtils.HEIGHT_LINES + NoteUtils.LINE_SPACE;
     static readonly OFFSET_SI_LOW_UPP = NoteUtils.OFFSET_LOWER_LINES - NoteUtils.RADIUS_NOTE;
     static readonly CENTER_NOTE = 4+NoteUtils.RADIUS_NOTE;
@@ -34,6 +36,8 @@ export class NoteUtils{
 	static readonly UPP_LA_DIESE_POS = 1 + NoteUtils.UPP_LA_POS;
 	static readonly UPP_SI_POS = NoteUtils.UPP_LA_DIESE_POS+1;
 	static readonly UPP_DO_POS = NoteUtils.UPP_SI_POS+1;
+	static readonly MIN_OCT = 2;
+	static readonly MAX_OCT = 6;
     static height(note:number):number{
         let diff = NoteUtils.isDiese(note)?-1:0;
         let doUppLowPos = NoteUtils.posNoDiese(NoteUtils.DO_POS);
@@ -46,7 +50,7 @@ export class NoteUtils{
     }
     static posNoDiese(note:number):number{
         let nbDieses = 0;
-        for (let i = 1; i <= note; i++){
+        for (let i = NoteUtils.LOW_DO_POS; i <= note; i++){
             if (NoteUtils.isDiese(i)){
                 nbDieses++;
             }
@@ -54,16 +58,16 @@ export class NoteUtils{
         return note - nbDieses;
     }
     static isDiese(note:number):boolean{
-        let oct = (note-1) % NoteUtils.NOTES_PER_OCTAVE + 1;
+        let oct = (note-NoteUtils.LOW_DO_POS) % NoteUtils.NOTES_PER_OCTAVE + NoteUtils.LOW_DO_POS;
         return NoteUtils.DIESES.indexOf(oct) > -1;
     }
     static octave(note:number):number{
-        for (let o = 2; o < 6; o++){
-            if (note <= NoteUtils.NOTES_PER_OCTAVE * (o - 1)){
+        for (let o = NoteUtils.MIN_OCT; o < NoteUtils.MAX_OCT; o++){
+            if (note < NoteUtils.LOW_DO_POS + NoteUtils.NOTES_PER_OCTAVE * (o - 1)){
                 return o;
             }
         }
-        return 6;
+        return NoteUtils.MAX_OCT;
     }
     static ndDash(note:number):number{
         if (note > NoteUtils.LOW_MI_POS && note < NoteUtils.UPP_LA_POS && note !== NoteUtils.DO_POS && note !== NoteUtils.DO_DIESE_POS){

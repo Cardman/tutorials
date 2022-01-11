@@ -1,6 +1,7 @@
 <svg [attr.width]="NoteUtils.WIDTH" [attr.height]="320">
 <g lines [y]="NoteUtils.OFFSET_UPPER_LINES"></g>
 <g lines [y]="NoteUtils.OFFSET_LOWER_LINES"></g>
+<svg:path attr.d="M {{NoteUtils.LEFT}} {{NoteUtils.OFFSET_UPPER_LINES}} L {{NoteUtils.LEFT}} {{NoteUtils.BOTTOM_LOWER_LINES}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
 <g *ngIf="note&gt;-1">
 <text *ngIf="diese" [attr.x]="0" [attr.y]="heightNote">#</text>
 <svg *ngIf="nbDash===NoteUtils.ONE_DASH">

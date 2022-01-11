@@ -1,10 +1,10 @@
 export class NoteUtils{
-    static LEFT = 0;
-    static RIGHT = 512;
-    static WIDTH = 512;
-    static LINES_NB = 5;
-    static RADIUS_NOTE = 8;
-    static LINE_SPACE = 2 * NoteUtils.RADIUS_NOTE;
+    static readonly LEFT = 0;
+    static readonly RIGHT = 512;
+    static readonly WIDTH = 512;
+    static readonly LINES_NB = 5;
+    static readonly RADIUS_NOTE = 8;
+    static readonly LINE_SPACE = 2 * NoteUtils.RADIUS_NOTE;
     static height(note:number):number{
         const doUppLow = 144;
         const siLowUpp = 184;

@@ -1,5 +1,5 @@
 import { Component,HostListener } from '@angular/core';
-import { NoteUtils } from './note-utils';
+import { Resources } from './resources';
 import { saveAs } from 'file-saver';
 
 @Component({
@@ -7,7 +7,7 @@ import { saveAs } from 'file-saver';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent extends Resources {
   title = 'mini-piano';
   state = -1;
   octave = -1;
@@ -19,41 +19,41 @@ export class AppComponent {
 	audio.load();
 	audio.play();
 	this.state = $event;
-	this.octave = NoteUtils.octave($event);
+	this.octave = this.NoteUtils.octave($event);
   }
   saveLast():void{
     let lines = '';
 	if (this.saveLines){
 		lines += `<svg>`;
 		for (let i = 0; i < 5; i++){
-			lines+=`<path d="M 0 ${AppComponent.boundUpp(i)} L 40 ${AppComponent.boundUpp(i)}" stroke="black" fill="transparent"/>`;
+			lines+=`<path d="M 0 ${this.boundUpp(i)} L 40 ${this.boundUpp(i)}" stroke="black" fill="transparent"/>`;
 		}
 		for (let i = 0; i < 5; i++){
-			lines+=`<path d="M 0 ${AppComponent.boundLow(i)} L 40 ${AppComponent.boundLow(i)}" stroke="black" fill="transparent"/>`;
+			lines+=`<path d="M 0 ${this.boundLow(i)} L 40 ${this.boundLow(i)}" stroke="black" fill="transparent"/>`;
 		}
 		lines += `</svg>`;
 	
 	}
-	let res = AppComponent.svgNote(this.state,lines);
+	let res = this.svgNote(this.state,lines);
 	if (res){
 	  var blob = new Blob([`<svg xmlns="http://www.w3.org/2000/svg" xmlns:_xmlns="xmlns">`+res+`</svg>`], {type: "text/plain;charset=utf-8"});
 	  saveAs(blob,this.state+'.svg');
 	}
   }
-  static boundUpp(i:number):number{
-     return i*NoteUtils.LINE_SPACE+64;
+  boundUpp(i:number):number{
+     return i*this.NoteUtils.LINE_SPACE+64;
   }
-  static boundLow(i:number):number{
-     return i*NoteUtils.LINE_SPACE+192;
+  boundLow(i:number):number{
+     return i*this.NoteUtils.LINE_SPACE+192;
   }
-  static svgNote(note:number,lines:string):string{
+  svgNote(note:number,lines:string):string{
 	if (note < 0){
 		return "";
 	}
-	let diese = NoteUtils.isDiese(note);
-	let heightNote = NoteUtils.height(note);
-	let nbDash = NoteUtils.ndDash(note);
-	let off = NoteUtils.isDiese(note)?10:0;
+	let diese = this.NoteUtils.isDiese(note);
+	let heightNote = this.NoteUtils.height(note);
+	let nbDash = this.NoteUtils.ndDash(note);
+	let off = this.NoteUtils.isDiese(note)?10:0;
 	let svgFile = `<svg width="40" height="320">`;
 	svgFile += lines;
 	if (diese){

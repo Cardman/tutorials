@@ -1,24 +1,24 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { NoteUtils } from '../note-utils';
+import { Resources } from '../resources';
 
 @Component({
   selector: 'part',
   templateUrl: './part.component.html',
   styleUrls: []
 })
-export class PartComponent {
+export class PartComponent extends Resources {
   @Input() note=-1;
-  public NoteUtils = NoteUtils;
   get heightNote():number{
-    return NoteUtils.height(this.note);
+    return this.NoteUtils.height(this.note);
   }
   get diese():boolean{
-    return NoteUtils.isDiese(this.note);
+    return this.NoteUtils.isDiese(this.note);
   }
   get off():number{
-    return NoteUtils.isDiese(this.note)?10:0;
+    return this.NoteUtils.isDiese(this.note)?10:0;
   }
   get nbDash():number{
-    return NoteUtils.ndDash(this.note);
+    return this.NoteUtils.ndDash(this.note);
   }
 }

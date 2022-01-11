@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NoteUtils } from '../note-utils';
+import { Resources } from '../resources';
 
 @Component({
   selector: '[lines]',
   templateUrl: './lines.component.svg',
   styleUrls: []
 })
-export class LinesComponent {
+export class LinesComponent extends Resources {
   @Input() y=0;
-  public NoteUtils = NoteUtils;
 
 }

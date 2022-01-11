@@ -1,17 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NoteUtils } from '../note-utils';
+import { Resources } from '../resources';
 
 @Component({
   selector: '[line]',
   templateUrl: './line.component.svg',
   styleUrls: []
 })
-export class LineComponent {
+export class LineComponent extends Resources{
   @Input() l=0;
   @Input() y=0;
-  public NoteUtils = NoteUtils;
 
   get coords():number{
-    return NoteUtils.LINE_SPACE*this.l+this.y;
+    return this.NoteUtils.LINE_SPACE*this.l+this.y;
   }
 }

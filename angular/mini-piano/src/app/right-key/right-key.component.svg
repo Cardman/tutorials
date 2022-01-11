@@ -1,7 +1,7 @@
-<svg:path attr.d="M {{5+x}} {{y}}
-L {{20+x}} {{y}}
-L {{20+x}} {{100+y}}
-L {{x}} {{100+y}}
-L {{x}} {{60+y}}
-L {{5+x}} {{60+y}}
-L {{5+x}} {{y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'" (click)="clk()"/>
+<svg:path attr.d="M {{NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{y}}
+L {{NoteUtils.WHITE_KEY_WIDTH+x}} {{y}}
+L {{NoteUtils.WHITE_KEY_WIDTH+x}} {{NoteUtils.WHITE_KEY_HEIGHT+y}}
+L {{x}} {{NoteUtils.WHITE_KEY_HEIGHT+y}}
+L {{x}} {{NoteUtils.BLACK_KEY_HEIGHT+y}}
+L {{NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{NoteUtils.BLACK_KEY_HEIGHT+y}}
+L {{NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'" (click)="clk()"/>

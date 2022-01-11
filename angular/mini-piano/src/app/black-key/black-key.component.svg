@@ -1,5 +1,5 @@
-<svg:path attr.d="M {{15+x}} {{y}}
-L {{25+x}} {{y}}
-L {{25+x}} {{60+y}}
-L {{15+x}} {{60+y}}
-L {{15+x}} {{y}}" [attr.fill]="'black'" (click)="clk()"/>
+<svg:path attr.d="M {{NoteUtils.WHITE_KEY_WIDTH-NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{y}}
+L {{NoteUtils.WHITE_KEY_WIDTH+NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{y}}
+L {{NoteUtils.WHITE_KEY_WIDTH+NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{NoteUtils.BLACK_KEY_HEIGHT+y}}
+L {{NoteUtils.WHITE_KEY_WIDTH-NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{NoteUtils.BLACK_KEY_HEIGHT+y}}
+L {{NoteUtils.WHITE_KEY_WIDTH-NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{y}}" [attr.fill]="'black'" (click)="clk()"/>

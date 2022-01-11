@@ -1,5 +1,5 @@
 <svg:path attr.d="M {{x}} {{y}}
-L {{20+x}} {{y}}
-L {{20+x}} {{100+y}}
-L {{x}} {{100+y}}
+L {{NoteUtils.WHITE_KEY_WIDTH+x}} {{y}}
+L {{NoteUtils.WHITE_KEY_WIDTH+x}} {{NoteUtils.WHITE_KEY_HEIGHT+y}}
+L {{x}} {{NoteUtils.WHITE_KEY_HEIGHT+y}}
 L {{x}} {{y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'" (click)="clk()"/>

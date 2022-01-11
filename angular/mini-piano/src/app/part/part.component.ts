@@ -7,7 +7,7 @@ import { Resources } from '../resources';
   styleUrls: []
 })
 export class PartComponent extends Resources {
-  @Input() note=-1;
+  @Input() note=this.NoteUtils.NO_NOTE;
   get heightNote():number{
     return this.NoteUtils.height(this.note);
   }
@@ -15,7 +15,7 @@ export class PartComponent extends Resources {
     return this.NoteUtils.isDiese(this.note);
   }
   get off():number{
-    return this.NoteUtils.isDiese(this.note)?10:0;
+    return this.NoteUtils.isDiese(this.note)?this.NoteUtils.OFF_NOTE:this.NoteUtils.OFF_DIESE_NOTE;
   }
   get nbDash():number{
     return this.NoteUtils.ndDash(this.note);

@@ -23,9 +23,20 @@ export class NoteUtils{
 	static readonly TWO_DASHES_UPP = 2.0;
     static readonly REGULS = [1, 3, 5, 6, 8, 10, 12];
     static readonly DIESES = [2, 4, 7, 9, 11];
+	static readonly DO_POS = 1 + 2 * NoteUtils.NOTES_PER_OCTAVE;
+	static readonly DO_DIESE_POS = 1 + NoteUtils.DO_POS;
+	static readonly LOW_DO_POS = 1;
+	static readonly LOW_DO_DIESE_POS = 1+NoteUtils.LOW_DO_POS;
+	static readonly LOW_RE_POS = NoteUtils.LOW_DO_DIESE_POS+1;
+	static readonly LOW_RE_DIESE_POS = 1+NoteUtils.LOW_RE_POS;
+	static readonly LOW_MI_POS = NoteUtils.LOW_RE_DIESE_POS+1;
+	static readonly UPP_LA_POS = 10 + 3 * NoteUtils.NOTES_PER_OCTAVE;
+	static readonly UPP_LA_DIESE_POS = 1 + NoteUtils.UPP_LA_POS;
+	static readonly UPP_SI_POS = NoteUtils.UPP_LA_DIESE_POS+1;
+	static readonly UPP_DO_POS = NoteUtils.UPP_SI_POS+1;
     static height(note:number):number{
         let diff = NoteUtils.isDiese(note)?-1:0;
-        let doUppLowPos = NoteUtils.posNoDiese(1 + 2 * NoteUtils.NOTES_PER_OCTAVE);
+        let doUppLowPos = NoteUtils.posNoDiese(NoteUtils.DO_POS);
         let siLowUpPos = NoteUtils.posNoDiese(2 * NoteUtils.NOTES_PER_OCTAVE);
         let adj = NoteUtils.posNoDiese(note);
         if (adj >= doUppLowPos) {
@@ -55,19 +66,19 @@ export class NoteUtils{
         return 6;
     }
     static ndDash(note:number):number{
-        if (note >= 6 && note <= 45 && note !== 25 && note !== 26){
+        if (note > NoteUtils.LOW_MI_POS && note < NoteUtils.UPP_LA_POS && note !== NoteUtils.DO_POS && note !== NoteUtils.DO_DIESE_POS){
             return NoteUtils.NO_DASH;
         }
-        if (note === 5 || note === 25 || note === 26 || note == 46 || note == 47){
+        if (note === NoteUtils.LOW_MI_POS || note === NoteUtils.DO_POS || note === NoteUtils.DO_DIESE_POS || note == NoteUtils.UPP_LA_POS || note == NoteUtils.UPP_LA_DIESE_POS){
             return NoteUtils.ONE_DASH;
         }
-        if (note === 48){
+        if (note === NoteUtils.UPP_SI_POS){
             return NoteUtils.ONE_HALF_DASH_UPP;
         }
-        if (note === 3 || note == 4){
+        if (note === NoteUtils.LOW_RE_POS || note == NoteUtils.LOW_RE_DIESE_POS){
             return NoteUtils.ONE_HALF_DASH_LOW;
         }
-        if (note === 1 || note === 2){
+        if (note === NoteUtils.LOW_DO_POS || note === NoteUtils.LOW_DO_DIESE_POS){
             return NoteUtils.TWO_DASHES_LOW;
         }
         return NoteUtils.TWO_DASHES_UPP;

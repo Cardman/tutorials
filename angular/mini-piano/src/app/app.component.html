@@ -15,7 +15,7 @@
 <g black_key [nb]="NoteUtils.DIESES[4]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="100+140*index" (newItemEvent)="onClick($event)"></g>
 <g right_key [nb]="NoteUtils.REGULS[6]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="120+140*index" (newItemEvent)="onClick($event)"></g>
 </svg>
-<g upper_key [nb]="49" [x]="560" (newItemEvent)="onClick($event)"></g>
+<g upper_key [nb]="NoteUtils.UPP_DO_POS" [x]="560" (newItemEvent)="onClick($event)"></g>
 </svg>
 <br/>
 <input class="form-control" type="checkbox" [(ngModel)]="saveLines"/>__<br/>

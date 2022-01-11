@@ -1,0 +1,1 @@
+<svg:path attr.d="M {{NoteUtils.LEFT}} {{coords}} L {{NoteUtils.RIGHT}} {{coords}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>

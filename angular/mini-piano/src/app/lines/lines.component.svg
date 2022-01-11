@@ -1,5 +1,1 @@
-<svg:path attr.d="M 0 {{y}} L 512 {{y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
-<svg:path attr.d="M 0 {{16+y}} L 512 {{16+y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
-<svg:path attr.d="M 0 {{32+y}} L 512 {{32+y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
-<svg:path attr.d="M 0 {{48+y}} L 512 {{48+y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
-<svg:path attr.d="M 0 {{64+y}} L 512 {{64+y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
+<svg line [y]="y" [l]="index" *ngFor="let t of [].constructor(NoteUtils.LINES_NB);let index = index;"/>

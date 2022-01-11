@@ -8,6 +8,7 @@ import { NoteUtils } from '../note-utils';
 })
 export class PartComponent {
   @Input() note=-1;
+  public NoteUtils = NoteUtils;
   get heightNote():number{
     return NoteUtils.height(this.note);
   }

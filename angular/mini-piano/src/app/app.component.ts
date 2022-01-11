@@ -26,10 +26,10 @@ export class AppComponent {
 	if (this.saveLines){
 		lines += `<svg>`;
 		for (let i = 0; i < 5; i++){
-			lines+=`<path d="M 0 ${i*16+64} L 40 ${i*16+64}" stroke="black" fill="transparent"/>`;
+			lines+=`<path d="M 0 ${AppComponent.boundUpp(i)} L 40 ${AppComponent.boundUpp(i)}" stroke="black" fill="transparent"/>`;
 		}
 		for (let i = 0; i < 5; i++){
-			lines+=`<path d="M 0 ${i*16+192} L 40 ${i*16+192}" stroke="black" fill="transparent"/>`;
+			lines+=`<path d="M 0 ${AppComponent.boundLow(i)} L 40 ${AppComponent.boundLow(i)}" stroke="black" fill="transparent"/>`;
 		}
 		lines += `</svg>`;
 	
@@ -39,6 +39,12 @@ export class AppComponent {
 	  var blob = new Blob([`<svg xmlns="http://www.w3.org/2000/svg" xmlns:_xmlns="xmlns">`+res+`</svg>`], {type: "text/plain;charset=utf-8"});
 	  saveAs(blob,this.state+'.svg');
 	}
+  }
+  static boundUpp(i:number):number{
+     return i*NoteUtils.LINE_SPACE+64;
+  }
+  static boundLow(i:number):number{
+     return i*NoteUtils.LINE_SPACE+192;
   }
   static svgNote(note:number,lines:string):string{
 	if (note < 0){

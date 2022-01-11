@@ -9,6 +9,7 @@ import { RightKeyComponent } from './right-key/right-key.component';
 import { CenterKeyComponent } from './center-key/center-key.component';
 import { BlackKeyComponent } from './black-key/black-key.component';
 import { UpperKeyComponent } from './upper-key/upper-key.component';
+import { LineComponent } from './line/line.component';
 import { LinesComponent } from './lines/lines.component';
 import { PartComponent } from './part/part.component';
 
@@ -19,6 +20,7 @@ import { PartComponent } from './part/part.component';
     CenterKeyComponent,
     BlackKeyComponent,
     UpperKeyComponent,
+    LineComponent,
     LinesComponent,
     PartComponent,
     AppComponent

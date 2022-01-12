@@ -14,7 +14,6 @@ export class AppComponent extends Resources {
   notesOnScreen:number[]=[];
   notesParts:number[]=[];
   tempo=1.0;
-  saveLines:boolean = false;
   onClick($event:number){
     let audio = new Audio();
 	audio.src = "../assets/sounds/"+($event+15)+".wav";
@@ -38,20 +37,17 @@ export class AppComponent extends Resources {
 	if (this.notesParts.length % 16 === 0){
 		nbRows--;
 	}
-	if (this.saveLines){
-		lines += `<svg>`;
-		for (let r = 0; r < nbRows; r++){
-			for (let i = 0; i < 5; i++){
-				lines+=`<path d="M 0 ${this.boundUpp(i)+r*320} L 512 ${this.boundUpp(i)+r*320}" stroke="black" fill="transparent"/>`;
-			}
-			for (let i = 0; i < 5; i++){
-				lines+=`<path d="M 0 ${this.boundLow(i)+r*320} L 512 ${this.boundLow(i)+r*320}" stroke="black" fill="transparent"/>`;
-			}
-			lines += `<path d="M ${this.NoteUtils.LEFT} ${this.NoteUtils.OFFSET_UPPER_LINES+r*320} L ${this.NoteUtils.LEFT} ${this.NoteUtils.BOTTOM_LOWER_LINES+r*320}" stroke="black" fill="transparent"/>`;
+	lines += `<svg>`;
+	for (let r = 0; r < nbRows; r++){
+		for (let i = 0; i < 5; i++){
+			lines+=`<path d="M 0 ${this.boundUpp(i)+r*320} L 512 ${this.boundUpp(i)+r*320}" stroke="black" fill="transparent"/>`;
 		}
-		lines += `</svg>`;
-	
+		for (let i = 0; i < 5; i++){
+			lines+=`<path d="M 0 ${this.boundLow(i)+r*320} L 512 ${this.boundLow(i)+r*320}" stroke="black" fill="transparent"/>`;
+		}
+		lines += `<path d="M ${this.NoteUtils.LEFT} ${this.NoteUtils.OFFSET_UPPER_LINES+r*320} L ${this.NoteUtils.LEFT} ${this.NoteUtils.BOTTOM_LOWER_LINES+r*320}" stroke="black" fill="transparent"/>`;
 	}
+	lines += `</svg>`;
 	let svgFile = `<svg>`;
 	svgFile += lines;
 	for (let r = 0; r < nbRows; r++){

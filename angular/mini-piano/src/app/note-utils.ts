@@ -48,7 +48,6 @@ export class NoteUtils{
 	static readonly MIN_OCT = 2;
 	static readonly MAX_OCT = 6;
     static height(note:number):number{
-        let diff = NoteUtils.isDiese(note)?-1:0;
         let doUppLowPos = NoteUtils.posNoDiese(NoteUtils.DO_POS);
         let siLowUpPos = NoteUtils.posNoDiese(NoteUtils.DO_POS-1);
         let adj = NoteUtils.posNoDiese(note);
@@ -56,6 +55,12 @@ export class NoteUtils{
             return NoteUtils.OFFSET_DO_UPP_LOW - (adj - doUppLowPos) * NoteUtils.RADIUS_NOTE;
         }
         return NoteUtils.OFFSET_SI_LOW_UPP + (siLowUpPos - adj) * NoteUtils.RADIUS_NOTE;
+    }
+    static str(note:number):string{
+        let diff = NoteUtils.isDiese(note)?-1:0;
+        let adj = NoteUtils.posNoDiese(note);
+        let oct = NoteUtils.octave(note);
+        return oct+' '+NoteUtils.posOctNoDiese(note)+(NoteUtils.isDiese(note)?'#':'');
     }
     static posNoDiese(note:number):number{
         let nbDieses = 0;
@@ -66,9 +71,21 @@ export class NoteUtils{
         }
         return note - nbDieses;
     }
+    static posOctNoDiese(note:number):number{
+        let nbNoDieses = 0;
+        for (let i = NoteUtils.LOW_DO_POS + NoteUtils.NOTES_PER_OCTAVE*(NoteUtils.octave(note) - NoteUtils.MIN_OCT); i <= note; i++){
+            if (!NoteUtils.isDiese(i)){
+                nbNoDieses++;
+            }
+        }
+        return nbNoDieses;
+    }
     static isDiese(note:number):boolean{
-        let oct = (note-NoteUtils.LOW_DO_POS) % NoteUtils.NOTES_PER_OCTAVE + NoteUtils.LOW_DO_POS;
+        let oct = NoteUtils.indexInOctave(note);
         return NoteUtils.DIESES.indexOf(oct) > -1;
+    }
+    static indexInOctave(note:number):number{
+        return (note-NoteUtils.LOW_DO_POS) % NoteUtils.NOTES_PER_OCTAVE + NoteUtils.LOW_DO_POS;
     }
     static octave(note:number):number{
         for (let o = NoteUtils.MIN_OCT; o < NoteUtils.MAX_OCT; o++){

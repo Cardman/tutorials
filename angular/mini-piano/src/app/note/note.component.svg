@@ -16,5 +16,5 @@
 <svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+pos+off}} {{heightNote}} L {{NoteUtils.NOTE_RIGHT_ROW+pos+off}} {{heightNote}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
 <svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+pos+off}} {{heightNote+NoteUtils.LINE_SPACE}} L {{NoteUtils.NOTE_RIGHT_ROW+pos+off}} {{heightNote+NoteUtils.LINE_SPACE}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>
 </svg>
-<svg:circle [attr.cx]="NoteUtils.CENTER_NOTE+pos+off" [attr.cy]="heightNote" [attr.r]="NoteUtils.RADIUS_NOTE"/>
+<svg:circle [attr.cx]="NoteUtils.CENTER_NOTE+pos+off" [attr.cy]="heightNote" [attr.r]="NoteUtils.RADIUS_NOTE" [attr.stroke]="'black'" [attr.fill]="'black'"/>
 <svg:path attr.d="M {{NoteUtils.VERT_BAR+pos+off}} {{heightNote}} L {{NoteUtils.VERT_BAR+pos+off}} {{heightNote-NoteUtils.VERT_NOTE_HEIGHT}}" [attr.stroke]="'black'" [attr.fill]="'transparent'"/>

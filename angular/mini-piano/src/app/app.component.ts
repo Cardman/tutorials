@@ -1,4 +1,4 @@
-import { Component,HostListener } from '@angular/core';
+import { Component,HostListener,OnInit } from '@angular/core';
 import { Resources } from './resources';
 import { saveAs } from 'file-saver';
 
@@ -7,13 +7,32 @@ import { saveAs } from 'file-saver';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent extends Resources {
+export class AppComponent extends Resources implements OnInit {
   title = 'mini-piano';
-  state = -1;
-  octave = -1;
+  lastNote = '';
   notesOnScreen:number[]=[];
   notesParts:number[]=[];
   tempo=1.0;
+  choice = -1;
+  enabledChoice = true;
+  diffs:number[][]=[];
+
+  ngOnInit(): void {
+    this.diffs.push(this.NoteUtils.REGULS.map(n => n + this.NoteUtils.NOTES_PER_OCTAVE*2));
+    let comp:number[]=[];
+    for (let o = 0; o < 4; o++){
+      for (let n of this.NoteUtils.REGULS.map(n => n + this.NoteUtils.NOTES_PER_OCTAVE*o)){
+        comp.push(n);
+      }
+    }
+    comp.push(this.NoteUtils.UPP_DO_POS);
+    this.diffs.push(comp);
+    let all:number[]=[];
+    for (let n = this.NoteUtils.LOW_DO_POS; n <= this.NoteUtils.UPP_DO_POS; n++){
+      all.push(n);
+    }
+    this.diffs.push(all);
+  }
   onClick($event:number){
     let audio = new Audio();
 	audio.src = "../assets/sounds/"+($event+15)+".wav";
@@ -22,14 +41,16 @@ export class AppComponent extends Resources {
 	if (this.notesOnScreen.length >= 16){
 		this.notesOnScreen = [];
 	}
-	this.state = $event;
-	this.notesOnScreen.push(this.state);
-	this.notesParts.push(this.state);
-	this.octave = this.NoteUtils.octave($event);
+	this.lastNote = this.NoteUtils.str($event);
+	this.notesOnScreen.push($event);
+	this.notesParts.push($event);
   }
   res():void{
      this.notesOnScreen = [];
      this.notesParts = [];
+  }
+  chg():void{
+     this.enabledChoice = !this.enabledChoice;
   }
   saveLast():void{
     let lines = '';
@@ -37,7 +58,6 @@ export class AppComponent extends Resources {
 	if (this.notesParts.length % 16 === 0){
 		nbRows--;
 	}
-	lines += `<svg>`;
 	for (let r = 0; r < nbRows; r++){
 		for (let i = 0; i < 5; i++){
 			lines+=`<path d="M 0 ${this.boundUpp(i)+r*320} L 512 ${this.boundUpp(i)+r*320}" stroke="black" fill="transparent"/>`;
@@ -47,7 +67,6 @@ export class AppComponent extends Resources {
 		}
 		lines += `<path d="M ${this.NoteUtils.LEFT} ${this.NoteUtils.OFFSET_UPPER_LINES+r*320} L ${this.NoteUtils.LEFT} ${this.NoteUtils.BOTTOM_LOWER_LINES+r*320}" stroke="black" fill="transparent"/>`;
 	}
-	lines += `</svg>`;
 	let svgFile = `<svg>`;
 	svgFile += lines;
 	for (let r = 0; r < nbRows; r++){

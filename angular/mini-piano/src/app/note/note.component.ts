@@ -9,6 +9,7 @@ import { Resources } from '../resources';
 export class NoteComponent extends Resources {
   @Input() pitch=this.NoteUtils.NO_NOTE;
   @Input() index=this.NoteUtils.NO_NOTE;
+  @Input() colorDom='black';
   get pos():number{
     return this.index*this.NoteUtils.NOTE_SPACE;
   }

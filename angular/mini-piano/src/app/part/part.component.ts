@@ -8,5 +8,12 @@ import { Resources } from '../resources';
 })
 export class PartComponent extends Resources {
   @Input() notesOnScreen:number[]=[];
+  @Input() notesColor:string[]=[];
 
+  domColor(ind:number):string{
+    if (ind < this.notesColor.length){
+      return this.notesColor[ind];
+    }
+    return 'black';
+  }
 }

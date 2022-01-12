@@ -47,6 +47,10 @@ export class NoteUtils{
 	static readonly UPP_DO_POS = NoteUtils.UPP_SI_POS+1;
 	static readonly MIN_OCT = 2;
 	static readonly MAX_OCT = 6;
+	static readonly NB_ANS = 16;
+    static color(expected:number,played:number):string{
+        return expected === played?'green':'red';
+    }
     static height(note:number):number{
         let doUppLowPos = NoteUtils.posNoDiese(NoteUtils.DO_POS);
         let siLowUpPos = NoteUtils.posNoDiese(NoteUtils.DO_POS-1);

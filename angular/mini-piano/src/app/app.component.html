@@ -1,4 +1,4 @@
-<part [notesOnScreen]="notesOnScreen"></part>
+<part [notesOnScreen]="notesOnScreen" [notesColor]="notesColor"></part>
 <br/>
 <svg [attr.width]="NoteUtils.WHITE_KEY_WIDTH*((NoteUtils.MAX_OCT-NoteUtils.MIN_OCT)*NoteUtils.REGULS.length+1)" [attr.height]="NoteUtils.WHITE_KEY_HEIGHT">
 <svg *ngFor="let t of [].constructor(NoteUtils.MAX_OCT-NoteUtils.MIN_OCT);let index = index">
@@ -25,5 +25,5 @@
 <svg class="link" (click)="saveLast()" width="50" height="16"><text x="0" y="16">SVG</text></svg><br/>
 <svg class="link" (click)="res()" width="50" height="16"><text x="0" y="16">=&gt;0</text></svg><br/>
 <svg class="link" (click)="chg()" width="50" height="16"><text x="0" y="16">xo</text></svg><br/>
-={{choice}}<br/>
-{{lastNote}}:{{tempo}}
+{{lastNote}}:{{tempo}}<br/>
+<span *ngIf="choice&gt;=1"><span class="correct">{{nbCorrect}}</span> - <span class="incorrect">{{nbFalse}}</span></span>

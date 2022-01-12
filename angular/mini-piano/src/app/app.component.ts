@@ -13,9 +13,14 @@ export class AppComponent extends Resources implements OnInit {
   notesOnScreen:number[]=[];
   notesParts:number[]=[];
   tempo=1.0;
-  choice = -1;
-  enabledChoice = true;
+  choice = 0;
+  enabledChoice = false;
   diffs:number[][]=[];
+  notesColor:string[]=[];
+  expNotes:number[]=[];
+  indexTestedNote = 0;
+  nbCorrect = 0;
+  nbFalse = 0;
 
   ngOnInit(): void {
     this.diffs.push(this.NoteUtils.REGULS.map(n => n + this.NoteUtils.NOTES_PER_OCTAVE*2));
@@ -34,6 +39,26 @@ export class AppComponent extends Resources implements OnInit {
     this.diffs.push(all);
   }
   onClick($event:number){
+    if (this.enabledChoice) {
+		return;
+	}
+	if (this.choice >= 1) {
+		let expNote = this.expNotes[this.indexTestedNote];
+		if (expNote === $event){
+			this.nbCorrect++;
+		} else {
+			this.nbFalse++;
+		}
+		this.lastNote = this.NoteUtils.str($event);
+		this.notesColor.push(this.NoteUtils.color(expNote,$event));
+		if (this.indexTestedNote + 1 < this.expNotes.length){
+			this.indexTestedNote++;
+			this.notesOnScreen.push(this.expNotes[this.indexTestedNote]);
+		} else {
+			this.enabledChoice = true;
+		}
+		return;
+	}
     let audio = new Audio();
 	audio.src = "../assets/sounds/"+($event+15)+".wav";
 	audio.load();
@@ -46,13 +71,37 @@ export class AppComponent extends Resources implements OnInit {
 	this.notesParts.push($event);
   }
   res():void{
+     if (this.choice >= 1) {
+		return;
+	 }
      this.notesOnScreen = [];
      this.notesParts = [];
   }
   chg():void{
+     this.notesOnScreen = [];
+     this.notesParts = [];
+	 this.notesColor=[];
      this.enabledChoice = !this.enabledChoice;
+     if (!this.enabledChoice){
+         if (this.choice >= 1) {
+			this.expNotes=[];
+			this.indexTestedNote=0;
+			this.nbCorrect=0;
+			this.nbFalse=0;
+			let lsQuiz = this.diffs[this.choice - 1];
+			for (let it = 0; it < this.NoteUtils.NB_ANS; it++){
+				let editInd = Math.floor(Math.random()*lsQuiz.length);
+				this.expNotes.push(lsQuiz[editInd]);
+			}
+			let expNote = this.expNotes[this.indexTestedNote];
+			this.notesOnScreen.push(expNote);
+		 }
+     }
   }
   saveLast():void{
+     if (this.choice >= 1) {
+		return;
+	 }
     let lines = '';
 	let nbRows = Math.floor(this.notesParts.length/16)+1;
 	if (this.notesParts.length % 16 === 0){

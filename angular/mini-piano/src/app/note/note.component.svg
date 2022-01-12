@@ -1,4 +1,4 @@
-<svg:text *ngIf="diese" [attr.x]="pos+NoteUtils.OFF_DIESE_NOTE" [attr.y]="heightNote">#</svg:text>
+<svg:text *ngIf="diese" [attr.x]="pos+NoteUtils.OFF_DIESE_NOTE" [attr.y]="heightNote" [attr.stroke]="colorDom">#</svg:text>
 <svg *ngIf="nbDash===NoteUtils.ONE_DASH">
 <svg:path attr.d="M {{NoteUtils.NOTE_LEFT_ROW+pos+off}} {{heightNote}} L {{NoteUtils.NOTE_RIGHT_ROW+pos+off}} {{heightNote}}" [attr.stroke]="colorDom" [attr.fill]="'transparent'"/>
 </svg>

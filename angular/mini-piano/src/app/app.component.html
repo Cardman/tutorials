@@ -1,6 +1,6 @@
 <part [notesOnScreen]="notesOnScreen" [notesColor]="notesColor"></part>
 <br/>
-<svg [attr.width]="NoteUtils.WHITE_KEY_WIDTH*((NoteUtils.MAX_OCT-NoteUtils.MIN_OCT)*NoteUtils.REGULS.length+1)" [attr.height]="NoteUtils.WHITE_KEY_HEIGHT">
+<svg [class]="enabledChoice?'input-disabled':'input-enabled'" [attr.width]="NoteUtils.WHITE_KEY_WIDTH*((NoteUtils.MAX_OCT-NoteUtils.MIN_OCT)*NoteUtils.REGULS.length+1)" [attr.height]="NoteUtils.WHITE_KEY_HEIGHT">
 <svg *ngFor="let t of [].constructor(NoteUtils.MAX_OCT-NoteUtils.MIN_OCT);let index = index">
 <g left_key [nb]="NoteUtils.REGULS[0]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="NoteUtils.WHITE_KEY_WIDTH*NoteUtils.REGULS.length*index" (newItemEvent)="onClick($event)"></g>
 <g black_key [nb]="NoteUtils.DIESES[0]+NoteUtils.NOTES_PER_OCTAVE*index" [x]="NoteUtils.WHITE_KEY_WIDTH*NoteUtils.REGULS.length*index" (newItemEvent)="onClick($event)"></g>
@@ -22,8 +22,8 @@
 <input class="form-control" [disabled]="!enabledChoice" type="radio" [value]="1" [(ngModel)]="choice"/>1<br/>
 <input class="form-control" [disabled]="!enabledChoice" type="radio" [value]="2" [(ngModel)]="choice"/>2<br/>
 <input class="form-control" [disabled]="!enabledChoice" type="radio" [value]="3" [(ngModel)]="choice"/>3<br/>
-<svg class="link" (click)="saveLast()" width="50" height="16"><text x="0" y="16">SVG</text></svg><br/>
-<svg class="link" (click)="res()" width="50" height="16"><text x="0" y="16">=&gt;0</text></svg><br/>
-<svg class="link" (click)="chg()" width="50" height="16"><text x="0" y="16">xo</text></svg><br/>
+<svg [class]="!playing||enabledChoice?'input-disabled':'link input-enabled'" (click)="saveLast()" width="50" height="16"><text x="0" y="16">SVG</text></svg><br/>
+<svg [class]="!playing||enabledChoice?'input-disabled':'link input-enabled'" (click)="res()" width="50" height="16"><text x="0" y="16">=&gt;0</text></svg><br/>
+<svg class="link input-enabled" (click)="chg()" width="50" height="16"><text x="0" y="16">xo</text></svg><br/>
 {{lastNote}}:{{tempo}}<br/>
 <span *ngIf="choice&gt;=1"><span class="correct">{{nbCorrect}}</span> - <span class="incorrect">{{nbFalse}}</span></span>

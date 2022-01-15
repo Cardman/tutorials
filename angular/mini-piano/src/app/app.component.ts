@@ -39,9 +39,6 @@ export class AppComponent extends Resources implements OnInit {
     this.diffs.push(all);
   }
   onClick($event:number){
-    if (this.enabledChoice) {
-		return;
-	}
 	if (this.choice >= 1) {
 		let expNote = this.expNotes[this.indexTestedNote];
 		if (expNote === $event){
@@ -70,10 +67,10 @@ export class AppComponent extends Resources implements OnInit {
 	this.notesOnScreen.push($event);
 	this.notesParts.push($event);
   }
+  get playing():boolean{
+    return this.choice < 1;
+  }
   res():void{
-     if (this.choice >= 1) {
-		return;
-	 }
      this.notesOnScreen = [];
      this.notesParts = [];
   }

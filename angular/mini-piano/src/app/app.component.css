@@ -8,3 +8,9 @@
 .incorrect{
 	color: red;
 }
+.input-disabled{
+	pointer-events: none;
+}
+.input-enabled{
+	pointer-events: auto;
+}

@@ -36,33 +36,32 @@ public class SampleMain{
 			@Override
 			public AbstractBinStreamIn buildIn(final String _filePath) {
 				return new AbstractBinStreamIn() {
-    private InputStream reader;
-     {
-        reader = tryCreateFileInputStream(_filePath);
-    }
+					private InputStream reader;
+					 {
+						reader = tryCreateFileInputStream(_filePath);
+					}
 
-    public InputStream tryCreateFileInputStream(String _file) {
-        try {
-            return new FileInputStream(StringUtil.nullToEmpty(_file));
-        } catch (Exception e) {
-            return null;
-        }
-    }
-    @Override
-    public boolean close() {
-        return StreamCoreUtil.close(reader);
-    }
+					public InputStream tryCreateFileInputStream(String _file) {
+						try {
+							return new FileInputStream(StringUtil.nullToEmpty(_file));
+						} catch (Exception e) {
+							return null;
+						}
+					}
+					@Override
+					public boolean close() {
+						return StreamCoreUtil.close(reader);
+					}
 
-    @Override
-    public int read(byte[] _array, int _off, int _len) {
-        try {
-            return reader.read(_array, _off, _len);
-        } catch (Exception e) {
-            return -2;
-        }
-    }
-}
-;
+					@Override
+					public int read(byte[] _array, int _off, int _len) {
+						try {
+							return reader.read(_array, _off, _len);
+						} catch (Exception e) {
+							return -2;
+						}
+					}
+				};
 			}
 
 			@Override
@@ -99,8 +98,8 @@ public class SampleMain{
 				return str;
 			}
 			public TechStreams getStreams() {
-        return tech;
-    }
+				return tech;
+			}
 		};
 		AbsLightFrameFactory abs = lg.getLightFrameFactory();
 		AbsCompoFactory compo = lg.getCompoFactory();

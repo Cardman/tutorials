@@ -136,6 +136,7 @@ public class SampleMain{
 		final StringBuilder conf = new StringBuilder("arc\nfr\ncover=");
 		final StringMap<byte[]> src = new StringMap<byte[]>();
 		src.addEntry("src/file.txt",StringUtil.encode("classe pq.Mille{@Test vide meth(){}}"));
+		src.addEntry("src/file2.txt",StringUtil.encode("classe pq.Mille2{@Test vide meth(){}}"));
 		final StringMap<byte[]> files = new StringMap<byte[]>();
 		TestableFrame test = new TestableFrame(){
 			byte[] confFile;

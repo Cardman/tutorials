@@ -129,13 +129,14 @@ public class SampleMain{
 		src.addEntry("src/file.txt",StringUtil.encode("classe pq.Mille{@Test vide meth(){}}"));
 		src.addEntry("src/file2.txt",StringUtil.encode("classe pq.Mille2{@Test vide meth(){}}"));
 		final StringMap<byte[]> files = new StringMap<byte[]>();
-		TestableFrame test = new TestableFrame(){
+		AbsTestableFrame test = new AbsTestableFrame(lg,new AbstractIssuer(){
+							public void log(String _info){
+								System.out.println(_info);
+							}
+						}){
 			byte[] confFile;
 			public boolean ok(String _file){
 				return true;
-			}
-			public AbstractInterceptor getIntercept() {
-				return lg.getInterceptor();
 			}
 			public String getTxtConf() {
 				String trim_ = conf.toString().trim();
@@ -150,17 +151,8 @@ public class SampleMain{
 			}
 			public void setResults(ContextEl _ctx, Argument _res, LgNamesWithNewAliases _evolved){
 			}
-			public FileInfos getInfos() {
-				AbstractNameValidating validator_ = lg.getValidator();
-				return FileInfos.buildMemoryFromFile(lg.getGenerator(),
-						validator_,new AbstractIssuer(){
-							public void log(String _info){
-								System.out.println(_info);
-							}
-						}, new MemInputFiles(confFile, lg.getStreams().getZipFact().zipBinFiles(map(src)), lg.getStreams().getZipFact().zipBinFiles(map(files))), lg.getStreams().getZipFact(), lg.getThreadFactory());
-			}
-			public AbstractThreadFactory getThreadFactory() {
-				return lg.getThreadFactory();
+			public MemInputFiles getInputs(){
+				return new MemInputFiles(confFile, getFrames().getStreams().getZipFact().zipBinFiles(map(src)), getFrames().getStreams().getZipFact().zipBinFiles(map(files)));
 			}
 		};
 		String txt_ = test.getTxtConf();

@@ -16,6 +16,7 @@ import code.expressionlanguage.gui.unit.*;
 import code.expressionlanguage.utilcompo.*;
 import code.vi.prot.impl.*;
 import java.io.*;
+import code.vi.maths.random.AdvancedGenerator;
 
 public class SampleMain{
 	public static void main(String...args){
@@ -91,7 +92,7 @@ public class SampleMain{
 
 			}
 		};
-		final LigOtherProgramInfos lg = new LigOtherProgramInfos();
+		final LigOtherProgramInfos lg = new LigOtherProgramInfos(new AdvancedGenerator());
 		AbsLightFrameFactory abs = lg.getLightFrameFactory();
 		AbsCompoFactory compo = lg.getCompoFactory();
 		AbsOtherFrame fr = abs.newOtherFrame();
@@ -164,8 +165,14 @@ public class SampleMain{
         th_.start();
         th_.join();
 		ExecutingOptions exec_ = exp.getExec();
+		bin.writeFile("debug.zip",lg.getStreams().getZipFact().zipBinFiles(map(src)));
 		StreamFolderFile.makeParent(exec_.getOutputFolder()+"/"+ exec_.getOutputZip(),str);
 		bin.writeFile(exec_.getOutputFolder()+"/"+ exec_.getOutputZip(),exp.getExportedReport());
+		AbstractFile file_ = str.newFile("debug.zip");
+        byte[] readZip_ = new DefBinFact(bin).loadFile("debug.zip", file_.length());
+		for (EntryCust<String,ContentTime> e:lg.getStreams().getZipFact().zippedBinaryFiles(readZip_).entryList()){
+			System.out.println(e.getValue().getContent().length);
+		}
 	}
 	private static StringMap<ContentTime> map(StringMap<byte[]> _files){
 		StringMap<ContentTime> files_ = new StringMap<ContentTime>();

@@ -96,6 +96,11 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>random</groupId>
+			<artifactId>random</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>compos_other</groupId>
 			<artifactId>compos_other</artifactId>
 			<version>1.0-SNAPSHOT</version>

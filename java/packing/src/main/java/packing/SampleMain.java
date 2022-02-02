@@ -91,16 +91,7 @@ public class SampleMain{
 
 			}
 		};
-		final TechStreams tech = new TechStreams(new DefBinFact(bin),null,new DefZipFact(new DefZipFactory()));
-		
-		final LightProgramInfos lg = new LightProgramInfos(new AdvGraphicStringListGenerator(), new AdvGraphicComboBoxGenerator()){
-			public AbstractFileCoreStream getFileCoreStream() {
-				return str;
-			}
-			public TechStreams getStreams() {
-				return tech;
-			}
-		};
+		final LigOtherProgramInfos lg = new LigOtherProgramInfos();
 		AbsLightFrameFactory abs = lg.getLightFrameFactory();
 		AbsCompoFactory compo = lg.getCompoFactory();
 		AbsOtherFrame fr = abs.newOtherFrame();
@@ -174,11 +165,15 @@ public class SampleMain{
 		};
 		String txt_ = test.getTxtConf();
 		FileInfos infos = test.getInfos();
-		RunningTest r_ = RunningTest.newFromContent(txt_, new ProgressingTestsImpl(test,lg.getStreams(),lg.getFileCoreStream()),
+		MemoryProgressingTests exp = new MemoryProgressingTests(test);
+		RunningTest r_ = RunningTest.newFromContent(txt_, exp,
                 infos);
 		AbstractThread th_ = lg.getThreadFactory().newThread(r_);
         th_.start();
         th_.join();
+		ExecutingOptions exec_ = exp.getExec();
+		StreamFolderFile.makeParent(exec_.getOutputFolder()+"/"+ exec_.getOutputZip(),str);
+		bin.writeFile(exec_.getOutputFolder()+"/"+ exec_.getOutputZip(),exp.getExportedReport());
 	}
 	private static StringMap<ContentTime> map(StringMap<byte[]> _files){
 		StringMap<ContentTime> files_ = new StringMap<ContentTime>();

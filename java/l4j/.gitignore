@@ -1,0 +1,7 @@
+*
+!/src/
+!/src/**/
+!/src/**/*.java
+!/pom.xml
+!/arch.xml
+!/.gitignore

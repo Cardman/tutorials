@@ -68,12 +68,12 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/classes/src</outputDirectory>
+							<outputDirectory>${basedir}/target/classes/src2</outputDirectory>
 							<resources>
 								<resource>
 									<directory>/src/</directory>
 									<includes>
-										<include>*</include>
+										<include>**/*</include>
 									</includes>
 								</resource>
 							</resources>

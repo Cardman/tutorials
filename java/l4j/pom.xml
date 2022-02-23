@@ -61,6 +61,48 @@
 							</resources>
 						</configuration>
 					</execution>
+					<execution>
+						<id>res_src2</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes/src</outputDirectory>
+							<resources>
+								<resource>
+									<directory>/src/</directory>
+									<includes>
+										<include>*</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>res_filter</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<escapeString>\</escapeString>
+							<useDefaultDelimiters>false</useDefaultDelimiters>
+							<delimiters>
+								<delimiter>${*}</delimiter>
+							</delimiters>
+							<outputDirectory>${basedir}/target/classes/addon</outputDirectory>
+							<resources>
+								<resource>
+									<directory>/</directory>
+									<includes>
+										<include>/sample.txt</include>
+									</includes>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>

@@ -3,5 +3,6 @@
 !/src/**/
 !/src/**/*.java
 !/pom.xml
+!/sample.txt
 !/arch.xml
 !/.gitignore

@@ -37,9 +37,33 @@ public class SampleMain{
 			@Override
 			public AbstractBinStreamIn buildIn(final String _filePath) {
 				return new AbstractBinStreamIn() {
-					private InputStream reader;
-					 {
+					private final InputStream reader;
+					private final byte[] arr = new byte[1];
+					private final ByteArrayOutputStream out = new ByteArrayOutputStream();
+					{
 						reader = tryCreateFileInputStream(_filePath);
+					}
+					@Override
+					public boolean close() {
+						out.reset();
+						return StreamCoreUtil.close(reader);
+					}
+
+
+					@Override
+					public int read() {
+						try {
+							int read_ = reader.read(arr);
+							out.write(arr,0,Math.max(0,read_));
+							return read_;
+						} catch (Exception e) {
+							return -2;
+						}
+					}
+
+					@Override
+					public byte[] getBytes() {
+						return out.toByteArray();
 					}
 
 					public InputStream tryCreateFileInputStream(String _file) {
@@ -47,19 +71,6 @@ public class SampleMain{
 							return new FileInputStream(StringUtil.nullToEmpty(_file));
 						} catch (Exception e) {
 							return null;
-						}
-					}
-					@Override
-					public boolean close() {
-						return StreamCoreUtil.close(reader);
-					}
-
-					@Override
-					public int read(byte[] _array, int _off, int _len) {
-						try {
-							return reader.read(_array, _off, _len);
-						} catch (Exception e) {
-							return -2;
 						}
 					}
 				};
@@ -168,8 +179,7 @@ public class SampleMain{
 		bin.writeFile("debug.zip",lg.getStreams().getZipFact().zipBinFiles(map(src)));
 		StreamFolderFile.makeParent(exec_.getOutputFolder()+"/"+ exec_.getOutputZip(),str);
 		bin.writeFile(exec_.getOutputFolder()+"/"+ exec_.getOutputZip(),exp.getExportedReport());
-		AbstractFile file_ = str.newFile("debug.zip");
-        byte[] readZip_ = new DefBinFact(bin).loadFile("debug.zip", file_.length());
+        byte[] readZip_ = new DefBinFact(bin).loadFile("debug.zip");
 		for (EntryCust<String,ContentTime> e:lg.getStreams().getZipFact().zippedBinaryFiles(readZip_).entryList()){
 			System.out.println(e.getValue().getContent().length);
 		}

@@ -11,7 +11,7 @@
 </fileSets>
 <files>
 <file>
-<source>${project.build.directory}/Applications.exe</source>
+<source>${project.build.directory}/${project.build.finalName}.exe</source>
 <outputDirectory>/target</outputDirectory>
 </file>
 </files>

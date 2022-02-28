@@ -10,6 +10,7 @@
 !/core/sub2/src/
 !/core/sub2/src/**
 !/main/
+!/main/arch.xml
 !/main/pom.xml
 !/main/app1/
 !/main/app1/pom.xml
@@ -20,4 +21,6 @@
 !/main/app2/src/
 !/main/app2/src/**
 !/pom.xml
+!/other/
+!/other/sample.txt
 !/.gitignore

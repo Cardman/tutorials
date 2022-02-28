@@ -82,7 +82,7 @@
 					</execution>
 					<execution>
 						<id>res_filter</id>
-						<phase>validate</phase>
+						<phase>${shade.phase}</phase>
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>

@@ -56,6 +56,16 @@ public class UserControllerTests {
 		assertEquals(3,newUser.getId());
 	}
 	@Test
+	public void create2() {
+		User newUser = new User();
+		newUser.setFirstName("testAdmin2");
+		newUser.setLastName("123456");
+		newUser.setEmail("testAdmin2@mail.com");
+		userController.createTwo(newUser); 
+		assertEquals(3,userController.findAll().size());
+		//cannot retrieve inserted id
+	}
+	@Test
 	public void findById2Test() {
         User admin=userController.findOne(idTwo);
         assertEquals(admin.getEmail(),"testAdmin@mail.com");

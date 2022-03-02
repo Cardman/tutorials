@@ -44,13 +44,13 @@ public interface UserRepository extends Repository<User, Integer> {
 
     User save(User user);
 
-    /*@Transactional
+    @Transactional
     @Modifying
     @Query(value = "insert into user (first_name,last_name,email) values(:#{#c.firstName},:#{#c.lastName},:#{#c.email})",
             nativeQuery = true)
-    void saveTwo(@Param("c") User user);*/
-	
-	//@Transactional
+    Integer saveTwo(@Param("c") User user);
+
+    @Transactional
     @Modifying
     @Query(value = "UPDATE user u set id =:newId where u.id = :oldId",
             nativeQuery = true)

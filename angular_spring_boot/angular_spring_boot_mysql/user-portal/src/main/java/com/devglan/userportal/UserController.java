@@ -16,7 +16,9 @@ public class UserController {
     public User create(@RequestBody User user){
         return userService.create(user);
     }
-
+    public int createTwo(User user) {
+        return userService.createTwo(user);
+    }
     @GetMapping(path = {"/{id}"})
     public User findOne(@PathVariable("id") int id){
         return userService.findById(id);

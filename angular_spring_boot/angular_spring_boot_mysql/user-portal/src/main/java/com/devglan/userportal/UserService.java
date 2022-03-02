@@ -5,7 +5,7 @@ import java.util.List;
 public interface UserService {
 
     User create(User user);
-    //User createTwo(User user);
+    int createTwo(User user);
 
     User delete(int id);
     void deleteWhere(User user);

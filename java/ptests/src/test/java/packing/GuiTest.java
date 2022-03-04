@@ -10,7 +10,7 @@ public class GuiTest{
 			JPanel p = new JPanel();
 			p.add(new JLabel());
 		} catch (Throwable t){
-			System.out.println("KO panel");
+			Assert.fail("KO panel");
 		}
 	}
 	@Test
@@ -18,7 +18,7 @@ public class GuiTest{
 		try {
 			JFrame p = new JFrame();
 		} catch (Throwable t){
-			System.out.println("KO frame");
+			Assert.fail("KO frame");
 		}
 	}
 }

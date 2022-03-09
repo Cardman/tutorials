@@ -164,7 +164,7 @@ public class SampleMain{
 			public void setResults(ContextEl _ctx, Argument _res, LgNamesWithNewAliases _evolved){
 			}
 			public MemInputFiles getInputs(){
-				return new MemInputFiles(confFile, getFrames().getStreams().getZipFact().zipBinFiles(map(src)), getFrames().getStreams().getZipFact().zipBinFiles(map(files)));
+				return new MemInputFiles(confFile, getFrames().getZipFact().zipBinFiles(map(src)), getFrames().getZipFact().zipBinFiles(map(files)));
 			}
 		};
 		String txt_ = test.getTxtConf();
@@ -176,11 +176,11 @@ public class SampleMain{
         th_.start();
         th_.join();
 		ExecutingOptions exec_ = exp.getExec();
-		bin.writeFile("debug.zip",lg.getStreams().getZipFact().zipBinFiles(map(src)));
+		bin.writeFile("debug.zip",lg.getZipFact().zipBinFiles(map(src)));
 		StreamFolderFile.makeParent(exec_.getOutputFolder()+"/"+ exec_.getOutputZip(),str);
 		bin.writeFile(exec_.getOutputFolder()+"/"+ exec_.getOutputZip(),exp.getExportedReport());
         byte[] readZip_ = new DefBinFact(bin).loadFile("debug.zip");
-		for (EntryCust<String,ContentTime> e:lg.getStreams().getZipFact().zippedBinaryFiles(readZip_).entryList()){
+		for (EntryCust<String,ContentTime> e:lg.getZipFact().zippedBinaryFiles(readZip_).entryList()){
 			System.out.println(e.getValue().getContent().length);
 		}
 	}

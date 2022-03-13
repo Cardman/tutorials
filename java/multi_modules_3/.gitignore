@@ -23,12 +23,8 @@
 !/main_join/pom.xml
 !/main_join/main_join1/
 !/main_join/main_join1/pom.xml
-!/main_join/main_join1/src/
-!/main_join/main_join1/src/**
 !/main_join/main_join2/
 !/main_join/main_join2/pom.xml
-!/main_join/main_join2/src/
-!/main_join/main_join2/src/**
 !/pom.xml
 !/other/
 !/other/arch.xml

@@ -1,0 +1,11 @@
+*
+!/core/
+!/core/src/
+!/core/src/**
+!/core/arch.xml
+!/core/pom.xml
+!/front/
+!/front/hello.txt
+!/other.txt
+!/pom.xml
+!/.gitignore

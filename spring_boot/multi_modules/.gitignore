@@ -1,0 +1,9 @@
+*
+!/core/
+!/core/src/
+!/core/src/**
+!/core/pom.xml
+!/main/
+!/main/pom.xml
+!/pom.xml
+!/.gitignore

@@ -1,0 +1,11 @@
+*
+!/main/
+!/main/pom.xml
+!/main/src/
+!/main/src/**
+!/pom.xml
+!/test/
+!/test/pom.xml
+!/test/src/
+!/test/src/**
+!/.gitignore

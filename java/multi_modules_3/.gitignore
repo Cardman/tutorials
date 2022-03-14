@@ -20,6 +20,7 @@
 !/main/app2/src/
 !/main/app2/src/**
 !/main_join/
+!/main_join/arch.xml
 !/main_join/pom.xml
 !/main_join/main_join1/
 !/main_join/main_join1/pom.xml

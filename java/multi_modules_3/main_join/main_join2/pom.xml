@@ -16,5 +16,6 @@
 	<properties>
 		<main.class>sample.MainClass2</main.class>
 		<shade.phase>package</shade.phase>
+		<tree.phase>none</tree.phase>
 	</properties>
 </project>

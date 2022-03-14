@@ -23,6 +23,7 @@
 		<java.version>1.8</java.version>
 		<main.class></main.class>
 		<shade.phase>none</shade.phase>
+		<tree.phase>validate</tree.phase>
 	</properties>
 
 	<dependencies>
@@ -49,42 +50,6 @@
 				<version>3.2.0</version>
 				<executions>
 					<execution>
-						<id>res_src2</id>
-						<phase>${shade.phase}</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/classes/src2</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${user.dir}/core/sub1/src/</directory>
-									<includes>
-										<include>**</include>
-									</includes>
-								</resource>
-								<resource>
-									<directory>${user.dir}/core/sub2/src/</directory>
-									<includes>
-										<include>**</include>
-									</includes>
-								</resource>
-								<resource>
-									<directory>${user.dir}/main/app1/src/</directory>
-									<includes>
-										<include>**</include>
-									</includes>
-								</resource>
-								<resource>
-									<directory>${user.dir}/main/app2/src/</directory>
-									<includes>
-										<include>**</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-					<execution>
 						<id>res_filter</id>
 						<phase>${shade.phase}</phase>
 						<goals>
@@ -96,7 +61,7 @@
 							<delimiters>
 								<delimiter>${*}</delimiter>
 							</delimiters>
-							<outputDirectory>${basedir}/target/classes/addon</outputDirectory>
+							<outputDirectory>${basedir}/target/addon</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${user.dir}/other</directory>
@@ -185,6 +150,23 @@
 				<version>3.3.0</version>
 				<executions>
 					<execution>
+						<id>tree</id>
+						<phase>${tree.phase}</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>srcs</finalName>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptors>
+								<descriptor>
+									arch.xml
+								</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+					<execution>
+						<id>final</id>
 						<phase>${shade.phase}</phase>
 						<goals>
 							<goal>single</goal>

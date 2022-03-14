@@ -1,4 +1,8 @@
 *
+!/core/
+!/core/pom.xml
+!/core/src/
+!/core/src/**
 !/main/
 !/main/pom.xml
 !/main/src/

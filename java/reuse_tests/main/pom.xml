@@ -15,6 +15,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>_resuse_</groupId>
+			<artifactId>_core</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>_resuse_</groupId>
 			<artifactId>_</artifactId>
 			<version>1.0</version>
 			<scope>test</scope>

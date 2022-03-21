@@ -1,0 +1,25 @@
+<div class="col-md-6">
+  <h2 class="text-center">Edit User</h2>
+  {{user.id}}
+<form>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" [(ngModel)]="user.email" placeholder="Email" name="email" class="form-control" id="email"><br/>
+	{{user.email}}
+  </div>
+
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input [(ngModel)]="user.firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName"><br/>
+	{{user.firstName}}
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name:</label>
+    <input [(ngModel)]="user.lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName"><br/>
+	{{user.lastName}}
+  </div>
+
+  <button class="btn btn-success" (click)="updateUser()">Edit</button>
+</form>
+</div>

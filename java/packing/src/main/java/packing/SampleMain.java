@@ -155,7 +155,7 @@ public class SampleMain{
 				confFile = StringUtil.encode(trim_);
 				return trim_;
 			}
-			public void showProgress(ContextEl _ctx, Struct _infos, Struct _doneTests, Struct _method, Struct _count, LgNamesWithNewAliases _evolved){
+			public void showProgress(ContextEl _ctx, Struct _infos, LgNamesWithNewAliases _evolved){
 				
 			}
 			public void finish(Struct _infos, LgNamesWithNewAliases _evolved){

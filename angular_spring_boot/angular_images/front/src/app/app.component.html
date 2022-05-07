@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<textarea [(ngModel)]="imageInput"></textarea>
+<br/>
+<button (click)="getImage()">Click</button><br/>
+<hr/>
+<img *ngIf="image" [src]='image' alt="no img"/>
+

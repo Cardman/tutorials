@@ -2,17 +2,9 @@ package code.web;
 
 import java.util.List;
 
-public class Exported {
-    private String img;
+public class ExpFile {
+    private String fileName;
     private List<Byte> bytes;
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
 
     public List<Byte> getBytes() {
         return bytes;
@@ -20,5 +12,13 @@ public class Exported {
 
     public void setBytes(List<Byte> bytes) {
         this.bytes = bytes;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 }

@@ -4,6 +4,8 @@
     Welcome to {{ title }}!
   </h1>
 </div>
+<input type="text" [(ngModel)]="fileName"/>
+<br/>
 <textarea [(ngModel)]="imageInput"></textarea>
 <br/>
 <button (click)="getImage()">Click</button><br/>

@@ -1,16 +1,16 @@
 package code.web;
 
-import java.util.List;
+import code.util.NonIterableBytes;
 
 public class ExpFile {
     private String fileName;
-    private List<Byte> bytes;
+    private NonIterableBytes bytes;
 
-    public List<Byte> getBytes() {
+    public NonIterableBytes getBytes() {
         return bytes;
     }
 
-    public void setBytes(List<Byte> bytes) {
+    public void setBytes(NonIterableBytes bytes) {
         this.bytes = bytes;
     }
 

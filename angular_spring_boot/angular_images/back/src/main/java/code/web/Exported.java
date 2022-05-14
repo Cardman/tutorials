@@ -1,10 +1,10 @@
 package code.web;
 
-import java.util.List;
+import code.util.NonIterableBytes;
 
 public class Exported {
     private String img;
-    private List<Byte> bytes;
+    private NonIterableBytes bytes;
 
     public String getImg() {
         return img;
@@ -14,11 +14,11 @@ public class Exported {
         this.img = img;
     }
 
-    public List<Byte> getBytes() {
+    public NonIterableBytes getBytes() {
         return bytes;
     }
 
-    public void setBytes(List<Byte> bytes) {
+    public void setBytes(NonIterableBytes bytes) {
         this.bytes = bytes;
     }
 }

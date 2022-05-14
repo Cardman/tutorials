@@ -46,10 +46,14 @@ readonly httpOptions = {
 
 export class Exported{
   img:string='';
-  bytes:number[]=[];
+  bytes:Bytes=new Bytes();
 }
 
 export class ExpFile {
   fileName='';
-  bytes:number[]=[];
+  bytes:Bytes=new Bytes();
+}
+
+export class Bytes {
+  array:number[]=[];
 }

@@ -19,10 +19,12 @@ readonly httpOptions = {
   title = 'front';
   private expo : Exported = new Exported();
   private image : SafeUrl;
+  private images : SafeUrl[]=[];
   private fileName='';
   private imageInput='';
   private stringInput='';
   private renderedList='';
+  selectedFiles: FileList;
   private readonly imageType : string = 'data:image/PNG;base64,';
   constructor(private http:HttpClient,private sanitizer:DomSanitizer) {
 
@@ -48,6 +50,29 @@ readonly httpOptions = {
 
       }
       );
+   }
+   selectFiles(event:any) {
+     this.selectedFiles = event.target.files;
+     console.log(event.target.files);
+   }
+   useFiles(){
+
+      const len = this.selectedFiles.length;
+      this.images = [];
+      for (let i = 0; i < len; i++) {
+         const data: FormData = new FormData();
+
+             data.append('file', this.selectedFiles[i]);
+         this.http.post('/api/files',data)
+                      .subscribe(
+                      (data:Exported[] ) =>
+                      {
+                        data.forEach(e => {
+                          this.images.push(this.sanitizer.bypassSecurityTrustUrl(this.imageType + e.img));
+                        });
+                      }
+                      )
+      }
    }
    strInput(){
      let db = new DoubledList();

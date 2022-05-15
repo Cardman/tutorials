@@ -16,4 +16,9 @@
 <button (click)="getImage()">Click</button><br/>
 <hr/>
 <img *ngIf="image" [src]='image' alt="no img"/>
+<hr/>
+<input type="file" (change)="selectFiles($event)"/><br/>
+<hr/>
+<button (click)="useFiles()">Click</button><br/>
+<img *ngFor="let i of images" [src]='i' alt="no img"/>
 

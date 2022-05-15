@@ -1,6 +1,5 @@
 package code.web;
 
-import code.gui.images.AbstractImage;
 import code.gui.images.ConverterGraphicBufferedImage;
 import code.gui.initialize.AbstractLightProgramInfos;
 import code.images.BaseSixtyFourUtil;
@@ -9,12 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Base64;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping({"/api"})
@@ -27,8 +28,7 @@ public class ImageController {
     public Exported getImage(@RequestBody String image) {
 
         int[][] imageByString = BaseSixtyFourUtil.getImageByString(image);
-        AbstractImage abstractImage_ = ConverterGraphicBufferedImage.decodeToImage(lightProgramInfos.getImageFactory(), imageByString);
-        byte[] bytes = abstractImage_.writeImg("png");
+        byte[] bytes = ConverterGraphicBufferedImage.decodeToImage(lightProgramInfos.getImageFactory(), imageByString).writeImg("png");
         String encodeImage = Base64.getEncoder().withoutPadding().encodeToString(bytes);
         Exported exported = new Exported();
         exported.setImg(encodeImage);
@@ -52,5 +52,27 @@ public class ImageController {
         doubledList.getStr().addAll(image.getStr());
         doubledList.getStr().addAll(image.getStr());
         return doubledList;
+    }
+
+    @PostMapping("/files")
+    public List<Exported> getFiles(@RequestParam("file") MultipartFile mf) {
+        return Collections.singletonList(apply(mf));
+    }
+
+    private Exported apply(MultipartFile f) {
+        try {
+            byte[] bytes = lightProgramInfos.getImageFactory().newImageFromBytes(f.getBytes()).writeImg("png");
+            String encodeImage = Base64.getEncoder().withoutPadding().encodeToString(bytes);
+            Exported exported = new Exported();
+            exported.setImg(encodeImage);
+            exported.setBytes(NonIterableBytes.newCompositeList(bytes));
+
+            return exported;
+        } catch (Exception e) {
+            Exported exported = new Exported();
+            exported.setImg("");
+            exported.setBytes(NonIterableBytes.newCompositeList());
+            return exported;
+        }
     }
 }

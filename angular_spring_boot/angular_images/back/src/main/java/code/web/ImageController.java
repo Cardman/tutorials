@@ -45,4 +45,12 @@ public class ImageController {
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(byteArray);
     }
+
+    @PostMapping("/doubledlist")
+    public DoubledList getBytes(@RequestBody DoubledList image) {
+        DoubledList doubledList = new DoubledList();
+        doubledList.getStr().addAll(image.getStr());
+        doubledList.getStr().addAll(image.getStr());
+        return doubledList;
+    }
 }

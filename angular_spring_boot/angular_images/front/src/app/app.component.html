@@ -4,6 +4,11 @@
     Welcome to {{ title }}!
   </h1>
 </div>
+<textarea [(ngModel)]="stringInput"></textarea>
+<br/>
+<button (click)="strInput()">Click</button><br/>
+{{renderedList}}
+<hr/>
 <input type="text" [(ngModel)]="fileName"/>
 <br/>
 <textarea [(ngModel)]="imageInput"></textarea>

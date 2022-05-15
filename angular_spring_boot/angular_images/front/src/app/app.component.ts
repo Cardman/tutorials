@@ -21,6 +21,8 @@ readonly httpOptions = {
   private image : SafeUrl;
   private fileName='';
   private imageInput='';
+  private stringInput='';
+  private renderedList='';
   private readonly imageType : string = 'data:image/PNG;base64,';
   constructor(private http:HttpClient,private sanitizer:DomSanitizer) {
 
@@ -42,6 +44,16 @@ readonly httpOptions = {
       }
       );
    }
+   strInput(){
+     let db = new DoubledList();
+     db.str.push(this.stringInput);
+     this.http.post('/api/doubledlist',db)
+           .subscribe(
+           (data:DoubledList ) =>{
+             this.renderedList = data.str[0]+data.str[1];
+           }
+           );
+   }
 }
 
 export class Exported{
@@ -56,4 +68,8 @@ export class ExpFile {
 
 export class Bytes {
   array:number[]=[];
+}
+
+export class DoubledList {
+  str:string[]=[];
 }

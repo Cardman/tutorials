@@ -38,7 +38,12 @@ readonly httpOptions = {
         e.fileName = this.fileName;
         e.bytes = data.bytes;
         this.http.post('/api/bytes',e, { headers:this.httpOptions.headers, responseType: 'blob'}).subscribe((event:Blob) => {
-            FileSaver.saveAs(event, this.fileName);
+            const a = document.createElement('a')
+            const objectUrl = URL.createObjectURL(event)
+            a.href = objectUrl
+            a.download = this.fileName;
+            a.click();
+            URL.revokeObjectURL(objectUrl);
                });
 
       }

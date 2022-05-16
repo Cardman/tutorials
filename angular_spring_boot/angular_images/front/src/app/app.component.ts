@@ -61,14 +61,25 @@ readonly httpOptions = {
       this.images = [];
       for (let i = 0; i < len; i++) {
          const data: FormData = new FormData();
-
-             data.append('file', this.selectedFiles[i]);
+         let sel: File = this.selectedFiles[i];
+             data.append('file', sel);
          this.http.post('/api/files',data)
                       .subscribe(
-                      (data:Exported[] ) =>
+                      (data:ExportedDecode[] ) =>
                       {
                         data.forEach(e => {
-                          this.images.push(this.sanitizer.bypassSecurityTrustUrl(this.imageType + e.img));
+                          this.images.push(this.sanitizer.bypassSecurityTrustUrl(this.imageType + e.exported.img));
+                          let ex:ExpFile = new ExpFile();
+                          ex.fileName = sel.name.replace('.png','.txt');
+                          ex.bytes = e.decode;
+                          this.http.post('/api/bytes',ex, { headers:this.httpOptions.headers, responseType: 'blob'}).subscribe((event:Blob) => {
+                                      const a = document.createElement('a')
+                                      const objectUrl = URL.createObjectURL(event)
+                                      a.href = objectUrl
+                                      a.download = sel.name.replace('.png','.txt');
+                                      a.click();
+                                      URL.revokeObjectURL(objectUrl);
+                                         });
                         });
                       }
                       )
@@ -85,7 +96,10 @@ readonly httpOptions = {
            );
    }
 }
-
+export class ExportedDecode{
+  decode:Bytes=new Bytes();
+  exported:Exported=new Exported();
+}
 export class Exported{
   img:string='';
   bytes:Bytes=new Bytes();

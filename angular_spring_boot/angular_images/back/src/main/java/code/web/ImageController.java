@@ -1,9 +1,11 @@
 package code.web;
 
+import code.gui.images.AbstractImage;
 import code.gui.images.ConverterGraphicBufferedImage;
 import code.gui.initialize.AbstractLightProgramInfos;
 import code.images.BaseSixtyFourUtil;
 import code.util.NonIterableBytes;
+import code.util.core.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -11,11 +13,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping({"/api"})
@@ -55,24 +55,31 @@ public class ImageController {
     }
 
     @PostMapping("/files")
-    public List<Exported> getFiles(@RequestParam("file") MultipartFile mf) {
+    public List<ExportedDecode> getFiles(@RequestParam("file") MultipartFile mf) {
         return Collections.singletonList(apply(mf));
     }
 
-    private Exported apply(MultipartFile f) {
+    private ExportedDecode apply(MultipartFile f) {
         try {
-            byte[] bytes = lightProgramInfos.getImageFactory().newImageFromBytes(f.getBytes()).writeImg("png");
+            AbstractImage abstractImage = lightProgramInfos.getImageFactory().newImageFromBytes(f.getBytes());
+            byte[] bytes = abstractImage.writeImg("png");
             String encodeImage = Base64.getEncoder().withoutPadding().encodeToString(bytes);
+            ExportedDecode out = new ExportedDecode();
             Exported exported = new Exported();
             exported.setImg(encodeImage);
             exported.setBytes(NonIterableBytes.newCompositeList(bytes));
-
-            return exported;
+            int[][] pixels = ConverterGraphicBufferedImage.toArrays(abstractImage);
+            out.setDecode(NonIterableBytes.newCompositeList(StringUtil.encode(BaseSixtyFourUtil.getStringByImage(pixels))));
+            out.setExported(exported);
+            return out;
         } catch (Exception e) {
+            ExportedDecode out = new ExportedDecode();
             Exported exported = new Exported();
             exported.setImg("");
             exported.setBytes(NonIterableBytes.newCompositeList());
-            return exported;
+            out.setDecode(NonIterableBytes.newCompositeList());
+            out.setExported(exported);
+            return out;
         }
     }
 }

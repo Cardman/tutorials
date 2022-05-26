@@ -12,6 +12,7 @@ public interface UserService {
 
     List<User> findAll();
     List<User> findByCriteriaBet(UserCriteria3 criteria);
+    List<User> findByCriteriaBet(UserCriteria4 criteria);
     List<User> findByCriteria(UserCriteria criteria);
     List<User> findByCriteria(UserCriteria2 criteria);
     List<CountName> groupFirst(Long count);

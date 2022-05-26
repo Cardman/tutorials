@@ -24,5 +24,12 @@ export class UserCriteria3 {
     begin: Date=null;
     end: Date=null;
     onlyNullFlag: boolean=false;
+}
+
+export class UserCriteria4 {
+
+    begin: string|null=null;
+    end: string|null=null;
+    onlyNullFlag: boolean=false;
 
 }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { User,UserCriteria,UserCriteria3 } from '../models/user.model';
+import { User,UserCriteria,UserCriteria3,UserCriteria4 } from '../models/user.model';
 
 import {Observable} from 'rxjs';
 
@@ -27,6 +27,10 @@ export class UserService {
 
   public getUsersBy2(criteria:UserCriteria3):Observable<User[]> {
     return this.http.post<User[]>(this.userUrl+"/filter2", criteria);
+  }
+
+  public getUsersBy3(criteria:UserCriteria4):Observable<User[]> {
+    return this.http.post<User[]>(this.userUrl+"/filter3", criteria);
   }
 
   public deleteUser(user:User):Observable<Object> {

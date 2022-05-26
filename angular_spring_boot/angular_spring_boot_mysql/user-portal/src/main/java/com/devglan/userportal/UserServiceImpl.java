@@ -27,6 +27,10 @@ public class UserServiceImpl implements UserService {
         return repository.findByCriteriaBet(criteria);
     }
     @Override
+    public List<User> findByCriteriaBet(UserCriteria4 criteria){
+        return repository.findByCriteriaBet(criteria);
+    }
+    @Override
     public User delete(int id) {
         User user = findById(id);
         if(user != null){

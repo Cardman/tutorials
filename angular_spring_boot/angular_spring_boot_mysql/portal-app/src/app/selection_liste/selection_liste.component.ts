@@ -12,7 +12,7 @@ export class SelectionListeComponent implements OnInit {
   userForm: FormGroup;
   @Output() newItemEvent = new EventEmitter<string[]>();
 
-  constructor(private formBuilder: FormBuilder, private selectionListeService: SelectionListeService) {
+  constructor(private formBuilder: FormBuilder, public selectionListeService: SelectionListeService) {
 
   }
 

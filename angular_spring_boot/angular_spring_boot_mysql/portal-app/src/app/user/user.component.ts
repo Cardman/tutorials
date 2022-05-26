@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { User,UserCriteria,UserCriteria3 } from '../models/user.model';
+import { User,UserCriteria,UserCriteria3,UserCriteria4 } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import * as moment from 'moment';
 
@@ -18,6 +18,7 @@ export class UserComponent implements OnInit {
   email : string = '';
   last : Date = null;
   range : string = '';
+  range2 : string = '';
 
   constructor(private router: Router, private userService: UserService) {
 
@@ -64,6 +65,24 @@ export class UserComponent implements OnInit {
     }
     console.log(JSON.stringify(criteria));
     this.userService.getUsersBy2(criteria)
+      .subscribe( data => {
+        this.users = data;
+      });
+  }
+  getUsersBy3():void {
+    let criteria:UserCriteria4 = new UserCriteria4();
+    if (this.range2.trim() === ","){
+        criteria.onlyNullFlag = true;
+    } else {
+        let parts = this.range2.trim().split(",");
+        if (parts.length === 2){
+         criteria.begin = parts[0];
+         criteria.end = parts[1];
+        }
+        
+    }
+    console.log(JSON.stringify(criteria));
+    this.userService.getUsersBy3(criteria)
       .subscribe( data => {
         this.users = data;
       });

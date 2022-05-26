@@ -27,6 +27,9 @@ public interface UserRepository extends Repository<User, Integer> {
     @Query(value = "select u from User u where :#{#c.onlyNullFlag}=1 and u.last is null or :#{#c.onlyNullFlag}=0 and (:#{#c.beginFlag}=1 or u.last>= :#{#c.begin}) and (:#{#c.endFlag}=1 or u.last<= :#{#c.end})")
     List<User> findByCriteriaBet(@Param("c") UserCriteria3 criteria);
 
+    @Query(value = "select u from User u where :#{#c.onlyNullFlag}=1 and u.last is null or :#{#c.onlyNullFlag}=0 and (:#{#c.beginFlag}=1 or u.last>= :#{#c.beginConverted}) and (:#{#c.endFlag}=1 or u.last<= :#{#c.endConverted})")
+    List<User> findByCriteriaBet(@Param("c") UserCriteria4 criteria);
+
     @Query(value = "select u from User u where u.id>=:#{#c.id} and u.firstName like %:#{#c.firstName}% and u.lastName like %:#{#c.lastName}% and u.email like %:#{#c.email}% and u.last = :#{#c.last}")
     List<User> findByCriteriaDate(@Param("c") UserCriteria criteria);
 

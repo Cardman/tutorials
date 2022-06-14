@@ -21,6 +21,8 @@ export class AppComponent extends Resources implements OnInit {
   indexTestedNote = 0;
   nbCorrect = 0;
   nbFalse = 0;
+  keyPressed: {[name:number]:boolean}={};
+  press: {[name:number]:number}={};
 
   ngOnInit(): void {
     this.diffs.push(this.NoteUtils.REGULS.map(n => n + this.NoteUtils.NOTES_PER_OCTAVE*2));
@@ -213,7 +215,193 @@ export class AppComponent extends Resources implements OnInit {
 			this.tempo /= 2.0;
 		}
 		return;
-	} 
-    
+	}
+	if (this.choice >= 1) {
+		return;
+	}
+	let nb = this.toFileEvent(event);
+    if (nb > -1 && !this.keyPressed[nb]){
+		this.playByKey(nb);
+		this.press[nb] = setInterval(()=>{
+			this.playByKey(nb);
+		},250);
+		this.keyPressed[nb] = true;
+	}
+  }
+  playByKey(nb:number):void{
+	let audio = new Audio();
+	audio.src = "../assets/sounds/"+nb+".wav";
+	audio.load();
+	audio.play();
+  }
+  @HostListener('document:keyup', ['$event'])
+  handleKeyUp(event: KeyboardEvent) {
+	if (this.choice >= 1) {
+		return;
+	}
+	let nb = this.toFileEvent(event);
+	if (nb > -1){
+		clearInterval(this.press[nb]);
+		this.keyPressed[nb] = false;
+	}
+  }
+  toFileEvent(event:KeyboardEvent):number{
+    let nb = -1;
+    if (event.code.startsWith('Key')){
+		nb=(this.toFile(event.code.substring('Key'.length),event.shiftKey));
+	} else if (event.code.startsWith('Digit')){
+		nb=(this.toFile(event.code.substring('Digit'.length),event.shiftKey));
+	}
+	return nb;
+  }
+  toFile(key:string, shift: boolean):number{
+    if (key==='Z'){
+		if (shift){
+			return 17;
+		}
+		return 16;
+	}
+    if (key==='X'){
+		if (shift){
+			return 19;
+		}
+		return 18;
+	}
+    if (key==='C'){
+		return 20;
+	}
+    if (key==='V'){
+		if (shift){
+			return 22;
+		}
+		return 21;
+	}
+    if (key==='B'){
+		if (shift){
+			return 24;
+		}
+		return 23;
+	}
+    if (key==='N'){
+		if (shift){
+			return 26;
+		}
+		return 25;
+	}
+    if (key==='M'){
+		return 27;
+	}
+    if (key==='A'){
+		if (shift){
+			return 29;
+		}
+		return 28;
+	}
+    if (key==='S'){
+		if (shift){
+			return 31;
+		}
+		return 30;
+	}
+    if (key==='D'){
+		return 32;
+	}
+    if (key==='F'){
+		if (shift){
+			return 34;
+		}
+		return 33;
+	}
+    if (key==='G'){
+		if (shift){
+			return 36;
+		}
+		return 35;
+	}
+    if (key==='H'){
+		if (shift){
+			return 38;
+		}
+		return 37;
+	}
+    if (key==='J'){
+		return 39;
+	}
+    if (key==='Q'){
+		if (shift){
+			return 41;
+		}
+		return 40;
+	}
+    if (key==='W'){
+		if (shift){
+			return 43;
+		}
+		return 42;
+	}
+    if (key==='E'){
+		return 44;
+	}
+    if (key==='R'){
+		if (shift){
+			return 46;
+		}
+		return 45;
+	}
+    if (key==='T'){
+		if (shift){
+			return 48;
+		}
+		return 47;
+	}
+    if (key==='Y'){
+		if (shift){
+			return 50;
+		}
+		return 49;
+	}
+    if (key==='U'){
+		return 51;
+	}
+    if (key==='1'){
+		if (shift){
+			return 53;
+		}
+		return 52;
+	}
+    if (key==='2'){
+		if (shift){
+			return 55;
+		}
+		return 54;
+	}
+    if (key==='3'){
+		return 56;
+	}
+    if (key==='4'){
+		if (shift){
+			return 58;
+		}
+		return 57;
+	}
+    if (key==='5'){
+		if (shift){
+			return 60;
+		}
+		return 59;
+	}
+    if (key==='6'){
+		if (shift){
+			return 62;
+		}
+		return 61;
+	}
+    if (key==='7'){
+		return 63;
+	}
+    if (key==='8'){
+		return 64;
+	}
+	return -1;
   }
 }

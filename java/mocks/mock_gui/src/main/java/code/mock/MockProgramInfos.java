@@ -76,7 +76,7 @@ public final class MockProgramInfos implements AbstractProgramInfos {
 
     @Override
     public AbsFrameFactory getFrameFactory() {
-        return mockFrameFactory;
+        return getMockFrameFactory();
     }
 
     @Override
@@ -152,6 +152,10 @@ public final class MockProgramInfos implements AbstractProgramInfos {
 
     @Override
     public AbsLightFrameFactory getLightFrameFactory() {
+        return getMockFrameFactory();
+    }
+
+    public MockFrameFactory getMockFrameFactory() {
         return mockFrameFactory;
     }
 

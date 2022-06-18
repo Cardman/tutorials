@@ -173,7 +173,7 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsTextField newTextField(int i) {
-        return new MockTextField();
+        return new MockTextField(i);
     }
 
     @Override
@@ -183,7 +183,7 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsTextField newTextField(String s, int i) {
-        return new MockTextField(s);
+        return new MockTextField(s,i);
     }
 
     @Override

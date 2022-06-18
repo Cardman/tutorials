@@ -12,11 +12,20 @@ public class MockTextField extends MockInput implements AbsTextField {
     private final CustList<AbsAutoCompleteListener> autoCompleteListeners = new CustList<AbsAutoCompleteListener>();
     private final CustList<AbsActionListener> absActionListeners = new CustList<AbsActionListener>();
     private final CustList<AbsAdvActionListener> absAdvActionListeners = new CustList<AbsAdvActionListener>();
+    private int cols;
     public MockTextField() {
         this("");
     }
     public MockTextField(String _t) {
         text = _t;
+    }
+    public MockTextField(int _cols) {
+        this("");
+        cols = _cols;
+    }
+    public MockTextField(String _t,int _cols) {
+        text = _t;
+        cols = _cols;
     }
     @Override
     public void setText(String s) {
@@ -56,6 +65,10 @@ public class MockTextField extends MockInput implements AbsTextField {
 
     public CustList<AbsAutoCompleteListener> getAutoCompleteListeners() {
         return autoCompleteListeners;
+    }
+
+    public int getCols() {
+        return cols;
     }
 
     public int getCaretPosition() {

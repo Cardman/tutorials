@@ -5,6 +5,12 @@ import code.gui.initialize.AbstractSocket;
 
 public class MockSocket implements AbstractSocket {
     private boolean cl;
+    private final boolean ko;
+
+    public MockSocket(boolean _k) {
+        this.ko = _k;
+    }
+
     @Override
     public AbstractBufferedReader getInput() {
         return null;
@@ -25,6 +31,6 @@ public class MockSocket implements AbstractSocket {
 
     @Override
     public boolean isKo() {
-        return false;
+        return ko;
     }
 }

@@ -78,17 +78,17 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsScrollPane newAbsScrollPane() {
-        return null;
+        return new MockScrollPane();
     }
 
     @Override
     public AbsScrollPane newAbsScrollPane(AbsCustComponent absCustComponent) {
-        return null;
+        return new MockScrollPane(absCustComponent);
     }
 
     @Override
     public AbsScrollPane newAbsScrollPane(AbsMetaLabel absMetaLabel) {
-        return null;
+        return new MockScrollPane(absMetaLabel);
     }
 
     @Override

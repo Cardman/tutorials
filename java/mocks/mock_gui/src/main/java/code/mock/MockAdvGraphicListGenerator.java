@@ -8,16 +8,16 @@ import code.gui.initialize.AbstractAdvGraphicListGenerator;
 public class MockAdvGraphicListGenerator implements AbstractAdvGraphicListGenerator {
     @Override
     public AbsGraphicListStr createSimple(AbsGraphicListPainter absGraphicListPainter, SpecSelectionCtx specSelectionCtx) {
-        return null;
+        return new MockCustGrListStr();
     }
 
     @Override
     public AbsGraphicListStr createMult(AbsGraphicListPainter absGraphicListPainter, SpecSelectionCtx specSelectionCtx) {
-        return null;
+        return new MockCustGrListStr();
     }
 
     @Override
     public boolean isCust() {
-        return false;
+        return true;
     }
 }

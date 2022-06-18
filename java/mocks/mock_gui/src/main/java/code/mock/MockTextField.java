@@ -10,6 +10,8 @@ public class MockTextField extends MockInput implements AbsTextField {
     private String text;
     private int caretPosition;
     private final CustList<AbsAutoCompleteListener> autoCompleteListeners = new CustList<AbsAutoCompleteListener>();
+    private final CustList<AbsActionListener> absActionListeners = new CustList<AbsActionListener>();
+    private final CustList<AbsAdvActionListener> absAdvActionListeners = new CustList<AbsAdvActionListener>();
     public MockTextField() {
         this("");
     }
@@ -31,17 +33,29 @@ public class MockTextField extends MockInput implements AbsTextField {
 
     @Override
     public void addActionListener(AbsActionListener absActionListener) {
-
+        absActionListeners.add(absActionListener);
     }
 
     @Override
     public void addActionListener(AbsAdvActionListener absAdvActionListener) {
+        absAdvActionListeners.add(absAdvActionListener);
+    }
 
+    public CustList<AbsActionListener> getAbsActionListeners() {
+        return absActionListeners;
+    }
+
+    public CustList<AbsAdvActionListener> getAbsAdvActionListeners() {
+        return absAdvActionListeners;
     }
 
     @Override
     public void addAutoComplete(AbsAutoCompleteListener absAutoCompleteListener) {
         autoCompleteListeners.add(absAutoCompleteListener);
+    }
+
+    public CustList<AbsAutoCompleteListener> getAutoCompleteListeners() {
+        return autoCompleteListeners;
     }
 
     public int getCaretPosition() {

@@ -148,22 +148,22 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsTextArea newTextArea() {
-        return null;
+        return new MockTextArea();
     }
 
     @Override
     public AbsTextArea newTextArea(int i, int i1) {
-        return null;
+        return new MockTextArea(i,i1);
     }
 
     @Override
     public AbsTextArea newTextArea(String s) {
-        return null;
+        return new MockTextArea(s);
     }
 
     @Override
     public AbsTextArea newTextArea(String s, int i, int i1) {
-        return null;
+        return new MockTextArea(s,i,i1);
     }
 
     @Override

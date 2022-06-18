@@ -213,7 +213,7 @@ public final class MockProgramInfos implements AbstractProgramInfos {
         mockFileSet.setCurrentPath(_path);
     }
     private StringBuilder build(byte[] _bytes, int _offset) {
-        int len_ = _bytes.length - _offset;
+        int len_ = _bytes.length;
         StringBuilder ml_ = new StringBuilder();
         for (int i = _offset; i < len_; i++) {
             if (_bytes[i] < 0 || _bytes[i] > 9) {

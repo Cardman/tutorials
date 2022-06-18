@@ -9,6 +9,6 @@ import code.util.StringList;
 public class MockGraphicComboBoxGenerator implements AbstractGraphicComboBoxGenerator {
     @Override
     public GraphicComboGrInt createCombo(AbstractImageFactory abstractImageFactory, StringList stringList, int i, AbsCompoFactory absCompoFactory) {
-        return null;
+        return new MockComboBox(stringList,i);
     }
 }

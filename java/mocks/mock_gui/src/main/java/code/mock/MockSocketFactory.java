@@ -5,12 +5,12 @@ import code.gui.initialize.*;
 public class MockSocketFactory implements AbstractSocketFactory {
     @Override
     public AbstractSocket newSocket(int i, String s) {
-        return null;
+        return new MockSocket(false);
     }
 
     @Override
     public AbstractServerSocket newServerSocket(String s, int i) {
-        return null;
+        return new MockServerSocket();
     }
 
     @Override

@@ -38,13 +38,13 @@ public final class MockProgramInfos implements AbstractProgramInfos {
     private final AbstractThreadFactory threadFactory;
     private final AbstractFileCoreStream fileCoreStream;
 
-    public MockProgramInfos(String _h, String _t,double[] _se, long _initMillis, long[] _incrs) {
+    public MockProgramInfos(String _h, String _t, double[] _se, long _initMillis, long[] _incrs, boolean _cust) {
         this.homePath = _h;
         tmpUserFolder = _t;
         generator = new MockGenerator(_se);
         graphicStringListGenerator = new MockGraphicStringListGenerator();
         graphicComboBoxGenerator = new MockGraphicComboBoxGenerator();
-        geneStrCompo = new MockAdvGraphicListGenerator();
+        geneStrCompo = new MockAdvGraphicListGenerator(_cust);
         validator = new DefaultNameValidating(new StringList());
         StringMap<FileStruct> f_ = new StringMap<FileStruct>();
         MockMillis mm_ = new MockMillis(_initMillis,_incrs);

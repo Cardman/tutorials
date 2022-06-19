@@ -7,23 +7,29 @@ import code.gui.SpecSelectionCtx;
 import code.gui.SpecSelectionStruct;
 
 public class MockCustGrListStr extends MockCustGrList<Struct> implements AbsGraphicListStr {
+    private boolean cust;
+
+    public MockCustGrListStr(boolean _c) {
+        this.cust = _c;
+    }
+
     @Override
     public void setCustCell(Struct struct, AbsPreparedLabel absPreparedLabel, Struct struct1, SpecSelectionStruct specSelectionStruct) {
-        isCust();
+        cust = isCust();
     }
 
     @Override
     public void setDefCell(Struct struct, SpecSelectionCtx specSelectionCtx) {
-        isCust();
+        cust = isCust();
     }
 
     @Override
     public void updateGraphics() {
-        isCust();
+        cust = isCust();
     }
 
     @Override
     public boolean isCust() {
-        return true;
+        return cust;
     }
 }

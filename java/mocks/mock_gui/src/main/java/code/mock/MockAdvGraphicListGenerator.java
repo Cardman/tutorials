@@ -14,12 +14,12 @@ public class MockAdvGraphicListGenerator implements AbstractAdvGraphicListGenera
 
     @Override
     public AbsGraphicListStr createSimple(AbsGraphicListPainter absGraphicListPainter, SpecSelectionCtx specSelectionCtx) {
-        return new MockCustGrListStr();
+        return new MockCustGrListStr(cust);
     }
 
     @Override
     public AbsGraphicListStr createMult(AbsGraphicListPainter absGraphicListPainter, SpecSelectionCtx specSelectionCtx) {
-        return new MockCustGrListStr();
+        return new MockCustGrListStr(cust);
     }
 
     @Override

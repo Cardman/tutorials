@@ -11,11 +11,19 @@ import code.util.StringList;
 public class MockGraphicStringListGenerator implements AbstractGraphicStringListGenerator {
     @Override
     public AbsGraphicList<String> createStrList(AbstractImageFactory abstractImageFactory, StringList stringList, AbsCompoFactory absCompoFactory) {
-        return null;
+        MockCustGrList<String> stringMockCustGrList = new MockCustGrList<String>();
+        for (String s: stringList) {
+            stringMockCustGrList.add(s);
+        }
+        return stringMockCustGrList;
     }
 
     @Override
     public Input createMultStrList(AbstractImageFactory abstractImageFactory, StringList stringList, Ints ints, int i) {
-        return null;
+        MockCustGrMultList mockCustGrMultList = new MockCustGrMultList();
+        for (String s: stringList) {
+            mockCustGrMultList.add(s);
+        }
+        return mockCustGrMultList;
     }
 }

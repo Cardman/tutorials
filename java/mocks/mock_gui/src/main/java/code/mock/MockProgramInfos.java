@@ -32,7 +32,7 @@ public final class MockProgramInfos implements AbstractProgramInfos {
     private final MockFileSet mockFileSet;
     private final AbstractInterceptor mockInterceptor = new MockInterceptor();
     private final AbstractGenerator generator;
-    private final MockFrameFactory mockFrameFactory = new MockFrameFactory();
+    private final MockFrameFactory mockFrameFactory = new MockFrameFactory(this);
     private final AbstractImageFactory imageFactory = new MockImageFactory();
     private final TechStreams techStreams;
     private final AbstractThreadFactory threadFactory;

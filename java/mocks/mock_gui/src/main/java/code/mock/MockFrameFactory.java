@@ -7,19 +7,25 @@ import code.gui.initialize.AbsLightFrameFactory;
 import code.gui.initialize.AbstractProgramInfos;
 
 public class MockFrameFactory implements AbsFrameFactory, AbsLightFrameFactory {
+    private final AbstractProgramInfos programInfos;
+
+    public MockFrameFactory(AbstractProgramInfos programInfos) {
+        this.programInfos = programInfos;
+    }
+
     @Override
     public AbsCommonFrame newCommonFrame(String s, AbstractProgramInfos abstractProgramInfos, AbstractImage abstractImage) {
-        return null;
+        return new MockCommonFrame(abstractProgramInfos);
     }
 
     @Override
     public AbsDialog newDialog(AbsCloseableDialog absCloseableDialog) {
-        return null;
+        return new MockDialog(absCloseableDialog,programInfos);
     }
 
     @Override
     public AbsDialog newDialog() {
-        return null;
+        return new MockDialog(programInfos);
     }
 
     @Override
@@ -29,11 +35,11 @@ public class MockFrameFactory implements AbsFrameFactory, AbsLightFrameFactory {
 
     @Override
     public AbsOtherDialog newOtherDialog() {
-        return null;
+        return new MockDialog(programInfos);
     }
 
     @Override
     public AbsOtherFrame newOtherFrame() {
-        return null;
+        return new MockCommonFrame(programInfos);
     }
 }

@@ -39,6 +39,8 @@ public final class MockProgramInfos implements AbstractProgramInfos {
     private final AbstractFileCoreStream fileCoreStream;
     private final AbsCompoFactory compoFactory = new MockCompoFactory();
     private final AbstractSocketFactory socketFactory = new MockSocketFactory();
+    private int screenWidth;
+    private int screenHeight;
 
     public MockProgramInfos(String _h, String _t, double[] _se, long _initMillis, long[] _incrs, boolean _cust) {
         this.homePath = _h;
@@ -139,12 +141,20 @@ public final class MockProgramInfos implements AbstractProgramInfos {
 
     @Override
     public int getScreenWidth() {
-        return 0;
+        return screenWidth;
     }
 
     @Override
     public int getScreenHeight() {
-        return 0;
+        return screenHeight;
+    }
+
+    public void setScreenHeight(int screenHeight) {
+        this.screenHeight = screenHeight;
+    }
+
+    public void setScreenWidth(int screenWidth) {
+        this.screenWidth = screenWidth;
     }
 
     @Override

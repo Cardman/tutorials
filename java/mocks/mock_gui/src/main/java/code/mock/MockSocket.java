@@ -13,7 +13,7 @@ public class MockSocket implements AbstractSocket {
 
     @Override
     public AbstractBufferedReader getInput() {
-        return null;
+        return new MockBufferedReader();
     }
 
     @Override

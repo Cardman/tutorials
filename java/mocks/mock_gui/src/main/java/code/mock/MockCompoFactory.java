@@ -234,12 +234,12 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsTableGui newTableGui(String... strings) {
-        return null;
+        return new MockTableGui(strings);
     }
 
     @Override
     public AbsWrappedTextArea newWrappedTextArea(int i, int i1) {
-        return null;
+        return new MockWrappedTextArea(i,i1);
     }
 
     @Override

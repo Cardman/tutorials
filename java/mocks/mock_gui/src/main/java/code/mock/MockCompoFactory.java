@@ -109,42 +109,42 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsPopupMenu newAbsPopupMenu() {
-        return null;
+        return new MockPopupMenu();
     }
 
     @Override
     public AbsSlider newAbsSlider() {
-        return null;
+        return new MockSlider();
     }
 
     @Override
-    public AbsSlider newAbsSlider(int i) {
-        return null;
+    public AbsSlider newAbsSlider(int _o) {
+        return new MockSlider(_o);
     }
 
     @Override
-    public AbsSlider newAbsSlider(int i, int i1) {
-        return null;
+    public AbsSlider newAbsSlider(int _min, int _max) {
+        return new MockSlider(_min, _max);
     }
 
     @Override
-    public AbsSlider newAbsSlider(int i, int i1, int i2) {
-        return null;
+    public AbsSlider newAbsSlider(int _min, int _max, int _v) {
+        return new MockSlider(_min, _max, _v);
     }
 
     @Override
-    public AbsSlider newAbsSlider(int i, int i1, int i2, int i3) {
-        return null;
+    public AbsSlider newAbsSlider(int _o, int _min, int _max, int _v) {
+        return new MockSlider(_o, _min, _max, _v);
     }
 
     @Override
     public AbsProgressBar newAbsProgressBar() {
-        return null;
+        return new MockProgressBar();
     }
 
     @Override
     public AbsSpinner newSpinner(int i, int i1, int i2, int i3) {
-        return null;
+        return new MockSpinner(i,i1,i2,i3);
     }
 
     @Override

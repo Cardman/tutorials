@@ -1,13 +1,13 @@
 package code.mock;
 
-import code.gui.AbsMetaLabel;
+import code.gui.AbsMetaLabelInt;
 import code.gui.images.AbstractImage;
 import code.gui.images.AbstractImageFactory;
 
 public class MockPaintableLabel extends MockPaintableLabelAbs{
 
-    private final AbsMetaLabel metaLabel;
-    public MockPaintableLabel(AbsMetaLabel _meta) {
+    private final AbsMetaLabelInt metaLabel;
+    public MockPaintableLabel(AbsMetaLabelInt _meta) {
         metaLabel = _meta;
     }
 

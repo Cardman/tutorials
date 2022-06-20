@@ -16,7 +16,7 @@ public class MockCompoFactory implements AbsCompoFactory {
     }
 
     @Override
-    public AbsPaintableLabel newAbsPaintableLabel(AbsMetaLabel absMetaLabel) {
+    public AbsPaintableLabel newAbsPaintableLabel(AbsMetaLabelInt absMetaLabel) {
         return new MockPaintableLabel(absMetaLabel);
     }
 
@@ -88,7 +88,7 @@ public class MockCompoFactory implements AbsCompoFactory {
     }
 
     @Override
-    public AbsScrollPane newAbsScrollPane(AbsMetaLabel absMetaLabel) {
+    public AbsScrollPane newAbsScrollPane(AbsMetaLabelInt absMetaLabel) {
         return new MockScrollPane(absMetaLabel);
     }
 

@@ -1,6 +1,9 @@
 package code.mock;
 
-import code.gui.*;
+import code.gui.AbsClock;
+import code.gui.AbsCustComponent;
+import code.gui.AbsMetaLabelInt;
+import code.gui.AbsPanel;
 import code.gui.images.AbstractImageFactory;
 import code.util.CustList;
 
@@ -26,18 +29,13 @@ public class MockPanel extends MockCustComponent implements AbsPanel {
     }
 
     @Override
-    public void add(Clock clock) {
+    public void add(AbsClock clock) {
         add(clock.getComponent());
     }
 
     @Override
-    public void add(AbsMetaLabel absMetaLabel) {
+    public void add(AbsMetaLabelInt absMetaLabel) {
         add(absMetaLabel.getPaintableLabel());
-    }
-
-    @Override
-    public void add(AbsMetaLabelNo absMetaLabelNo) {
-        add(absMetaLabelNo.getPaintableLabel());
     }
 
     @Override
@@ -54,7 +52,7 @@ public class MockPanel extends MockCustComponent implements AbsPanel {
     }
 
     @Override
-    public void add(AbsMetaLabel absMetaLabel, int i) {
+    public void add(AbsMetaLabelInt absMetaLabel, int i) {
         add(absMetaLabel.getPaintableLabel(),i);
     }
 
@@ -72,7 +70,7 @@ public class MockPanel extends MockCustComponent implements AbsPanel {
     }
 
     @Override
-    public void add(AbsMetaLabel absMetaLabel, String s) {
+    public void add(AbsMetaLabelInt absMetaLabel, String s) {
         add(absMetaLabel.getPaintableLabel(),s);
     }
 

@@ -1,7 +1,7 @@
 package code.mock;
 
 import code.gui.AbsCustComponent;
-import code.gui.AbsMetaLabel;
+import code.gui.AbsMetaLabelInt;
 import code.gui.AbsPreparedLabel;
 import code.gui.images.AbstractImage;
 import code.gui.images.MetaFont;
@@ -134,8 +134,8 @@ public class MockImage implements AbstractImage {
     }
 
     @Override
-    public void setFont(AbsMetaLabel absMetaLabel) {
-        setFont(absMetaLabel.getMetaFont());
+    public void setFont(AbsMetaLabelInt _font) {
+        setFont(((MockCustComponent)_font.getPaintableLabel()).getMetaFont());
     }
 
     @Override

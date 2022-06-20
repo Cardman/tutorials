@@ -1,4 +1,6 @@
 *
+!/int_gui/
+!/int_gui/**
 !/mock_gui/
 !/mock_gui/**
 !/pom.xml

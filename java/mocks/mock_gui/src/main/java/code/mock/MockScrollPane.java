@@ -1,7 +1,7 @@
 package code.mock;
 
 import code.gui.AbsCustComponent;
-import code.gui.AbsMetaLabel;
+import code.gui.AbsMetaLabelInt;
 import code.gui.AbsScrollPane;
 import code.gui.images.MetaDimension;
 import code.gui.images.MetaRect;
@@ -15,7 +15,7 @@ public class MockScrollPane extends MockCustComponent implements AbsScrollPane {
         setViewportView(null);
     }
 
-    public MockScrollPane(AbsMetaLabel _center) {
+    public MockScrollPane(AbsMetaLabelInt _center) {
         this(_center.getPaintableLabel());
     }
     public MockScrollPane(AbsCustComponent _ch) {

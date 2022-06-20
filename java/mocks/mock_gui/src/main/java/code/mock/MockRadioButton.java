@@ -1,7 +1,7 @@
 package code.mock;
 
+import code.gui.AbsCustButtonGroup;
 import code.gui.AbsRadioButton;
-import code.gui.CustButtonGroup;
 import code.gui.events.AbsActionListener;
 import code.gui.events.AbsChangeListener;
 import code.util.CustList;
@@ -12,7 +12,7 @@ public class MockRadioButton extends MockInput implements AbsRadioButton {
     private final IdList<AbsChangeListener> changeListeners = new IdList<AbsChangeListener>();
     private boolean selected;
     private String text;
-    private CustButtonGroup buttonGroup;
+    private AbsCustButtonGroup buttonGroup;
     public MockRadioButton() {
         this("");
     }
@@ -65,12 +65,12 @@ public class MockRadioButton extends MockInput implements AbsRadioButton {
     }
 
     @Override
-    public CustButtonGroup getButtonGroup() {
+    public AbsCustButtonGroup getButtonGroup() {
         return buttonGroup;
     }
 
     @Override
-    public void setButtonGroup(CustButtonGroup _b) {
+    public void setButtonGroup(AbsCustButtonGroup _b) {
         this.buttonGroup = _b;
     }
 }

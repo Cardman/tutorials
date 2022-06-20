@@ -37,7 +37,8 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsImgButton newImgButton(AbstractImage abstractImage) {
-        return null;
+        abstractImage.getWidth();
+        return new MockImgButton();
     }
 
     @Override
@@ -48,32 +49,32 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsPanel newAbsolute() {
-        return null;
+        return new MockPanel(MockLayout.ABSOLUTE);
     }
 
     @Override
     public AbsPanel newBorder() {
-        return null;
+        return new MockPanel(MockLayout.BORDER);
     }
 
     @Override
     public AbsPanel newGrid(int i, int i1) {
-        return null;
+        return new MockPanel(MockLayout.GRID);
     }
 
     @Override
     public AbsPanel newGrid(int i, int i1, int i2, int i3) {
-        return null;
+        return new MockPanel(MockLayout.GRID);
     }
 
     @Override
     public AbsPanel newPageBox() {
-        return null;
+        return new MockPanel(MockLayout.PAGE);
     }
 
     @Override
     public AbsPanel newLineBox() {
-        return null;
+        return new MockPanel(MockLayout.LINE);
     }
 
     @Override
@@ -93,17 +94,17 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsTabbedPane newAbsTabbedPane() {
-        return null;
+        return new MockTabbedPane();
     }
 
     @Override
     public AbsSplitPane newVerticalSplitPane(AbsCustComponent absCustComponent, AbsCustComponent absCustComponent1) {
-        return null;
+        return new MockSplitPane(false,absCustComponent,absCustComponent1);
     }
 
     @Override
     public AbsSplitPane newHorizontalSplitPane(AbsCustComponent absCustComponent, AbsCustComponent absCustComponent1) {
-        return null;
+        return new MockSplitPane(true,absCustComponent,absCustComponent1);
     }
 
     @Override

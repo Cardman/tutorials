@@ -17,17 +17,17 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsPaintableLabel newAbsPaintableLabel(AbsMetaLabel absMetaLabel) {
-        return null;
+        return new MockPaintableLabel(absMetaLabel);
     }
 
     @Override
     public AbsPaintableLabel newAbsPaintableLabel() {
-        return null;
+        return new MockPaintableLabelNo();
     }
 
     @Override
     public AbsPreparedLabel newPreparedLabel(AbstractImage abstractImage) {
-        return new MockPreparedLabel();
+        return new MockPreparedLabel(abstractImage);
     }
 
     @Override

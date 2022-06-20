@@ -7,12 +7,12 @@ import code.gui.initialize.AbsCompoFactory;
 public class MockCompoFactory implements AbsCompoFactory {
     @Override
     public AbsTreeGui newTreeGui(AbstractMutableTreeNode abstractMutableTreeNode) {
-        return null;
+        return new MockTreeGui(abstractMutableTreeNode);
     }
 
     @Override
     public AbstractMutableTreeNode newMutableTreeNode(String s) {
-        return null;
+        return new MockMutableTreeNode(s);
     }
 
     @Override

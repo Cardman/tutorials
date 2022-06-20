@@ -189,47 +189,47 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsCustCheckBox newCustCheckBox() {
-        return null;
+        return new MockCustCheckBox();
     }
 
     @Override
     public AbsCustCheckBox newCustCheckBox(String s) {
-        return null;
+        return new MockCustCheckBox(s);
     }
 
     @Override
     public AbsCustCheckBox newCustCheckBox(String s, boolean b) {
-        return null;
+        return new MockCustCheckBox(s,b);
     }
 
     @Override
     public AbsPlainButton newPlainButton() {
-        return null;
+        return new MockPlainButton();
     }
 
     @Override
     public AbsPlainButton newPlainButton(String s) {
-        return null;
+        return new MockPlainButton(s);
     }
 
     @Override
     public AbsRadioButton newRadioButton() {
-        return null;
+        return new MockRadioButton();
     }
 
     @Override
     public AbsRadioButton newRadioButton(String s) {
-        return null;
+        return new MockRadioButton(s);
     }
 
     @Override
     public AbsRadioButton newRadioButton(String s, boolean b) {
-        return null;
+        return new MockRadioButton(s,b);
     }
 
     @Override
     public AbsPlainLabel newPlainLabel(String s) {
-        return null;
+        return new MockPlainLabel(s);
     }
 
     @Override

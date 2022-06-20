@@ -37,6 +37,8 @@ public final class MockProgramInfos implements AbstractProgramInfos {
     private final TechStreams techStreams;
     private final AbstractThreadFactory threadFactory;
     private final AbstractFileCoreStream fileCoreStream;
+    private final AbsCompoFactory compoFactory = new MockCompoFactory();
+    private final AbstractSocketFactory socketFactory = new MockSocketFactory();
 
     public MockProgramInfos(String _h, String _t, double[] _se, long _initMillis, long[] _incrs, boolean _cust) {
         this.homePath = _h;
@@ -127,7 +129,7 @@ public final class MockProgramInfos implements AbstractProgramInfos {
 
     @Override
     public AbstractSocketFactory getSocketFactory() {
-        return null;
+        return socketFactory;
     }
 
     @Override
@@ -186,7 +188,7 @@ public final class MockProgramInfos implements AbstractProgramInfos {
 
     @Override
     public AbsCompoFactory getCompoFactory() {
-        return null;
+        return compoFactory;
     }
 
     @Override

@@ -15,11 +15,11 @@ public class MockSocketFactory implements AbstractSocketFactory {
 
     @Override
     public AbstractNetworkInterfaceList newList() {
-        return null;
+        return new MockNetworkInterfaceList();
     }
 
     @Override
     public AbstractAddressList newAddr(String s) {
-        return null;
+        return new MockAddressList();
     }
 }

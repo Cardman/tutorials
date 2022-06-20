@@ -244,36 +244,36 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public AbsMenuBar newMenuBar() {
-        return null;
+        return new MockMenuBar();
     }
 
     @Override
     public AbsMenu newMenu() {
-        return null;
+        return new MockMenu();
     }
 
     @Override
     public AbsMenu newMenu(String s) {
-        return null;
+        return new MockMenu(s);
     }
 
     @Override
     public AbsCheckBoxMenuItem newCheckBoxMenuItem() {
-        return null;
+        return new MockCheckBoxMenuItem();
     }
 
     @Override
     public AbsCheckBoxMenuItem newCheckBoxMenuItem(String s) {
-        return null;
+        return new MockCheckBoxMenuItem(s);
     }
 
     @Override
     public AbsMenuItem newMenuItem() {
-        return null;
+        return new MockMenuItem();
     }
 
     @Override
     public AbsMenuItem newMenuItem(String s) {
-        return null;
+        return new MockMenuItem(s);
     }
 }

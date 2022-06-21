@@ -14,7 +14,7 @@ public class MockCustComponent implements AbsCustComponent {
     private AbsCustComponent parent;
     private MetaFont metaFont;
     private boolean autoscrolls;
-    private boolean visible;
+    private boolean visible = true;
     private boolean accessible = true;
     private boolean focusable = true;
     private boolean opaque;

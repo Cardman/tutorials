@@ -12,7 +12,7 @@ public class MockCustComponent implements AbsCustComponent {
     private MockPosition vertical = MockPosition.CENTER;
     private MockPosition horizontal = MockPosition.CENTER;
     private AbsCustComponent parent;
-    private MetaFont metaFont;
+    private MetaFont metaFont = new MetaFont("",1,1);
     private boolean autoscrolls;
     private boolean visible = true;
     private boolean accessible = true;

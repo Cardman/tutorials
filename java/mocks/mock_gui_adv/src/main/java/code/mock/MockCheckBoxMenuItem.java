@@ -2,6 +2,7 @@ package code.mock;
 
 import code.gui.AbsCheckBoxMenuItem;
 import code.gui.AbsMenu;
+import code.gui.GuiBaseUtil;
 import code.gui.events.AbsActionListener;
 import code.gui.events.AbsAdvActionListener;
 import code.util.CustList;
@@ -69,7 +70,7 @@ public class MockCheckBoxMenuItem extends MockInput implements AbsCheckBoxMenuIt
     @Override
     public void setEnabledMenu(boolean _b) {
         setEnabled(_b);
-        MockMenu.setEnabled(_b, this);
+        GuiBaseUtil.setEnabled(_b, this);
     }
 
     @Override

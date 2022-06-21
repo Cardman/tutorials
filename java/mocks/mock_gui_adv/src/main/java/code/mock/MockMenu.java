@@ -24,10 +24,7 @@ public class MockMenu extends MockInput implements AbsMenu {
 
     @Override
     public EnabledMenu getItem(int i) {
-        if (subs.isValidIndex(i)) {
-            return subs.get(i);
-        }
-        return null;
+        return GuiBaseUtil.get(subs,i);
     }
 
     @Override
@@ -79,27 +76,9 @@ public class MockMenu extends MockInput implements AbsMenu {
     @Override
     public void setEnabledMenu(boolean _b) {
         setEnabled(_b);
-        setEnabled(_b, this);
+        GuiBaseUtil.setEnabled(_b, this);
     }
-    public static void setEnabled(boolean _b, EnabledMenu _subMenu) {
-        AbsMenu mPar_ = _subMenu.getParentMenu();
-        while (mPar_ != null) {
-            if (!_b) {
-                int nbSubMenus_ = mPar_.getSubCount();
-                for (int i = 0; i < nbSubMenus_; i++) {
-                    EnabledMenu m_ = mPar_.getItem(i);
-                    if (m_ == null) {
-                        continue;
-                    }
-                    if (m_.isEnabled()) {
-                        return;
-                    }
-                }
-            }
-            mPar_.setEnabled(_b);
-            mPar_ = mPar_.getParentMenu();
-        }
-    }
+
     @Override
     public String getText() {
         return text;

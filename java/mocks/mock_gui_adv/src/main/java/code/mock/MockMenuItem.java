@@ -2,6 +2,7 @@ package code.mock;
 
 import code.gui.AbsMenu;
 import code.gui.AbsMenuItem;
+import code.gui.GuiBaseUtil;
 import code.gui.events.AbsActionListener;
 import code.gui.events.AbsAdvActionListener;
 import code.util.CustList;
@@ -55,7 +56,7 @@ public class MockMenuItem extends MockInput implements AbsMenuItem {
     @Override
     public void setEnabledMenu(boolean _b) {
         setEnabled(_b);
-        MockMenu.setEnabled(_b, this);
+        GuiBaseUtil.setEnabled(_b, this);
     }
 
     @Override

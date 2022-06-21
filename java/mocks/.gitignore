@@ -1,7 +1,11 @@
 *
 !/int_gui/
 !/int_gui/**
+!/gui_fct/
+!/gui_fct/**
 !/mock_gui/
 !/mock_gui/**
+!/mock_gui_adv/
+!/mock_gui_adv/**
 !/pom.xml
 !/.gitignore

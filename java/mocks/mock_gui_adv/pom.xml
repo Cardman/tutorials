@@ -7,14 +7,20 @@
         <artifactId>gui</artifactId>
         <version>2.0</version>
     </parent>
-	<groupId>mocks</groupId>
-	<artifactId>mocks</artifactId>
+	<groupId>mock_gui_adv</groupId>
+	<artifactId>mock_gui_adv</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<modules>
-	<module>int_gui</module>
-	<module>mock_gui</module>
-	<module>gui_fct</module>
-	<module>mock_gui_adv</module>
-	</modules>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>mock_gui</groupId>
+			<artifactId>mock_gui</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>gui_fct</groupId>
+			<artifactId>gui_fct</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+    </dependencies>
 </project>

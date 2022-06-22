@@ -3,8 +3,10 @@ package code.mock;
 import code.gui.*;
 import code.gui.images.AbstractImage;
 import code.gui.initialize.AbsCompoFactory;
+import code.util.CustList;
 
 public class MockCompoFactory implements AbsCompoFactory {
+    private final CustList<Runnable> later = new CustList<Runnable>();
     @Override
     public AbsTreeGui newTreeGui(AbstractMutableTreeNode abstractMutableTreeNode) {
         return new MockTreeGui(abstractMutableTreeNode);
@@ -43,9 +45,15 @@ public class MockCompoFactory implements AbsCompoFactory {
 
     @Override
     public void invokeLater(Runnable _runnable) {
-        //boolean to include for immediate or not
-        //sample immediate true for autocomplete
+        later.add(_runnable);
     }
+
+    public void invoke() {
+        for (Runnable r: later) {
+            r.run();
+        }
+    }
+
 
     @Override
     public AbsPanel newAbsolute() {

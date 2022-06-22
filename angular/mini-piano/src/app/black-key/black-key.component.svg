@@ -3,4 +3,4 @@ L {{NoteUtils.WHITE_KEY_WIDTH+NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{y}}
 L {{NoteUtils.WHITE_KEY_WIDTH+NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{NoteUtils.BLACK_KEY_HEIGHT+y}}
 L {{NoteUtils.WHITE_KEY_WIDTH-NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{NoteUtils.BLACK_KEY_HEIGHT+y}}
 L {{NoteUtils.WHITE_KEY_WIDTH-NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{y}}" [attr.fill]="'black'" (click)="clk()"/>
-<svg:circle *ngIf="pressed" [attr.fill]="'red'" [attr.cx]="NoteUtils.WHITE_KEY_WIDTH-NoteUtils.BLACK_KEY_HALF_WIDTH+x" [attr.cy]="y" r="5"/>
+<svg:circle *ngIf="pressed" [attr.fill]="'red'" [attr.cx]="NoteUtils.WHITE_KEY_WIDTH+x" [attr.cy]="y" [attr.r]="NoteUtils.BLACK_KEY_HALF_WIDTH"/>

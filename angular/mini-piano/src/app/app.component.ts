@@ -219,7 +219,7 @@ export class AppComponent extends Resources implements OnInit {
 	if (this.choice >= 1) {
 		return;
 	}
-	let nb = this.toFileEvent(event);
+	let nb = this.toFileEventFull(event);
     if (nb > -1 && !this.keyPressed[nb]){
 		this.playByKey(nb);
 		this.press[nb] = setInterval(()=>{
@@ -239,7 +239,7 @@ export class AppComponent extends Resources implements OnInit {
 	if (this.choice >= 1) {
 		return;
 	}
-	let nb = this.toFileEvent(event);
+	let nb = this.toFileEventFull(event);
 	if (nb > -1){
 		clearInterval(this.press[nb]);
 		this.keyPressed[nb] = false;
@@ -254,6 +254,153 @@ export class AppComponent extends Resources implements OnInit {
 	}
 	return nb;
   }
+  toFileEventFull(event:KeyboardEvent):number{
+    let nb = -1;
+    if (event.code=== 'Space'){
+		nb= 16;
+	} else if (event.code=== 'IntlBackslash'){
+		nb= 17;
+	} else if (event.code=== 'Comma'){
+		nb= 25;
+	} else if (event.code=== 'Period'){
+		nb= 26;
+	} else if (event.code=== 'Slash'){
+		nb= 27;
+	} else if (event.code=== 'Semicolon'){
+		nb= 37;
+	} else if (event.code=== 'Quote'){
+		nb= 38;
+	} else if (event.code=== 'Backslash'){
+		nb= 39;
+	} else if (event.code=== 'BracketLeft'){
+		nb= 50;
+	} else if (event.code=== 'BracketRight'){
+		nb= 51;
+	} else if (event.code=== 'Backquote'){
+		nb= 52;
+	} else if (event.code=== 'Minus'){
+		nb= 63;
+	} else if (event.code=== 'Equal'){
+		nb= 64;
+	} else if (event.code.startsWith('Key')){
+		nb=(this.toFileFull(event.code.substring('Key'.length),event.shiftKey));
+	} else if (event.code.startsWith('Digit')){
+		nb=(this.toFileFull(event.code.substring('Digit'.length),event.shiftKey));
+	}
+	return nb;
+  }
+  //
+  toFileFull(key:string, shift: boolean):number{
+	if (key==='Z'){
+		return 18;
+	}
+    if (key==='X'){
+		return 19;
+	}
+    if (key==='C'){
+		return 20;
+	}
+    if (key==='V'){
+		return 21;
+	}
+    if (key==='B'){
+		return 22;
+	}
+    if (key==='N'){
+		return 23;
+	}
+	if (key==='M'){
+		return 24;
+	}
+	if (key==='A'){
+		return 28;
+	}
+    if (key==='S'){
+		return 29;
+	}
+    if (key==='D'){
+		return 30;
+	}
+    if (key==='F'){
+		return 31;
+	}
+    if (key==='G'){
+		return 32;
+	}
+    if (key==='H'){
+		return 33;
+	}
+    if (key==='J'){
+		return 34;
+	}
+    if (key==='K'){
+		return 35;
+	}
+    if (key==='L'){
+		return 36;
+	}
+	if (key==='Q'){
+		return 40;
+	}
+    if (key==='W'){
+		return 41;
+	}
+    if (key==='E'){
+		return 42;
+	}
+    if (key==='R'){
+		return 43;
+	}
+    if (key==='T'){
+		return 44;
+	}
+    if (key==='Y'){
+		return 45;
+	}
+    if (key==='U'){
+		return 46;
+	}
+    if (key==='I'){
+		return 47;
+	}
+    if (key==='O'){
+		return 48;
+	}
+    if (key==='P'){
+		return 49;
+	}
+    if (key==='1'){
+		return 53;
+	}
+    if (key==='2'){
+		return 54;
+	}
+    if (key==='3'){
+		return 55;
+	}
+    if (key==='4'){
+		return 56;
+	}
+    if (key==='5'){
+		return 57;
+	}
+    if (key==='6'){
+		return 58;
+	}
+    if (key==='7'){
+		return 59;
+	}
+    if (key==='8'){
+		return 60;
+	}
+    if (key==='9'){
+		return 61;
+	}
+    if (key==='0'){
+		return 62;
+	}
+	return -1;
+   }
   toFile(key:string, shift: boolean):number{
     if (key==='Z'){
 		if (shift){

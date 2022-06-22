@@ -7,3 +7,4 @@ L {{x}} {{NoteUtils.WHITE_KEY_HEIGHT+y}}
 L {{x}} {{NoteUtils.BLACK_KEY_HEIGHT+y}}
 L {{NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{NoteUtils.BLACK_KEY_HEIGHT+y}}
 L {{NoteUtils.BLACK_KEY_HALF_WIDTH+x}} {{y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'" (click)="clk()"/>
+<svg:circle *ngIf="pressed" [attr.fill]="'red'" [attr.cx]="NoteUtils.BLACK_KEY_HALF_WIDTH+x" [attr.cy]="y" r="5"/>

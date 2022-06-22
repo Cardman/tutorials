@@ -73,23 +73,4 @@ public final class GuiBaseUtil {
         }
         return null;
     }
-    public static void setEnabled(boolean _b, EnabledMenu _subMenu) {
-        AbsMenu mPar_ = _subMenu.getParentMenu();
-        while (mPar_ != null) {
-            if (!_b) {
-                int nbSubMenus_ = mPar_.getSubCount();
-                for (int i = 0; i < nbSubMenus_; i++) {
-                    EnabledMenu m_ = mPar_.getItem(i);
-                    if (m_ == null) {
-                        continue;
-                    }
-                    if (m_.isEnabled()) {
-                        return;
-                    }
-                }
-            }
-            mPar_.setEnabled(_b);
-            mPar_ = mPar_.getParentMenu();
-        }
-    }
 }

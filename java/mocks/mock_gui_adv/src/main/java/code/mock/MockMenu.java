@@ -76,7 +76,6 @@ public class MockMenu extends MockInput implements AbsMenu {
     @Override
     public void setEnabledMenu(boolean _b) {
         setEnabled(_b);
-        GuiBaseUtil.setEnabled(_b, this);
     }
 
     @Override

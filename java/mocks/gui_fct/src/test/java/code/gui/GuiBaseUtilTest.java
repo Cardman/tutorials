@@ -2,6 +2,7 @@ package code.gui;
 
 import code.mock.*;
 import code.util.CustList;
+import code.util.IdList;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -31,5 +32,15 @@ public class GuiBaseUtilTest {
     @Test
     public void indexOf() {
         assertEquals(-1, GuiBaseUtil.indexOf(new CustList<AbsCustComponent>(),null));
+    }
+    @Test
+    public void menu1(){
+        assertNull(GuiBaseUtil.get(new IdList<EnabledMenu>(),0));
+    }
+    @Test
+    public void menu2(){
+        IdList<EnabledMenu> list_ = new IdList<EnabledMenu>();
+        list_.add(null);
+        assertNull(GuiBaseUtil.get(list_,0));
     }
 }

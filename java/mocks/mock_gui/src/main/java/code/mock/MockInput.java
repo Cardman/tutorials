@@ -1,7 +1,7 @@
 package code.mock;
 
 public class MockInput extends MockCustComponent{
-    private boolean enabled;
+    private boolean enabled = true;
 
     public boolean isEnabled() {
         return enabled;

@@ -37,7 +37,7 @@ public class MockBinStreamInImpl implements AbstractBinStreamIn {
         index += read_;
         return read_;
     }
-    private static void set(byte[] _dest,int _idest,byte[] _orig, int _iorigin){
+    public static void set(byte[] _dest,int _idest,byte[] _orig, int _iorigin){
         _dest[_idest] = _orig[_iorigin];
     }
 

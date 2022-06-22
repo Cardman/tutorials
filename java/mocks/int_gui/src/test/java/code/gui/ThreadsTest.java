@@ -6,6 +6,7 @@ import code.stream.core.ContentTime;
 import code.stream.core.TechStreams;
 import code.threads.FileStruct;
 import code.threads.ThState;
+import code.util.core.NumberUtil;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -56,5 +57,42 @@ public class ThreadsTest {
         ContentTime t_ = new ContentTime(new byte[0],0);
         assertEquals(0, t_.getLastModifTime());
         assertEquals(0, t_.getContent().length);
+    }
+    @Test
+    public void isZip1(){
+        FileStruct f_ = new FileStruct(null,0);
+        assertFalse(isZip(f_.getContent()));
+    }
+    @Test
+    public void isZip2(){
+        assertFalse(isZip(new byte[0]));
+    }
+    @Test
+    public void isZip3(){
+        assertFalse(isZip(new byte[4]));
+    }
+    @Test
+    public void isZip4(){
+        assertFalse(isZip(NumberUtil.wrapByteArray((byte)0x0,(byte)0x0, (byte)0x0,(byte)0x0)));
+    }
+    @Test
+    public void isZip5(){
+        assertFalse(isZip(NumberUtil.wrapByteArray((byte)0x50,(byte)0x0, (byte)0x0,(byte)0x0)));
+    }
+    @Test
+    public void isZip6(){
+        assertFalse(isZip(NumberUtil.wrapByteArray((byte)0x50,(byte)0x4b, (byte)0x0,(byte)0x0)));
+    }
+    @Test
+    public void isZip7(){
+        assertFalse(isZip(NumberUtil.wrapByteArray((byte)0x50,(byte)0x4b, (byte)0x03,(byte)0x0)));
+    }
+    @Test
+    public void isZip8(){
+        assertTrue(isZip(NumberUtil.wrapByteArray((byte)0x50,(byte)0x4b, (byte)0x03,(byte)0x4)));
+    }
+
+    private boolean isZip(byte[] _bs) {
+        return FileListInfo.isZip(_bs);
     }
 }

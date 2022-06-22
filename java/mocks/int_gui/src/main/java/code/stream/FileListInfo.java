@@ -13,6 +13,11 @@ public final class FileListInfo {
         }
     }
 
+    public static boolean isZip(byte[] _bytes) {
+        return _bytes != null && _bytes.length > 3
+                && _bytes[0] == (byte)0x50&& _bytes[1] == (byte)0x4b
+                && _bytes[2] == (byte)0x03&& _bytes[3] == (byte)0x04;
+    }
     public AbstractFile[] getNames() {
         return names;
     }

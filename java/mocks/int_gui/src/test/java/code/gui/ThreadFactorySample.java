@@ -34,6 +34,11 @@ public class ThreadFactorySample implements AbstractThreadFactory {
     }
 
     @Override
+    public void newStartedThread(Runnable _runnable, boolean _immediate) {
+
+    }
+
+    @Override
     public AbstractThread newThread(Runnable _runnable) {
         return null;
     }

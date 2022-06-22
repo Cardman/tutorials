@@ -46,6 +46,11 @@ public class MockThreadFactory implements AbstractThreadFactory {
     }
 
     @Override
+    public void newStartedThread(Runnable _runnable, boolean _immediate) {
+        new MockThread(_runnable, _immediate,ids).start();
+    }
+
+    @Override
     public AbstractThread newThread(Runnable _run) {
         return new MockThread(_run, false,ids);
     }

@@ -3,6 +3,7 @@ package code.mock;
 import code.maths.montecarlo.AbstractGenerator;
 import code.stream.core.AbstractBinFact;
 import code.threads.FileStruct;
+import code.util.StringMap;
 
 public class MockBinFact implements AbstractBinFact {
     private final MockRand mockRand;
@@ -15,7 +16,11 @@ public class MockBinFact implements AbstractBinFact {
 
     @Override
     public byte[] loadFile(String _s) {
-        FileStruct val_ = fileSet.getFiles().getVal(_s);
+        return load(_s, fileSet.getFiles());
+    }
+
+    public static byte[] load(String _s, StringMap<FileStruct> _files) {
+        FileStruct val_ = _files.getVal(_s);
         if (val_ == null) {
             return null;
         }
@@ -37,5 +42,9 @@ public class MockBinFact implements AbstractBinFact {
             return true;
         }
         return false;
+    }
+
+    public MockFileSet getFileSet() {
+        return fileSet;
     }
 }

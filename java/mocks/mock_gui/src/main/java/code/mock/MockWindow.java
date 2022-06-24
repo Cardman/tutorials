@@ -146,13 +146,13 @@ public abstract class MockWindow implements WithListener{
     }
 
     public void setLocationRelativeTo(AbsDialog absDialog) {
-        locationFirst = absDialog.getLocationOnScreen().getXcoord()+((MockDialog)absDialog).getWidth()/2;
-        locationSecond = absDialog.getLocationOnScreen().getYcoord()+((MockDialog)absDialog).getHeight()/2;
+        locationFirst = absDialog.getLocationOnScreen().getXcoord()+((MockAbsDialog)absDialog).getWidth()/2;
+        locationSecond = absDialog.getLocationOnScreen().getYcoord()+((MockAbsDialog)absDialog).getHeight()/2;
     }
 
     public void setLocationRelativeToWindow(Iconifiable iconifiable) {
-        if (iconifiable instanceof MockDialog) {
-            setLocationRelativeTo((MockDialog)iconifiable);
+        if (iconifiable instanceof MockAbsDialog) {
+            setLocationRelativeTo((MockAbsDialog)iconifiable);
         } else if (iconifiable instanceof AbsGroupFrame) {
             setLocationRelativeTo((AbsGroupFrame)iconifiable);
         } else {
@@ -197,10 +197,6 @@ public abstract class MockWindow implements WithListener{
 
     public boolean isVisible() {
         return visible;
-    }
-
-    public void pack() {
-        GuiBaseUtil.recalculate(pane);
     }
 
     public Ownable getOwner() {

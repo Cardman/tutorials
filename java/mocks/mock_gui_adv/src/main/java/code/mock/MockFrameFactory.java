@@ -2,15 +2,12 @@ package code.mock;
 
 import code.gui.*;
 import code.gui.images.AbstractImage;
-import code.gui.initialize.AbsFrameFactory;
-import code.gui.initialize.AbsLightFrameFactory;
 import code.gui.initialize.AbstractProgramInfos;
 
-public class MockFrameFactory implements AbsFrameFactory, AbsLightFrameFactory {
-    private final AbstractProgramInfos programInfos;
+public class MockFrameFactory extends MockAbsFrameFactory {
 
     public MockFrameFactory(AbstractProgramInfos programInfos) {
-        this.programInfos = programInfos;
+        super(programInfos);
     }
 
     @Override
@@ -20,26 +17,21 @@ public class MockFrameFactory implements AbsFrameFactory, AbsLightFrameFactory {
 
     @Override
     public AbsDialog newDialog(AbsCloseableDialog absCloseableDialog) {
-        return new MockDialog(absCloseableDialog,programInfos);
+        return new MockDialog(absCloseableDialog, getProgramInfos());
     }
 
     @Override
     public AbsDialog newDialog() {
-        return new MockDialog(programInfos);
-    }
-
-    @Override
-    public void setCursor(AbsCustComponent absCustComponent, int i, int i1, int[] ints) {
-        absCustComponent.setHandCursor();
+        return new MockDialog(getProgramInfos());
     }
 
     @Override
     public AbsOtherDialog newOtherDialog() {
-        return new MockDialog(programInfos);
+        return new MockDialog(getProgramInfos());
     }
 
     @Override
     public AbsOtherFrame newOtherFrame() {
-        return new MockCommonFrame(programInfos);
+        return new MockCommonFrame(getProgramInfos());
     }
 }

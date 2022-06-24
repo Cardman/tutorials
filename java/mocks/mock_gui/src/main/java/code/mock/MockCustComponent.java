@@ -489,6 +489,9 @@ public class MockCustComponent implements AbsCustComponent {
     @Override
     public void recalculate() {
         AbsCustComponent parent_ = getParent();
+        if (parent_ instanceof MockPanel && ((MockPanel)parent_).getLayout() == MockLayout.ABSOLUTE) {
+            return;
+        }
         if (parent_ instanceof MockCustComponent) {
             setSize(new MetaDimension(parent_.getWidth(), parent_.getHeight()));
         } else {

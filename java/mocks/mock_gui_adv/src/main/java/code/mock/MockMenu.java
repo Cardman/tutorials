@@ -1,6 +1,7 @@
 package code.mock;
 
 import code.gui.*;
+import code.util.CustList;
 import code.util.IdList;
 
 public class MockMenu extends MockInput implements AbsMenu {
@@ -23,8 +24,8 @@ public class MockMenu extends MockInput implements AbsMenu {
     }
 
     @Override
-    public EnabledMenu getItem(int i) {
-        return GuiBaseUtil.get(subs,i);
+    public CustList<EnabledMenu> getItems() {
+        return subs;
     }
 
     @Override

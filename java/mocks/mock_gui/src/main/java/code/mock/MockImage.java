@@ -60,7 +60,7 @@ public class MockImage implements AbstractImage {
 
     @Override
     public void drawImage(AbstractImage _img, int i, int i1) {
-        BaseSixtyFourUtil.clipSixtyFour(((MockImage)_img).pixels,i,i1,_img.getWidth(),_img.getHeight());
+        BaseSixtyFourUtil.clipSixtyFour(((MockImage)_img).pixels,0,0,_img.getWidth(),_img.getHeight());
     }
 
     @Override
@@ -135,7 +135,7 @@ public class MockImage implements AbstractImage {
 
     @Override
     public void setFont(AbsMetaLabelInt _font) {
-        setFont(((MockCustComponent)_font.getPaintableLabel()).getMetaFont());
+        setFont(_font.getPaintableLabel().getMetaFont());
     }
 
     @Override

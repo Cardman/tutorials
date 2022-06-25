@@ -6,8 +6,9 @@ import code.gui.initialize.AbstractProgramInfos;
 
 public abstract class MockAbsCommonFrame extends MockWindow implements AbsCommonFrame,AbsOtherFrame {
 
-    protected MockAbsCommonFrame(AbstractProgramInfos frames) {
+    protected MockAbsCommonFrame(AbstractProgramInfos frames, String _lgKey) {
         super(frames);
+        setLanguageKey(_lgKey);
     }
 
     @Override

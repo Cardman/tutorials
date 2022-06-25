@@ -12,7 +12,7 @@ public class MockFrameFactory extends MockAbsFrameFactory {
 
     @Override
     public AbsCommonFrame newCommonFrame(String s, AbstractProgramInfos abstractProgramInfos, AbstractImage abstractImage) {
-        return new MockCommonFrame(abstractProgramInfos);
+        return new MockCommonFrame(abstractProgramInfos, s);
     }
 
     @Override
@@ -32,6 +32,6 @@ public class MockFrameFactory extends MockAbsFrameFactory {
 
     @Override
     public AbsOtherFrame newOtherFrame() {
-        return new MockCommonFrame(getProgramInfos());
+        return new MockCommonFrame(getProgramInfos(), "");
     }
 }

@@ -1,8 +1,6 @@
 package code.mock;
 
 import code.stream.AbstractFile;
-import code.stream.AbstractFileCoreStream;
-import code.stream.FileListInfo;
 import code.threads.FileStruct;
 import code.util.CustList;
 import code.util.StringList;
@@ -32,25 +30,25 @@ public class MockFile implements AbstractFile {
     }
 
     @Override
-    public FileListInfo listAbsolute(AbstractFileCoreStream _abstractFileCoreStream) {
+    public String[] list() {
         if (!isDirectory()) {
-            return new FileListInfo(null);
+            return new MockFileListInfoName(null).getSimples();
         }
-        CustList<AbstractFile> files_ = new CustList<AbstractFile>();
+        StringList files_ = new StringList();
         for (String p: fileSet.getFiles().getKeys()) {
             if (!StringUtil.quickEq(p,abs)&&(p.startsWith(abs+"/")||p.startsWith(abs+"\\"))) {
                 String sub_ = p.substring(abs.length()+1);
                 if (!sub_.contains("/") && !sub_.contains("\\")) {
-                    files_.add(_abstractFileCoreStream.newFile(p));
+                    files_.add(sub_);
                 }
             }
         }
         int len_ = files_.size();
-        AbstractFile[] arr_ = new AbstractFile[len_];
+        String[] l_ = new String[len_];
         for (int i = 0; i < len_; i++) {
-            arr_[i] = files_.get(i);
+            l_[i] = files_.get(i);
         }
-        return new FileListInfo(arr_);
+        return l_;
     }
 
     @Override

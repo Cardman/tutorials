@@ -14,8 +14,10 @@ public class MockFile implements AbstractFile {
         abs = absolute(_mfs, _s);
     }
     private String absolute(MockFileSet _mfs, String _s) {
-        if (_s.startsWith("/")) {
-            return _s;
+        for (String r: _mfs.getRoots()) {
+            if (_s.startsWith(r)) {
+                return _s;
+            }
         }
         return _mfs.getCurrentPath()+_s;
     }

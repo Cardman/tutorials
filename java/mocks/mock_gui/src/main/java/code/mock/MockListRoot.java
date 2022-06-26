@@ -1,15 +1,21 @@
 package code.mock;
 
 import code.stream.AbstractListRoot;
+import code.util.StringList;
 
 public class MockListRoot implements AbstractListRoot {
+
+    private final StringList roots;
+    public MockListRoot(StringList _r) {
+        roots = _r;
+    }
     @Override
     public int length() {
-        return 1;
+        return roots.size();
     }
 
     @Override
     public String path(int _i) {
-        return "/";
+        return roots.get(_i);
     }
 }

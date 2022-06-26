@@ -11,7 +11,7 @@ public class MockFileCoreStream implements AbstractFileCoreStream {
     }
     @Override
     public AbstractListRoot newFileList() {
-        return new MockListRoot();
+        return new MockListRoot(fileSet.getRoots());
     }
 
     @Override

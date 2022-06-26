@@ -37,9 +37,12 @@ public class MockFile implements AbstractFile {
         StringList files_ = new StringList();
         for (String p: fileSet.getFiles().getKeys()) {
             if (!StringUtil.quickEq(p,abs)&&(p.startsWith(abs+"/")||p.startsWith(abs+"\\"))) {
-                String sub_ = p.substring(abs.length()+1);
-                if (!sub_.contains("/") && !sub_.contains("\\")) {
+                String sub_ = p.substring(abs.length()+1).replace('\\','/');
+                int sep_ = sub_.indexOf('/');
+                if (sep_ < 0) {
                     files_.add(sub_);
+                } else {
+                    files_.add(sub_.substring(0,sep_));
                 }
             }
         }

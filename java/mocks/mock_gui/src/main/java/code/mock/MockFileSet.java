@@ -18,6 +18,11 @@ public class MockFileSet {
         mockMillis = _mm;
         roots = new StringList("/");
     }
+    public void initRootsFolders() {
+        for (String s: roots) {
+            files.addEntry(s, new FileStruct(null, mockMillis.millis()));
+        }
+    }
     public StringMap<FileStruct> getFiles() {
         return files;
     }

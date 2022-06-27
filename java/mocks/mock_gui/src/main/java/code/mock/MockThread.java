@@ -11,6 +11,7 @@ public class MockThread implements AbstractThread {
     private final Runnable runnable;
     private int priority;
     private boolean interrupted;
+    private boolean invoked;
     private final long id;
 
     public MockThread(Runnable _r, boolean _i, AbstractAtomicLong _id) {
@@ -24,6 +25,7 @@ public class MockThread implements AbstractThread {
         setAlive(true);
         if (immediate && runnable != null) {
             runnable.run();
+            invoked = true;
         }
         setAlive(false);
     }
@@ -41,7 +43,14 @@ public class MockThread implements AbstractThread {
 
     @Override
     public ThState join() {
-        return ThState.of(isAlive());
+        boolean alive_ = isAlive();
+        if (!invoked && runnable != null) {
+            setAlive(true);
+            runnable.run();
+            invoked = true;
+            setAlive(false);
+        }
+        return ThState.of(alive_);
     }
 
     @Override

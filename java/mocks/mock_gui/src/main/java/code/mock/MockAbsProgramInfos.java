@@ -14,7 +14,6 @@ import code.stream.core.AbstractZipFact;
 import code.stream.core.TechStreams;
 import code.threads.AbstractAtomicInteger;
 import code.threads.AbstractThreadFactory;
-import code.threads.FileStruct;
 import code.util.CustList;
 import code.util.StringList;
 import code.util.StringMap;
@@ -41,17 +40,15 @@ public abstract class MockAbsProgramInfos implements AbstractProgramInfos {
     private int screenWidth;
     private int screenHeight;
 
-    protected MockAbsProgramInfos(String _h, String _t, double[] _se, long _initMillis, long[] _incrs, boolean _cust) {
+    protected MockAbsProgramInfos(String _h, String _t, double[] _se, boolean _cust, MockFileSet _set) {
         this.homePath = _h;
         tmpUserFolder = _t;
         generator = new MockGenerator(_se);
         graphicStringListGenerator = new MockGraphicStringListGenerator();
         graphicComboBoxGenerator = new MockGraphicComboBoxGenerator();
         geneStrCompo = new MockAdvGraphicListGenerator(_cust);
-        validator = new DefaultNameValidating(new StringList());
-        StringMap<FileStruct> f_ = new StringMap<FileStruct>();
-        MockMillis mm_ = new MockMillis(_initMillis,_incrs);
-        mockFileSet = new MockFileSet(f_,validator,mm_);
+        mockFileSet = _set;
+        validator = mockFileSet.getValidating();
         fileCoreStream = new MockFileCoreStream(mockFileSet);
         threadFactory = new MockThreadFactory(generator, mockFileSet);
         MockBinFact mockBinFact_ = new MockBinFact(generator, mockFileSet);

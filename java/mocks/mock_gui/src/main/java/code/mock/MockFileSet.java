@@ -12,16 +12,18 @@ public class MockFileSet {
     private final StringList roots;
     private String currentPath = "/";
 
-    public MockFileSet(StringMap<FileStruct> _f, DefaultNameValidating _validator, MockMillis _mm) {
-        files = _f;
-        validating = _validator;
-        mockMillis = _mm;
-        roots = new StringList("/");
+    public MockFileSet(long _initMillis, long[] _incrs, String[] _roots) {
+        files = new StringMap<FileStruct>();
+        validating = new DefaultNameValidating(new StringList());
+        mockMillis = new MockMillis(_initMillis, _incrs);
+        roots = new StringList(_roots);
+        initRootsFolders();
     }
     public void initRootsFolders() {
         for (String s: roots) {
             files.addEntry(s, new FileStruct(null, mockMillis.millis()));
         }
+        currentPath = roots.first();
     }
     public StringMap<FileStruct> getFiles() {
         return files;

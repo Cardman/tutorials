@@ -32,9 +32,6 @@ public class MockBinFact implements AbstractBinFact {
     public boolean writeFile(String s, byte[] bytes) {
         String abs_ = MockFile.absolute(fileSet, s);
         String link_ = linkedRoot(abs_);
-        if (link_.isEmpty()) {
-            return false;
-        }
         if (!fileSet.getValidating().okPath(abs_.substring(link_.length()),'/','\\')) {
             return false;
         }

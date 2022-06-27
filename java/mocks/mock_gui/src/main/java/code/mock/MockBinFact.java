@@ -15,16 +15,16 @@ public class MockBinFact implements AbstractBinFact {
 
     @Override
     public byte[] loadFile(String _s) {
-        return load(_s, fileSet);
+        return load(_s, fileSet).getContent();
     }
 
-    public static byte[] load(String _s, MockFileSet _files) {
+    public static FileStruct load(String _s, MockFileSet _files) {
         String abs_ = MockFile.absolute(_files, _s);
         FileStruct val_ = _files.getFiles().getVal(abs_);
         if (val_ == null) {
-            return new FileStruct(null,0).getContent();
+            return new FileStruct(null,0);
         }
-        return val_.getContent();
+        return val_;
     }
 
 

@@ -128,12 +128,12 @@ public class MockImage implements AbstractImage {
 
     @Override
     public void setFont(String _name, int _style, int _size) {
-        metaFont = new MetaFont(_name,_style,_size);
+        setFont(new MetaFont(_name,_style,_size));
     }
 
     @Override
     public void setFont(MetaFont metaFont) {
-        setFont(metaFont.getFontFamily(), metaFont.getFont(), metaFont.getRealSize());
+        setMetaFont(metaFont);
     }
 
     @Override
@@ -144,6 +144,10 @@ public class MockImage implements AbstractImage {
     @Override
     public void setFont(AbsMetaLabelInt _font) {
         setFont(_font.getPaintableLabel().getMetaFont());
+    }
+
+    public void setMetaFont(MetaFont metaFont) {
+        this.metaFont = metaFont;
     }
 
     @Override

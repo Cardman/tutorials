@@ -42,7 +42,11 @@ public class MockFileSet {
     }
 
     public void setCurrentPath(String _path) {
-        this.currentPath = _path;
+        String abs_ = MockFile.absolute(this, _path);
+        if (!files.contains(abs_)) {
+            return;
+        }
+        this.currentPath = abs_;
     }
 
     public StringList getRoots() {

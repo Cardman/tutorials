@@ -31,7 +31,7 @@ public class MockBinFact implements AbstractBinFact {
     @Override
     public boolean writeFile(String s, byte[] bytes) {
         String abs_ = MockFile.absolute(fileSet, s);
-        String link_ = linkedRoot(abs_);
+        String link_ = fileSet.linkedRoot(abs_);
         if (!fileSet.getValidating().okPath(abs_.substring(link_.length()),'/','\\')) {
             return false;
         }
@@ -44,17 +44,6 @@ public class MockBinFact implements AbstractBinFact {
             return true;
         }
         return false;
-    }
-
-    private String linkedRoot(String _root) {
-        String link_ = "";
-        for (String r: fileSet.getRoots()) {
-            if (_root.startsWith(r)) {
-                link_ = r;
-                break;
-            }
-        }
-        return link_;
     }
 
     public MockFileSet getFileSet() {

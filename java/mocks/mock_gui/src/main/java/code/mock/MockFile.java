@@ -93,15 +93,17 @@ public class MockFile implements AbstractFile {
         if (_abstractFile.exists()) {
             return false;
         }
-        if (StringUtil.quickEq(abs,_abstractFile.getAbsolutePath())) {
+        String otherAbs_ = _abstractFile.getAbsolutePath();
+        if (StringUtil.quickEq(abs, otherAbs_)) {
             return false;
         }
-        if (!fileSet.getValidating().okPath(_abstractFile.getAbsolutePath(), '/', '\\')) {
+        String r_ = fileSet.linkedRoot(otherAbs_);
+        if (!fileSet.getValidating().okPath(otherAbs_.substring(r_.length()), '/', '\\')) {
             return false;
         }
         FileStruct old_ = fileSet.getFiles().getVal(abs);
         fileSet.getFiles().removeKey(abs);
-        abs = _abstractFile.getAbsolutePath();
+        abs = otherAbs_;
         fileSet.getFiles().put(abs,old_);
         return true;
     }
@@ -131,19 +133,12 @@ public class MockFile implements AbstractFile {
 
     @Override
     public boolean mkdirs() {
-        if (!fileSet.getValidating().okPath(abs, '/', '\\')) {
+        String r_ = fileSet.linkedRoot(abs);
+        if (!fileSet.getValidating().okPath(abs.substring(r_.length()), '/', '\\')) {
             return false;
         }
         if (fileSet.getFiles().contains(abs)) {
             return false;
-        }
-        StringList list_ = StringUtil.splitChars(abs, '/', '\\');
-        StringList pars_ = new StringList();
-        for (String p: list_) {
-            if (!fileSet.getFiles().contains(StringUtil.join(pars_,'/'))) {
-                return false;
-            }
-            pars_.add(p);
         }
         fileSet.getFiles().put(abs,new FileStruct(null,fileSet.getMockMillis().millis()));
         return true;

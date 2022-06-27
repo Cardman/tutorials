@@ -49,6 +49,17 @@ public class MockFileSet {
         this.currentPath = abs_;
     }
 
+    public String linkedRoot(String _root) {
+        String link_ = "";
+        for (String r: getRoots()) {
+            if (_root.startsWith(r)) {
+                link_ = r;
+                break;
+            }
+        }
+        return link_;
+    }
+
     public StringList getRoots() {
         return roots;
     }

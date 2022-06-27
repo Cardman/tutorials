@@ -140,8 +140,7 @@ public class MockFile implements AbstractFile {
         StringList list_ = StringUtil.splitChars(abs, '/', '\\');
         StringList pars_ = new StringList();
         for (String p: list_) {
-            FileStruct val_ = fileSet.getFiles().getVal(StringUtil.join(pars_, '/'));
-            if (val_ != null && val_.getContent() != null) {
+            if (MockBinFact.load(StringUtil.join(pars_, '/'),fileSet).getContent() != null) {
                 return false;
             }
             pars_.add(p);

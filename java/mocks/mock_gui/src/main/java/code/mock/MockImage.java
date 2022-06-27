@@ -60,10 +60,10 @@ public class MockImage implements AbstractImage {
 
     @Override
     public void drawImage(AbstractImage _img, int _x, int _y) {
-        int w_ = Math.min(getWidth()-_x,_img.getWidth());
-        int h_ = Math.min(getHeight()-_y,_img.getHeight());
         int a_ = Math.max(0,-_x);
         int b_ = Math.max(0,-_y);
+        int w_ = Math.max(a_,Math.min(getWidth()-_x,_img.getWidth()));
+        int h_ = Math.max(b_,Math.min(getHeight()-_y,_img.getHeight()));
         for(int i = a_; i < w_; i++) {
             for (int j = b_; j < h_; j++) {
                 setRGB(i+_x,j+_y,_img.getRGB(i,j));

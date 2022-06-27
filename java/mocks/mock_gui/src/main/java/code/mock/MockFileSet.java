@@ -6,11 +6,12 @@ import code.util.StringList;
 import code.util.StringMap;
 
 public class MockFileSet {
+    private static final String SL = "/";
     private final DefaultNameValidating validating;
     private final StringMap<FileStruct> files;
     private final MockMillis mockMillis;
     private final StringList roots;
-    private String currentPath = "/";
+    private String currentPath = SL;
 
     public MockFileSet(long _initMillis, long[] _incrs, String[] _roots) {
         files = new StringMap<FileStruct>();
@@ -46,7 +47,7 @@ public class MockFileSet {
         if (!files.contains(abs_)) {
             return;
         }
-        this.currentPath = abs_;
+        this.currentPath = abs_+ SL;
     }
 
     public String linkedRoot(String _root) {

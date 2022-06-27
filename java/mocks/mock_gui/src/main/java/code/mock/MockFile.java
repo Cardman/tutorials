@@ -13,7 +13,7 @@ public class MockFile implements AbstractFile {
         fileSet = _mfs;
         abs = absolute(_mfs, _s);
     }
-    private String absolute(MockFileSet _mfs, String _s) {
+    public static String absolute(MockFileSet _mfs, String _s) {
         for (String r: _mfs.getRoots()) {
             if (_s.startsWith(r)) {
                 return _s;

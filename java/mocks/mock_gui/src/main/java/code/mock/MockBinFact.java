@@ -3,7 +3,6 @@ package code.mock;
 import code.maths.montecarlo.AbstractGenerator;
 import code.stream.core.AbstractBinFact;
 import code.threads.FileStruct;
-import code.util.StringMap;
 
 public class MockBinFact implements AbstractBinFact {
     private final MockRand mockRand;
@@ -16,13 +15,14 @@ public class MockBinFact implements AbstractBinFact {
 
     @Override
     public byte[] loadFile(String _s) {
-        return load(_s, fileSet.getFiles());
+        return load(_s, fileSet);
     }
 
-    public static byte[] load(String _s, StringMap<FileStruct> _files) {
-        FileStruct val_ = _files.getVal(_s);
+    public static byte[] load(String _s, MockFileSet _files) {
+        String abs_ = MockFile.absolute(_files, _s);
+        FileStruct val_ = _files.getFiles().getVal(abs_);
         if (val_ == null) {
-            return null;
+            return new FileStruct(null,0).getContent();
         }
         return val_.getContent();
     }
@@ -30,18 +30,34 @@ public class MockBinFact implements AbstractBinFact {
 
     @Override
     public boolean writeFile(String s, byte[] bytes) {
-        if (!fileSet.getValidating().okPath(s,'/','\\')) {
+        String abs_ = MockFile.absolute(fileSet, s);
+        String link_ = linkedRoot(abs_);
+        if (link_.isEmpty()) {
             return false;
         }
-        FileStruct val_ = fileSet.getFiles().getVal(s);
+        if (!fileSet.getValidating().okPath(abs_.substring(link_.length()),'/','\\')) {
+            return false;
+        }
+        FileStruct val_ = fileSet.getFiles().getVal(abs_);
         if (val_ != null && val_.getContent() == null) {
             return false;
         }
         if (mockRand.edit()) {
-            fileSet.getFiles().put(s,new FileStruct(bytes,fileSet.getMockMillis().millis()));
+            fileSet.getFiles().put(abs_,new FileStruct(bytes,fileSet.getMockMillis().millis()));
             return true;
         }
         return false;
+    }
+
+    private String linkedRoot(String _root) {
+        String link_ = "";
+        for (String r: fileSet.getRoots()) {
+            if (_root.startsWith(r)) {
+                link_ = r;
+                break;
+            }
+        }
+        return link_;
     }
 
     public MockFileSet getFileSet() {

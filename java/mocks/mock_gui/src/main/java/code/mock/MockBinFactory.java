@@ -13,7 +13,7 @@ public class MockBinFactory implements AbstractBinFactory {
 
     @Override
     public AbstractBinStreamIn buildIn(String _filePath) {
-        return new MockBinStreamInImpl(MockBinFact.load(_filePath,mockBinFact.getFiles()), 2);
+        return new MockBinStreamInImpl(MockBinFact.load(_filePath,mockBinFact), 2);
     }
 
     @Override

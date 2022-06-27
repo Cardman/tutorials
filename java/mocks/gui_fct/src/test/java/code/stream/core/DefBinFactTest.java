@@ -11,7 +11,7 @@ public class DefBinFactTest {
     @Test
     public void t1() {
         MockFileSet set_ = fileSet(0,new long[0],"/");
-        set_.getFiles().put("abc",new FileStruct(StringUtil.encode("abc"),0));
+        set_.getFiles().put("/abc",new FileStruct(StringUtil.encode("abc"),0));
         assertEquals(3,new DefBinFact(new MockBinFactory(set_)).loadFile("abc").length);
     }
     @Test

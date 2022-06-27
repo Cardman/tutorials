@@ -50,17 +50,25 @@ public class MockImage implements AbstractImage {
 
     @Override
     public int getRGB(int _i, int _j) {
-        return pixels[_i][_j];
+        return pixels[_j][_i];
     }
 
     @Override
     public void setRGB(int _i, int _j, int _c) {
-        pixels[_i][_j] = _c;
+        pixels[_j][_i] = _c;
     }
 
     @Override
-    public void drawImage(AbstractImage _img, int i, int i1) {
-        BaseSixtyFourUtil.clipSixtyFour(((MockImage)_img).pixels,0,0,_img.getWidth(),_img.getHeight());
+    public void drawImage(AbstractImage _img, int _x, int _y) {
+        int w_ = Math.max(0,Math.min(getWidth()-_x,_img.getWidth()));
+        int h_ = Math.max(0,Math.min(getHeight()-_y,_img.getHeight()));
+        int a_ = Math.max(0,-_x);
+        int b_ = Math.max(0,-_y);
+        for(int i = a_; i < w_; i++) {
+            for (int j = b_; j < h_; j++) {
+                setRGB(i+_x,j+_y,_img.getRGB(i,j));
+            }
+        }
     }
 
     @Override

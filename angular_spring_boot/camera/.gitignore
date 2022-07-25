@@ -1,0 +1,7 @@
+*
+!/back/
+!/back/**
+!/front/
+!/front/**
+!/.gitignore
+!/pom.xml

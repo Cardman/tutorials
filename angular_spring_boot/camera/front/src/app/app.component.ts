@@ -66,6 +66,10 @@ readonly httpOptions = {
 			  {
 				this.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + data.img);
 				this.sub2.unsubscribe();
+				(async () => { 
+					await delay(100);
+				})();
+				this.typing = 0;
 
 			  }
 			  );
@@ -95,6 +99,75 @@ readonly httpOptions = {
 			  {
 				this.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + data.img);
 				this.sub2.unsubscribe();
+				(async () => { 
+					await delay(100);
+				})();
+				this.typing = 0;
+
+			  }
+			  );
+		/*this.th = setInterval(()=>{
+			if (this.typing > 0){
+				return;
+			}
+			this.typing = event.keyCode;
+			this.v.x++;
+			this.sub2 = this.http.post('/api/image',this.v)
+			  .subscribe(
+			  (data:Exported ) =>
+			  {
+				this.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + data.img);
+				this.sub2.unsubscribe();
+
+			  }
+			  );
+		},1000);*/
+	  } else if (event.keyCode === 38){
+		this.typing = event.keyCode;
+			this.v.y--;
+			this.sub2 = this.http.post('/api/image',this.v)
+			  .subscribe(
+			  (data:Exported ) =>
+			  {
+				this.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + data.img);
+				this.sub2.unsubscribe();
+				(async () => { 
+					await delay(100);
+				})();
+				this.typing = 0;
+
+			  }
+			  );
+	  
+        /*this.th = setInterval(()=>{
+			if (this.typing > 0){
+				return;
+			}
+			this.typing = event.keyCode;
+			this.v.x--;
+			this.sub2 = this.http.post('/api/image',this.v)
+			  .subscribe(
+			  (data:Exported ) =>
+			  {
+				this.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + data.img);
+				this.sub2.unsubscribe();
+
+			  }
+			  );
+		},1000);*/
+	  } else if (event.keyCode === 40){
+		this.typing = event.keyCode;
+			this.v.y++;
+			this.sub2 = this.http.post('/api/image',this.v)
+			  .subscribe(
+			  (data:Exported ) =>
+			  {
+				this.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + data.img);
+				this.sub2.unsubscribe();
+				(async () => { 
+					await delay(100);
+				})();
+				this.typing = 0;
 
 			  }
 			  );
@@ -115,15 +188,15 @@ readonly httpOptions = {
 			  );
 		},1000);*/
 	  }
+
    }
    @HostListener('window:keyup',['$event'])
    keyUp(event:KeyboardEvent){
-	  if (this.typing === 37||this.typing === 39){
+	  /*if (this.typing === 37||this.typing === 39||event.keyCode === 38||event.keyCode === 40){
 		//clearInterval(this.th);
 		this.typing = 0;
-	  }
+	  }*/
    }
-   
 }
 export class Exported{
   img:string='';
@@ -135,3 +208,6 @@ export class Bytes {
   array:number[]=[];
 }
 
+export function delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}

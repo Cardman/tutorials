@@ -1,0 +1,13 @@
+*
+!/.gitignore
+!/*.json
+!/*.js
+!/*.xml
+!/src/
+!/src/**/
+!/src/**/*.ts
+!/src/**/*.css
+!/src/**/*.scss
+!/src/**/*.html
+!/src/**/*.json
+!/src/**/*.ico

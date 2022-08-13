@@ -22,6 +22,7 @@ readonly httpOptions = {
 
   title = 'front';
   private image : SafeUrl;
+  private square : SafeUrl;
   private images : SafeUrl[]=[];
   private fileName='';
   private imageInput='';
@@ -33,6 +34,7 @@ readonly httpOptions = {
   typing:number=0;
   th:number;
   private sub2:Subscription;
+  private sub3:Subscription;
   en:boolean=false;
   delta:number=0;
   v:Coords=new Coords();
@@ -40,7 +42,16 @@ readonly httpOptions = {
 
   }
   ngOnInit():void{
-  this.getImage();
+  this.sub3 = this.http.get('/api/square')
+			  .subscribe(
+			  (data:Exported ) =>
+			  {
+				this.square = this.sanitizer.bypassSecurityTrustUrl(this.imageType + data.img);
+				this.sub3.unsubscribe();
+				this.getImage();
+			  }
+			  );
+ 
   }
   getImage(){
 	this.v.x=0;

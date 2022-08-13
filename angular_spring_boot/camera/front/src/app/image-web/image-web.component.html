@@ -1,2 +1,13 @@
-<img #scene (click)="onClick()" (keydown)="keyDown($event)" [src]='image' alt="no img" [ngStyle]="{'position':'relative','left':left+'px','top':top+'px'}"/>
-
+<div class="parent">
+<img #scene (click)="onClick()" class="imgA1" (keydown)="keyDown($event)" [src]='image' alt="no img" [ngStyle]="{'position':'relative','left':left+'px','top':top+'px'}"/>
+<svg class="imgB1" height="32" width="32" [ngStyle]="{'position':'relative','left':-5*32+'px'}">
+<g>
+<svg:rect width="100%" height="100%" [attr.fill]="'red'"/>
+</g>
+</svg>
+</div>
+<br/>
+<div class="parent">
+<img #scene (click)="onClick()" class="imgA1" (keydown)="keyDown($event)" [src]='image' alt="no img" [ngStyle]="{'position':'relative','left':left+'px','top':top+'px'}"/>
+<img class="imgB1" [src]='square' alt="no img" [ngStyle]="{'position':'relative','left':-5*32+'px'}"/>
+</div>

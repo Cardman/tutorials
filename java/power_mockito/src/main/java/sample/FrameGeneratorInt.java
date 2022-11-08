@@ -8,4 +8,5 @@ public interface FrameGeneratorInt {
     JDialog dialog();
     Cursor cursor(int _wCurs, int _hCurs, int[] _pixels);
     AbsCompo newCompo();
+    ClStream openClip(byte[] _file);
 }

@@ -3,6 +3,7 @@ package sample;
 import java.awt.*;
 import java.awt.image.MemoryImageSource;
 import java.io.*;
+import javax.sound.sampled.*;
 import javax.swing.*;
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -10,17 +11,17 @@ import org.mockito.Mockito;
 import org.powermock.core.classloader.annotations.*;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.*;
-import static org.powermock.api.mockito.PowerMockito.whenNew;
 
 import org.powermock.api.mockito.PowerMockito;
 
 @RunWith(PowerMockRunner.class)
-@PowerMockIgnore({"javax.swing.*","java.awt.*","java.awt.image.*"})
+@PrepareForTest({ AudioSystem.class})
+@PowerMockIgnore({"javax.swing.*","java.awt.*","java.awt.image.*","javax.sound.sampled.*"})
 public final class FrameGeneratorTest{
 
 
@@ -163,6 +164,45 @@ public final class FrameGeneratorTest{
 		absCompo.setValue("_");
 		Assert.assertEquals("_",m.getValue());
 		Assert.assertEquals("_",ans.getAns());
+	}
+	@Test
+	public void addLineListener1() throws Exception {
+		PowerMockito.mockStatic(AudioSystem.class);
+		Clip cl_ = mock(Clip.class);
+		AudioInputStream ais_ = mock(AudioInputStream.class);
+		when(AudioSystem.getAudioInputStream(any(InputStream.class))).thenReturn(ais_);
+		when(AudioSystem.getClip()).thenReturn(cl_);
+		doNothing().when(cl_).open(ais_);
+		doNothing().when(cl_).start();
+		doNothing().when(cl_).addLineListener((LineListener) any());
+		FrameGenerator frameGene = new FrameGenerator();
+		ClStream clp_ = frameGene.openClip(new byte[0]);
+		assertNotNull(clp_);
+		SoundList sl_ = mock(SoundList.class);
+		clp_.addLineListener(sl_);
+		clp_.resume();
+		clp_.stop(0);
+		clp_.closeClipStream();
+		clp_.getMicrosecondLength();
+		clp_.isRunning();
+		LineEvent l_ = mock(LineEvent.class);
+		whenNew(LineEvent.class).withAnyArguments().thenReturn(l_);
+		doReturn(mock(LineEvent.Type.class)).when(l_).getType();
+		new Speak(sl_).update(l_);
+	}
+	@Test
+	public void addLineListener2() throws Exception {
+		PowerMockito.mockStatic(AudioSystem.class);
+		Clip cl_ = mock(Clip.class);
+		AudioInputStream ais_ = mock(AudioInputStream.class);
+		when(AudioSystem.getAudioInputStream(any(InputStream.class))).thenReturn(ais_);
+		when(AudioSystem.getClip()).thenReturn(cl_);
+		doThrow(new SomeException()).when(cl_).open(ais_);
+		doNothing().when(cl_).start();
+		doNothing().when(cl_).addLineListener((LineListener) any());
+		FrameGenerator frameGene = new FrameGenerator();
+		ClStream clp_ = frameGene.openClip(new byte[0]);
+		assertNull(clp_);
 	}
 }
 

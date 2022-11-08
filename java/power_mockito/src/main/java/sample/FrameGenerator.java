@@ -3,6 +3,7 @@ package sample;
 import java.awt.*;
 import java.awt.image.MemoryImageSource;
 import java.io.*;
+import javax.sound.sampled.*;
 import javax.swing.*;
 
 public final class FrameGenerator implements FrameGeneratorInt{
@@ -59,6 +60,24 @@ public final class FrameGenerator implements FrameGeneratorInt{
 	public AbsCompo newCompo() {
 		return new Real(lab());
 	}
+
+	@Override
+	public ClStream openClip(byte[] _file) {
+		ByteArrayInputStream bis_ = new ByteArrayInputStream(_file);
+		return openClip(bis_);
+	}
+
+	public ClStream openClip(InputStream _file) {
+		try {
+			AudioInputStream audioIn_ = AudioSystem.getAudioInputStream(_file);
+			Clip clip_ = AudioSystem.getClip();
+			clip_.open(audioIn_);
+			return new ClImpl(clip_,audioIn_);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
 	public JLabel lab() {
 		return new JLabel();
 	}

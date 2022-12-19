@@ -1,0 +1,6 @@
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\MyLibrary\bin\Debug\MyLibrary.dll
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\MyLibrary\bin\Debug\MyLibrary.pdb
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\MyLibrary\obj\Debug\MyLibrary.csproj.AssemblyReference.cache
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\MyLibrary\obj\Debug\MyLibrary.dll
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\MyLibrary\obj\Debug\MyLibrary.pdb

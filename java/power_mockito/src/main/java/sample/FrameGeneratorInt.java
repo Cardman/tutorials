@@ -9,4 +9,5 @@ public interface FrameGeneratorInt {
     Cursor cursor(int _wCurs, int _hCurs, int[] _pixels);
     AbsCompo newCompo();
     ClStream openClip(byte[] _file);
+    ClStream openMp3(byte[] _file);
 }

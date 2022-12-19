@@ -10,6 +10,7 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             _task?.Wait();
+            _cancellation?.Cancel();
             _cancellation = new();
             _task = Task.Factory.StartNew(IncrementCount, _cancellation.Token);
         }

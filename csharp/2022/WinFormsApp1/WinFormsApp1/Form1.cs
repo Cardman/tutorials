@@ -11,12 +11,17 @@ namespace WinFormsApp1
         {
             _task?.Wait();
             _cancellation = new();
-            _task = Task.Factory.StartNew(() =>
-            {
-                label1.Invoke(() => {
-                    label1.Text = ++_count + "";
-                });
-            }, _cancellation.Token);
+            _task = Task.Factory.StartNew(IncrementCount, _cancellation.Token);
+        }
+
+        private void IncrementCount()
+        {
+            label1.Invoke(IncrementCountAtomic);
+        }
+
+        private void IncrementCountAtomic()
+        {
+            label1.Text = ++_count + "";
         }
 
         private void button2_Click(object sender, EventArgs e)

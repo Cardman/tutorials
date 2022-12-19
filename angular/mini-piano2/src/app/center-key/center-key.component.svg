@@ -1,0 +1,9 @@
+<svg:path attr.d="M {{5+x}} {{y}}
+L {{15+x}} {{y}}
+L {{15+x}} {{60+y}}
+L {{20+x}} {{60+y}}
+L {{20+x}} {{100+y}}
+L {{x}} {{100+y}}
+L {{x}} {{60+y}}
+L {{5+x}} {{60+y}}
+L {{5+x}} {{y}}" [attr.stroke]="'black'" [attr.fill]="'transparent'" (click)="clk()"/>

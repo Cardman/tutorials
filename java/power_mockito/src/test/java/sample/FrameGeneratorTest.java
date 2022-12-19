@@ -5,23 +5,27 @@ import java.awt.image.MemoryImageSource;
 import java.io.*;
 import javax.sound.sampled.*;
 import javax.swing.*;
+
+import javazoom.jl.decoder.*;
+import javazoom.jl.player.advanced.*;
 import org.junit.*;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.powermock.core.classloader.annotations.*;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.*;
+import static org.powermock.api.mockito.PowerMockito.when;
 
 import org.powermock.api.mockito.PowerMockito;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({ AudioSystem.class})
-@PowerMockIgnore({"javax.swing.*","java.awt.*","java.awt.image.*","javax.sound.sampled.*"})
+@PrepareForTest({ AudioSystem.class,Bitstream.class,Header.class,AdvancedPlayer.class})
+@PowerMockIgnore({"javax.swing.*","java.awt.*","java.awt.image.*","javax.sound.sampled.*","javazoom.jl.player.advanced.*","javazoom.jl.decoder.*"})
 public final class FrameGeneratorTest{
 
 
@@ -204,6 +208,51 @@ public final class FrameGeneratorTest{
 		ClStream clp_ = frameGene.openClip(new byte[0]);
 		assertNull(clp_);
 	}
+	@Test
+	public void addLineListener3() throws Exception {
+//		PowerMockito.mockStatic(Bitstream.class);
+//		PowerMockito.mockStatic(Header.class);
+		Bitstream str_ = PowerMockito.mock(Bitstream.class);
+		whenNew(Bitstream.class).withAnyArguments().thenReturn(str_);
+		when(new Bitstream(any(InputStream.class))).thenReturn(str_);
+		Header header_ = PowerMockito.mock(Header.class);
+		Mockito.when(str_.readFrame()).thenReturn(header_);
+//		given(str_.readFrame()).willReturn(header_);
+//		doReturn(header_).when(str_).readFrame();
+		doReturn(1.0f).when(header_).total_ms(anyInt());
+		doReturn(1.0f).when(header_).ms_per_frame();
+		AdvancedPlayer player_ = mock(AdvancedPlayer.class);
+		when(ClMp3Impl.player(new byte[0])).thenReturn(player_);
+		whenNew(AdvancedPlayer.class).withAnyArguments().thenReturn(player_);
+//		when(AudioSystem.getAudioInputStream(any(InputStream.class))).thenReturn(ais_);
+//		when(AudioSystem.getClip()).thenReturn(cl_);
+//		doNothing().when(cl_).open(ais_);
+//		doNothing().when(cl_).start();
+//		doNothing().when(cl_).addLineListener((LineListener) any());
+//		AbstractThreadFactory thFact = mock(AbstractThreadFactory.class);
+//		AbstractThread th = mock(AbstractThread.class);
+//		doReturn(th).when(thFact).newThread(any(Runnable.class));
+//		doNothing().when(th).start();
+		FrameGenerator frameGene = spy(new FrameGenerator());
+//		FrameGenerator frameGene = spy(new FrameGenerator(thFact));
+		doNothing().when(player_).stop();
+		doReturn(str_).when(frameGene).bitStream(any(InputStream.class));
+//		when(frameGene.bitStream(any(InputStream.class))).thenReturn(str_);
+		ClStream clp_ = frameGene.openMp3(new byte[0]);
+		assertNotNull(clp_);
+		SoundList sl_ = mock(SoundList.class);
+		clp_.addLineListener(sl_);
+		clp_.resume();
+		//clp_.stop(0);
+		clp_.closeClipStream();
+		clp_.getMicrosecondLength();
+		clp_.isRunning();
+		PlaybackEvent l_ = mock(PlaybackEvent.class);
+		whenNew(PlaybackEvent.class).withAnyArguments().thenReturn(l_);
+		new SpeakMp3(sl_).playbackStarted(l_);
+		new SpeakMp3(sl_).playbackFinished(l_);
+	}
+	//
 }
 
 class SomeException extends RuntimeException{

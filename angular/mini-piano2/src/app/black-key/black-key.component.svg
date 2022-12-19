@@ -1,0 +1,5 @@
+<svg:path attr.d="M {{15+x}} {{y}}
+L {{25+x}} {{y}}
+L {{25+x}} {{60+y}}
+L {{15+x}} {{60+y}}
+L {{15+x}} {{y}}" [attr.fill]="'black'" (click)="clk()"/>

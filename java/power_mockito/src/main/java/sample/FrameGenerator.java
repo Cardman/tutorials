@@ -1,5 +1,8 @@
 package sample;
 
+import javazoom.jl.decoder.*;
+import javazoom.jl.player.advanced.*;
+
 import java.awt.*;
 import java.awt.image.MemoryImageSource;
 import java.io.*;
@@ -8,6 +11,14 @@ import javax.swing.*;
 
 public final class FrameGenerator implements FrameGeneratorInt{
     private static final String SELECT = "select";
+	private final AbstractThreadFactory fact;
+	public FrameGenerator() {
+		this(new DefThreadFactory());
+	}
+	public FrameGenerator(AbstractThreadFactory th) {
+		fact = th;
+	}
+
 	public JFrame frame(){
 		return new JFrame();
 	}
@@ -76,6 +87,35 @@ public final class FrameGenerator implements FrameGeneratorInt{
 		} catch (Exception e) {
 			return null;
 		}
+	}
+	@Override
+	public ClStream openMp3(byte[] _file) {
+		ByteArrayInputStream bis_ = new ByteArrayInputStream(_file);
+		try {
+			Bitstream bitstream_ = bitStream(bis_);
+			Header header_ = bitstream_.readFrame();
+			double millis_ = header_.total_ms(_file.length);
+			long ratio_ = (long) header_.ms_per_frame();
+			long micros_ = (long)millis_;
+			micros_ *= 1000;
+			AdvancedPlayer player_ = ClMp3Impl.player(_file);
+			return ret(micros_,ratio_, player_,_file);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	Bitstream bitStream(InputStream _bis) {
+		return new Bitstream(_bis);
+	}
+
+	private ClMp3Impl ret(long _micros, long _ratio, AdvancedPlayer _pl, byte[] _bytes) {
+		close(_pl);
+		return new ClMp3Impl(_bytes, fact, _micros,_ratio);
+	}
+
+	private void close(AdvancedPlayer _pl) {
+		_pl.close();
 	}
 
 	public JLabel lab() {

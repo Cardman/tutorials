@@ -12,10 +12,7 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_task != null)
-            {
-                _task.Wait();
-            }
+            _task?.Wait();
             _cancellation = new();
             _task = Task.Factory.StartNew(() =>
             {

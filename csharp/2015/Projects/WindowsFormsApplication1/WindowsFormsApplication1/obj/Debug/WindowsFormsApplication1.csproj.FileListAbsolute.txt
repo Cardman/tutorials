@@ -1,0 +1,17 @@
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Properties\myresources\trs\testres.txt
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MyLibrary.dll
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\nunit.framework.dll
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MyLibrary.pdb
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\nunit.framework.xml
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.AssemblyReference.cache
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.SuggestedBindingRedirects.cache
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CopyComplete
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\fdesr\_git\tutorials\csharp\2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

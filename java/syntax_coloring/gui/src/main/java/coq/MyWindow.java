@@ -194,6 +194,7 @@ class Highlighter implements DocumentListener,UndoableEditListener {
 		for (SegmentPart s:ls){
 			AttributeSet textStyle = style.addAttribute(style.getEmptySet(),StyleConstants.Foreground,new Color(s.red,s.green,s.blue));
 			textStyle = style.addAttribute(textStyle,StyleConstants.FontSize, s.size);
+			textStyle = style.addAttribute(textStyle,StyleConstants.Background, new Color(255,255,255));
 			ta.getStyledDocument().setCharacterAttributes(s.begin,(s.end - s.begin),textStyle, false);
 		}
 		store = true;

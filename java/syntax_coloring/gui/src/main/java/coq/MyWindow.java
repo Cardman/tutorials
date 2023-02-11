@@ -36,6 +36,7 @@ public class MyWindow {
 		UndoAction undoAction = new UndoAction();
 		RedoAction redoAction=new RedoAction();
 	public MyWindow(){
+		undoManager.setLimit(Integer.MAX_VALUE);
 		ta.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
 		setTabSize(4);
 		jsp.setPreferredSize(new Dimension(512,512));
@@ -52,6 +53,10 @@ public class MyWindow {
 		h.ta = ta;
 		h.spl = spl;
 		h.undoManager = undoManager;
+		undoAction.setEnabled(false);
+		redoAction.setEnabled(false);
+		h.undoAction = undoAction;
+		h.redoAction = redoAction;
 		Document doc = ta.getDocument();
 		doc.addDocumentListener(h);
 		ta.addCaretListener(new CaretListener() {
@@ -125,15 +130,6 @@ public class MyWindow {
  
     }
 }
-interface Check{
-	javax.swing.undo.UndoableEdit ch(javax.swing.undo.UndoableEdit e);
-}
-class Check2 implements Check{
-	@Override
-	public javax.swing.undo.UndoableEdit ch(javax.swing.undo.UndoableEdit e){
-		return e;
-	}
-}
 //class Highlighter implements DocumentListener {
 class Highlighter implements DocumentListener,UndoableEditListener {
 //UndoableEditListener
@@ -145,12 +141,12 @@ class Highlighter implements DocumentListener,UndoableEditListener {
 		MyWindow.RedoAction redoAction;*/
 		boolean store = true;
 		UndoManager undoManager;
-		Check ch = new Check2();
+		MyWindow.UndoAction undoAction;
+		MyWindow.RedoAction redoAction;
     public void insertUpdate(DocumentEvent e) {
 	try{
-	 ch.ch((javax.swing.undo.UndoableEdit)e);
 	 //applyHighlighting();
-        highlight(e.getDocument(),e.getOffset(),e.getLength());
+        highlight();
 		}catch(Exception f){}
     }
 	@Override
@@ -159,24 +155,28 @@ class Highlighter implements DocumentListener,UndoableEditListener {
 	 return;
 	 }*/
 	 try {
-	 javax.swing.undo.UndoableEdit ed = e.getEdit();
-	 //System.out.println(store);
+	 javax.swing.text.AbstractDocument.DefaultDocumentEvent ed =
+        (javax.swing.text.AbstractDocument.DefaultDocumentEvent)e.getEdit();
+		if  (ed.getType().equals(DocumentEvent.EventType.CHANGE)) {
+			return;
+		}
 		 undoManager.addEdit(ed);
+		 redoAction.setEnabled(undoManager.canRedo());
+		 undoAction.setEnabled(undoManager.canUndo());
 		 }catch(Exception f){}
 	 }
 
     public void removeUpdate(DocumentEvent e) {
 	try{ 
-		ch.ch((javax.swing.undo.UndoableEdit)e);
 		//applyHighlighting();
-		highlight(e.getDocument(), e.getOffset(), 0);
+		highlight();
 		}catch(Exception f){}
     }
 
     public void changedUpdate(DocumentEvent e) {
 	}
 
-    private void highlight(Document doc, int offset, int length) {
+    private void highlight() {
         //Edit the color only when the EDT is ready
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {

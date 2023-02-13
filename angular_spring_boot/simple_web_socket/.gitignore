@@ -1,4 +1,6 @@
 *
+!/angular/
+!/angular/**
 !/src/
 !/src/**
 !/.gitignore

@@ -31,13 +31,13 @@ public class SocketRest {
         } catch (Exception e) {
             return new ResponseEntity<>(new HttpHeaders(), HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>("GOOD", new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<>("\"GOOD\"", new HttpHeaders(), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.GET,value = "/send/general3")
     public ResponseEntity<?> sendMessage1(){
         this.simpMessagingTemplate.convertAndSend("/socket-publisher","[1,2]");
-        return new ResponseEntity<>("GOOD", new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<>("\"GOOD\"", new HttpHeaders(), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST,value = "/send/general2")

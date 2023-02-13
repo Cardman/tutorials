@@ -23,7 +23,7 @@ public class SocketRest {
     @RequestMapping(method = RequestMethod.GET,value = "/send/general1")
     public ResponseEntity<?> sendMessage(){
         Thread th = new Thread(() -> {
-            this.simpMessagingTemplate.convertAndSend("/socket-publisher","{1,2}");
+            this.simpMessagingTemplate.convertAndSend("/socket-publisher","[1,2]");
         });
         th.start();
         try {
@@ -36,7 +36,7 @@ public class SocketRest {
 
     @RequestMapping(method = RequestMethod.GET,value = "/send/general3")
     public ResponseEntity<?> sendMessage1(){
-        this.simpMessagingTemplate.convertAndSend("/socket-publisher","{1,2}");
+        this.simpMessagingTemplate.convertAndSend("/socket-publisher","[1,2]");
         return new ResponseEntity<>("GOOD", new HttpHeaders(), HttpStatus.OK);
     }
 

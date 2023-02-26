@@ -308,7 +308,7 @@ public final class Net {
      @return the associated socket of the place or null if it is an invalid place for a player
       * @param _place the place of a player around the table
      * @param _common */
-    static AbstractSocket getSocketByPlace(byte _place, NetCommon _common) {
+    public static AbstractSocket getSocketByPlace(byte _place, NetCommon _common) {
         for (int i: _common.getPlacesPlayers().getKeys()) {
             if (_common.getPlacesPlayers().getVal(i) == _place) {
                 return _common.getSockets().getVal(i);

@@ -1378,7 +1378,7 @@ public final class WindowNetWork extends NetGroupFrame implements WindowCardsInt
         file.addSeparator();
         exit=getCompoFactory().newMenuItem(getMessages().getVal(CST_EXIT));
         exit.addActionListener(new QuitEvent(this));
-        exit.setAccelerator((char) GuiConstants.VK_ESCAPE);
+        exit.setAccelerator((char) GuiConstants.VK_ESCAPE,0);
         file.addMenuItem(exit);
         getJMenuBar().add(file);
     }
@@ -2174,7 +2174,7 @@ public final class WindowNetWork extends NetGroupFrame implements WindowCardsInt
         threadEmission = _threadEmission;
     }
 
-    @Override
+//    @Override
     public boolean canChangeLanguage() {
         if (!netg.getContainerGame().isSimple()) {
             return false;
@@ -2827,5 +2827,13 @@ public final class WindowNetWork extends NetGroupFrame implements WindowCardsInt
 
     public void setButtonClick(AbsButton _b) {
         this.buttonClick = _b;
+    }
+
+    public WindowCardsCore getNetg() {
+        return netg;
+    }
+
+    public WindowAikiCore getAiki() {
+        return aiki;
     }
 }

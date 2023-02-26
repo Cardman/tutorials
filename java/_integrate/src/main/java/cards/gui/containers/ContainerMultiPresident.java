@@ -765,6 +765,18 @@ public class ContainerMultiPresident extends ContainerPresident implements
         window().sendObjectPlayGame();
     }
 
+    public NumComboBox getChoiceOfPlaceForPlayingGame() {
+        return choiceOfPlaceForPlayingGame;
+    }
+
+    public AbsCustCheckBox getReady() {
+        return ready;
+    }
+
+    public HandPresident getPlayerHandPresident() {
+        return playerHandPresident;
+    }
+
     @Override
     public WindowNetWork window() {
         return win;

@@ -55,7 +55,7 @@ public final class ChatSample extends NetGroupFrame implements MockWithAction {
         return "";
     }
 
-    @Override
+//    @Override
     public boolean canChangeLanguage() {
         return false;
     }

@@ -68,25 +68,25 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
         loopClientBegin(toilettes_,toilettes_);
         loopClientBegin(toilettes_,canard_);
         ((ContainerMultiPresident)toilettes_.getNetg().getContainerGame()).getChoiceOfPlaceForPlayingGame().setSelectedItem(1);
-        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().clear();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
         server(toilettes_, chaussures1_);
         loopClientBegin(toilettes_,toilettes_);
         loopClientBegin(toilettes_,canard_);
         ((ContainerMultiPresident)canard_.getNetg().getContainerGame()).getChoiceOfPlaceForPlayingGame().setSelectedItem(3);
-        chaussures2_.getInstr().clear();
+//        chaussures2_.getInstr().clear();
         chaussures2_.getInstr().addAllElts(chaussures2_.getOutput());
         server(toilettes_, chaussures2_);
         loopClientBegin(toilettes_,toilettes_);
         loopClientBegin(toilettes_,canard_);
         ((ContainerMultiPresident)toilettes_.getNetg().getContainerGame()).getReady().setSelected(true);
-        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().clear();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
         server(toilettes_, chaussures1_);
         loopClientBegin(toilettes_,toilettes_);
         loopClientBegin(toilettes_,canard_);
         ((ContainerMultiPresident)canard_.getNetg().getContainerGame()).getReady().setSelected(true);
-        chaussures2_.getInstr().clear();
+//        chaussures2_.getInstr().clear();
         chaussures2_.getInstr().addAllElts(chaussures2_.getOutput());
         server(toilettes_, chaussures2_);
         loopClientBegin(toilettes_,toilettes_);
@@ -94,35 +94,33 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
         AbsPanel pane = toilettes_.getCommonFrame().getPane();
         MockPlainButton button = (MockPlainButton) pane.getComponent(pane.getComponentCount() - 1);
         button.getActionListeners().get(0).action();
-        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().clear();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
         server(toilettes_, chaussures1_);
 
         loopClient(toilettes_,toilettes_);
-        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().clear();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
         loopClient(toilettes_,canard_);
-        chaussures2_.getInstr().clear();
+//        chaussures2_.getInstr().clear();
         chaussures2_.getInstr().addAllElts(chaussures2_.getOutput());
         server2(toilettes_, chaussures1_);
-        loopClient(toilettes_,toilettes_);
-        chaussures1_.getInstr().clear();
-        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
-        loopClient(toilettes_,canard_);
-        chaussures2_.getInstr().clear();
-        chaussures2_.getInstr().addAllElts(chaussures2_.getOutput());
+        System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getProgressingTrick().total());
         server2(toilettes_, chaussures2_);
+        System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getProgressingTrick().total());
         loopClient(toilettes_,toilettes_);
-        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().clear();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
         loopClient(toilettes_,canard_);
-        chaussures2_.getInstr().clear();
+//        chaussures2_.getInstr().clear();
         chaussures2_.getInstr().addAllElts(chaussures2_.getOutput());
 
         server2(toilettes_, chaussures1_);
+        System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getProgressingTrick().total());
         server2(toilettes_, chaussures2_);
+        System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getProgressingTrick().total());
         loopClient(toilettes_,toilettes_);
-        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().clear();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
 //        loopClient(toilettes_,canard_);
 //        chaussures2_.getInstr().clear();
@@ -141,9 +139,9 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
         System.out.println(((ContainerMultiPresident)toilettes_.getNetg().getContainerGame()).getPlayerHandPresident().getCards().getList());
         MockPaintableLabelAbs card_ = (MockPaintableLabelAbs) cards_.getComponent(cards_.getComponentCount()-2);
         card_.getMouseWithoutClickListeners().get(0).mousePressed(null,null,null);
-        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().clear();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
-        server(toilettes_, chaussures1_);
+        server2(toilettes_, chaussures1_);
 //        chaussures1_.getInstr().clear();
 //        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
 //        server(toilettes_, chaussures1_);
@@ -159,6 +157,21 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
         System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getProgressingTrick().total());
         System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getProgressingTrick().getCards().getList().get(0).getCards().getList());
         System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getDeal().getDeal().get(1).getCards().getList());
+        loopClient(toilettes_,toilettes_);
+        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
+        server2(toilettes_, chaussures1_);
+
+        loopClient(toilettes_,toilettes_);
+//        chaussures1_.getInstr().clear();
+        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
+        loopClient(toilettes_,canard_);
+//        chaussures2_.getInstr().clear();
+        chaussures2_.getInstr().addAllElts(chaussures2_.getOutput());
+        server2(toilettes_, chaussures1_);
+        System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getProgressingTrick().total());
+        server2(toilettes_, chaussures2_);
+        System.out.println(Net.getGames(toilettes_.getNet()).partiePresident().getProgressingTrick().total());
+//        server2(toilettes_, chaussures2_);
         //
 //        loopClient(toilettes_,canard_);
 //        chaussures1_.getInstr().clear();
@@ -177,19 +190,21 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
     }
 
     private void server(WindowNetWork toilettes_, MockSocket _ch) {
-        String s_ = _ch.getInput().readLine();
+        String s_ = _ch.getInstr().last();
+//        String s_ = _ch.getInput().readLine();
         server(toilettes_, s_);
     }
 
     private void server(WindowNetWork toilettes_, String f_) {
         Document readObject1_ = toilettes_.getDoc(f_);
-        ((MockSocket)toilettes_.getSockets().getSockets().getValue(0)).getOutput().clear();
-        ((MockSocket)toilettes_.getSockets().getSockets().getValue(1)).getOutput().clear();
+//        ((MockSocket)toilettes_.getSockets().getSockets().getValue(0)).getOutput().clear();
+//        ((MockSocket)toilettes_.getSockets().getSockets().getValue(1)).getOutput().clear();
         toilettes_.getSockets().getConnectionsServer().firstValue().loopServer(f_,readObject1_);
     }
 
     private void server2(WindowNetWork toilettes_, MockSocket _ch) {
-        String s_ = _ch.getInput().readLine();
+        String s_ = _ch.getInstr().last();
+//        String s_ = _ch.getInput().readLine();
         server2(toilettes_, s_);
     }
 
@@ -201,11 +216,12 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
     private void loopClient(WindowNetWork toilettes_) {
         ContainerMultiPresident c_ = (ContainerMultiPresident) toilettes_.getNetg().getContainerGame();
         MockSocket chaussures1_ = (MockSocket) toilettes_.getBasicClient().getSocket();
-        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
+//        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
+//        chaussures1_.getOutput().clear();
+        Document doc1_ = toilettes_.getDoc(chaussures1_.getInstr().last());
+//        Document doc1_ = toilettes_.getDoc(chaussures1_.getInput().readLine());
+//        chaussures1_.getInstr().clear();
         chaussures1_.getOutput().clear();
-        Document doc1_ = toilettes_.getDoc(chaussures1_.getInput().readLine());
-        chaussures1_.getInstr().clear();
-
         toilettes_.getExiting(doc1_);
         new LoopClient(toilettes_,doc1_, chaussures1_).run();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
@@ -214,16 +230,17 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
     private void loopClient(WindowNetWork _server,WindowNetWork toilettes_) {
         AbstractSocket server_ = Net.getSocketByPlace(((ContainerMulti) toilettes_.getNetg().getContainerGame()).getIndexInGame(), _server.getSockets());
         MockSocket chaussures1_ = (MockSocket) toilettes_.getBasicClient().getSocket();
-        chaussures1_.getInstr().clear();
-        chaussures1_.getInstr().add(((MockSocket)server_).getOutput().last());
+//        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().add(((MockSocket)server_).getOutput().last());
 //        chaussures1_.getInstr().addAllElts(((MockSocket)server_).getOutput());
 //        _server.getSockets().getSockets().getValue();
 //        ContainerMultiPresident c_ = (ContainerMultiPresident) toilettes_.getNetg().getContainerGame();
 //        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
+//        chaussures1_.getOutput().clear();
+        Document doc1_ = toilettes_.getDoc(((MockSocket)server_).getOutput().last());
+//        Document doc1_ = toilettes_.getDoc(chaussures1_.getInput().readLine());
+//        chaussures1_.getInstr().clear();
         chaussures1_.getOutput().clear();
-        Document doc1_ = toilettes_.getDoc(chaussures1_.getInput().readLine());
-        chaussures1_.getInstr().clear();
-
         toilettes_.getExiting(doc1_);
         new LoopClient(toilettes_,doc1_, chaussures1_).run();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
@@ -232,16 +249,17 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
     private void loopClientBegin(WindowNetWork _server,WindowNetWork toilettes_) {
         AbstractSocket server_ = _server.getSockets().getSockets().getVal(((ContainerMulti) toilettes_.getNetg().getContainerGame()).getNoClient());
         MockSocket chaussures1_ = (MockSocket) toilettes_.getBasicClient().getSocket();
-        chaussures1_.getInstr().clear();
-        chaussures1_.getInstr().add(((MockSocket)server_).getOutput().last());
+//        chaussures1_.getInstr().clear();
+//        chaussures1_.getInstr().add(((MockSocket)server_).getOutput().last());
 //        chaussures1_.getInstr().addAllElts(((MockSocket)server_).getOutput());
 //        _server.getSockets().getSockets().getValue();
 //        ContainerMultiPresident c_ = (ContainerMultiPresident) toilettes_.getNetg().getContainerGame();
 //        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
+//        chaussures1_.getOutput().clear();
+        Document doc1_ = toilettes_.getDoc(((MockSocket)server_).getOutput().last());
+//        Document doc1_ = toilettes_.getDoc(chaussures1_.getInput().readLine());
+//        chaussures1_.getInstr().clear();
         chaussures1_.getOutput().clear();
-        Document doc1_ = toilettes_.getDoc(chaussures1_.getInput().readLine());
-        chaussures1_.getInstr().clear();
-
         toilettes_.getExiting(doc1_);
         new LoopClient(toilettes_,doc1_, chaussures1_).run();
         chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());

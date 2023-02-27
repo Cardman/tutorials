@@ -240,10 +240,10 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
         Document doc1_ = toilettes_.getDoc(((MockSocket)server_).getOutput().last());
 //        Document doc1_ = toilettes_.getDoc(chaussures1_.getInput().readLine());
 //        chaussures1_.getInstr().clear();
-        chaussures1_.getOutput().clear();
+//        chaussures1_.getOutput().clear();
         toilettes_.getExiting(doc1_);
         new LoopClient(toilettes_,doc1_, chaussures1_).run();
-        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
+//        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
     }
 
     private void loopClientBegin(WindowNetWork _server,WindowNetWork toilettes_) {
@@ -259,10 +259,10 @@ public final class WindowNetWorkTest extends EquallableNetworkUtil {
         Document doc1_ = toilettes_.getDoc(((MockSocket)server_).getOutput().last());
 //        Document doc1_ = toilettes_.getDoc(chaussures1_.getInput().readLine());
 //        chaussures1_.getInstr().clear();
-        chaussures1_.getOutput().clear();
+//        chaussures1_.getOutput().clear();
         toilettes_.getExiting(doc1_);
         new LoopClient(toilettes_,doc1_, chaussures1_).run();
-        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
+//        chaussures1_.getInstr().addAllElts(chaussures1_.getOutput());
     }
     private WindowNetWork window(MockProgramInfos pr_, StringMap<StringMap<PreparedPagesCards>> belote_, StringMap<StringMap<PreparedPagesCards>> president_, StringMap<StringMap<PreparedPagesCards>> tarot_, boolean _create) {
         WindowNetWork canard_ = new WindowNetWork("fr", pr_, belote_, president_, tarot_,new CardFactories(new MockAdvGraphicListGeneratorGene<CardBelote>(), new MockAdvGraphicListGeneratorGene<CardPresident>(), new MockAdvGraphicListGeneratorGene<CardTarot>(), new MockAdvGraphicListGeneratorGene<Suit>()),new AikiFactory(new MockAdvGraphicListGeneratorGene<BallNumberRate>(),new MockAdvGraphicListGeneratorGene<Fighter>(),new MockAdvGraphicListGeneratorGene<String>(),new MockAdvGraphicListGeneratorGene<String>(),new MockAdvGraphicListGeneratorGene<String>(),new MockAdvGraphicListGeneratorGene<UsablePokemon>()));

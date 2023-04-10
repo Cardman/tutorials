@@ -1,0 +1,5 @@
+﻿Le lanceur de BOOST copie les variations de statistiques (y compris esquive et précision) de la cible
+et écrase les variations du lanceur.
+
+Si un pokémon lance SAISIE sur le lanceur de BOOST et n'est pas KO,
+alors le lanceur de SAISIE copie les variations de statistiques de la cible de BOOST.

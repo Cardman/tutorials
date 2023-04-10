@@ -1,0 +1,4 @@
+﻿EFFORT est une attaque pseudo offensive.
+Cette attaque affecte les pv restants de la cible à ceux du lanceur.
+
+L'attaque échoue si et seulement si le lanceur possède un nombre supérieur ou égal de pv restants à ceux de la cible.

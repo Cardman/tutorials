@@ -1,0 +1,7 @@
+﻿RELAIS est une attaque telle que:
+le lanceur transmet tous ses effets d'attaques et de boosts au pokémon le remplaçant.
+
+S'il n'existe pas de pokémon à l'arrière de l'équipe du lanceur de RELAIS, alors
+cette attaque échoue.
+
+Transmettre un clone par RELAIS évite le POISON ou le POISON_GRAVE par les pics toxiks.

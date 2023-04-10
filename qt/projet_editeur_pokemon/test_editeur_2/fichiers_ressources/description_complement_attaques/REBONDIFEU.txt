@@ -1,0 +1,3 @@
+Si le mode de combat est un mode de combat où l'adjacence est activée,
+alors tous les adversaires adjacents à la cible perdent 1/8 de leurs pv max.
+sinon tous les adversaires perdent 1/8 de leurs pv max.

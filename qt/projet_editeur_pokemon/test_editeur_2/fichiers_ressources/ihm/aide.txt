@@ -1,0 +1,308 @@
+Cet éditeur permet d'exporter des données cartographiques qui seront des ressources pour le jeu Pokémon Evolution.
+
+Pour cet éditeur, un pokémon est caractérisé par
+son nom,
+son niveau,
+son genre,
+son objet.
+
+Un pokémon peut être obtenu par le fait de marcher (ou de surfer) à certains endroits,
+de pêcher à certains endroits,
+par le don d'un personnage,
+par la possession de celui-ci au départ,
+ou encore par le fait d'interagir lorsqu'il est fixe.
+Un pokédex est l'ensemble des pokémons pouvant et devant être obtenus.
+
+Pour cet éditeur, un pokémon dressé est un pokémon possédant une liste non vide d'attaques.
+Un pokémon dressé doit faire partie d'une équipe de pokémon.
+Un équipe de pokémon est une liste de pokémon qui est prête à combattre.
+
+Un personnage possède
+un nom,
+une miniature,
+une orientation graphique,
+
+
+Pour chaque équipe de pokémon, une récompense est associée.
+Un dresseur pokémon est un personnage possédant en plus
+une image de combat,
+une multiplicité de combat allant de 1 à 4.
+L'absence d'équipe pokémon est lié au fait que la constitution des dresseurs n'est pas commune.
+
+La multiplicité de combat est le nombre maximal de pokémon d'une équipe qui peuvent être sur le terrain.
+Exemple: si le combat est dit "double", alors la multiplicité de combat vaut 2;
+et par équipe, un ou deux pokémon peuvent être sur le terrain.
+
+Un dresseur ordinaire possède une liste de couples équipe - récompense.
+
+Un champion est un dresseur possédant en plus:
+un badge,
+une liste de couples équipe - récompense
+une capsule technique,
+une autorisation d'utilisation de capsule secrète hors combat (pour les obstacles ou l'accès à certains environnements) (s'il n'existe pas d'autorisation, sinon c'est le numéro de la capsule secrète pouvant être utilisée).
+Si l'utilisateur a tous les badges nécessaires associés à une ligue (groupe de dresseurs), il peut y accéder.
+
+Un dresseur de la ligue est un dresseur possédant une équipe et une récompense de base.
+Un dresseur de la ligue fait partie d'un groupe de dresseurs qui doivent être vaincus successivement en avançant toujours d'une salle.
+A la fin, lorsque le groupe de dresseurs est totalement vaincu, l'utilisateur doit se placer à un endroit précis pour revenir au lieu de départ du jeu.
+Ce groupe de dresseurs peut être vaincu indéfiniment, jusqu'à ce qu'une mission de l'utilisateur soit remplie et dans ce cas c'est un autre groupe de dresseurs qui peut être vaincu indéfiniment.
+
+Le but du jeu est d'obtenir par différents moyens tous les pokémons et de battre toutes les ligues.
+
+Une tuile est le plus petit rectangle permettant d'afficher une carte.
+Une tuile possède une image de fond, et éventuellement une image d'obstacle temporaire.
+
+Un personnage n'étant pas un dresseur peut donner des objets ou exclusivement des capsules secrètes ou exclusivement un pokemon;
+ou exclusivement peut acheter/vendre des objets ou exclusivement des capsules techniques,
+ou exclusivement peut soigner des pokémons,
+ou exclusivement peut faire revivre un fossile,
+ou exclusivement peut garder en pension deux pokémons,
+ou exclusivement peut enseigner des attaques aux pokémons de l'utilisateur.
+
+Dans ce jeu, le prix d'achat vaut par défaur le prix de vente.
+
+Un environnement ordinaire (hors ligue) est un rectangle constitué de tuiles.
+Un environnement ordinaire est aussi caractérisé par son type.
+Pour que l'environnement soit un ensemble d'obstacles permanents,
+il faut choisir la chaîne vide pour le type d'environnement.
+Le type de l'environnement définit l'image de fond par défaut pour chaque tuile.
+Un environnement ordinaire peut contenir des personnages,
+des objets pouvant être ramassés,
+des possibilités d'échange de pokémons par les boîtes (boîte: groupe de pokémon capturés)
+Un environnement ordinaire possède une liste éventuellement vide de pokémons non dressés pouvant apparaître au bout d'un certain nombre de pas de déplacement.
+Un environnement ordinaire possède des listes éventuellement vides de pokémons non dressés pouvant apparaître en étant pêché avec une canne,
+une super canne ou une méga canne.
+
+Si l'environnement est un muret long (de grande dimension >= 2 et de petite dimension valant 1), il ne laisse passer l'utilisateur que dans un sens. Dans ce cas, il ne possède pas de personnage, ni d'objet pouvant être ramassé, ni de possibilité d'échange de pokémons par les boîtes.
+La liste de pokémons non dressés pouvant apparaître au cours d'un déplacement est vide pour un muret.
+Les listes de pokémons non dressés pouvant apparaître au cours de la pêche sont vides pour un muret.
+
+Un plateau est un rectangle constitué d'environnements.
+L'utilisateur ne voit qu'une partie rectangulaire du plateau, lorsqu'il joue.
+
+Un lieu est un regroupement de plateaux.
+Un lieu peut être un bâtiment, une grotte; dans ce cas, les plateaux sont les étages.
+Un lieu peut être une route terrestre, un canal maritime, un passage sous-marin, une ville (hors des bâtiments); dans ce cas ce lieu n'est en principe constitué que d'un seul plateau. 
+
+Pour chaque ligue L, on a besoin d'avoir les coordonnées d'origine faisant partie d'un lieu pour avoir accès à la ligue L.
+Un environnement de ligue est un rectangle simplement constitué de tuiles.
+Un plateau de ligue est une salle rectangulaire contenant un et un seul dresseur de la ligue et constitué d'environnements de ligue.
+Un plateau de ligue possède une sortie vers un autre plateau de ligue ou vers les coordonnées de départ.
+Les plateaux de ligues sont linéairement liés.
+
+Une minimap est une carte utilisable par la capsule secrète vol permettant de se déplacer vers des endroits précis et rapidement.
+
+
+Créer de nouvelles données implique éventuellement une confirmation en cas de données déjà en cours d'être éditées.
+Pour créer des données, il faut choisir Fichier puis Nouvelles données.
+Ensuite, il faut choisir une liste de noms dans différents langues et un type de lieu dans une boîte de dialogue.
+Le type de lieu peut être:
+VILLE	
+BATIMENT	
+GROTTE	
+CENTRE_POKEMON	
+SHOP	
+ARENE	
+ROUTE	
+CANAL	
+Un plateau vide est créé et ajouté dans le lieu venant d'être créé.
+
+Pour seléctionner une tuile de la grille, il faut choisir Environnement, puis Sélectionner
+et enfin cliquer sur la tuile désirée
+
+Pour remplir le plateau, il faut choisir Environnement, puis Nouveau
+et enfin cliquer sur la tuile désirée.
+Une boîte de dialogue demandera dans ce cas, la hauteur, la largeur et le type d'environnement.
+Si l'environnement ne peut pas être créé, alors un message d'erreur apparaît.
+Sinon, la grille est repeinte et éventuellement agrandie (largeur et hauteur) et le panneau d'édition de l'environnement ordinaire est réinitialisé.
+
+Sur le panneau d'édition d'un environnement ordinaire,
+un environnement peut être modifié par les actions suivantes:
+1.modification du type d'environnement
+2.orientation du muret
+Sens dans lequel l'utilisateur doit passer
+3.période d'apparition si des pokémons doivent apparaître lors d'un déplacement de l'utilisateur.
+Ceci n'a d'importance que si la liste des pokémons qui doivent apparaître lors d'un déplacement de l'utilisateur n'est pas vide
+4.liste des pokémons qui doivent apparaître lors d'un déplacement de l'utilisateur
+Pour ajouter un pokémon à cette liste, il faut cliquer sur Ajouter.
+Une boîte de dialogue demandant le nom, le niveau, le genre, l'objet et la capacité du pokémon apparaît.
+Pour éditer un pokémon de cette liste, il faut sélectionner une ligne ou une case du tableau non vide, puis cliquer sur Editer.
+Dans ce cas, les champs sont remplis par les valeurs du pokémon édité
+Pour insérer un pokémon dans la liste, il faut sélectionner une ligne ou une case du tableau non vide, puis cliquer sur Inserer.
+Comme pour l'ajout d'un pokémon à cette liste, une boîte de dialogue demandant le nom, le niveau, le genre, l'objet et la capacité du pokémon apparaît.
+Si les données du pokémon sont validées, alors le pokémon est inséré dans la liste à l'indice sélectionné et ceux qui suivent sont réindexés.
+Pour supprimer un pokémon de la liste, il faut sélectionner une ligne ou une case du tableau non vide, puis cliquer sur Supprimer.
+Le pokémon sélectionné sera retiré de la liste et ceux qui suivent sont réindexés.
+L'ordre d'appartition est important.
+5.apparition par la pêche avec la canne
+La construction de la liste d'apparition par la pêche avec la canne est analogue à la construction de la liste des pokémons qui doivent apparaître lors d'un déplacement de l'utilisateur.
+6.apparition par la pêche avec la super canne
+La construction de la liste d'apparition par la pêche avec la super canne est analogue à la construction de la liste des pokémons qui doivent apparaître lors d'un déplacement de l'utilisateur.
+7.apparition par la pêche avec la mega canne
+La construction de la liste d'apparition par la pêche avec la mega canne est analogue à la construction de la liste des pokémons qui doivent apparaître lors d'un déplacement de l'utilisateur.
+8.personnage non dresseur
+Pour éditer un personnage non dresseur, il faut cliquer sur Editer après avoir sélectionné "personnage non dresseur".
+Une boîte de dialogue; demandant le nom, le nom d'image de la miniature, l'orientation, et les actions possibles d'un personnage apparaît.
+Ce n'est qu'après avoir cliqué sur Valider, que les changements à l'environnement sont appliqués.
+Un personnage non dresseur peut avoir une des actions suivantes.
+8.a achats d'objets
+Une boîte de dialogue; demandant la liste d'objets et affichant un tableau qui affiche, pour chaque objet ajouté à la liste demandée, le nom de l'objet, le type de l'objet et le prix de l'objet; apparaît.
+La liste d'objets ne doit être vide.
+8.b achats de ct
+Une boîte de dialogue; demandant la liste de capsules techniques et affichant un tableau qui affiche, pour chaque capsule ajoutée à la liste demandée, le numéro de la capsule et l'attaque qui y est associée; apparaît.
+La liste de capsules techniques ne doit être vide.
+8.c dons de cs
+Une boîte de dialogue; demandant la liste de capsules secrètes et affichant un tableau qui affiche, pour chaque capsule ajoutée à la liste demandée, le numéro de la capsule et l'attaque qui y est associée; apparaît.
+La liste de capsules secrètes ne doit être vide.
+8.d soin de pokémon
+Si l'utilisateur s'approche de ce personnage, alors le personnage soigne tous les pokémons de l'utilisateur.
+8.e lieu pour faire revivre un fossile
+Si l'utilisateur s'approche de ce personnage, et si l'utilisateur possède au moins un fossile, alors une liste de noms de fossiles apparaît.
+Puis l'utilisateur choisit un fossile, si l'utilisateur a une place dans l'equipe, alors un pokémon revit du fossile, sinon rien ne se passe.
+8.f lieu de pension
+Si l'utilisateur possède au total au moins deux pokémons compatibles (ils ont un groupe d'oeufs en commun, ne sont pas du groupe "sans oeuf" et sont de genre opposé ou l'un d'eux est du groupe "Méthamorph") et un troisième et si aucun pokémon n'est à la pension, alors l'interaction avec ce personnage peut s'effectuer.
+Si deux pokémons sont en pension et qu'un oeuf a été pondu et que l'utilisateur possède au moins trois places libres, alors l'interaction avec ce personnage peut s'effectuer.
+8.g move tutor
+Le personnage peut enseigner des attaques à pokémon.
+8.h don d'objet
+Une boîte de dialogue; demandant un objet et affichant le type de l'objet sélectionné; apparaît.
+L'objet est automatiquement donné
+8.i don de pokémon
+Une boîte de dialogue; demandant le nom, le niveau, le genre, l'objet et la capacité du pokémon; apparaît.
+Si l'utilisateur n'a pas de place libre dans son équipe, alors ce pokémon est envoyé dans les boîtes.
+8.j rien
+Le personnage n'a pas d'action.
+9.dresseur ordinaire
+Pour éditer un dresseur ordinaire, il faut cliquer sur Editer après avoir sélectionné "dresseur ordinaire".
+Une boîte de dialogue; demandant le nom, le nom d'image de la miniature, l'orientation, le nom d'image macroscopique, les listes non vides de paire d'équipe de pokémon - récompense, la multiplicité du combat, les messages de début de combat et de fin de combat, apparaît.
+Ce n'est qu'après avoir cliqué sur Valider, que les changements à l'environnement sont appliqués.
+10.champion
+Pour éditer un champion, il faut cliquer sur Editer après avoir sélectionné "champion".
+Une boîte de dialogue; en plus des éléments démandés pour un dresseur ordinaire, demandant le numéro de capsule technique, le numéro de capsule secrète et le nom du badge dans chaque langue; apparaît.
+Ce n'est qu'après avoir cliqué sur Valider, que les changements à l'environnement sont appliqués.
+11.arbre à couper
+Une boîte de dialogue; demandant confirmation de choix d'arbres à couper; apparaît.
+12.rocher à detruire
+Une boîte de dialogue; demandant confirmation de choix de rochers à detruire; apparaît.
+13.rocher à déplacer
+Une boîte de dialogue; demandant confirmation de choix de rochers à déplacer; apparaît.
+14.tourbillon à siphonner
+Une boîte de dialogue; demandant confirmation de choix de tourbillons à siphonner; apparaît.
+15.échange de boîtes
+Une boîte de dialogue; demandant confirmation de lieu d'échanges de boîtes; apparaît.
+L'utilisateur peut prendre dans son équipe un pokémon ou un oeuf provenant d'une boîte, s'il possède au moins une place libre dans son équipe.
+L'utilisateur peut déposer dans une boîte un oeuf de son équipe.
+L'utilisateur peut déposer dans une boîte un pokémon de son équipe, s'il possède au moins deux pokémon dans son équipe.
+16.pokémon légendaire
+Une boîte de dialogue demandant des informations pour le pokémon légendaire apparaît
+L'utilisateur peut interagir avec ce pokémon, il le combat.
+Si l'utilisateur ne le capture pas, alors tout est repris juste avant le combat.
+Si l'utilisateur le capture, alors le pokémon légendaire disparaît (tout en étant stocké dans une boîte) et la tuile devient libre.
+17.pokémon à ramasser dans une pokéball
+Idem que 8.i
+Mais la pokéball disparaît après avoir été prise.
+18.objet à ramasser
+Idem que 8.h
+Mais l'objet disparaît après avoir été pris.
+19.image de la tuile sélectionnée.
+De 8 à 18, les éléments peuvent tous être supprimés, en choisissant l'option "Rien".
+Il n'y a pas besoin de cliquer sur un bouton pour valider les données concernant l'environnement édité.
+Pour valider les obstacles d'interaction, il faut choisir ok, 
+
+Pour déplacer un environnement, if faut seléctionner une tuile de la grille appaertenant à cet environnement, puis choisir Environnement, puis Déplacer et enfin la destination de la tuile sélectionnée.
+Attention au déplacement qui dépend de la première sélection.
+
+Pour ajouter un lieu sans l'éditer, il faut seléctionner Lieu, puis Nouveau;
+comme pour la création de données, une boîte de dialogue de création de nouveau lieu apparaît.
+Ensuite, dans le cas d'édition d'une ligue, il y a table rase de la grille pour pouvoir éditer le premier plateau du lieu
+et le panneau d'édition concerne un environnement ordinaire.
+
+Pour ajouter un lieu en l'éditant, il faut seléctionner Lieu, puis Nouveau et edition;
+comme pour la création de données, une boîte de dialogue de création de nouveau lieu apparaît.
+Ensuite, il y a table rase de la grille pour pouvoir éditer le premier plateau du lieu nouvellement créé.
+
+Pour choisir un lieu, il faut qu'il existe au moins un lieu de créé.
+Une boîte de dialogue affichant les noms et le type dans la langue du logiciel apparaît.
+Il faut choisir une case ou ligne du tableau puis valider.
+Si le lieu ne contient qu'un plateau, alors il y a table rase de la grille pour pouvoir éditer le plateau du lieu.
+Sinon une autre boîte de dialogue affichant les numéros de plateaux du lieux et contenant une grille permettant de visualiser le contenu d'un plateau apparaît; dans ce cas il faut choisir une case du tableau puis valider.
+Choisir une case dans une telle boîte de dialogue change le plateau graphiquement affiché.
+
+Pour choisir un plateau, il faut qu'un lieu soit en cours d'édition.
+Un plateau ne peut être choisi que s'il appartient au même lieu que celui qui est en cours d'édition.
+
+Pour ajouter une ligue, il faut seléctionner Ligue, puis Nouveau.
+Ensuite, dans le cas d'édition d'un lieu, il y a table rase de la grille pour pouvoir éditer le premier plateau de la ligue
+et le panneau d'édition concerne un environnement de ligue.
+
+Un plateau 
+
+
+
+puis
+choisir 
+
+MENU\tFichier
+\tNouvelles données\tCTRL+N
+\tCharger\tCTRL+ALT+O
+\tCharger rapidement CTRL+O
+\tSauvegarder\tCTRL+S
+\tSauvegarder sous\tCTRL+ALT+S
+\tExporter des ressources\tCTRL+E
+\tQuitter\tECHAP
+\tValider\tCTRL+V
+MENU\tLieu
+\tNouveau
+\tNouveau et edition
+\tChoisir
+\tSupprimer
+MENU\tPlateau
+\tNouveau
+\tChoisir
+\tSupprimer
+MENU\tLiens
+\tInsérer un lien entre deux plateaux\tF5
+\tSouder deux plateaux de lieux différents\tF6
+\tLier une ligue\tF7
+\tAjouter/Supprimer des conditions de ligue
+\tAjouter/Supprimer des conditions de champions
+MENU\tLigue
+\tNouveau
+\tChoisir
+\tSupprimer
+MENU\tPlateau de ligue
+\tNouveau
+\tChoisir
+\tSupprimer
+MENU\tGrille
+\tInsérer une ligne en haut\tALT+1
+\tInsérer une ligne en bas\tALT+2
+\tInsérer une colonne à gauche\tALT+3
+\tInsérer une colonne à droite\tALT+4
+\tInsérer des lignes en haut\tALT+5
+\tInsérer des lignes en bas\tALT+6
+\tInsérer des colonnes à gauche\tALT+7
+\tInsérer des colonnes à droite\tALT+8
+MENU\tEnvironnement
+\tNouveau
+\tDéplacer
+\tSupprimer
+\tModifier la hauteur
+\tInsérer une ligne
+\tInsérer ou supprimer des lignes
+\tSupprimer une ligne
+\tModifier la largeur
+\tInsérer une colonne
+\tInsérer ou supprimer des colonnes
+\tSupprimer une colonne
+\tSélectionner
+MENU\tEléments de départ
+\tCoordonnées\tF8
+\tPokémon\tF9
+\tNombre maximal d'attaques\tF10
+MENU\tCarte
+\tEditer\tF3
+\tLier\tF4
+MENU\tAide
+\tDonnées\tF2
+\tUtilisation du logiciel\tF1

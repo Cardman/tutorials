@@ -1,0 +1,1 @@
+L'attaque ROUE_DE_FEU permet à un lanceur gelé de se dégeler puis d'attaquer la cible.

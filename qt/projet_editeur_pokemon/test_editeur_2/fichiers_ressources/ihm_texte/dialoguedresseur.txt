@@ -1,0 +1,32 @@
+TITRE_D	Nouveau dresseur
+TITRE_C	Nouveau champion
+NOM	Nom en $1:
+NOM_MINIATURE	Nom de miniature :
+ORIENTATION_H	Orientation horizontale du dresseur :
+ORIENTATION_V	Orientation verticale du dresseur :
+ETIQUETTE_NOM	nom
+ETIQUETTE_NIVEAU	niveau
+AJOUTER_EQ	Ajouter équipe
+EDITER_EQ	Editer équipe
+SUPPRIMER_EQ	Supprimer équipe
+INSERER_EQ	Insérer équipe
+NOM_IMAGE	Nom d'image :
+MESSAGE_DEBUT_CBT	Message de début de combat :
+MESSAGE_FIN_CBT	Message de fin de combat :
+MULT_CBT	Multiplicité du combat :
+BADGE	Nom du badge en $1:
+NUMERO_CAPSULE	Numéro de capsule $1:
+TECHNIQUE	technique
+SECRETE	secrète
+NOM_ATTAQUE_LIE	Nom d'attaque contenue dans la capsule $1:
+VALIDER	Valider
+TITRE_D_2	Editer dresseur
+TITRE_C_2	Editer champion
+ERREUR	Erreur
+INDICE_INSERT_INV	Indice d'insertion invalide!
+INDICE_EDIT_INV	Indice d'édition invalide!
+INDICE_SUPPR_INV	Indice de suppression invalide!
+PAS_EQUIPES	Pas d'équipe non vide!
+PAS_NOM	Pas de nom en $1.
+PAS_BADGE	Pas de nom de badge en $1!
+ERR_ORIENTATION	Erreur d'orientation!

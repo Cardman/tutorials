@@ -1,0 +1,1 @@
+L'attaque LAME_SAINTE ignore les variations d'esquive de la cible.

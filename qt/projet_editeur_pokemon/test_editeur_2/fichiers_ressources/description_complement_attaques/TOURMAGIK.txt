@@ -1,0 +1,7 @@
+﻿TOURMAGIK est une attaque d'échange d'objets.
+Le lanceur de l'attaque TOURMAGIK échange son objet avec la cible de l'attaque TOURMAGIK.
+
+L'attaque TOURMAGIK échoue si et seulement si
+la cible possède un clone ou la cible a la capacité MULTI_TYPE ou GLUE.
+
+L'objet échangé ne peut pas être repossédé en utilisant l'attaque RECYCLAGE (lanceur ou cible de l'attaque TOURMAGIK).

@@ -1,0 +1,74 @@
+FICHIER	Fichier	
+	NOUVELLES_DONNEES	Nouvelles données	
+	CHARGER	Charger	
+	CHARGER_RAPIDEMENT	Charger rapidement	
+	SAUVEGARDER	Sauvegarder	
+	SAUVEGARDER_SOUS	Sauvegarder sous	
+	IMPORTER_IMAGES	Importer des images	
+	EXPORTER	Exporter des ressources	
+	QUITTER	Quitter	
+	VALIDER	Valider	
+LIEU	Lieu	
+	NOUVEAU	Nouveau	
+	NOUVEAU_SELECT	Nouveau et edition	
+	MODIFIER_NOM_TYPE	Modifier le nom ou le type	
+	CHOISIR	Choisir	
+	SUPPRIMER	Supprimer	
+PLATEAU	Plateau	
+	NOUVEAU	Nouveau	
+	CHOISIR	Choisir	
+	SUPPRIMER	Supprimer	
+LIENS	Liens	
+	INSERER_LIENS_ENTRE_PLATEAUX	Insérer un lien entre deux plateaux	
+	SOUDER_LIEUX_COTE_COTE	Souder deux plateaux de lieux différents	
+	LIAISONS_LIGUE	Lier une ligue	
+	AJOUT_SUPPR_COND_LIGUE	Ajouter/Supprimer des conditions de ligue	
+	AJOUT_SUPPR_COND_CHAMPIONS	Ajouter/Supprimer des conditions de champions	
+	ENLEVER_LIENS_L	Désouder les lieux	
+	ENLEVER_LIENS_P	Désouder les plateaux	
+	ENLEVER_LIENS_LG	Enlever l'origine et l'accès	
+	ENLEVER_LIENS_PL	Désouder les plateaux de ligue	
+LIGUE	Ligue	
+	NOUVEAU	Nouveau	
+	CHOISIR	Choisir	
+	SUPPRIMER	Supprimer	
+PLATEAU_LIGUE	Plateau de ligue	
+	NOUVEAU	Nouveau	
+	CHOISIR	Choisir	
+	INSERER	Inserer	
+	SUPPRIMER	Supprimer	
+	EDITER_DRESSEUR	Editer dresseur	
+GRILLE	Grille	
+	AJOUTER_LIGNE_HAUT	Insérer une ligne en haut	
+	AJOUTER_LIGNE_BAS	Insérer une ligne en bas	
+	AJOUTER_COLONNE_GAUCHE	Insérer une colonne à gauche	
+	AJOUTER_COLONNE_DROITE	Insérer une colonne à droite	
+	AJOUTER_LIGNES_HAUT	Insérer des lignes en haut	
+	AJOUTER_LIGNES_BAS	Insérer des lignes en bas	
+	AJOUTER_COLONNES_GAUCHE	Insérer des colonnes à gauche	
+	AJOUTER_COLONNES_DROITE	Insérer des colonnes à droite	
+ENVIRONNEMENT	Environnement	
+	NOUVEAU	Nouveau	
+	DEPLACER	Déplacer	
+	SUPPRIMER	Supprimer	
+	MODIFIER_HAUTEUR	Modifier la hauteur	
+	INSERER_LIGNE	Insérer une ligne	
+	INSERER_SUPPRIMER_LIGNES	Insérer ou supprimer des lignes	
+	SUPPRIMER_LIGNE	Supprimer une ligne	
+	MODIFIER_LARGEUR	Modifier la largeur	
+	INSERER_COLONNE	Insérer une colonne	
+	INSERER_SUPPRIMER_COLONNES	Insérer ou supprimer des colonnes	
+	SUPPRIMER_COLONNE	Supprimer une colonne	
+	SELECTION	Sélectionner	
+ELEMENTS_DEPART	Eléments de départ	
+	VILLE	Ville	
+	COORDONNEES	Coordonnées	
+	POKEMON	Pokémon	
+	NB_MAX_ATTAQUES	Nombre maximal d'attaques	
+MAP	Carte	
+	EDITER	Editer	
+	LIER	Lier	
+AIDE	Aide	
+	DONNEES	Données	
+	UTILISATION	Utilisation du logiciel	
+	SQL	Base de données avec sql	

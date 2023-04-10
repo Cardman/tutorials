@@ -1,0 +1,9 @@
+L'attaque ROULADE bloque le lanceur, (il ne peut pas switcher sauf si un des pokémons adverse sur le terrain est KO en fin de tour, il ne peut pas non plus lancer une autre attaque, ni est soigné par un dresseur.) pendant 5 tours.
+
+Si l'attaque ROULADE est choisie par BLABLADODO alors le lanceur n'est pas bloque
+
+A chaque tour, la puissance double tant que le lanceur est bloqué sur l'attaque.
+
+Si l'attaque BOUL_ARMURE est lancé avant le premier tour de ROULADE, alors la puissance de ROULADE double.
+
+L'utilisation des PP se fait au premier tour et 1 seul PP de base (sans compter la capacité PRESSION de la cible) est utilisé.

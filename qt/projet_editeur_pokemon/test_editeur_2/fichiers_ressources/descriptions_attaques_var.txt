@@ -1,0 +1,42 @@
+DIRECT	L'attaque est directe.
+INDIRECT	L'attaque est indirecte.
+PRECISION_SURE	La précision de l'attaque ne subit pas de variation. L'attaque ne peut pas échouer.
+PRECISION_N	La précision de base de l'attaque est de $1.
+FUITE_ADV	Après l'utilisation de l'attaque, l'adversaire peut switcher.
+NON_FUITE_ADV	Après l'utilisation de l'attaque, l'adversaire ne peut pas switcher naturellement.
+PREPA_TOUR	L'attaque demande un tour de préparation, par défaut, sauf cas particuliers.
+NON_PREPA_TOUR	L'attaque ne demande pas de tour de préparation.
+DISPARITION_TOUR	Le lanceur de cette attaque disparaît lors du tour de préparation.
+NON_DISPARITION_TOUR	Le lanceur de cette attaque ne disparaît pas lors du tour de préparation.
+ATTAQ_TOUCH_PK_DISP	Les attaques suivantes: $1 peuvent toucher le lanceur de cette attaque lors du tour de disparition.
+NON_ATTAQ_TOUCH_PK_DISP	Aucune attaque ne peut toucher le lanceur de cette attaque lors du tour de disparition, sauf cas de l'ANNULE_GARDE.
+ADJ_ADV	L'attaque touche tous les adversaires adjacents.
+ADJ_MULT	L'attaque touche tous les pokémons adjacents.
+ADJ_UNIQ	L'attaque touche une cible adjacente.
+ALLIE	L'attaque touche un partenaire.
+ALLIES	L'attaque touche tous les partenaires.
+AUTRE_UNIQ	L'attaque touche une cible adjacente ou non autre que le lanceur.
+GLOBALE	L'attaque concerne tous les pokémons.
+LANCEUR	L'attaque touche le lanceur.
+PSEUDO_GLOBALE	L'attaque concerne tous les autres pokémons que le lanceur.
+TOUS_ADV	L'attaque touche tous les pokémons adjacents.
+UNIQUE_IMPORTE	L'attaque touche une cible adjacente ou non qui peut être le lanceur.
+LOI_PROBA_REPET_COUPS	La loi de répétition de l'attaque pendant le tour est $1.
+LOI_PROBA_REPET_TOUR	La loi de répétition de l'attaque à la fin de chaque tour à partir du lancer de l'attaque est $1.
+BLOQ	Le lanceur est bloqué après l'utilisation de l'attaque.
+NON_BLOQ	Le lanceur n'est pas bloqué après l'utilisation de l'attaque.
+MIN_MAX_PUIS	Le plus petit coefficient multiplicateur de la puissance est de $1.\nLe plus grand coefficient multiplicateur de la puissance est de $2.
+KO_POSS	L'adversaire peut tomber KO après l'attaque.
+KO_IMPOSS	L'adversaire ne peut pas tomber KO après l'attaque.
+CIBLE_SOM	Pour que l'attaque réussisse, il faut que la cible soit endormie.
+NON_CIBLE_SOM	Pour que l'attaque réussisse, il n'est pas nécessaire que la cible soit endormie.
+LANCEUR_SOM	Pour que l'attaque réussisse, il faut que le lanceur soit endormi.
+NON_LANCEUR_SOM	Pour que l'attaque réussisse, il n'est pas nécessaire que le lanceur soit endormi.
+STAT_ATT_00	La valeur de la statistique ATTAQUE de base de la cible est utilisée pour l'attaque pour le calcul des dégâts.
+STAT_ATT_01	La valeur de la statistique ATTAQUE de base du lanceur est utilisée pour l'attaque pour le calcul des dégâts.
+STAT_ATT_10	La valeur de la statistique ATTAQUE_SPECIALE de base de la cible est utilisée pour l'attaque pour le calcul des dégâts.
+STAT_ATT_11	La valeur de la statistique ATTAQUE_SPECIALE de base du lanceur est utilisée pour l'attaque pour le calcul des dégâts.
+STAT_DEF_00	La valeur de la statistique DEFENSE de base de la cible est utilisée pour la défense pour le calcul des dégâts.
+STAT_DEF_01	La valeur de la statistique DEFENSE de base du lanceur est utilisée pour la défense pour le calcul des dégâts.
+STAT_DEF_10	La valeur de la statistique DEFENSE_SPECIALE de base de la cible est utilisée pour la défense pour le calcul des dégâts.
+STAT_DEF_11	La valeur de la statistique DEFENSE_SPECIALE de base du lanceur est utilisée pour la défense pour le calcul des dégâts.

@@ -1,0 +1,2 @@
+create table type_pk (nom varchar(15), type varchar(15),  primary key(nom,type), foreign key(nom) references pokedex(nom))
+ 

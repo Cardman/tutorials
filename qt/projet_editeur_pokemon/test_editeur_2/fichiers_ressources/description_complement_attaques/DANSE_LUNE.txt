@@ -1,0 +1,4 @@
+DANSE_LUNE est une attaque de sacrifice.
+En effet, le lanceur tombe KO et le remplacant, supposé non KO avant son entrée sur le terrain,
+est totalement soigné (pv restants, pp des attaques, statut)
+après une éventuelle mise à KO par les effets des attaques PICOTS, PIEGE_DE_ROC, PICS_TOXIK.

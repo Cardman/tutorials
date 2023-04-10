@@ -1,0 +1,10 @@
+﻿VAMPIGRAINE est une attaque telle que:
+la cible perd 1/8 de ses pv max à chaque fin de tour.
+le lanceur gagne les pv perdus de la cible sauf si la cible possède la capacité SUINTEMENT où il perd les pv perdis par la cible.
+
+L'attaque VAMPIGRAINE peut être utilisée sur un pokémon ayant le type PLANTE mais celui-ci ne perd pas de pv à la fin de chaque tour
+et le lanceur ne regagne pas de pv à la fin de chaque tour.
+
+L'attaque VAMPIGRAINE peut être utilisée sous l'effet d'ANTI_SOIN, mais ceci se passe comme pour une cible ayant le type PLANTE.
+
+Si un pokémon subissant VAMPIGRAINE utilise TOUR_RAPIDE, alors il est libéré de VAMPIGRAINE.

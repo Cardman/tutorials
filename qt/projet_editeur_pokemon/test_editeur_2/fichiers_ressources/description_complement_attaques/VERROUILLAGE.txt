@@ -1,0 +1,5 @@
+﻿VERROUILLAGE est une attaque permettant à la prochaine attaque non totalement précise de la rendre précise à 100% sur la cible.
+VERROUILLAGE est une attaque permettant d'attaquer des cibles ayant disparu pendant le tour de chargement.
+Si la cible switche ou le lanceur switche alors l'attaque VERROUILLAGE perd son effet.
+
+Si la cible de VERROUILLAGE avait lancé REFLET_MAGIK, alors le lanceur subit les effets de VERROUILLAGE à la place de la cible.

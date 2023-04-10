@@ -1,0 +1,8 @@
+﻿PAR_ICI est une attaque de détournement d'attention.
+En effet, si un adversaire n'ayant pas joué choisit une attaque à cible unique et alors la cible devient le lanceur de PAR_ICI.
+
+Cette attaque permet de protéger les partenaires du lanceur de PAR_ICI des attaques adverses à cible unique.
+Cela n'empêchera pas que les partenaires du lanceur de PAR_ICI peuvent cibler un autre pokémon que le lanceur de PAR_ICI.
+
+Rien ne change pour un pokémon ayant lancé POURSUITE sur un autre qui switche, car la priorité de POURSUITE devient supérieure à celle de PAR_ICI.
+Rien ne change pour une attaque multi-cibles où ne visant que le lanceur.

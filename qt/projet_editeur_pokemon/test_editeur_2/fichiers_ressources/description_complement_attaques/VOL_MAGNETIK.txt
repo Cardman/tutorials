@@ -1,0 +1,11 @@
+﻿VOL_MAGNETIK est une attaque immunisant le lanceur pendant 5 tours aux attaques du type SOL, aux picots, aux pics toxiks et au piege de roc.
+
+L'attaque RACINES échoue sous les effets de VOL_MAGNETIK.
+L'attaque VOL_MAGNETIK échoue sous les effets de RACINES.
+L'attaque VOL_MAGNETIK échoue sous les effets de GRAVITE.
+L'attaque VOL_MAGNETIK perd son effet sous les effets de GRAVITE.
+L'attaque VOL_MAGNETIK échoue sous la possession de LEVITATION.
+
+Si le lanceur switche alors les effets restent.
+
+Si un pokémon avait utilisé SAISIE sur le lanceur de VOL_MAGNETIK, alors le pokémon ayant utilisé SAISIE se retrouve sous l'effet de VOL_MAGNETIK.

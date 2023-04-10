@@ -1,0 +1,12 @@
+La puissance de l'attaque ATOUT est la suivante:
+si avant l'utilisation de l'attaque ATOUT, le lanceur possède au plus 1 PP de l'attaque ATOUT
+la puissance de l'attaque ATOUT est de 200;
+si avant l'utilisation de l'attaque ATOUT, le lanceur possède exactement 2 PP de l'attaque ATOUT
+la puissance de l'attaque ATOUT est de 80;
+si avant l'utilisation de l'attaque ATOUT, le lanceur possède exactement 3 PP de l'attaque ATOUT
+la puissance de l'attaque ATOUT est de 60;
+si avant l'utilisation de l'attaque ATOUT, le lanceur possède exactement 4 PP de l'attaque ATOUT
+la puissance de l'attaque ATOUT est de 50;
+dans les autres cas,
+la puissance de l'attaque ATOUT est de 40.
+

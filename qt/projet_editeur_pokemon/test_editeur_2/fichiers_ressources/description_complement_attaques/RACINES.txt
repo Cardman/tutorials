@@ -1,0 +1,15 @@
+﻿RACINES est une attaque telle que:
+le lanceur ne peut pas être retiré de force par CYCLONE,HURLEMENT,DRACOQUEUE et PROJECTION.
+Ces attaques échouent (DRACOQUEUE et PROJECTION ne font pas de dégâts) sur un pokémon sous l'effet de RACINES.
+
+De plus, un pokémon sous l'effet de RACINES ne peut pas être sous l'effet de LEVIKINESIE, ni sous l'effet de VOL_MAGNETIK.
+
+De plus, un pokémon sous l'effet de RACINES ayant le type VOL ou la capacité LEVITATION est sensible aux attaques SOL.
+
+Cependant un pokémon sous l'effet de RACINES ne peut pas switcher de lui-même sauf par les attaques DEMI_TOUR,CHANGE_ECLAIR ou RELAIS.
+
+Un pokémon sous l'effet de RACINES voit se restaurer 1/8 de ses pv_max à la fin de chaque tour sauf s'il est sous ANTI_SOIN.
+
+ANTI_SOIN ne bloque pas l'utilisation de RACINES, mais bloque la restauration des pv à la fin du tour.
+
+Si un pokémon avait lancé SAISIE sur le lanceur de RACINES, alors le pokémon ayant lancé SAISIE sera sous l'effet de RACINES à la place du lanceur.

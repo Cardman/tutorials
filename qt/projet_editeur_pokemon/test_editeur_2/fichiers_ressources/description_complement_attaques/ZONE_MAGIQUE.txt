@@ -1,0 +1,3 @@
+﻿ZONE_MAGIQUE est une attaque globale durant 5 tours.
+Réutiliser ZONE_MAGIQUE, alors que cette attaque est active, l'annule.
+Les pokémon sur le terrain ne peuvent pas utiliser d'objets pendant l'effet de cette attaque

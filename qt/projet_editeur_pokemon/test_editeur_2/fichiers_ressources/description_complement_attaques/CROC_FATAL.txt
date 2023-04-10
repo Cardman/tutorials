@@ -1,0 +1,1 @@
+L'attaque CROC_FATAL réduit de moitié les pv restants de la cible.

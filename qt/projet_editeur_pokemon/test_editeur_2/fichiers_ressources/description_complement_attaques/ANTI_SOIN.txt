@@ -1,0 +1,32 @@
+﻿ANTI_SOIN est une attaque qui pendant 5 tours empêche l'utilisation des attaques suivantes par la cible:
+
+APPEL_SOINS
+ATTERRISSAGE
+AURORE
+AVALE
+E_COQUE
+LAIT_A_BOIRE
+PARESSE
+RAYON_LUNE
+REPOS
+SOIN
+SYNTHESE
+VOEU
+
+Si une de ces attaques allait être utilisée par la cible après le lancer de ANTI_SOIN sur la cible,
+alors cette attaque échoue.
+
+ANNEAU_HYDRO, VOEU, VAMPIGRAINE et RACINES peuvent être lancées par un pokémon sous les effets de ANTI_SOIN mais
+ne restaure pas de pv tant que ces effets sont actifs.
+
+Les effets de cette attaque annule les capacités ABSORB_VOLT et ABSORB_EAU,
+c'est à dire les pokémons dotés de ces capacités subiront des dégâts au lieu de restaurer de la vie
+tant que ces pokémons sont sous les effets de ANTI_SOIN.
+
+Les attaques qui absorbent des pv et qui infligent des dégâts lancées par un pokémon sous ANTI_SOIN ne font que d'infliger des dégâts.
+Si un pokémon sous les effets de l'attaque ANTI_SOIN lance une attaque absorbant des pv sur un pokémon ayant la capacité SUINTEMENT,
+alors le lanceur de l'attaque absorbant des pv ne perd pas de vie.
+
+
+S'il existe une cible de l'attaque ANTI_SOIN ayant lancé REFLET_MAGIK et n'est pas KO, alors c'est l'équipe du lanceur de ANTI_SOIN
+qui subit les effets de ANTI_SOIN.

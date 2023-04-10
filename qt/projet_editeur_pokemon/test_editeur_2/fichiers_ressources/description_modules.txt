@@ -1,0 +1,1 @@
+Si un pokémon tient cet objet, alors l'attaque TECHNO_BUSTER devient de type $1.	If a pokemon helds this object, then the type of the move TECHNO_BUSTER becomes $1.

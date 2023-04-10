@@ -1,0 +1,4 @@
+Si le lanceur fait partie de l'équipe de l'utilisateur,
+la puissance de l'attaque RETOUR vaut bonheur du lanceur * 2 / 5 + 1 
+sinon
+la puissance de l'attaque RETOUR vaut 30

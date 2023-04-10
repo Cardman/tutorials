@@ -1,0 +1,22 @@
+TYPE_ENV	Type environnement :
+NOM_LIGUE	Nom de la ligue en $1:
+NOM	Nom en $1:
+NOM_MINIATURE	Nom de miniature :
+ORIENTATION_H	Orientation horizontale du dresseur :
+ORIENTATION_V	Orientation verticale du dresseur :
+EQUIPE	Equipe ordonnée du dresseur de la ligue
+ETIQUETTE_NOM	nom
+ETIQUETTE_NIVEAU	niveau
+AJOUTER_PK	Ajouter pokémon
+EDITER_PK	Editer pokémon
+SUPPRIMER_PK	Supprimer pokémon
+INSERER_PK	Insérer pokémon
+NOM_IMAGE	Nom d'image :
+MESSAGE_DEBUT_CBT	Message de début de combat :
+MESSAGE_FIN_CBT	Message de fin de combat :
+MULT_CBT	Multiplicité du combat :
+PK_SELECT	Pokémon selectionné
+RECOMPENSE	Récompense :
+IMAGE_FOND_TUILE	Image de fond de la tuile :
+COORD_H_DRESSEUR	Coordonnée horizontale du dresseur :
+COORD_V_DRESSEUR	Coordonnée verticale du dresseur :

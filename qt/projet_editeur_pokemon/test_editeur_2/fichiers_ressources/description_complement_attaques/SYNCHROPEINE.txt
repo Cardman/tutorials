@@ -1,0 +1,2 @@
+Si la cible de l'attaque SYNCHROPEINE possède au moins un type en commun avec le lanceur alors
+cette attaque inflige des dégâts à la cible, sinon cette attaque échoue

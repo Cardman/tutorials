@@ -1,0 +1,6 @@
+si la cible porte un objet et si la cible ne possède pas la capacité GLUE et si la cible ne possède pas de clone,
+alors l'attaque SABOTAGE fait tomber l'objet de la cible sans que le lanceur ne le ramasse même si le lanceur
+ne porte pas d'objet.
+
+si la cible ne porte pas d'objet ou si la cible possède la capacité GLUE ou si la cible possède un clone,
+alors l'attaque SABOTAGE ne fait que d'infliger des dégâts à la cible.

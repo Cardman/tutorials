@@ -1,0 +1,19 @@
+﻿DETECTION protège le lanceur de la plupart des attaques sauf celles qui suivent:
+BOOST
+CARNAREKET
+IMITATION
+MORPHING
+POSSESIF
+PRESCIENCE
+REQUIEM
+REVENANT
+RUSE
+
+la précision de cette attaque vaut 100/2^nb,
+où nb vaut le nombre d'utilisation des attaques
+ABRI
+DETECTION
+TENACITE
+GARDE_LARGE
+PREVENTION
+lancées après le dernier envoi du lanceur.

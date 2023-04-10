@@ -1,0 +1,12 @@
+La puissance de l'attaque NOEUD_HERBE est la suivante:
+si la cible a une masse actuellement inférieure à 10 kg
+alors la puissance est de 20;
+sinon si la cible a une masse actuellement inférieure à 25 kg
+alors la puissance est de 40;
+sinon si la cible a une masse actuellement inférieure à 50 kg
+alors la puissance est de 60;
+sinon si la cible a une masse actuellement inférieure à 100 kg
+alors la puissance est de 80;
+sinon si la cible a une masse actuellement inférieure à 200 kg
+alors la puissance est de 100;
+sinon la puissance est de 120.

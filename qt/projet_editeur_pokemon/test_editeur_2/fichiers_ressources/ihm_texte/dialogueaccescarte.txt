@@ -1,0 +1,16 @@
+TITRE	Editer conditions d'accès a des coordonnées sur la carte en fonction des ligues
+ETIQUETTE_NOM	Nom
+ETIQUETTE_TYPE	Type
+AJOUT_LIGUE	Ajouter condition de ligue
+SUPPRIMER_LIGUE	Supprimer condition de ligue
+MAJ_CONDITION	Editer condition d'accès aux coordonnées
+SUPPR_CONDITION	Supprimer condition d'accès aux coordonnées
+VALIDER	Valider
+ERREUR	Erreur
+SUCCES	Succès
+LIGUE_NON_SELECT	Pas de ligue selectionnée!
+MAUVAISES_COORDS	Mauvaises coordonnées!
+CONDITION_DEJA_PRESENTE	Condition d'accès aux coordonnées déjà présente!
+CONDITION_AJOUTEE	Condition d'accès aux coordonnées ajoutée!
+CONDITION_SUPPRIMEE	Condition d'accès aux coordonnées supprimée!
+COORDS_NON_SELECT	Pas de coordonnées selectionnées!

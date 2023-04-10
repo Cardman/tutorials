@@ -1,0 +1,11 @@
+﻿BARRAGE est une attaque de piège pour le switch
+la cible ne peut pas switcher tant que le lanceur est présent sur le terrain.
+Cependant, la cible pourra toujours switcher avec la CARAPACE_MUE, et les attaques RELAIS, DEMI_TOUR, CHANGE_ECLAIR.
+La cible pourra être switchée de force avec une attaque CYCLONE, HURLEMENT, DRACOQUEUE, PROJECTION, si elles réussissent.
+
+Si la cible arrive à quitter le terrain, alors les effets s'estompent.
+
+Si la cible avait lancé REFLET_MAGIK sur le lanceur avant le lancer de BARRAGE,
+alors le lanceur ne peut pas switcher tant que la cible est présente sur le terrain.
+Dans ce cas, la lanceur pourra toujours switcher avec la CARAPACE_MUE, et les attaques RELAIS, DEMI_TOUR, CHANGE_ECLAIR.
+La lanceur pourra être switchée de force avec une attaque CYCLONE, HURLEMENT, DRACOQUEUE, PROJECTION, si elles réussissent.

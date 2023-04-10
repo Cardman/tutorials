@@ -1,0 +1,1 @@
+La puissance de l'attaque TACLE_FEU vaut (minimum(maximum(partie_entiere(masse actuelle du lanceur/masse actuelle de la cible),1),5) + 1) * 20

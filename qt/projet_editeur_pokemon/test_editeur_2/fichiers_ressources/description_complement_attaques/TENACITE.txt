@@ -1,0 +1,12 @@
+﻿TENACITE empêche le KO de son lanceur en gardant 1 PV par une attaque, si le lanceur est censé tomber KO.
+
+Cependant, les dégâts de fin de tour peuvent mettre KO le lanceur de TENACITE.
+
+la précision de cette attaque vaut 100/2^nb,
+où nb vaut le nombre d'utilisation des attaques
+ABRI
+DETECTION
+TENACITE
+GARDE_LARGE
+PREVENTION
+lancées après le dernier envoi du lanceur.

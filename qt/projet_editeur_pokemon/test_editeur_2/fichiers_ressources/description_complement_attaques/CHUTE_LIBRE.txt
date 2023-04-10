@@ -1,0 +1,22 @@
+CHUTE_LIBRE ne peut pas être utilisée sous gravité.
+Si la gravité est mise en place pendant le tour de chargement de CHUTE_LIBRE,
+alors le lanceur et la cible réapparaissent.
+
+L'attaque CHUTE_LIBRE est telle que:
+
+le lanceur et la cible ne peuvent pas être touchés par la plupart des attaques,
+car ils ont disparu.
+
+une attaque peut toucher le lanceur de CHUTE_LIBRE en tour de chargement si et seulement si
+cette attaque peut toucher le cible de CHUTE_LIBRE en tour de chargement.
+
+La cible ne peut pas attaquer pendant le tour de chargement.
+Au deuxième tour les dégâts sont infligés à la cible.
+
+L'attaque CHUTE_LIBRE ne fait rien sur une cible ayant le type VOL ou la capacité LEVITATION sauf si la cible est sous l'effet de ANTI_AIR.
+
+L'attaque CHUTE_LIBRE échoue si et seulement si la cible possède un clone.
+
+Si le lanceur de CHUTE_LIBRE tombe KO pendant le tour de chargement alors la cible est libérée de l'attaque sans subir de dégâts.
+Si le cible de CHUTE_LIBRE tombe KO pendant le tour de chargement alors le lanceur n'utilise pas du tout de PP pour l'attaque, car l'utilisation de PP pour
+des attaque demandant un tour de chargement ne s'effectue qu'au deuxième tour (après le chargement).

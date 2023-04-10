@@ -1,0 +1,11 @@
+﻿A_LA_QUEUE est une attaque très particulière.
+
+Pour que la cible de A_LA_QUEUE attaque vers la fin, il faut que le lanceur ne tombe pas KO,
+jusqu'à l'attaque de la cible, et que la cible de A_LA_QUEUE ne soit cible de APRES_VOUS avec un lanceur de APRES_VOUS non KO.
+
+A_LA_QUEUE échoue si moins de trois pokémons sont sur le terrain.
+
+A_LA_QUEUE échoue si la cible a déjà attaqué.
+
+Pour l'ordre d'attaque des pokémons cibles de A_LA_QUEUE,
+on compare les priorités d'attaques, puis la possession de la capacité FREIN, puis le port d'objet, et enfin les vitesses.

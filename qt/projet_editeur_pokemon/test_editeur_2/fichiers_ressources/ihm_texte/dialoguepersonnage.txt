@@ -1,0 +1,21 @@
+TITRE	Nouveau personnage
+NOM	Nom en $1:
+NOM_MINIATURE	Nom de miniature
+ORIENTATION_H	Orientation horizontale du personnage
+ORIENTATION_V	Orientation verticale du personnage
+EDITER	Editer
+ACHAT_OBJ	Achat d'objets
+ACHAT_CT	Achat de capsules techniques
+DON_CS	Don de capsules secrètes
+SOIN_PK	Soin de pokémon
+LIEU_VIVRE_FOSSILE	Lieu pour faire revivre un pokémon provenant d'un fossile
+LIEU_PENSION	Lieu de pension
+MOVE_TUTOR	Move tutor
+DON_OBJET	Don d'objet
+DON_PK	Don de pokemon
+RIEN	Aucune action
+VALIDER	Valider
+TITRE_2	Editer personnage
+ERREUR	Erreur
+PAS_NOM	Pas de nom en $1.
+ERREUR_ORIENTATION	Erreur d'orientation!

@@ -1,0 +1,4 @@
+L'attaque TOUT_OU_RIEN met KO le lanceur et fait perdre le nombre de pv restants du lanceur avant le lancer de l'attaque à la cible.
+
+NB:
+IL EST RIDICULE D'UTILISER TOUT_OU_RIEN, SI LES PV RESTANTS DU LANCEUR SONT BAS.

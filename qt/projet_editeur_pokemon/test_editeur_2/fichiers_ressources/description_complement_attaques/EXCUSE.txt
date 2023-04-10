@@ -1,0 +1,10 @@
+L'attaque EXCUSE est particulière.
+
+En effet, les effets qui ont lieu sont aléatoire avec la loi suivante:
+
+((40,2/5);(80,3/10);(120,1/10);(-80,1/5)
+
+Pour le dernier événement qui est -80, cela signifie que 80 pv sont restaurés pour la cible, sinon pour les autres
+c'est la puissance de l'attaque qui est tirée.
+
+L'attaque EXCUSE soigne le pokémon même derrière un clone, mais si ce sont des dégâts ils iront d'abord sur le clone de la cible.

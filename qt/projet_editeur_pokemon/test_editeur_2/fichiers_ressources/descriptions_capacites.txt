@@ -1,0 +1,101 @@
+﻿ANTI_CLIMAT	Tant que le possesseur de cette capacité est présent sur le terrain, l'éventuel climat sur le terrain est inactif.\nSi le possesseur sort du terrain, le climat redevient actif.
+ANTI_FUITE	Les adversaires du possesseur ne peuvent pas switcher.
+ANTI_FUITE_SI_NE_POSSEDE_TYPE	Les adversaires du possesseur n'ayant pas le type $1 ne peuvent pas switcher.
+ANTI_FUITE_SI_POSSEDE_TYPE	Les adversaires du possesseur ayant le type $1 ne peuvent pas switcher.
+ANTI_IMMU_ATTAQUE	Le possesseur de cette capacité peut utiliser des attaques de type $1 sur des cibles ayant le type $2.
+BAISSE_STATISTIQUE_ADVERSAIRE	Lors de l'entrée du possesseur de cette capacité sur le terrain, les adversaires perdent $2 cran en $1.
+BLOQUE_CONSO_BAIES_ADV	Tant que le possesseur de cette capacité est présent sur le terrain, les adversaires ne peuvent pas utiliser de baies.
+CHANGEMENT_TYPE_SI_CLIMAT	Lorsque le climat $1 est actif, le possesseur de cette capacité devient de type $2.
+CHANGEMENT_TYPE_SI_DEGATS	Lorsque le possesseur de cette capacité subit des dégâts, il prend le type de l'attaque subie.
+CLIMAT	Lors de l'entrée du possesseur de cette capacité sur le terrain, le climat change et devient $1 jusqu'à la mise en place d'un nouveau climat.
+COPIE_CAPACITE	Lors de l'entrée du possesseur de cette capacité sur le terrain, le possesseur de cette capacité prend une des capacités des adversaires.
+DEGATS_RECUL_ADV	Lorsque le possesseur de cette capacité subit des dégâts par une attaque directe et si le possesseur de cette capacité n'est pas KO, alors le lanceur de l'attaque directe perd $1 des pv max du lanceur de l'attaque directe.
+DEGATS_RECUL_ADV_SI_KO	Lorsque le possesseur de cette capacité subit des dégâts par une attaque directe et si le possesseur de cette capacité est KO par cette attaque directe, alors le lanceur de l'attaque directe perd $1 des pv max du lanceur de l'attaque directe.
+DEGATS_STATUT	Si les adversaires du possesseur de cette capacité ont le statut $1 et ne sont pas immunisés à une perte de pv, alors ils perdent $2 de leurs pv max.
+DIMINUE_PAS_ECLOSION	En dehors du combat, le nombre de pas nécessaires pour faire éclore des oeufs est diminué de $1 * le nombre de possesseur de cette capacité.\nEn un pas en dehors du combat, le nombre de pas nécessaires pour l'éclosion baisse de $1 * le nombre de possesseur de cette capacité.
+DIVISE_TOUR_SOMMEIL	Le nombre de tours de REPOS est divisé par $1, et le nombre maximal de tours de SOMMEIL autre que le REPOS est divisé par $1.
+GAIN_PV_SI_CLIMAT	Si le climat $1 est actif, alors le possesseur de cette capacité gagne $2 de ses pv max.
+GAIN_PV_TYPE	Lorsque le possesseur de cette capacité subit des dégâts par une attaque du type $1, il récupère $2 de ses pv max.
+IGN_CAPACITE	Le possesseur de cette capacité ignore les capacités suivantes: $1.
+IGNORE_ATTAQUE	Le possesseur de cette capacité ignore les effets de l'attaque $1 activée par un adversaire.
+IGNORE_BOOST_STATISTIQUE_ADV	Le possesseur de cette capacité ignore les boosts positifs de $1 de l'adversaire.
+IMMU_ANTI_FUITE	Le possesseur de cette capacité peut toujours switcher et ignore les capacités $1.
+IMMU_ATTAQUE	Les attaques $1 lancées contre le possesseur de cette capacité échouent.
+IMMU_ATTAQUE_TYPE	Les attaques de type $1 lancées contre le possesseur de cette capacité n'infligent pas de dégâts.
+IMMU_BAISSE_STATISTIQUE	La statistique $1 du possesseur de cette capacité ne peut pas être baissée.\nSi une attaque ne faisant que de baisser cette statistique est lancée contre ce possesseur, elle échoue.
+IMMU_BAISSE_STATISTIQUE_SI_STATUT	La baisse de la statistique $1 est ignorée en cas de statut $2 pour le lanceur.
+IMMU_CC	Le possesseur de cette capacité ne peut pas subir de coup critique.
+IMMU_CLIMAT	Le possesseur de cette capacité ne subit pas de dégâts liés au climat $1.
+IMMU_DEGATS_ATTAQUES_PIEGEANTES	Le possesseur de cette capacité n'est pas piégé par les attaques piégeantes.
+IMMU_DEGATS_BRULURE	Le possesseur de cette capacité ne subit pas de dégâts liés à la brûlure.
+IMMU_DEGATS_CAUCHEMAR	Le possesseur de cette capacité ne subit pas de dégâts liés à l'attaque CAUCHEMAR à la fin du tour.
+IMMU_DEGATS_MALEDICTION_2	Le possesseur de cette capacité ne subit pas de dégâts liés à l'attaque MALEDICTION lancée par un spectre sur le possesseur de cette capacité à la fin du tour.
+IMMU_DEGATS_PART	Le possesseur de cette capacité ne subit pas de dégâts causés par une attaque utilisée par un partenaire.
+IMMU_DEGATS_RECUL	Le possesseur de cette capacité ne subit pas de dégâts de recul par une de ses attaques.
+IMMU_DEGATS_VAMPIGRAINE	Le possesseur de cette capacité ne subit pas de dégâts infligés par VAMPIGRAINE et le lanceur de VAMPIGRAINE ne restaure pas et ne perd pas de pv.
+IMMU_CAPACITE	Le possesseur de cette capacité ne subit pas de dégâts liés à la capacité $1.
+IMMU_PARALYSIE_TOTALE	Si le possesseur de cette capacité est paralysé, il peut toujours attaquer.
+IMMU_PICOTS	Le possesseur de cette capacité ne subit pas de dégâts liés aux utilisations de PICOTS par l'adversaire.
+IMMU_PIEGE_DE_ROC	Le possesseur de cette capacité ne subit pas de dégâts liés aux utilisations de PIEGE DE ROC par l'adversaire.
+IMMU_RECHARGER_TOUR	Le possesseur de cette capacité n'a pas besoin de recharger après un lancer d'attaque demandant un tour de rechargement.
+IMMU_PSEUDO_STATUT	Le possesseur de cette capacité est immunisé au pseudo statut $1.
+IMMU_STATUT	Le possesseur de cette capacité est immunisé au statut $1.
+IMMU_STATUT_SI_CLIMAT	Si le climat $1 est actif, le possesseur de cette capacité est immunisé à $2.
+IMMU_STATUT_SI_NON_CLIMAT	Si aucun climat n'est actif, le possesseur de cette capacité est immunisé à $1.
+LENTEUR_VITESSE	Le possesseur de cette capacité attaque en dernier pour une même priorité d'attaque et un port d'objet concernant l'ordre d'attaque équivalent à un autre combattant.
+MULT_DEGATS[<	Les dégâts infligés par le possesseur de cette capacité, lançant une attaque peu efficace, sont multipliés par $1.
+MULT_DEGATS_ADV	Les dégâts causés par une attaque de type $1 sur le possesseur de cette capacité sont multipliés par $2.
+MULT_DEGATS_CC	La valeur des coups critiques infligés par le possesseur de cette capacité est multiplié par $1.
+MULT_DEGATS_PART	Les dégâts causés par une attaque lancée par un partenaire du possesseur de cette capacité sur le possesseur de cette capacité sont multipliés par $1.
+MULT_DEGATS_RECU[<	Les dégâts causés par une attaque peu efficace sur le possesseur de cette capacité sont multipliés par $1.
+MULT_DEGATS_RECU[>	Les dégâts causés par une attaque super efficace sur le possesseur de cette capacité sont multipliés par $1.
+MULT_DEGATS_STATUT	Les dégâts causés par le statut $1 sur le possesseur de cette capacité sont multipliés par $2.
+MULT_PROBA_CC	La probabilité des coups critiques infligés par le possesseur de cette capacité est multiplié par $1.
+MULT_PROBA_EFFET_SEC	La probabilité des effets secondaires des attaques utilisées contre le possesseur de cette capacité est multiplié par $1.
+MULT_PROBA_EFFET_SEC_LANCEUR	La probabilité des effets secondaires des attaques utilisées par le possesseur de cette capacité est multiplié par $1.
+MULT_PUISSANCE_ATTAQUE	La puissance de l'attaque $1 est multipliée par $2.
+MULT_PUISSANCE_ATTAQUE_CATEGORIE	La puissance des attaques de catégorie $1 est multiplié par $2.
+MULT_PUISSANCE_TOUTES_ATTAQUES	La puissance de toutes les attaques est multiplié par $1.
+MULT_PUISSANCE_ATTAQUE_TYPE	La puissance des attaques de type $1 est multiplié par $2.
+MULT_PUISSANCE_ATTAQUE_SI_EGALITE_GENRE[EGAL	Si les genres du possesseur de cette capacité (lanceur) et de la cible sont égaux et sexués, alors la puissance de toutes les attaques lancés par le possesseur de cette capacité est multipliée par $1.
+MULT_PUISSANCE_ATTAQUE_SI_EGALITE_GENRE[OPPOSE	Si les genres du possesseur de cette capacité (lanceur) et de la cible sont opposés et sexués, alors la puissance de toutes les attaques lancés par le possesseur de cette capacité est multipliée par $1.
+MULT_PUISSANCE_SI[<=	Si l'attaque utilisée par le possesseur de cette capacité a une base d'attaque inférieure ou égale à $1, alors la puissance de cette attaque est multipliée par $2.
+MULT_PUISSANCE_TYPE_SI_CLIMAT	Si le climat $1 est actif, alors la puissance des attaques du type $2 est multiplié par $3.
+MULT_PUISSANCE_TYPE_INF_EG	Si le possesseur de cette capacité a un nombre de pv restants inférieurs à $2 de ses pv max alors la puissance des attaques du type $1 est multiplié par $3.
+MULT_STAB	Si le possesseur de cette capacité utilise une attaque dont le type fait partie des types du possesseur de cette capacité, alors le STAB est multiplié par $1.
+MULT_STATISTIQUE[C	La statistique $1 du possesseur de cette capacité gagne $2 cran.
+MULT_STATISTIQUE	La statistique $1 du possesseur de cette capacité est multipliée par $2.
+MULT_STATISTIQUE_PART	La statistique $1 des membres de l'équipe du possesseur de cette capacité est multiplié par $2 puissance le nombre de possesseur de cette capacité dans l'équipe.
+MULT_STATISTIQUE_SI_ADV_KO	Si le possesseur de cette capacité met KO une cible avec une attaque, alors la statistique $1 gagne $2 cran(s).
+MULT_STATISTIQUE_SI_BAISSE_STATISTIQUE	Si une des statistiques du possesseur de cette capacité baisse, alors la statistique $1 gagne $2 cran(s).\nLa statistique $1 ne peut pas être baissée.
+MULT_STATISTIQUE_SI_CATEGORIE	La statistique $1 du possesseur de cette capacité subissant une attaque de catégorie $2 est multipliée par $3.
+MULT_STATISTIQUE_SI_CLIMAT	Si le climat $2 est actif, alors la statistique $1 du possesseur de cette capacité est multiplié par $3.
+MULT_STATISTIQUE_SI_DERNIER	Si le possesseur de cette capacité attaque le dernier (il n'existe aucun combattant non KO, attaquant après),\n alors la statistique $1 du possesseur de cette capacité est multiplié par $2.
+MULT_STATISTIQUE_SI_PERD_OBJET	Si le possesseur de cette capacité perd son objet, alors la statistique $1 du possesseur de cette capacité est multiplié par $2, tant que le possesseur de cette capacité reste sur le terrain.\nS'il sort du terrain et réentre, la statistique $1 du possesseur de cette capacité redevient normale.
+MULT_STATISTIQUE_SI_STATISTIQUE_ADV[SUP	Si la statistique $1 du pokémon adverse choisi est supérieure à la statistique $2 du même pokémon adverse choisi, le possesseur de cette capacité gagne $3 cran en $4.
+MULT_STATISTIQUE_SI_STATISTIQUE_ADV[INF	Si la statistique $1 du pokémon adverse choisi est inférieure à la statistique $2 du même pokémon adverse choisi, le possesseur de cette capacité gagne $3 cran en $4.
+MULT_STATISTIQUE_SI_STATISTIQUE_ADV[EGA	Si la statistique $1 du pokémon adverse choisi est égale à la statistique $2 du même pokémon adverse choisi, le possesseur de cette capacité gagne $3 cran en $4.
+MULT_STATISTIQUE_SI_STATUT_COEFF	Si le possesseur de cette capacité a le statut $1, alors la statistique $2 du possesseur de cette capacité est multipliée par $3.
+MULT_STATISTIQUE_SI_STATUT_CRAN	Si le possesseur de cette capacité a le statut $1, alors la statistique $2 du possesseur de cette capacité est multipliée par $3.
+MULT_STATISTIQUE_SI_TOUCHE_CATEGORIE	Si le possesseur de cette capacité a subi les dégâts d'une attaque de catégorie $1, alors la statistique $2 du possesseur de cette capacité gagne $3 cran(s).
+MULT_STATISTIQUE_SI_TOUCHE_TYPE	Si le possesseur de cette capacité a subi les dégâts d'une attaque de type $1, alors la statistique $2 du possesseur de cette capacité gagne $3 cran(s).
+MULT_TAUX_DEGATS_ADV	Si le possesseur de cette capacité a subi les dégâts d'une attaque absorbant des dégâts et que le lanceur de l'attaque absorbant des dégâts est censé récupérer de la vie, il perd la vie qu'il aurait dû récupérer.\nDe même pour une attaque comme VAMPIGRAINE ou un objet absorbant des pv.
+MULT_VARIATION_CRAN	La variation de cran de boost de statistiques (y compris la précision et l'esquive) est multiplié par $1.
+NB_PP_UTILISE	Si une attaque réussit et affecte le possesseur de cette capacité et si le lanceur de l'attaque ne fait pas partie de la même équipe que le possesseur de cette capacité, alors le nombre de PP supplémentaires utilisés par le lanceur de l'attaque sur le possesseur de cette capacité est multiplié par le nombre de cibles adverses ayant cette capacité.
+NOMBRE_COUPS	Pour une attaque infligeant plusieurs coups pendant un tour, le nombre de coups est maximal pour un possesseur de cette capacité.
+PASSE_ABRI	Toutes les attaques lancées par le possesseur de cette capacité ignore les effets de l'attaque ABRI lancée par un adversaire
+PLAQUE	Le type du possesseur de cette capacité devient le type de la plaque possédée, sinon le type du possesseur de cette capacité est celui de base.
+PROBA_ENTRAVE_ATTAQUE_PRECEDENTE	
+SOIN_STATUT_SI_SWITCH	Si le possesseur de cette capacité se retire alors le statut du possesseur de cette capacité est soigné.
+SOIN_TAUX_PVMAX_SI_SWITCH	Si le possesseur de cette capacité se retire alors le possesseur de cette capacité récupère $1 de ses pv max.
+SOMME_PRIO	La priorité des attaques de catégorie $1 possédées par le possesseur de cette capacité gagne $2.
+STATISTIQUES_MAXIMALES_SI_CC	Si le possesseur de cette capacité subit un coup critique, alors la statistique $1 du possesseur de cette capacité devient maximale.
+STATUT_OK	A la fin de chaque tour, si le possesseur de cette capacité a un statut altéré, avec une probabilité de $1, le statut du possesseur de cette capacité est soigné.
+STATUT_OK_PART	A la fin de chaque tour, si un des membres de l'équipe du possesseur de cette capacité a un statut altéré, avec une probabilité de $1, le statut de tous les membres du possesseur de cette capacité est soigné.
+STATUT[[PSEUDO_STATUT	Si une attaque directe est utilisée et réussie contre le possesseur de cette capacité,\nalors avec une probabilité de $1, la loi de probabilité des statuts possibles que le lanceur de l'attaque directe subit est $2.
+STATUT	Si une attaque directe est utilisée et réussie contre le possesseur de cette capacité,\nalors avec une probabilité de $1, la loi de probabilité des statuts possibles que le lanceur de l'attaque directe subit est $2.
+TOUCHE_PSEUDO_INVULNERABLE	Le possesseur de cette capacité peut toucher un pokémon en cours de préparation d'une attaque et disparu.
+TRANSFERT_STATUT	Si le possesseur de cette capacité subit une altération du statut $1, alors le pokémon à l'origine de l'altération, à moins d'une immunisation, subit le statut $2.
+TYPE_ATTAQUES	Le type de toutes les attaques utilisé par le possesseur de cette capacité est $1.
+UTILISE_BAIE_SOIN_PV	Si le possesseur de cette capacité a au plus $1 de ses pv max et sous réserve de pouvoir utiliser une baie, il utilise la baie.
+MOMIE	Si une attaque directe est utilisée et réussie contre le possesseur de cette capacité, alors la capacité spéciale du lanceur de l'attaque directe devient MOMIE jusqu'à ce que le lanceur de l'attaque directe se retire.

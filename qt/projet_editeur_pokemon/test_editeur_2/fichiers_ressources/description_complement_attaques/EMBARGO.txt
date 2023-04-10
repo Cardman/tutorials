@@ -1,0 +1,6 @@
+﻿EMBARGO est une attaque privant la cible d'utiliser son objet pendant 5 tours.
+
+Si un pokémon sous l'effet de EMBARGO utilise une attaque comme PICORE ou PIQURE et que la cible de l'attaque PICORE ou PIQURE possède une baie,
+alors la baie est consommée, mais le lanceur de l'attaque PICORE ou PIQURE ne bénéficie pas de la baie détruite.
+
+Si la cible de l'attaque EMBARGO a lancé REFLET_MAGIK, alors le lanceur de l'attaque EMBARGO subi l'embargo au lieu de la cible.

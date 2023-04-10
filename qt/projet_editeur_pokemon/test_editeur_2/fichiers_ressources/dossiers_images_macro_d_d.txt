@@ -1,0 +1,14 @@
+fichiers_ressources/ihm/images_macro_dresseurs
+fichiers_ressources/ihm/images_macro_dresseurs/ligue
+fichiers_ressources/ihm/images_macro_dresseurs/ligue/macrol5
+fichiers_ressources/ihm/images_macro_dresseurs/ligue/macrol4
+fichiers_ressources/ihm/images_macro_dresseurs/ligue/macrol3
+fichiers_ressources/ihm/images_macro_dresseurs/ligue/macrol2
+fichiers_ressources/ihm/images_macro_dresseurs/ligue/macrol1
+fichiers_ressources/ihm/images_macro_dresseurs/cow_boy_girl
+fichiers_ressources/ihm/images_macro_dresseurs/badges
+fichiers_ressources/ihm/images_macro_dresseurs/badges/macrob5
+fichiers_ressources/ihm/images_macro_dresseurs/badges/macrob4
+fichiers_ressources/ihm/images_macro_dresseurs/badges/macrob3
+fichiers_ressources/ihm/images_macro_dresseurs/badges/macrob2
+fichiers_ressources/ihm/images_macro_dresseurs/badges/macrob1

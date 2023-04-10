@@ -1,0 +1,4 @@
+COUP_D_MAIN est une attaque permettant à un partenaire (en combat multiple)
+d'augmenter les dégâts en les multipliant par 3/2.
+
+L'attaque COUP_D_MAIN échoue si le combat est simple (1 contre 1, à la fois).

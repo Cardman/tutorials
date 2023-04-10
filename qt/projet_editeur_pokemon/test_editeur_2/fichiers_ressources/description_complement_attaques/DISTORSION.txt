@@ -1,0 +1,16 @@
+﻿DISTORSION est une attaque globale.
+Pendant les 5 tours qui suivent,
+un pokémons lent agira avant un pokémon rapide.
+
+Distorsion n'agit pas sur Frein et les objets ENCENS_PLEIN et RALENTIQUEUE.
+
+Les pokémons devant attaquer après que Distorsion soit mis en place pendant ce même temps agiront dans un autre ordre.
+
+Exemple: un pokémon A possédant la capacité FARCEUR lance Distorsion avec une priorité -6
+un pokémon B sans la capacité FARCEUR lance CYCLONE, après le pokémon A (priorité -6), le pokémon B est plus lent que le pokémon A,
+car Distorsion n'était pas actif avant que le pokémon A lance cette attaque.
+un pokémon C sans la capacité FARCEUR lance CYCLONE, en étant plus rapide que B.
+
+Alors le pokémon C va attaquer après le pokémon B, car l'attaque Distorsion est active dès qu'elle est lancée.
+
+Si l'attaque Distorsion est active, et si un pokémon lance l'attaque Distorsion, alors l'attaque Distorsion devient inactive.

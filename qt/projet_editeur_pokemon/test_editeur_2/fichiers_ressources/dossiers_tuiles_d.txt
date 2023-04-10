@@ -1,0 +1,12 @@
+fichiers_ressources/ihm/sols_accessibles
+fichiers_ressources/ihm/sols_accessibles/sable
+fichiers_ressources/ihm/sols_accessibles/routes
+fichiers_ressources/ihm/sols_accessibles/roches
+fichiers_ressources/ihm/sols_accessibles/neige
+fichiers_ressources/ihm/batiments
+fichiers_ressources/ihm/batiments/shop
+fichiers_ressources/ihm/batiments/ligue
+fichiers_ressources/ihm/batiments/habitation
+fichiers_ressources/ihm/batiments/centre_pk
+fichiers_ressources/ihm/batiments/arene
+fichiers_ressources/ihm/autres_obstacles

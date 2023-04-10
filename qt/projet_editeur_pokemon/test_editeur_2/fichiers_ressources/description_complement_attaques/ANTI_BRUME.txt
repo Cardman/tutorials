@@ -1,0 +1,10 @@
+﻿ANTI_BRUME est une attaque avec les effets suivants:
+
+Les effets des attaques MUR_LUMIERE, PROTECTION, RUNE_PROTECT, BRUME lancées par l'équipe adverse n'ont plus lieu.
+Les attaques PICOTS, PIEGE_DE_ROC, PICS_TOXIK lancées par l'équipe adverse n'ont plus d'effets lors d'une entrée sur le terrain.
+
+Si une des cibles de l'attaque ANTI_BRUME a lancée auparavant REFLET_MAGIK et n'est pas KO,
+alors c'est l'équipe du lanceur de ANTI_BRUME qui est finalement touchée par sa propre attaque.
+
+Les effets de l'attaque BRUME lancée par l'équipe adverse empêche la baisse d'esquive des combattants de l'équipe adverse
+avant que ces effets ne disparaissent.

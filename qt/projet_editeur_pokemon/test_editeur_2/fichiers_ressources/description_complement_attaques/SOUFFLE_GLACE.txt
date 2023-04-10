@@ -1,0 +1,1 @@
+L'attaque SOUFFLE_GLACE inflige toujours un coup critique sauf si la cible est immunisée aux coups critiques et si le lanceur n'ignore pas la capacité de la cible.

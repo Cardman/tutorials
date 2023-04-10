@@ -1,0 +1,2 @@
+﻿BUEE_NOIRE est une attaque telle que
+tous les pokémons au combat se retrouve avec toutes leurs statistiques (y compris esquive et precision) à 0

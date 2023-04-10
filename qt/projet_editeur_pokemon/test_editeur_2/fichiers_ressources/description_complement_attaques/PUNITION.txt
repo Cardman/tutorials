@@ -1,0 +1,5 @@
+La puissance de l'attaque PUNITION vaut 60+20*somme de tous les boosts de statistiques positifs de la cible (y compris précision et esquive, mais pas les coups critiques)
+
+S'il n'y a pas de boost de statistiques positif de la cible alors la puissance de l'attaque est de 60.
+
+Le maximum de la puissance de cette attaque est de 200.

@@ -1,0 +1,1 @@
+Si la cible de l'attaque CALCINATION porte une baie, alors la baie est utilisée sans être consommée par la cible.

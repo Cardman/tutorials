@@ -1,0 +1,38 @@
+TITRE_L	Souder des lieux
+TITRE_P	Lier des plateaux
+TITRE_PL	Lier une ligue avec des lieux
+ETIQUETTE_NOM	Nom
+ETIQUETTE_TYPE	Type
+VALIDER	Valider
+LIER_PL	Lier plateaux
+DELIER_PL	Délier plateaux
+SOUDER_L	Souder lieux
+DESOUDER_L	Déssouder lieux
+EDITER_COORDS_ACCES	Editer coordonnées d'accès depuis un lieu
+EDITER_ORIGINE_LIGUE	Editer coordonnées d'origine de la ligue
+SUPPRIMER_COORDS_ACCES	Supprimer coordonnées d'accès depuis un lieu
+SUPPRIMER_ORIGINE_LIGUE	Supprimer coordonnées d'origine de la ligue
+LIER_PL_L	Lier plateaux de la ligue
+DELIER_PL_L	Délier plateaux de la ligue
+SUCCES	Succès
+LIEUX_SOUDES	Lieux soudés!
+LIEUX_DESSOUDES	Lieux dessoudés!
+TITRE_DIAL	Choix
+LIEN	Lien :
+OK	OK
+ANNULER	Annuler
+ERREUR	Erreur
+CHOIX_INVALIDE_PL	Choix invalide de plateaux
+SUCCES	Succès
+PLATEAUX_LIES	Plateaux liés!
+PLATEAUX_DELIES	Plateaux deliés!
+SUPPRESSION_FINIE	Suppression finie!
+PLATEAUX_LIGUE_LIES	Plateaux de ligues reliés!
+PLATEAUX_LIGUE_DELIES	Plateaux de ligues deliés!
+COORDS_INVALIDE	Coordonnées invalides!
+PLATEAU_LIGUE_NON_PREMIER	Plateau de ligue non premier!
+COORDS_ACCES_LIES	Coordonnées d'accès à la ligue liées!
+COORDS_ORIGINE_LIES	Coordonnées d'origine de la ligue liées!
+LIGUE_NON_SELECT	Pas de ligue selectionnée
+COORDS_ACCES_SUPPR	Coordonnées d'accès supprimées
+COORDS_ORIGINE_SUPPR	Coordonnées d'origine supprimées

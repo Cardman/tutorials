@@ -1,0 +1,5 @@
+﻿TEN_DANSE est une attaque telle que le lanceur transmet sa capacité à la cible.
+
+L'attaque TEN_DANSE échoue si et seulement si le lanceur possède la capacité MULTI_TYPE.
+
+Si la cible de TEN_DANSE avait auparavant lancé REFLET_MAGIK alors la cible transmet sa capacité au lanceur et remplace celle du lanceur par celle de la cible.

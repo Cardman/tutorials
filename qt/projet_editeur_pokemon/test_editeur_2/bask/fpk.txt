@@ -1,0 +1,24 @@
+Le pokémon a pour nom $1.
+$1 a pour numéro $2.
+$1 a pour masse $3 kg soit environ $19 kg.
+$1 a pour ensemble de types $4.
+Les valeurs de base des statistiques de base et les ev des statistiques de base de $1 sont:
+nom de la statistique\tvaleur de base\tev donnés par un $1 sauvage
+$5.
+$1 apprend les attaques par montée de niveau suivantes:
+$6
+La répartition des sexes possibles est $7.
+$1 peut apprendre les CT suivantes:
+$8
+$1 peut apprendre les CS suivantes:
+$9
+$1 peut posséder une des capacités suivantes: $10.
+$1 peut posséder les move tutors suivants:
+$11
+$1 a pour base d'évolution $12.
+$1 a pour taux de capture $13.
+$1 a pour taille $14 m soit environ $20 m.
+$1 a pour courbe d'expérience totale depuis le premier niveau $15.
+$1 a pour base de points d'expérience en tant que pokémon sauvage: $16.
+$1 fait partie des groupes d'oeufs $17.
+Pour que l'oeuf contenant $1 éclose, il faut marcher $18 pas.

@@ -1,0 +1,9 @@
+﻿POSSESSIF est une attaque telle que:
+la cible ne peut pas utiliser les attaques actuellement connues du lanceur.
+
+Si la cible ou le lanceur switchent, alors les effets s'estompent.
+
+Si un pokémon avait lancé SAISIE sur le lanceur de POSSESSIF, alors le lanceur de POSSESSIF ne peut pas utiliser
+les attaques du pokémon ayant lancé SAISIE
+
+L'attaque échoue si et seulement si la cible et le lanceur n'ont pas d'attaques en commun lors du lancer de POSSESSIF.

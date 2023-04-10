@@ -1,0 +1,13 @@
+TAUX_FIXE	Le taux de capture sera toujours de $1.
+TAUX_NIVEAUX	Le taux de capture sera de $1, si le rapport du niveau du pokémon de l'utilisateur sur le combat sur le niveau du pokémon sauvage est compris entre $2 et $3.
+TAUX_PECHE	Le taux de capture sera de $1, si l'utilisateur a pêché.
+TAUX_PIERRE_EVO	Le taux de capture sera de $1, si le pokémon sauvage possède une évolution avec la pierre évolutive $2.
+TAUX_GENRE	Si le pokémon de l'utilisateur sur le terrain et le pokémon sauvage ont un genre, et que leurs genres sont opposés, alors le taux de capture sera de $1.
+TAUX_MASSE	Si le rapport de la masse du pokémon sauvage sur la masse moyenne est compris entre $2 et $3, alors le taux de capture sera de $1.
+TAUX_VITESSE	Si la vitesse de base du pokémon sauvage est comprise entre $2 et $3, alors le taux de capture sera de $1.
+TAUX_DEJA_CAPTURE	Si le pokémon suavage avait déjà été obtenu par différents moyens, alors le taux de capture sera de $1.
+TAUX_TEMPS	Si le nombre de tours sur le terrain depuis le début du combat est compris entre $2 et $3, alors le taux de capture sera de $1.
+TAUX_NIVEAU_ADV	Si le niveau du pokémon sauvage est compris entre $2 et $3, alors le taux de capture sera de $1.
+TAUX_TYPES	Si le pokémon possède un des types $1, alors le taux de capture sera de $2.
+TAUX_LIEU	Si le type de lieu du combat est $1, alors le taux de capture sera de $2.
+TAUX_DEFAUT	Sinon le taux de capture sera par défaut de $1.

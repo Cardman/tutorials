@@ -1,0 +1,8 @@
+La puissance de l'attaque CONTRE est la suivante:
+posons N tel que N = 64 * pv_restants du lanceur / pv_max du lanceur
+si N < 2 alors la puissance est de 200.
+sinon si N < 6 alors la puissance est de 150.
+sinon si N < 13 alors la puissance est de 100.
+sinon si N < 22 alors la puissance est de 80.
+sinon si N < 43 alors la puissance est de 40.
+sinon la puissance est de 20.

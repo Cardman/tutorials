@@ -1,0 +1,6 @@
+﻿GRIBOUILLE est une attaque permettant à son lanceur de la remplacer DEFINITIVEMENT par la dernière attaque utilisée ou choisie par la cible.
+
+Ceci implique que pour les combats qui suivent, si un pokémon avait lancé GRIBOUILLE sur une cible,
+alors ce sera l'attaque remplaçant GRIBOUILLE qui sera utilisée.
+
+L'attaque GRIBOUILLE échoue si et seulement si l'attaque choisie ou la dernière attaque utilisée de la cible est LUTTE ou GRIBOUILLE.

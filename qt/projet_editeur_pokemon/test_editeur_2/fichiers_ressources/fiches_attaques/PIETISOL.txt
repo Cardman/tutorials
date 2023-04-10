@@ -1,0 +1,26 @@
+PP:20
+TYPE:SOL
+CATEGORIE:PHYSIQUE:I
+PRIORITE:0
+PRECISIONAT:100
+EFFET_DEGAT[A,60,0]
+EFFET_STATISTIQUE[A,VITESSE,1,-1]
+FUITE_ADVERSE:VRAI
+prepa_tour:FAUX
+disparait pdt tour charg:FAUX
+AttConcTouche:
+Repet_coup:[(1,1)]
+Repet_tour:[(1,1)]
+lanceur_bloque:FAUX
+puis_mult:(1;1)
+ne_peut_pas_mettre_ko:FAUX
+puissance_fixe_base:VRAI
+Effet_SI_ECHEC:FAUX
+Effet_SI_NON_DEGAT:FAUX
+SEXE_OPPOSE:FAUX
+LANC_ENDORMI:FAUX
+ADV_ENDORMI:FAUX
+ADJ MULT
+FAUX
+LANCEUR,ATTAQUE
+CIBLE,DEFENSE

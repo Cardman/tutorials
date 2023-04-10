@@ -1,0 +1,14 @@
+﻿PATIENCE est une attaque pseudo offensive.
+Le lanceur, pendant 2 tours d'inactivité emmagasine les dégâts subis par des attaques ou des effets de statuts tels que BRULURE, POISON, POISON_GRAVE
+ou d'autres dégâts subis en fin de tour.
+
+Les dégâts qui vont être infligés à la cible valent le double de tous les dégâts subis par le lanceur.
+
+Un pokémon ne peut pas choisir l'attaque PATIENCE, s'il possède un clone.
+L'attaque PATIENCE est annulée si le statut du lanceur devient SOMMEIL.
+L'attaque PATIENCE est annulée si le lanceur a peur.
+L'attaque PATIENCE est gelé si le statut du lanceur devient GEL. (Le nombre de tour de PATIENCE n'augmente pas)
+L'attaque PATIENCE est annulée si le lanceur s'est fait entraver son attaque.
+
+L'attaque PATIENCE peut toucher un pokémon préparant une attaque.
+L'attaque PATIENCE peut toucher un pokémon SPECTRE.

@@ -1,0 +1,13 @@
+﻿PICS_TOXIK est une attaque telle que:
+tout adversaire entrant sur le terrain,
+à l'exception des pokémons ayant le type VOL ou la capacité LEVITATION non soumis aux effets de GRAVITE et de ANTI_AIR,
+et à l'exception des pokémons ayant la capacité GARDE_MAGIK ou sous l'effet de LEVIKINESIE ou de VOL_MAGNETIK.
+et à l'exception des pokémons ayant le type ACIER ou POISON,
+est empoisonné si les pics toxiks ne sont posés qu'une fois, est gravement empoisonné sinon.
+
+Un pokémon ayant le type POISON entrant sur le terrain enlève les pics toxiks posés par l'adversaire.
+
+Les attaques ANTI_BRUME et TOUR_RAPIDE lancé par l'équipe adverse du lanceur de PICS_TOXIK permettent de se débarrasser des picots lancés par l'adversaire.
+En fait, les attaques ANTI_BRUME et TOUR_RAPIDE enlève les picots posés par les combattants de l'équipe adverse.
+
+Si un des adversaires avait lancé REFLET_MAGIK alors c'est l'équipe du lanceur qui se retrouve avec des PICS_TOXIK dans son camp.

@@ -1,0 +1,5 @@
+TITRE	Nouveau lieu
+NOM	Nom en $1:
+TYPE	Type:
+VALIDER	Valider
+TITRE_2	Editer lieu

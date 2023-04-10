@@ -1,0 +1,4 @@
+﻿AIR_VEINARD est une attaque protégeant l'équipe du lanceur pendant 5 tours des coups critiques.
+
+Si un des adversaire a lancé auparavant SAISIE  et n'est pas KO,
+alors c'est l'équipe adverse qui est finalement protégée contre les coups critiques pendant 5 tours.

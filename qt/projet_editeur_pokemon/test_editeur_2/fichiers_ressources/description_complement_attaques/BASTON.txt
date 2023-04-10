@@ -1,0 +1,3 @@
+L'attaque BASTON est une attaque particulière.
+Tous les pokémons de l'équipe du lanceur non KO, et n'ayant pas de statut altéré et non oeuf lancent tour à tour l'attaque BASTON de puissance de base 10 sur la cible.
+BASTON inflige des dégâts même sur des pokémons ayant la capacité GARDE_MYSTIK et pas faible face aux attaques du type TENEBRE.

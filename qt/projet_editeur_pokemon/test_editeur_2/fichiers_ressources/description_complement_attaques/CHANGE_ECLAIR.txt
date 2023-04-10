@@ -1,0 +1,6 @@
+L'attaque CHANGE_ECLAIR est telle que:
+s'il existe un pokémon de l'équipe du lanceur étant à l'arrière
+le lanceur est remplacé par un pokémon de son équipe à l'arrière, après que la cible ait subi des dégâts.
+sinon rien d'autre ne se passe après que la cible ait subi des dégâts.
+
+Si la cible n'a pas subi de dégâts peu importe la raison, alors le lanceur n'est pas remplacé.

@@ -1,0 +1,6 @@
+SEDUCTION échoue si et seulement si
+la cible possède la capacité BENET
+ou la cible est assexuée
+ou le lanceur est assexué
+ou le lanceur et la cible sont de même sexe
+ou un objet protégeant de l'amour est porté par la cible ne subissant pas EMBARGO et ZONE_MAGIQUE n'est pas active.

@@ -1,0 +1,24 @@
+TITRE	Nouvelle liste de capsules $1
+TECHNIQUES	techniques
+SECRETES	secrètes
+TECHNIQUE	technique
+SECRETE	secrète
+NUMERO_CAPSULE	Numéro de capsule $1:
+NOM_ATTAQUE	Nom d'attaque contenue dans la capsule $1:
+ETIQUETTE_NUMERO_CAPSULE	Numéro
+ETIQUETTE_NOM_ATTAQUE	Nom d'attaque
+AJOUTER_CAPSULE	Ajouter capsule
+SUPPRIMER_CAPSULE	Supprimer capsule
+VALIDER	Valider
+ERREUR	Erreur
+CAPSULE_T_INEX	Capsule technique inexistante!
+CAPSULE_S_INEX	Capsule secrète inexistante!
+PAS_CAPSULE	Pas de capsule!
+CAPSULE_T_DEJA_PRESENTE	Capsule technique déjà présente!
+CAPSULE_S_DEJA_PRESENTE	Capsule secrète déjà présente!
+SUCCES	Succès
+CAPSULE_T_AJ	Capsule technique ajoutée!
+CAPSULE_S_AJ	Capsule secrète ajoutée!
+CAPSULE_T_SUPPR	Capsule technique supprimée!
+CAPSULE_S_SUPPR	Capsule secrète supprimée!
+TITRE_2	Editer liste de capsules $1

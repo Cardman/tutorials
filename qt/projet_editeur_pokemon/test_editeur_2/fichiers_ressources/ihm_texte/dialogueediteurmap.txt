@@ -1,0 +1,16 @@
+TITRE	Editeur minimap
+AJ_LIGNE_H	Ajouter une ligne en haut de la grille
+AJ_LIGNE_B	Ajouter une ligne en bas de la grille
+AJ_COL_G	Ajouter une colonne à gauche de la grille
+AJ_COL_D	Ajouter une colonne à droite de la grille
+AJ_LIGNES_H	Ajouter des lignes en haut de la grille
+AJ_LIGNES_B	Ajouter des lignes en bas de la grille
+AJ_COLS_G	Ajouter des colonnes à gauche de la grille
+AJ_COLS_D	Ajouter des colonnes à droite de la grille
+SUPPR_LIGNE	Supprimer ligne courante minimap
+SUPPR_TUILE	Supprimer tuile courante minimap
+SUPPR_COL	Supprimer colonne courante minimap
+VALIDER	Valider
+ERREUR	Erreur
+NOM_INEX	Image inexistante!
+MESSAGE_ERR	Une carte doit occuper le coin en haut à gauche de la grille\net doit former un rectangle.

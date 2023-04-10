@@ -1,0 +1,11 @@
+EVO	$1 évolue en $2, s'il ne porte pas de pierre stase, et 
+EVO_ATT	s'il possède l'attaque $1 dans son panel d'attaques.
+EVO_BON	s'il a un nombre de points bonheur supérieur ou égal à $1 et s'il monte de niveau.
+EVO_NIV	s'il monte de niveau et que son nouveau niveau est supérieur ou égal à $1.
+EVO_NIV_GEN	s'il monte de niveau et si son nouveau niveau est supérieur ou égal à $1 et si son genre est $2.
+EVO_PIERRE	s'il reçoit la pierre évolutive $1.
+EVO_PIERRE_GEN	s'il reçoit la pierre évolutive $1 et si son genre est $2.
+EVO_OBJ	s'il monte de niveau et s'il porte l'objet $1.
+EVO_PLACE	s'il monte de niveau et s'il existe au moins un $1 dans l'équipe.
+EVO_COND_STAT_EG	s'il monte de niveau et si son nouveau niveau est supérieur à $1 et si ses statistiques $2 et $3 sont égales.
+EVO_COND_STAT_SUP	s'il monte de niveau et si son nouveau niveau est supérieur à $1 et si sa statistique $2 est supérieure à sa statistique $3.

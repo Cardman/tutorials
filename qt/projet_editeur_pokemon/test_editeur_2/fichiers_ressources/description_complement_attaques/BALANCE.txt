@@ -1,0 +1,15 @@
+﻿BALANCE est une attaque telle que
+le lanceur et la cible ont la moyenne des pv restants qu'ils avaient avant l'attaque.
+Attention si la moyenne des pv restants avant le lancer de BALANCE est supérieur aux pv max d'un des pokémon
+alors le pokémon ayant le moins de pv max, se retrouve avec tous ses pv
+et le pokémon ayant le plus de pv max, se retrouve avec la moyenne des pv restants avant le lancer de BALANCE.
+
+Cette attaque échoue si la cible possède un clone.
+
+Exemples: un pokémon A ayant 120 pv restants sur 150 et un pokémon B ayant 50 pv restants sur 100
+Si un des pokémons lance BALANCE, alors le pokémon A se retrouve avec 85 pv restants sur sur 150
+et le pokémon B se retrouve avec 85 pv restants sur sur 100
+
+Un pokémon A ayant 120 pv restants sur 150 et un pokémon B ayant 50 pv restants sur 80
+Si un des pokémons lance BALANCE, alors le pokémon A se retrouve avec 85 pv restants sur sur 150
+et le pokémon B se retrouve avec 80 pv restants sur sur 80.

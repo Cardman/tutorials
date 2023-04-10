@@ -1,0 +1,38 @@
+TITRE	Editeur de cartes pour le jeu pokémon Evolution
+CHARGEMENT_BDD	Chargement de la base de données en cours
+NOUVELLES_DONNEES	Nouvelles données
+CONTINUER_INT	Voulez-vous continuer?
+ERREUR	Erreur
+PAS_LIEU_EDITION	Pas de lieu en cours d'édition!
+PAS_PLATEAU_EDITION	Pas de plateau en cours d'édition!
+PAS_ENVIRONNEMENT_EDITION	Pas d'environnement en cours d'édition!
+ENVIRONNEMENT_PRES	Environnement déjà présent!
+PAS_LIEU_DONNEES	Pas de lieu présent dans les données!
+AJOUT_ENV	Ajout d'un environnement
+DEPLACER_ENV	Déplacer un environnement
+SELECT_ENV	Sélection d'un environnement
+SUPPR_ENV	Suppression d'un environnement
+PAS_LIGUE_DONNEES	Pas de ligue présente dans les données!
+PAS_PLATEAU_LIGUE	Pas de plateau dans la ligue selectionnée!
+PAS_LIGUE_EDITION	Pas de ligue en cours d'édition!
+CHARGEMENT_FINI	Chargement fini!
+ECH_CHARGEMENT	Echec du chargement!
+SAUVEGARDE_FINIE	Sauvegarde finie!
+DONNEES_INV	Données invalides!
+DONNEES_VAL	Données valides!
+EXPORT_FINI	Export fini!
+INDICE_INSERT_INV	Indice d'insertion invalide!
+INDICE_EDIT_INV	Indice d'édition invalide!
+INDICE_SUPPR_INV	Indice de suppression invalide!
+CONFIRM_ECH_PK	Confirmer boîte d'échange pokémon
+CONFIRM_MAJ_ARBRE	Confirmer mise en place d'un arbre à couper
+CONFIRM_MAJ_ROCHER_DESTR	Confirmer mise en place d'un rocher à détruire
+CONFIRM_MAJ_ROCHER_AMOV	Confirmer mise en place d'un rocher amovible
+CONFIRM_MAJ_TOURBILLON	Confirmer mise en place d'un tourbillon à siphoner
+NB_ATT_MAX	Nombre d'attaques maximal pour les données du jeu
+NOUVEAU_NB	Entrez un nouveau nombre d'attaques maximal
+PAS_MINIMAP	Pas d'éléments dans la minimap!
+PAS_CHAMPION	Pas de champion d'arêne dans les données!
+TITRE_FERMETURE	Voulez-vous sauvegarder avant de quitter?
+MESS_FERMETURE	Si vous quittez,\nalors les données non sauvegardées sont perdues.
+ERREUR_BDD	Base de données non terminée!

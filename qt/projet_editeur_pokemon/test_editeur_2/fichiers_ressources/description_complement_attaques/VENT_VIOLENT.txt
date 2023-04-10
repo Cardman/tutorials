@@ -1,0 +1,4 @@
+L'attaque VENT_VIOLENT est la seule à pouvoir rendre confus un pokémon possédant un clone, mais pas s'il est immunisé par autre chose.
+
+La précision de l'attaque VENT_VIOLENT est de 1/2 sous le soleil.
+L'attaque VENT_VIOLENT a 100% de précision sous la pluie et ingore les variations de précision et d'esquive.

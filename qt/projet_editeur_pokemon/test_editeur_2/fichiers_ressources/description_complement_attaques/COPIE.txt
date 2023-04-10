@@ -1,0 +1,12 @@
+COPIE est une attaque permettant d'utiliser temporairement la dernière attaque utilisée par la cible.
+L'attaque COPIE échoue si et seulement si la dernière attaque utilisée par la cible est une des suivantes:
+une attaque déjà connue du lanceur
+BABIL
+COPIE
+GRIBOUILLE
+LUTTE
+METRONOME
+
+ou si le lanceur vient d'entrer sur le terrain.
+
+L'attaque copiée possède 5 PP et COPIE la remplace lorsque les 5 PP sont utilisés ou le lanceur sort du terrain (switch de force ou non, KO...)

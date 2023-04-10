@@ -1,0 +1,5 @@
+﻿IMITATION est une attaque telle que le lanceur copie la capacité de la cible.
+
+L'attaque IMITATION échoue si et seulement si la cible possède la capacité GARDE_MYSTIK ou MULTI_TYPE.
+
+Si la cible de IMITATION avait auparavant lancé REFLET_MAGIK alors la cible copie la capacité du lanceur et remplace celle de la cible par celle du lanceur

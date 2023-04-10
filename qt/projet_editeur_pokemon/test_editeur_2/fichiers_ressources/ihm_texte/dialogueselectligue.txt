@@ -1,0 +1,3 @@
+TITRE	Choisir une ligue
+TITRE_S	Supprimer une ligue
+VALIDER	Valider

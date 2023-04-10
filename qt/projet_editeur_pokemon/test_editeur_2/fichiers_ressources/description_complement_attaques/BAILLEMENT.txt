@@ -1,0 +1,12 @@
+BAILLEMENT est une attaque de changement de statut.
+
+La cible s'endort à la fin du tour suivant.
+
+L'attaque échoue si et seulement si la cible possède un clone ou la cible n'a pas le statut OK.
+La cible ne s'endort pas si elle switche (de force ou non) avant l'effet de BAILLEMENT.
+
+La cible ne s'endort à la fin du tour suivant que si la cible ne possède pas de clone, et ne possède ni ESPRIT_VITAL, ni INSOMNIA,
+et n'est pas protégée par RUNE_PROTECT et qu'aucun pokémon n'a lancé BROUHAHA pendant ce tour.
+
+Si la cible a lancé REFLET_MAGIK avant que le lanceur n'ait lancé BAILLEMENT,
+alors dans le cas où le lanceur peut subir les effets de BAILLEMENT, il s'endort à la fin du tour suivant.

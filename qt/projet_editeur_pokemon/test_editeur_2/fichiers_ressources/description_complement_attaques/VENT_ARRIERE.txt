@@ -1,0 +1,5 @@
+﻿VENT_ARRIERE est une attaque de boost d'équipe.
+La vitesse des pokémons de l'équipe du lanceur, pendant 3 tours, double leur vitesse, ceci n'étant pas compté comme un boost.
+
+Si un pokémon avait lancé SAISIE sur le lanceur de VENT_ARRIERE, alors l'équipe du lanceur de SAISIE a tous ses membres qui ont une
+vitesse doublée pendant 3 tours.

@@ -1,0 +1,7 @@
+La puissance de AIRE_D_EAU double si une seule des attaques AIRE_DE_FEU ou AIRE_D_HERBE est lancée par un partenaire avant cette attaque et est réussie, sans nécessité le non KO du lanceur de l'autre attaque.
+
+La puissance de AIRE_D_EAU triple si les attaques AIRE_DE_FEU et AIRE_D_HERBE sont lancées par des partenaires avant cette attaque et est réussie, sans nécessité le non KO du lanceur de l'autre attaque.
+
+Si l'attaque AIRE_D_EAU est combinée avec l'attaque AIRE_DE_FEU pendant le même tour, alors, pendant 3 tours, les probabilités des effets secondaires des attaques utilisées par l'équipe des pokémons ayant lancé les attaques AIRE_DE_FEU et AIRE_D_EAU pendant le même tour, doublent.
+
+Si l'attaque AIRE_D_EAU est combinée avec l'attaque AIRE_D_HERBE pendant le même tour, alors, pendant 3 tours, la vitesse des adversaires sur le terrain est calculée avec un cran de moins, sauf si le boost de vitesse est minimal, lors du calcul d'ordre d'attaque (premier, ... dernier à attaque).

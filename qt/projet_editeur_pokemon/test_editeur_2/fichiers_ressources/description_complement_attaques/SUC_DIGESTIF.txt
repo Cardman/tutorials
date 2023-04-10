@@ -1,0 +1,8 @@
+﻿SUC_DIGESTIF est une attaque supprimant la capacité de la cible (inactive).
+
+Si le pokémon ayant sa capacité inactive switche, alors il la récupère
+
+L'attaque SUC_DIGESTIF échoue si et seulement si la cible possède la capacité MULTI_TYPE.
+
+Si la cible avait lancé REFLET_MAGIK sur le lanceur de SUC_DIGESTIF et si le lanceur ne possède pas la capacité MULTI_TYPE, alors 
+le lanceur perd l'activité de sa capacité.

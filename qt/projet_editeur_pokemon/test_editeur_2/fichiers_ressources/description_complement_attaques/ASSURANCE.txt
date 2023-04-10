@@ -1,0 +1,1 @@
+La puissance de l'attaque ASSURANCE est doublée si la cible a déjà subi des dégâts pendant le tour.

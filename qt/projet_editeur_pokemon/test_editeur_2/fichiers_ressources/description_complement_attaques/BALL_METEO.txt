@@ -1,0 +1,6 @@
+L'attaque BALL_METEO est telle que:
+la puissance double sous un climat actif (sans pokémon ayant la capacité CIEL_GRIS ou AIR_LOCK active).
+le type est FEU sous le SOLEIL
+le type est EAU sous la PLUIE
+le type est GLACE sous la GRELE
+le type est ROCHE sous la TEMPETESABLE

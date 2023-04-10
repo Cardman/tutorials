@@ -1,0 +1,5 @@
+TITRE	Choisir un lieu
+TITRE_S	Supprimer un lieu
+ETIQUETTE_NOM	nom
+ETIQUETTE_TYPE	type
+VALIDER	Valider

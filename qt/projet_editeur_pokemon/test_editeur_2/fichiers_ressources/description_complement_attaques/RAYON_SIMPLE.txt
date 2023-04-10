@@ -1,0 +1,7 @@
+﻿RAYON_SIMPLE est une attaque telle que
+la cible prend la capacité SIMPLE jusqu'à ce qu'elle soit switchée.
+
+Si la cible de RAYON_SIMPLE avait lancé REFLET_MAGIK sur le lanceur de RAYON_SIMPLE et si le lanceur ne possède pas MULTI_TYPE, alors le lanceur de RAYON_SIMPLE
+prend la capacité SIMPLE jusqu'à ce qu'il soit switché.
+
+RAYON_SIMPLE échoue si et seulement si la cible a la capacité MULTI_TYPE.

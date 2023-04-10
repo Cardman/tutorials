@@ -1,0 +1,1 @@
+L'attaque JACKPOT permet à l'utilisateur (du jeu) de gagner 40 fois la somme des niveaux du lanceur et de la cible.

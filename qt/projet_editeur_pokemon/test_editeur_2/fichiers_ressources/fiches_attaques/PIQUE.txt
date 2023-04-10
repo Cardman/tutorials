@@ -1,0 +1,26 @@
+PP:5
+TYPE:VOL
+CATEGORIE:PHYSIQUE:I
+PRIORITE:0
+PRECISIONAT:90
+EFFET_DEGAT[A,140,0]
+EFFET_STATUT[A,3/10,[PEUR,1]]
+FUITE_ADVERSE:VRAI
+prepa_tour:VRAI
+disparait pdt tour charg:FAUX
+AttConcTouche:
+Repet_coup:[(1,1)]
+Repet_tour:[(1,1)]
+lanceur_bloque:FAUX
+puis_mult:(1;1)
+ne_peut_pas_mettre_ko:FAUX
+puissance_fixe_base:VRAI
+Effet_SI_ECHEC:FAUX
+Effet_SI_NON_DEGAT:FAUX
+SEXE_OPPOSE:FAUX
+LANC_ENDORMI:FAUX
+ADV_ENDORMI:FAUX
+AUTRE UNIQ
+VRAI
+LANCEUR,ATTAQUE
+CIBLE,DEFENSE

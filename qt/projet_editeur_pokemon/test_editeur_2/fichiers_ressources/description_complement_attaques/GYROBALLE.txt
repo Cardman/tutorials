@@ -1,0 +1,1 @@
+La puissance de l'attaque GYROBALLE vaut 1 + (25 * vitesse de la cible / vitesse du lanceur)

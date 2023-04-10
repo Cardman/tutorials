@@ -1,0 +1,14 @@
+﻿AVALE est une attaque de soins.
+Le lanceur restaure une partie de ses pv max en fonction du nombre d'utilisation de STOCKAGE.
+si le lanceur a utilisé moins de 4 fois l'attaque STOCKAGE et au moins une fois l'attaque STOCKAGE,
+alors les pv restaurés valent
+1/4 * 2^(nb - 1)*pv_max
+où nb est le nombre d'utilisations de STOCKAGE avant l'attaque AVALE et après le dernier envoi.
+
+AVALE ne peut pas être utilisée sous l'effet de ANTI_SOIN
+
+Après l'utilisation de AVALE, le nombre d'utilisations de STOCKAGE passe à 0.
+
+Si la cible a lancé SAISIE sur le lanceur de AVALE, alors la cible restaure 1/4 * 2^(nb - 1)*pv_max
+où nb est le nombre d'utilisations de STOCKAGE par le lanceur d'AVALE, avant l'attaque AVALE et après le dernier envoi,
+et pv_max est les pv_max du lanceur de SAISIE. De plus le nombre d'utilisations de STOCKAGE pour le lanceur d'AVALE passe à 0.

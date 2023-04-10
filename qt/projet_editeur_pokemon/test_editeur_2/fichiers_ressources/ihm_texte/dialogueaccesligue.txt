@@ -1,0 +1,27 @@
+TITRE	Editer conditions d'accès à la ligue sur la carte en fonction des champions d'arêne
+ETIQUETTE_COORDONNEES	Coordonnées
+ETIQUETTE_NOM	Nom
+ETIQUETTE_BADGE	Badge
+ETIQUETTE_CT	Capsule technique
+ETIQUETTE_ATTAQUE_CT	Attaque contenue dans la capsule technique
+ETIQUETTE_CS	Capsule secrète
+ETIQUETTE_ATTAQUE_CS	Attaque contenue dans la capsule secrète
+ETIQUETTE_NIV_MIN_PRE_EQ	Niveau minimal de la première équipe
+ETIQUETTE_NIV_MAX_PRE_EQ	Niveau maximal de la première équipe
+ETIQUETTE_RECOMP_BASE	Récompense de base de la première équipe
+ETIQUETTE_RECOMP_TOTALE	Récompense totale de la première équipe
+ETIQUETTE_MULT_CBT	Multiplicité du combat
+AJOUTER_COND_CH	Ajouter condition de champion
+SUPPR_COND_CH	Supprimer condition de champion
+AJOUTER_COND_ACCES_LIGUE	Ajouter condition d'accès à la ligue
+SUPPR_COND_ACCES_LIGUE	Supprimer condition d'accès à la ligue
+VALIDER	Valider
+ERREUR	Erreur
+CHAMPION_NON_SELECT	Pas de champion selectionné!
+COORDS_NON_SELECT	Pas de coordonnées selectionnées!
+CONDITION_DEJA_PRESENTE	Condition d'accès à la ligue déjà présente!
+SUCCES	Succès
+CONDITION_CH_AJ	Condition de champion ajoutée
+CONDITION_CH_SUPPR	Condition de champion supprimée
+CONDITION_ACCES_LIGUE_AJ	Condition d'accès à la ligue ajoutée
+CONDITION_ACCES_LIGUE_SUPPR	Condition d'accès à la ligue supprimée

@@ -1,0 +1,13 @@
+﻿BRUME est une attaque protégeant l'équipe du lanceur contre les baisses de statistiques (y compris esquive et précision),
+infligées par l'équipe adverse, pendant 5 tours, mais ne protège pas des baisses de statistiques auto-induites.
+
+Si un pokémon adverse possède la capacité INFILTRATION et tente de faire baisser une statistique de l'équipe protégée par BRUME,
+il y parvient, mais la BRUME restera active.
+
+L'attaque ANTI_BRUME supprime la BRUME protégeant l'équipe adverse du lanceur de ANTI_BRUME.
+
+Un deuxième lancer de BRUME permet de réinitialiser le nombre de tours passés à 0.
+
+Si un pokémon lance SAISIE sur le lanceur de BRUME et n'est pas KO,
+alors l'équipe du lanceur de SAISIE se protège des baisses de statistiques infligées par l'équipe adverse
+à la place de l'équipe du lanceur.

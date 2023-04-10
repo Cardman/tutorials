@@ -1,0 +1,26 @@
+﻿ACUPRESSION est une attaque qui augmente aléatoirement une statistique du lanceur de 2 crans sans affecter les autres pokémons
+Cette statistique est forcément une statistique non boostée au maximum et est l'une des suivantes:
+
+ATTAQUE
+DEFENSE
+ATTAQUE_SPECIALE
+DEFENSE_SPECIALE
+VITESSE
+PRECISION
+ESQUIVE
+
+Les événements probables sont équiprobables.
+
+Exemple:
+En supposant que seules la défense et la défense spéciale peuvent être augmentées,
+alors la probabilité d'augmenter la défense est de 1/2.
+
+Si un autre pokémon lance SAISIE et n'est pas KO, lorsque le lanceur lance ACUPRESSION, et que la cible de SAISIE est la cible de ACUPRESSION
+alors c'est une des statistiques du lanceur de SAISIE qui est boostée à la place de la cible de ACUPRESSION
+à condition qu'il existe une statistique du lanceur de SAISIE non boostée au maximum.
+
+Tous les lanceurs de SAISIE, ayant pour cible la cible de ACUPRESSION, voient une de leurs statistiques booster.
+
+Cette attaque échoue si et seulement si la cible a toutes ses statistiques boostées au maximum.
+
+Cette attaque a la particularité que la cible peut être le lanceur ou un autre pokémon que le lanceur, c'est une attaque où le choix est complétement libre.

@@ -1,0 +1,13 @@
+HURLEMENT est une attaque de switch forcé.
+Si l'attaque HURLEMENT réussit, alors la cible est retirée de force du terrain et un nouveau pokémon de l'équipe adverse est choisi de manière
+aléatoire uniforme pour entrer sur le terrain, dans le cas d'un combat contre un dresseur.
+Si l'attaque HURLEMENT réussit, alors le combat est fini, dans le cas d'un combat contre un pokémon sauvage.
+
+Si le pokémon envoyé après le retrait forcé de la cible est empoisonné par les pics toxik et possède la capacité SYNCHRO, alors
+le lanceur est simplement empoisonné, sauf si le lanceur est immunisé au poison (capacité VACCIN, types POISON, ACIER).
+
+L'attaque HURLEMENT échoue si et seulement si la cible possède la capacité VENTOUSE ou ANTI_BRUIT, ou est sous l'effet de RACINES dans un combat contre un pokémon sauvage.
+L'attaque HURLEMENT échoue si et seulement si la cible possède la capacité VENTOUSE ou ANTI_BRUIT, ou est sous l'effet de RACINES
+ou il n'existe aucun pokémon à l'arrière du coté de l'équipe de la cible dans un combat contre un dresseur.
+
+Si la cible a lancé REFLET_MAGIK, alors le lanceur est finalement switché de force et les effets de l'attaque s'effectuent sur le lanceur au lieu de la cible.

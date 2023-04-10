@@ -1,0 +1,5 @@
+DETREMPAGE est une attaque changeant les types de la cible en le type EAU.
+
+En particulier, si la cible possède les types EAU et VOL, alors la cible perd son type VOL et donc ne possédera que le type EAU.
+
+DETREMPAGE échoue si et seulement si la cible possède la capacité MULTI_TYPE.

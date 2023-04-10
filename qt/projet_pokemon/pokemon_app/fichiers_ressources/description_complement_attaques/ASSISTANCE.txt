@@ -1,0 +1,29 @@
+﻿ASSISTANCE est une attaque appelant une autre attaque que:
+une attaque connue du lanceur
+ASSISTANCE
+BABIL
+BLABLA_DODO
+COUP_D_MAIN
+COPIE
+DETECTION
+GRIBOUILLE
+IMPLORE
+LARCIN
+LUTTE
+MIMIQUE
+MITRA_POING
+METRONOME
+MOI_D_ABORD
+PAR_ICI
+PASSE_PASSE
+PRLVT_DESTIN
+REFLET_MAGIK
+RIPOSTE
+RUSE
+SAISIE
+TENACITE
+TOURMAGIK
+VOILE_MIROIR
+
+Si aucune attaque ne peut être appelée par ASSISTANCE, alors ASSISTANCE échoue.
+Sinon, on tire une attaque aléatoirement avec une même probabilité pouvant être appelée par ASSISTANCE.

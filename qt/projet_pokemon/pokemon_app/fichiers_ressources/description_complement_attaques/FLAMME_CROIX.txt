@@ -1,0 +1,2 @@
+La puissance de l'attaque FLAMME_CROIX double si l'attaque ECLAIR_CROIX est réussie par un pokémon de la même équipe que
+le lanceur de l'attaque FLAMME_CROIX.

@@ -1,0 +1,12 @@
+﻿ATTERRISSAGE est une attaque de soin.
+
+Le lanceur récupère 1/2 de ses pv_max.
+Le lanceur perd son type VOL, mais si le lanceur n'a que pour type VOL, alors il devient NORMAL.
+Ce changement de type dure jusqu'à la fin du tour.
+
+Si un pokémon ayant lancé l'attaque SAISIE sur le lanceur de ATTERRISSAGE n'est pas KO,
+alors c'est le pokémon qui a lancé l'attaque SAISIE qui se voit récupérer 1/2 de ses pv_max (du lanceur de SAISIE)
+et qui voit son type éventuellement changer.
+
+ATTERRISSAGE protège de l'attaque ANTI_AIR, si ATTERRISSAGE est utilisé avant ANTI_AIR.
+ATTERRISSAGE ne peut pas être utilisé sous l'effet de ANTI_SOIN.

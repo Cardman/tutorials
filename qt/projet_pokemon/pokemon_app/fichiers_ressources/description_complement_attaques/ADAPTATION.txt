@@ -1,0 +1,9 @@
+﻿ADAPTATION est une attaque changeant l'ensemble des types du lanceur en le type d'une des attaques du lanceur aléatoirement choisi.
+
+Le type de Malédiction ne peut être choisie par Adaptation.
+Puissance Cachée et Ball'Meteo sont considérées comme de type Normal.
+
+Cette attaque échoue si et seulement si toutes les attaques du lanceur sont EXACTEMENT du même type que lui.
+
+Exemple: un pokémon du type NORMAL/VOL n'ayant que des attaques du type NORMAL en lançant ADAPTATION deviendra du type NORMAL.
+un pokémon du type NORMAL n'ayant que des attaques du type NORMAL en lançant ADAPTATION verra son attaque échouer.

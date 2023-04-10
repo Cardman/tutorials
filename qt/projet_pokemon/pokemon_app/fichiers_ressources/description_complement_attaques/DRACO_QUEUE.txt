@@ -1,0 +1,5 @@
+L'attaque DRACO_QUEUE force le switch aléatoire uniforme de la cible par un remplaçant de son équipe.
+
+L'attaque DRACO_QUEUE échoue si et seulement si la cible est immunisée au switch de force.
+
+L'attaque DRACO_QUEUE ne fait rien d'autre que d'infliger des dégâts sur une cible immunisée au switch de force n'ayant pas de remplaçant.

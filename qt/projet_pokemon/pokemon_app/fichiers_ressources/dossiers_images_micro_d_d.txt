@@ -1,0 +1,13 @@
+fichiers_ressources/ihm/images_micro_dresseurs
+fichiers_ressources/ihm/images_micro_dresseurs/ligue
+fichiers_ressources/ihm/images_micro_dresseurs/ligue/microl5
+fichiers_ressources/ihm/images_micro_dresseurs/ligue/microl4
+fichiers_ressources/ihm/images_micro_dresseurs/ligue/microl3
+fichiers_ressources/ihm/images_micro_dresseurs/ligue/microl2
+fichiers_ressources/ihm/images_micro_dresseurs/ligue/microl1
+fichiers_ressources/ihm/images_micro_dresseurs/champions
+fichiers_ressources/ihm/images_micro_dresseurs/champions/microb5
+fichiers_ressources/ihm/images_micro_dresseurs/champions/microb4
+fichiers_ressources/ihm/images_micro_dresseurs/champions/microb3
+fichiers_ressources/ihm/images_micro_dresseurs/champions/microb2
+fichiers_ressources/ihm/images_micro_dresseurs/champions/microb1

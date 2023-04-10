@@ -1,0 +1,164 @@
+LANCEUR_DESCR	le lanceur
+CIBLE_DESCR	la cible
+LANCEUR_MAJ_DESCR	Le lanceur
+CIBLE_MAJ_DESCR	La cible
+DU_LANCEUR	du lanceur
+DE_LA_CIBLE	de la cible
+VRAI	vrai	true
+FAUX	faux	false
+PRIX	Prix :	Price :
+Male	mâle	male
+Femelle	femelle	female
+ASSEXUE	assexué	without sex
+MIXTE	mâle à 50% et femelle à 50%	male at 50% and female at 50%
+FEMELLE_100	femelle à 100%	female at 100%
+MALE_100	mâle à 100%	male at 100%
+LEG	légendaire	legendary
+MALE	Mâle	Male
+FEMELLE	Femelle	Female
+PARAM	config.ini
+SQL_OUI	OUI
+SQL_NON	NON
+SQL_XX	X
+SQL_TABLE_TYPE	table_type
+SQL_TABLE_TYPE_TYPE1	type1
+SQL_TABLE_TYPE_TYPE1_T	chaine de caractères
+SQL_TABLE_TYPE_TYPE2	type2
+SQL_TABLE_TYPE_TYPE2_T	chaine de caractères
+SQL_TABLE_TYPE_EFF	eff
+SQL_TABLE_TYPE_EFF_T	nombre réel
+SQL_POKEDEX	pokedex
+SQL_POKEDEX_NOM	nom
+SQL_POKEDEX_NOM_T	chaine de caractères
+SQL_POKEDEX_NUMERO	numero
+SQL_POKEDEX_NUMERO_T	nombre entier
+SQL_POKEDEX_MASSE	masse
+SQL_POKEDEX_MASSE_T	nombre réel
+SQL_POKEDEX_TAILLE	taille
+SQL_POKEDEX_TAILLE_T	nombre réel
+SQL_POKEDEX_REP_GENRE	rep_genre
+SQL_POKEDEX_REP_GENRE_T	chaine de caractères
+SQL_POKEDEX_EXP_BASE	exp_base
+SQL_POKEDEX_EXP_BASE_T	nombre entier
+SQL_POKEDEX_PV	pv
+SQL_POKEDEX_PV_T	nombre entier
+SQL_POKEDEX_PV_EV	pv_ev
+SQL_POKEDEX_PV_EV_T	nombre entier
+SQL_POKEDEX_ATTAQUE	attaque
+SQL_POKEDEX_ATTAQUE_T	nombre entier
+SQL_POKEDEX_ATTAQUE_EV	attaque_ev
+SQL_POKEDEX_ATTAQUE_EV_T	nombre entier
+SQL_POKEDEX_DEFENSE	defense
+SQL_POKEDEX_DEFENSE_T	nombre entier
+SQL_POKEDEX_DEFENSE_EV	defense_ev
+SQL_POKEDEX_DEFENSE_EV_T	nombre entier
+SQL_POKEDEX_ATTAQUE_SPECIALE	attaque_speciale
+SQL_POKEDEX_ATTAQUE_SPECIALE_T	nombre entier
+SQL_POKEDEX_ATTAQUE_SPECIALE_EV	attaque_speciale_ev
+SQL_POKEDEX_ATTAQUE_SPECIALE_EV_T	nombre entier
+SQL_POKEDEX_DEFENSE_SPECIALE	defense_speciale
+SQL_POKEDEX_DEFENSE_SPECIALE_T	nombre entier
+SQL_POKEDEX_DEFENSE_SPECIALE_EV	defense_speciale_ev
+SQL_POKEDEX_DEFENSE_SPECIALE_EV_T	nombre entier
+SQL_POKEDEX_VITESSE	vitesse
+SQL_POKEDEX_VITESSE_T	nombre entier
+SQL_POKEDEX_VITESSE_EV	vitesse_ev
+SQL_POKEDEX_VITESSE_EV_T	nombre entier
+SQL_POKEDEX_TX_CAPT	tx_capt
+SQL_POKEDEX_TX_CAPT_T	nombre entier
+SQL_POKEDEX_PAS_ECL	pas_ecl
+SQL_POKEDEX_PAS_ECL_T	nombre entier
+SQL_POKEDEX_PKBASE	pkbase
+SQL_POKEDEX_PKBASE_T	chaine de caractères
+SQL_EVOLUTIONS_NIV	evolutions_niv
+SQL_EVOLUTIONS_NIV_NOMBASE	nombase
+SQL_EVOLUTIONS_NIV_NOMBASE_T	chaine de caractères
+SQL_EVOLUTIONS_NIV_NOMEVO	nomevo
+SQL_EVOLUTIONS_NIV_NOMEVO_T	chaine de caractères
+SQL_EVOLUTIONS_NIV_NIVEAU	niveau
+SQL_EVOLUTIONS_NIV_NIVEAU_T	nombre entier
+SQL_EVOLUTIONS_BONHEUR	evolutions_bonheur
+SQL_EVOLUTIONS_BONHEUR_NOMBASE	nombase
+SQL_EVOLUTIONS_BONHEUR_NOMBASE_T	chaine de caractères
+SQL_EVOLUTIONS_BONHEUR_NOMEVO	nomevo
+SQL_EVOLUTIONS_BONHEUR_NOMEVO_T	chaine de caractères
+SQL_EVOLUTIONS_PIERREEVO	evolutions_pierreevo
+SQL_EVOLUTIONS_PIERREEVO_NOMBASE	nombase
+SQL_EVOLUTIONS_PIERREEVO_NOMBASE_T	chaine de caractères
+SQL_EVOLUTIONS_PIERREEVO_NOMEVO	nomevo
+SQL_EVOLUTIONS_PIERREEVO_NOMEVO_T	chaine de caractères
+SQL_EVOLUTIONS_PIERREEVO_PIERRE	pierre
+SQL_EVOLUTIONS_PIERREEVO_PIERRE_T	chaine de caractères
+SQL_EVOLUTIONS_OBJEVO	evolutions_objevo
+SQL_EVOLUTIONS_OBJEVO_NOMBASE	nombase
+SQL_EVOLUTIONS_OBJEVO_NOMBASE_T	chaine de caractères
+SQL_EVOLUTIONS_OBJEVO_NOMEVO	nomevo
+SQL_EVOLUTIONS_OBJEVO_NOMEVO_T	chaine de caractères
+SQL_EVOLUTIONS_OBJEVO_OBJET	objet
+SQL_EVOLUTIONS_OBJEVO_OBJET_T	chaine de caractères
+SQL_EVOLUTIONS_ATTAQUE	evolutions_attaque
+SQL_EVOLUTIONS_ATTAQUE_NOMBASE	nombase
+SQL_EVOLUTIONS_ATTAQUE_NOMBASE_T	chaine de caractères
+SQL_EVOLUTIONS_ATTAQUE_NOMEVO	nomevo
+SQL_EVOLUTIONS_ATTAQUE_NOMEVO_T	chaine de caractères
+SQL_EVOLUTIONS_ATTAQUE_NOMATT	nomatt
+SQL_EVOLUTIONS_ATTAQUE_NOMATT_T	chaine de caractères
+SQL_TABLE_ATTAQUES	attaques
+SQL_TABLE_ATTAQUES_NOM	nom
+SQL_TABLE_ATTAQUES_NOM_T	chaine de caractères
+SQL_TABLE_ATTAQUES_TYPE_ATT	type_att
+SQL_TABLE_ATTAQUES_TYPE_ATT_T	chaine de caractères
+SQL_TABLE_ATTAQUES_PRIO	prio
+SQL_TABLE_ATTAQUES_PRIO_T	chaine de caractères
+SQL_TABLE_ATTAQUES_PUISSANCE	puissance
+SQL_TABLE_ATTAQUES_PUISSANCE_T	nombre entier
+SQL_TABLE_ATTAQUES_PUISSANCE_FIXE	puissance_fixe
+SQL_TABLE_ATTAQUES_PUISSANCE_FIXE_T	chaine de caractères
+SQL_TABLE_ATTAQUES_CATEGORIE	categorie
+SQL_TABLE_ATTAQUES_CATEGORIE_T	chaine de caractères
+SQL_TABLE_ATTAQUES_DIRECTE	directe
+SQL_TABLE_ATTAQUES_DIRECTE_T	chaine de caractères
+SQL_TABLE_ATTAQUES_PRECISION	precision
+SQL_TABLE_ATTAQUES_PRECISION_T	nombre entier
+SQL_CS_ATTAQUE	cs_attaque
+SQL_CS_ATTAQUE_CS	cs
+SQL_CS_ATTAQUE_CS_T	nombre entier
+SQL_CS_ATTAQUE_ATTAQUE	attaque
+SQL_CS_ATTAQUE_ATTAQUE_T	chaine de caractères
+SQL_CT_ATTAQUE	ct_attaque
+SQL_CT_ATTAQUE_CT	ct
+SQL_CT_ATTAQUE_CT_T	nombre entier
+SQL_CT_ATTAQUE_ATTAQUE	attaque
+SQL_CT_ATTAQUE_ATTAQUE_T	chaine de caractères
+SQL_CS_PK	cs_pk
+SQL_CS_PK_NOM	nom
+SQL_CS_PK_NOM_T	chaine de caractères
+SQL_CS_PK_CS	cs
+SQL_CS_PK_CS_T	nombre entier
+SQL_CT_PK	ct_pk
+SQL_CT_PK_NOM	nom
+SQL_CT_PK_NOM_T	chaine de caractères
+SQL_CT_PK_CT	ct
+SQL_CT_PK_CT_T	nombre entier
+SQL_MT_PK	mt_pk
+SQL_MT_PK_NOM	nom
+SQL_MT_PK_NOM_T	chaine de caractères
+SQL_MT_PK_MT	mt
+SQL_MT_PK_MT_T	chaine de caractères
+SQL_NIV_ATT	niv_att
+SQL_NIV_ATT_NOM	nom
+SQL_NIV_ATT_NOM_T	chaine de caractères
+SQL_NIV_ATT_NIV	niv
+SQL_NIV_ATT_NIV_T	nombre entier
+SQL_NIV_ATT_ATTAQUE	attaque
+SQL_NIV_ATT_ATTAQUE_T	chaine de caractères
+SQL_TYPE_PK	type_pk
+SQL_TYPE_PK_NOM	nom
+SQL_TYPE_PK_NOM_T	chaine de caractères
+SQL_TYPE_PK_TYPE	type
+SQL_TYPE_PK_TYPE_T	chaine de caractères
+SQL_CAPAC_PK	capac_pk
+SQL_CAPAC_PK_NOM	nom
+SQL_CAPAC_PK_NOM_T	chaine de caractères
+SQL_CAPAC_PK_CAPACITE	capacite
+SQL_CAPAC_PK_CAPACITE_T	chaine de caractères

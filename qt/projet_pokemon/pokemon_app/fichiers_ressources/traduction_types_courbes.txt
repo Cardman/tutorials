@@ -1,0 +1,6 @@
+E	erratique
+F	fluctuante
+L	lente
+M	moyenne
+P	parabolique
+R	rapide

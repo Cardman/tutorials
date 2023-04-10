@@ -1,0 +1,4 @@
+﻿FULMIFER est une attaque pseudo offensive.
+Cette attaque inflige 3/2*(dégâts subis par l'utilisateur avant le lancer de l'attaque FULMIFER) à la cible.
+
+L'attaque FULMIFER échoue si seulement si le lanceur n'a pas subi de dégâts avant le lancer de l'attaque FULMIFER ou possède un clone.

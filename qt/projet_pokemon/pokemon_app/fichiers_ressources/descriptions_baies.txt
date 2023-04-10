@@ -1,0 +1,12 @@
+﻿GAIN_PV[>	Si le porteur de la baie est touché par une attaque super efficace et peut utiliser une baie, alors il récupère $1 de ses pv max, la baie n'est pas utilisée si le porteur avait tous ses pv.
+LOI_PROBA_PREMIER	Si le porteur de la baie est censé attaquer après un pokémon ne portant la baie, alors le porteur de la baie attaque d'abord.
+MULT_DEGATS_ADV	Si le porteur de la baie est touché par une attaque super efficace de type $1, alors les dégâts infligés au porteur de la baie sont multipliés par $2.
+MULT_STATISTIQUE_SI	Si le porteur de la baie a au plus $1 de ses pv max, alors la statistique $2 du porteur de la baie augmente de $3 cran.
+PUISSANCE_TYPE	Si le porteur de la baie utilise l'attaque DON_NATUREL, alors cette attaque prend le type $1 et possède une puissance de $2.
+SANS_ECHEC	Si le porteur de la baie vient à échouer une attaque, alors il la réussit.
+SOIN_PP	Si le porteur de la baie a une de ses attaques sans PP, alors $1 PP sont restaurés pour cette attaque.
+SOIN_PSEUDO_STATUT	Si le porteur de la baie a le pseudo statut $1, alors le pseudo statut est guéri.
+SOIN_PV	Si le porteur de la baie a au plus $2 de ses pv max, alors $1 pv sont restaurés.
+SOIN_STATUT	Si le porteur de la baie a le statut $1, alors le statut est guéri.
+SOIN_TAUX_PV_PVMAX	Si le porteur de la baie a au plus $2 de ses pv max, alors il récupère $1 de ses pv max.
+TAUX_DEGATS_RECUL_ADV	Si le porteur de la baie subit les dégâts d'une attaque de catégorie $1 et ne tombe pas KO, alors le lanceur de l'attaque de catégorie $1 perd $2 des pv max du lanceur de l'attaque.

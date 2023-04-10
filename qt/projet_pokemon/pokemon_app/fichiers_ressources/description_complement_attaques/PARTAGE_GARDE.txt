@@ -1,0 +1,10 @@
+﻿PARTAGE_GARDE est une attaque telle que
+le lanceur et la cible se retrouve avec la moyenne des statistiques de défense et de défense spéciale possédées avant le lancer.
+Cette attaque ne prend en compte que la base des statistiques (avec seulement les ev et les iv)
+
+Les effets disparaissent à la fin du combat.
+
+Exemple:
+un pokémon A possédant 140 en défense et 90 en défense spéciale lance l'attaque PARTAGE_GARDE
+sur un pokémon B possédant 120 en défense et 110 en défense spéciale.
+Alors les deux pokémons se retrouve avec 130 en défense et 100 en défense spéciale.

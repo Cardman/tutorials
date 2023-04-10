@@ -1,0 +1,38 @@
+TYPE_ENV	Type environnement :
+MURET	Muret
+MURET_XY	(x,y):
+APPAR_PER	Apparition des pokémons sauvages périodique lors du déplacement de l'utilisateur
+NB_PAS_MOYEN	Nombre de pas moyen entre deux apparitions successives :
+ETIQUETTE_NOM	nom
+ETIQUETTE_NIVEAU	niveau
+ETIQUETTE_CAPACITE	capacité
+ETIQUETTE_OBJET	objet
+ETIQUETTE_GENRE	genre
+AFFICHE_APPAR_PER	Liste ordonnée des pokémons apparaissant en cours de déplacement de l'utilisateur
+AJOUTER_PK	Ajouter pokémon
+EDITER_PK	Editer pokémon
+SUPPRIMER_PK	Supprimer pokémon
+INSERER_PK	Insérer pokémon
+AFFICHE_APPAR_CANNE	Liste ordonnée des pokémons apparaissant en pêchant avec la canne
+AFFICHE_APPAR_SUPER_CANNE	Liste ordonnée des pokémons apparaissant en pêchant avec la super canne
+AFFICHE_APPAR_MEGA_CANNE	Liste ordonnée des pokémons apparaissant en pêchant avec la mega canne
+INFOS_TUILES	Informations tuile
+PERSONNAGE	Personnage non dresseur
+EDITER_P	Editer personnage non dresseur
+DRESSEUR	Dresseur ordinaire
+EDITER_D	Editer dresseur ordinaire
+CHAMPION	Champion
+EDITER_C	Editer champion
+ARBRE	Arbre à couper
+ROCHER_DESTR	Rocher à détruire
+ROCHER_AMOV	Rocher amovible
+TOURBILLON	Tourbillon à siphoner
+BOITE_ECH	Boîte d'échange pokémon
+PK_LEG	Pokémon légendaire fixe
+EDITER_PK_LEG	Editer pokémon légendaire fixe
+DON_PK	Pokémon à ramasser dans une pokéball
+EDITER_DON_PK	Editer pokémon à ramasser dans une pokéball
+OBJET	Objet à ramasser
+EDITER_OBJET	Editer objet à ramasser
+RIEN	Rien
+IMAGE_FOND_TUILE	Image de fond de la tuile:

@@ -1,0 +1,6 @@
+﻿PHOTOCOPIE est une attaque telle que
+le lanceur utilise la dernière attaque réussie de la cible.
+C'est donc une attaque ne visant que le lanceur.
+
+PHOTOCOPIE échoue si et seulement si la dernière attaque réussie de la cible est PHOTOCOPIE ou la cible n'a pas réussi son attaque.
+

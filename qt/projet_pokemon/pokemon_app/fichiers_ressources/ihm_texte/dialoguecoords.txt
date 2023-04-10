@@ -1,0 +1,9 @@
+TITRE	Choix de coordonnées pour $1.
+DEPART	le départ du jeu
+LIEU_VOL	la destination en volant vers un lieu
+LIAISON	l'origine de la ligue sélectionnée
+ETIQUETTE_NOM	Nom
+ETIQUETTE_TYPE	Type
+VALIDER	Valider
+ERREUR	Erreur
+MAUVAISES_COORDS	Mauvaises coordonnées!

@@ -1,0 +1,15 @@
+﻿LEVIKINESIE est une attaque telle que:
+la cible est immunisée aux attaques de type SOL
+la cible est immunisée aux picots, aux pics toxiks, au piege de roc
+la cible peut s'échapper de la capacité PIEGE.
+toutes les attaques, sauf les OHKO, touchent la cible, au niveau de la précision et de l'esquive.
+
+Ces effets durent 3 tours.
+
+LEVIKINESIE échoue si et seulement si la cible est sous l'effet de RACINES ou la gravité est présente ou la cible possède le type VOL ou la capacité LEVITATION ou la BALLE DE FER.
+
+L'activité de l'attaque GRAVITE annule LEVIKINESIE.
+
+Si la cible de LEVIKINESIE avait lancé REFLET_MAGIK, alors le lanceur subit les effets de LEVIKINESIE à la place de la cible.
+
+Si la cible prend le type VOL ou la capacité LEVITATION ou la BALLE de FER alors les effets de LEVIKINESIE s'estompent.

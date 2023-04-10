@@ -1,0 +1,9 @@
+TITRE	Voir les données de base du jeu
+NOM_POKEMON	Nom de pokémon :
+NOM_ATTAQUE	Nom d'attaque :
+NOM_CAPACITE	Nom de capacité :
+NOM_OBJET	Nom d'objet :
+DESCRIPTION_POKEMON	Description du pokémon :
+DESCRIPTION_ATTAQUE	Description de l'attaque :
+DESCRIPTION_CAPACITE	Description de la capacité :
+DESCRIPTION_OBJET	Description de l'objet :

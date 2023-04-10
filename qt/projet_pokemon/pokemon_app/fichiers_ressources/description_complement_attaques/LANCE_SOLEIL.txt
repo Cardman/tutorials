@@ -1,0 +1,3 @@
+L'attaque LANCE_SOLEIL ne prend pas de tour de chargement sous le soleil actif.
+
+La puissance de l'attaque LANCE_SOLEIL est divisée par 2 sous un autre climat actif.

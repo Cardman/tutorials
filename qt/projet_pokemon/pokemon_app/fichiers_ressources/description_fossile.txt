@@ -1,0 +1,1 @@
+Permet de faire revivre $1, au niveau $2.	

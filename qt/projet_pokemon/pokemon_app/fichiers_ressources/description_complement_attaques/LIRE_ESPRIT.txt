@@ -1,0 +1,5 @@
+﻿LIRE_ESPRIT est une attaque permettant à la prochaine attaque non totalement précise de la rendre précise à 100% sur la cible.
+LIRE_ESPRIT est une attaque permettant d'attaquer des cibles ayant disparu pendant le tour de chargement.
+Si la cible switche ou le lanceur switche alors l'attaque LIRE_ESPRIT perd son effet.
+
+Si la cible de LIRE_ESPRIT avait lancé REFLET_MAGIK, alors le lanceur subit les effets de LIRE_ESPRIT à la place de la cible.

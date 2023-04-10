@@ -1,0 +1,12 @@
+﻿ASTUCE_FORCE est une attaque très particulière.
+
+Cette attaque échange les valeurs d'attaque et de défense toutes les deux physiques sans prendre en compte les modifications de ces statistiques.
+
+Par exemple:
+
+Un pokémon ayant 50 en attaque et 100 en défense va se retrouver avec 100 en attaque et 50 en défense
+
+Cela ne concerne que l'attaque de base et la défense de base.
+
+Si un pokémon ayant lancé l'attaque SAISIE sur le lanceur de ASTUCE_FORCE n'est pas KO,
+alors c'est le pokémon qui a lancé l'attaque SAISIE qui voit son attaque et sa défense échangées.

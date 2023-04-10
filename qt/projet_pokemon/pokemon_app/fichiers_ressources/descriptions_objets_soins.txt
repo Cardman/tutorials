@@ -1,0 +1,11 @@
+BONHEUR	Si le pokémon est capturé avec une LUXE_BALL, alors il gagne une base de $1 points de bonheur, sinon il gagne une base de $2 points de bonheur.	If the pokemon is caught by a LUXE_BALL, then it wins a base of $1 happiness points, else it wins a base of $2 happiness points.
+SOIN_EQUIPE	Soigne toute l'équipe pendant un combat ou non.	Restores all team while a fight or not.
+SOIN_KO	Réanime un pokémon KO.	Resuscitates a KO pokemon.
+SOIN_PP	Soigne $1 pp de $2 attaques.	Restores $1 pp of $2 attacks.
+SOIN_PP[,*	Soigne $1 pp de toutes les attaques.	Restores $1 pp of all attacks.
+SOIN_PP[*	Soigne tous les pp de $1 attaques.	Restores all pp of $1 attacks.
+SOIN_PP[*,*	Soigne tous les pp de toutes les attaques.	Restores all pp of all attacks.
+SOIN_PV	Soigne $1 pv.\tSi le nombre de pv à restaurer est plus petit que le nombre de pv pouvant être soigné, alors il reste les pv non restauré dans l'objet.	Restores $1 hp.\tIf the number of hp to restore is lower than the number of hp which can be restored, then the no used hp remain in the object.
+SOIN_PV[*	Soigne tous les pv.	Restores all hp.
+SOIN_PV[*/	Soigne $1 pv des pv max.	Restores $1 hp of the max hp.
+SOIN_STATUT	Enlève le statut $1.	Removes the status $1.

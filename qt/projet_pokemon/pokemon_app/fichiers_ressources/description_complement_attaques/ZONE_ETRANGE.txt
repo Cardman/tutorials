@@ -1,0 +1,3 @@
+﻿ZONE_ETRANGE est une attaque globale durant 5 tours.
+Réutiliser ZONE_ETRANGE, alors que cette attaque est active, l'annule.
+Les pokémon sur le terrain voient leur défense physiques et leur défense spéciales échangées (avec seulement les iv et ev).

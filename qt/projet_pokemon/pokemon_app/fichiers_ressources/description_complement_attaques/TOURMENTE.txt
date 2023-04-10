@@ -1,0 +1,6 @@
+﻿TOURMENTE est une attaque obligeant la cible à changer d'attaque à chaque tour, même si la cible ne l'a pas réussi.
+
+L'effet disparaît si la cible switche.
+
+Si la cible de TOURMENTE avait lancé REFLET_MAGIK, alors le lanceur subit les effets de TOURMENTE à la place.
+

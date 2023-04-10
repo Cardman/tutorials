@@ -1,0 +1,7 @@
+﻿PROVOC est une attaque telle que:
+la cible est obligé d'utiliser une attaque offensive ou pseudo offensive.
+Si la cible allait lancer une attaque ni offensive, ni pseudo offensive alors l'attaque de la cible échouera.
+
+Si la cible avait utilisé REFLET_MAGIK et si le lanceur n'a pas de clone, alors le lanceur sera obliger d'utiliser des attaques offensives.
+
+L'attaque REFLET_MAGIK échoue si et seulement si la cible possède un clone.

@@ -1,0 +1,8 @@
+﻿POUDREFUREUR est une attaque de détournement d'attention.
+En effet, si un adversaire n'ayant pas joué choisit une attaque à cible unique alors la cible devient le lanceur de POUDREFUREUR.
+
+Cette attaque permet de protéger les partenaires du lanceur adjacents au lanceur de POUDREFUREUR des attaques adverses à cible unique.
+Cela n'empêchera pas que les partenaires du lanceur de POUDREFUREUR peuvent cibler un autre pokémon que le lanceur de POUDREFUREUR.
+
+Rien ne change pour un pokémon ayant lancé POURSUITE sur un autre qui switche, car la priorité de POURSUITE devient supérieure à celle de POUDREFUREUR.
+Rien ne change pour une attaque multi-cibles où ne visant que le lanceur.

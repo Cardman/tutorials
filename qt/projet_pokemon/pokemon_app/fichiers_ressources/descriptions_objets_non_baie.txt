@@ -1,0 +1,56 @@
+﻿ANNULE_IMMU_TYPE	Le porteur de l'objet peut toucher des cibles adverses censées être immunisées à l'attaque du porteur de l'objet.
+ANTI_EVO	Le porteur de l'objet ne peut pas évoluer.
+ANTI_KO	Le porteur de l'objet conserve $1 pv s'il est censé tomber KO.
+ANTI_KO_SI_TOUS_PV	Le porteur de l'objet conserve $1 pv s'il est censé tomber KO et s'il possédait tous ses pv.
+ATTAQUE_DERNIER	Le porteur de l'objet attaque après un pokémon ne portant cet objet.
+CALCUL_EXPERIENCE	Le porteur de l'objet en supposant qu'il n'ait pas atteint le niveau maximal, gagne 1 / (1 + nombre de porteurs de l'objet) * le nombre total d'expérience.
+CHANGEMENT_FORME
+DEGATS_RECUL	A la fin d'un tour, le porteur de l'objet perd $1 de ses pv max.
+DEGATS_RECUL_ADV	Si le porteur de l'objet est touché par une attaque directe, alors le lanceur de l'attaque directe subit $1 des pv max du lanceur de cette attaque.
+DETRUIT_SI_CONTACT	Si le porteur subit des dégâts par une attaque directe lancée par un adversaire ou un allié, alors l'objet est détruit.
+DRAINE_TAUX_DEGATS	Lors de l'utilisation d'une attaque par le porteur de l'objet contre un adversaire, le porteur de l'objet récupère $1 des pv max de l'adversaire que l'adversaire perd.
+FUITE_REUSSIE	Le porteur de l'objet peut toujours fuir ou switcher.
+GAIN_EV_COMBAT	Le porteur de l'objet gagne $1 ev de $2.
+GAIN_PV_TOUS	A la fin du tour, le porteur de l'objet récupère $1 de ses pv max.
+GAIN_PV	A la fin du tour, si le porteur de l'objet contient le type $1, alors il récupère $2 de ses pv max, sinon il récupère $3 de ses pv max.
+IMMU_AMOUR	Le porteur de l'objet ne peut pas tomber amoureux.	The pokemon, which carries the object, cannot fall in love.
+IMMU_BAISSE_STATISTIQUE	Si un ensemble de statistiques du porteur de l'objet est censé être baissée, alors les statistiques en question ne seront pas baissées.
+IMMU_TYPE	Le porteur de l'objet est immunisé aux attaques de type $1.
+LOI_PROBA_PREMIER	Si le porteur de l'objet est censé attaquer après un pokémon ne portant d'objet changeant l'ordre d'attaque, alors avec une probabilité de $1, le porteur de l'objet attaque avant.
+MULT_DEGATS_ATT_PIEGEANTE	Les dégâts de fin de tour causés par des attaques piégeantes utilisées par le porteur de l'objet sont multipliés par $1.
+MULT_GAIN_ARGENT	A la fin du combat, le gain est multiplié par $1.
+MULT_GAIN_BONHEUR	Le gain de bonheur du porteur de l'objet est multiplié par $1.
+MULT_GAIN_EV	Le gain de ev du porteur de l'objet est multiplié par $1.
+MULT_GAIN_EXPERIENCE	Le gain d'expérience du porteur de l'objet est multiplié par $1.
+MULT_MASSE	La masse du porteur est multipliée par $1.
+MULT_PUISSANCE_ATTAQUE	La puissance de toutes les attaques du porteur de l'objet est multiplié par $1.
+MULT_PUISSANCE_ATTAQUE[>	La puissance de toutes les attaques super efficaces du porteur de l'objet est multiplié par $1.
+MULT_PUISSANCE_ATTAQUE_CATEGORIE	La puissance des attaques de catégorie $1 est multipliée par $2.
+MULT_PUISSANCE_ATTAQUE_CONSECUTIVE	La puissance des attaques réussies consécutivement est multipliée par $1.
+MULT_PUISSANCE_ATTAQUE_POKEMON[TYPES	La puissance des attaques de type $1 utilisées par $2 est multipliée par $3.
+MULT_PUISSANCE_ATTAQUE_TYPE	La puissance des attaques de type $1 est multipliée par $2.
+MULT_PV_DRAINES	Les pv drainés sont multipliés par $1.
+MULT_STATISTIQUE_ADV	La statistique $1 d'un pokémon lançant une attaque ayant pour cible au moins le porteur de l'objet est multiplié par $2.
+MULT_STATISTIQUE_ADV[C	La statistique $1 d'un pokémon lançant une attaque ayant pour cible au moins le porteur de l'objet gagne $2 cran(s).
+MULT_STATISTIQUE	La statistique $1 du porteur de l'objet est multiplié par $2.
+MULT_STATISTIQUE[C	La statistique $1 du porteur de l'objet gagne $2 cran(s).
+MULT_STATISTIQUE_POKEMON	La statistique $1 de $2 est multiplié par $3.
+MULT_STATISTIQUE_POKEMON[C	La statistique $1 de $2 gagne $3 cran(s).
+MULT_STATISTIQUE_PRE_EVO	La statistique $1 d'un pokémon pouvant évoluer est multipliée par $2.
+MULT_STATISTIQUE_SI_DERNIER	Si le porteur de l'objet attaque après ses cibles, alors la statistique $1 du porteur de l'objet est multipliée par $2.
+MULT_STATISTIQUE_SI_TOUCHE_TYPE	Si le porteur de l'objet subit les dégâts d'une attaque de type $1, alors la statistique $2 du porteur de l'objet gagne $3 crans.
+NB_TOURS_CLIMAT	Le nombre de tours de climat $1 passe à 8.
+NB_TOURS_PIEGES	Le nombre de tours d'effets des attaques piégeantes utilisées par le porteur de l'objet est maximal.
+NB_TOURS_PROTECTION	Le nombre de tours des effets des attaques de protections (de défense, de défense spéciale) passe à $1.
+PREPA_VITE	Lors de l'utilisation d'une attaque demandant un tour, le porteur de l'objet attaque sans charger.
+REPOUSSE_SAUVAGES	Repousse les pokémons sauvages jusqu'à ce que l'objet ne soit plus porté.
+REPRODUCTION	Permet d'avoir $1 par reproduction, sinon c'est son évolution qui est obtenue.
+SANS_EFFET_CAPACITE	Si le porteur de l'objet possède la capacité $1, alors l'objet est sans effet.
+SENSIBLE_TYPE	Le porteur de l'objet devient sensible aux attaques de type $1.
+STATUT_FIN_TOUR_LANCEUR	Le porteur de l'objet prend le statut $1, à la fin du tour.
+SWITCH_REUSSI	Le porteur de l'objet peut toujours switcher.
+SWITCH_POSSIBLE_SI_TOUCHE	Le switch est proposé lorsque le porteur de l'objet est touché par une attaque.
+SWITCH_FORCE_ADV_SI_TOUCHE	Si le porteur de l'objet est touché par une attaque lancée par un adversaire, alors le lanceur de cette attaque est obligé de switcher sauf s'il est impossible de remplacer le lanceur.
+SYNCHRO_AMOUR	Si le porteur de l'objet tombe amoureux d'un autre pokémon et si cet autre pokémon peut tomber amoureux du porteur de l'objet, alors cet autre pokémon tombe amoureux du porteur de l'objet.
+TRANSFERT_OBJ_SI_CONTACT	Si un adversaire touche le porteur de l'objet avec une attaque directe et ne porte pas d'objet, alors l'adversaire récupère l'objet.
+USAGE_UNIQUE	Après utilisation de l'objet, l'objet disparaît.

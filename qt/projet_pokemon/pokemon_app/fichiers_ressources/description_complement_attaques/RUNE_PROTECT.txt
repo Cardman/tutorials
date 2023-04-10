@@ -1,0 +1,13 @@
+﻿RUNE_PROTECT est une attaque protégeant l'équipe du lanceur contre les altérations de statuts (y compris celui provoqué par BAILLEMENT),
+infligées par l'équipe adverse, pendant 5 tours, mais ne protège pas des altérations de statuts auto-induites.
+
+Si un pokémon adverse possède la capacité INFILTRATION et tente d'altérer le statut d'un membre de l'équipe protégée par RUNE_PROTECT,
+il y parvient, mais la RUNE_PROTECT restera active.
+
+L'attaque ANTI_BRUME supprime la RUNE_PROTECT protégeant l'équipe adverse du lanceur de ANTI_BRUME.
+
+Un deuxième lancer de RUNE_PROTECT permet de réinitialiser le nombre de tours passés à 0.
+
+Si un pokémon lance SAISIE sur le lanceur de RUNE_PROTECT et n'est pas KO,
+alors l'équipe du lanceur de SAISIE se protège des altérations de statuts infligées par l'équipe adverse
+à la place de l'équipe du lanceur.

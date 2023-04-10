@@ -1,0 +1,11 @@
+﻿RECYCLAGE est une attaque telle que:
+Le lanceur récupère le dernier objet qu'il a porté.
+
+Si le dernier objet porté par le lanceur de RECYCLAGE avait été perdu par PASSE_PASSE ou TOURMAGIK,
+alors l'attaque échoue.
+
+L'attaque RECYCLAGE échoue si et seulement si le dernier objet porté par le lanceur de RECYCLAGE avait été perdu par PASSE_PASSE ou TOURMAGIK
+ou le lanceur possède un objet.
+
+Si un pokémon avait utilisé SAISIE sur le lanceur de RECYCLAGE et si lepokémon ayant utilisé SAISIE ne possède pas d'objet,
+alors le pokémon ayait utilisé SAISIE récupère le dernier objet porté et utilisé par le lanceur de RECYCLAGE

@@ -1,0 +1,11 @@
+﻿STOCKAGE est une attaque permettant d'en utiliser une autre.
+Les attaques pouvant être utilisées après STOCKAGE sont
+AVALE
+RELACHE
+
+De plus la défense physique et la défense spéciale du lanceur augmente d'un cran sauf si le lanceur a ses boosts maximaux.
+
+Si le lanceur possède au moins 3 utilisations de STOCKAGE alors l'attaque STOCKAGE échoue.
+
+Si un pokémon avait lancé SAISIE sur le lanceur de STOCKAGE, alors le pokémon ayant lancé SAISIE gagne 1 utilisation de STOCKAGE,
+sauf si le pokémon ayant lancé SAISIE possède 3 utilisations de STOCKAGE.

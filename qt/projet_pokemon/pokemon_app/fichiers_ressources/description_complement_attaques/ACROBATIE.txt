@@ -1,0 +1,1 @@
+La puissance de base de ACROBATIE est doublée si le lanceur ne porte pas d'objet.

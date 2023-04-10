@@ -1,0 +1,7 @@
+﻿MOI_D_ABORD est une attaque en appelant une autre.
+Cette attaque appelle l'attaque choisie par la cible.
+
+Si le lanceur de MOI_D_ABORD attaque avant la cible alors les dégâts infligés par une attaque offensive sont multipliés par 3/2.
+
+L'attaque MOI_D_ABORD échoue si et seulement si la cible n'utilise pas une attaque offensive.
+(PATIENCE,FULMIFER,EFFORT,BALANCE,RIPOSTE,VOILE_MIROIR,TOUT_OU_RIEN sont des attaques pseudo offensives)

@@ -1,0 +1,18 @@
+﻿CAMOUFLAGE est une attaque de changement de type.
+Ce changement de type est déterministe contrairement à ADAPTATION et CONVERSION_2.
+
+Voici les changements de type en fonction du type de lieu où se déroule le combat:
+
+BATIMENT	NORMAL
+DESERT	SOL
+ROUTE	SOL
+HERBE	PLANTE
+HAUTES_HERBES	PLANTE
+ETANG	EAU
+OCEAN	EAU
+GROTTE	ROCHE
+MONTAGNE	ROCHE
+NEIGE	GLACE
+
+Si un pokémon ayant lancé SAISIE sur le lanceur de CAMOUFLAGE n'est pas KO, alors c'est le pokémon ayant lancé SAISIE qui
+voit sont type changer.

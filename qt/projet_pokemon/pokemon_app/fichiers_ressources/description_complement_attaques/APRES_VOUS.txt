@@ -1,0 +1,23 @@
+﻿APRES_VOUS est une attaque très particulière.
+
+Si la cible de APRES_VOUS n'est pas KO, alors la cible attaquera juste après le lanceur de APRES_VOUS correspondant même si elle est cible de
+A_LA_QUEUE.
+
+APRES_VOUS échoue si moins de trois pokémons sont sur le terrain.
+
+APRES_VOUS échoue si la cible a déjà attaqué.
+
+Exemple:
+
+Supposons que:
+un pokémon A lance APRES_VOUS sur un pokémon B.
+un pokémon C lance APRES_VOUS sur un pokémon D.
+le pokémon A attaque avant le pokémon B
+le pokémon A attaque avant le pokémon C
+le pokémon C attaque avant le pokémon D
+alors on en déduit que les deux premiers pokémons sont A-B.
+Supposons de plus que:
+après l'attaque du pokémon B, aucun des pokémons C et D n'est KO.
+alors l'ordre qui suit le pokémon B et C-D.
+
+On ne tient pas compte des priorités d'attaques pour les cibles de APRES_VOUS

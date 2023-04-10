@@ -1,0 +1,31 @@
+TITRE	Nouvelle liste d'objets
+ETIQUETTE_OBJET	Nom d'objet :
+ETIQUETTE_OBJET_2	Nom
+ETIQUETTE_PRIX	Prix
+ETIQUETTE_TYPE	Type
+AJOUTER_OBJ	Ajouter objet
+SUPPRIMER_OBJ	Supprimer objet
+VALIDER	Valider
+ERREUR	Erreur
+OBJ_DEJA_PRESENT	Objet déjà présent!
+OBJ_INEX	Objet inexistant!
+PAS_OBJET	Pas d'objet!
+SUCCES	Succès
+OBJET_AJ	Objet ajouté!
+OBJET_SUPPR	Objet supprimé!
+TITRE_2	Editer liste d'objets
+BALL	Ball
+BAIE	Baie
+BOOST	Boost
+FOSSILE	Fossile
+OBJET_CBT_ATTAC	Objet attachable par un pokemon et utilisable en combat
+OBJET_EVO	Objet attachable par un pokemon et permettant l'évolution
+PIERRE_EVO	Pierre évolutive
+PLAQUE	Plaque
+REPOUSSE	Repousse
+REVENTE	Revente
+SOIN_PP	Soin de points de pouvoir (pour les attaques)
+SOIN_PV_STATUT	Soin de points de vie et de statut
+SOIN_PV	Soin de points de vie
+SOIN_STATUT	Soin de statut
+SOIN_TOTAL	Soin total

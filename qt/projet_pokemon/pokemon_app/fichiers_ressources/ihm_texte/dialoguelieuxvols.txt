@@ -1,0 +1,6 @@
+TITRE	Editer liens pour voler vers des lieux
+EDITER_LIEN	Editer lien
+SUPPRIMER_LIEN_COURANT	Supprimer lien courant
+VALIDER	Valider
+ERREUR	Erreur
+MESS_ERREUR	Une carte doit posseder un lieu de vol!

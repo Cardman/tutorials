@@ -1,0 +1,10 @@
+﻿PARTAGE_FORCE est une attaque telle que
+le lanceur et la cible se retrouve avec la moyenne des statistiques d'attaque et d'attaque spéciale possédées avant le lancer.
+Cette attaque ne prend en compte que la base des statistiques (avec seulement les ev et les iv)
+
+Les effets disparaissent à la fin du combat.
+
+Exemple:
+un pokémon A possédant 140 en attaque et 90 en attaque spéciale lance l'attaque PARTAGE_FORCE
+sur un pokémon B possédant 120 en attaque et 110 en attaque spéciale.
+Alors les deux pokémons se retrouve avec 130 en attaque et 100 en attaque spéciale.

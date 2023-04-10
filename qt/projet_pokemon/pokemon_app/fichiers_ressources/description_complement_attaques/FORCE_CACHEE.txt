@@ -1,0 +1,16 @@
+L'attaque FORCE_CACHEE possède des effets secondaires dépendant du lieu du combat.
+
+Lieu\tEffet
+BATIMENT\tparalyse la cible
+ROUTE\tbaisse la précision de la cible de 1 cran
+DESERT\tbaisse la précision de la cible de 1 cran
+HERBRE\tendort la cible
+EAU\tbaisse l'attaque physique de la cible de 1 cran
+ROCHE\tapeure la cible
+NEIGE\tgèle la cible
+
+Les effets secondaires ont tous la même probabilité d'avoir lieu qui est de 3/10.
+Si le lanceur possède la capacité SERENITE et que la cible n'est pas immunisée aux effets secondaires en fonction du lieu,
+alors la probabilité que l'effet secondaire ait lieu est de 6/10.
+
+Si la cible est immunisée aux effets secondaires en fonction du lieu, alors les effets secondaires n'ont pas lieu.

@@ -1,0 +1,6 @@
+﻿VOILE_MIROIR est une attaque pseudo offensive.
+Les dégâts infligés à la cible valent le double des dégâts des attaques spéciales infligés au lanceur.
+
+Si le lanceur n'a pas subi de dégâts spéciales, alors VOILE_MIROIR échoue
+
+Cette attaque ne tient pas compte des résistances maus tient compte des immunités.

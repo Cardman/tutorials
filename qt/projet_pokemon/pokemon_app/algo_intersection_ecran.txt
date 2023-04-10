@@ -1,0 +1,94 @@
+HashMap<QPair<int,int>,Coordonnees> Donnees::intersection_avec_ecran(const Coordonnees& _coords,bool _ligue){
+	HashMap<QPair<int,int>,Coordonnees> liste_;
+	int inval_=Tuile::_coords_invalide_;
+	QPair<int,int> coords_env_=_coords.coords_environnement();
+	QPair<int,int> coords_tuile_=_coords.coords_tuile();
+	int largeur_ecran_=(int)(constante_numerique("ESPACE_GAUCHE_ECRAN")+Taux(1)+constante_numerique("ESPACE_DROITE_ECRAN"));
+	int hauteur_ecran_=(int)(constante_numerique("ESPACE_HAUT_ECRAN")+Taux(1)+constante_numerique("ESPACE_BAS_ECRAN"));
+	int x_ecran_2_=constante_numerique("ESPACE_GAUCHE_ECRAN");
+	int y_ecran_2_=constante_numerique("ESPACE_HAUT_ECRAN");
+	int x_ecran_=coords_env_.first+coords_tuile_.first-x_ecran_2_;
+	int y_ecran_=coords_env_.second+coords_env_.first-y_ecran_2_;
+	QPair<int,int> id_ecran(x_ecran_,y_ecran_);
+	QPair<int,int> dims_ecran(largeur_ecran_,hauteur_ecran_);
+	for(int i=0;i<largeur_ecran_;i++){
+		for(int j=0;j<hauteur_ecran_;j++){
+			liste_.ajouter_cle_valeur(QPair<int,int>(i,j),Coordonnees());
+		}
+	}
+	HashMap<QPair<int,int>,QPair<int,int> > envs_;
+	typedef QPair<int,int> CoinGauche;
+	if(_ligue){
+		PlateauLigue *pl_=ligues.valeur(_coords.lieu())->plateau(_coords.plateau());
+		foreach(CoinGauche c,pl_->coords_env()){
+			envs_.ajouter_cle_valeur(c,pl_->environnement(c)->dimensions());
+		}
+	}else{
+		Plateau *pl_=lieux.valeur(_coords.lieu())->plateau(_coords.plateau());
+		foreach(CoinGauche c,pl_->coords_env()){
+			envs_.ajouter_cle_valeur(c,pl_->environnement(c)->dimensions());
+		}
+	}
+	foreach(CoinGauche e,envs_.cles()){
+		QPair<QPair<int,int>,QPair<int,int> > inter_=intersection(e,envs_.valeur(e),id_ecran,dims_ecran);
+		/*std::cout<<"id:"<<QString::number(e.first).toStdString()<<";";
+		std::cout<<QString::number(e.second).toStdString()<<"\n";*/
+		/*std::cout<<"valeur:"<<QString::number(inter_.first.first).toStdString()<<";";
+		std::cout<<QString::number(inter_.first.second).toStdString()<<" ";
+		std::cout<<QString::number(inter_.second.first).toStdString()<<";";
+		std::cout<<QString::number(inter_.second.second).toStdString()<<"\n";*/
+		if(inter_.second.first!=inval_){
+			QPair<int,int> cle_;
+			for(int i=inter_.first.first;i<=inter_.second.first;i++){
+				cle_.first=i+e.first-x_ecran_;
+				for(int j=inter_.first.second;j<=inter_.second.second;j++){
+					/*cle_.first=i+e.first+x_ecran_-x_ecran_2_;
+					cle_.second=j+e.second+y_ecran_-y_ecran_2_;*/
+					cle_.second=j+e.second-y_ecran_;
+					/*std::cout<<QString::number(cle_.first).toStdString()<<" ";
+					std::cout<<QString::number(cle_.second).toStdString()<<",";*/
+					Coordonnees& valeur_=liste_.valeur(cle_)
+					valeur_.lieu()=_coords.lieu()
+					valeur_.plateau()=_coords.plateau()
+					valeur_.coords_environnement()=e
+					valeur_.coords_tuile()=QPair<int,int>(i,j)
+				}
+				//std::cout<<";\n";
+			}
+			//std::cout<<"fin env\n";
+		}
+	}
+	QList<QPair<int,int> > directions_;
+	directions_<<QPair<int,int>(0,1);
+	directions_<<QPair<int,int>(0,-1);
+	directions_<<QPair<int,int>(1,0);
+	directions_<<QPair<int,int>(-1,0);
+	bool ajout_=false;
+	forever{
+		ajout_=false;
+		foreach(CoinGauche c,liste_.cles()){
+			foreach(CoinGauche d,directions_){
+				Coordonnees voisin_=tuile_voisine(coords_,d,_ligue)
+				if(voisin_==Coordonnees()){
+					continue
+				}
+				QList<Coordonnees> cles_=liste_.cles(voisin_)
+				if(cles_.isEmpty()){
+					CoinGauche cle_
+					cle_.first=c.first+d.first
+					cle_.second=c.second+d.second
+					if(liste_.cles().contains(cle_)){
+						liste_.valeur(cle_)=voisin_
+						ajout_=true
+					}
+				}
+			}
+		}
+		if(!ajout_){
+			break;
+		}
+	}	
+	return liste_;
+}
+
+

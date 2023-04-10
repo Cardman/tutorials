@@ -1,0 +1,3 @@
+﻿TELEPORT est une attaque permettant de fuir le combat contre un pokémon sauvage.
+
+L'attaque TELEPORT échouera toujours dans un combat contre un dresseur.

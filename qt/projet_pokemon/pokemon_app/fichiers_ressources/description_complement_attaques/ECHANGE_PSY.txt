@@ -1,0 +1,8 @@
+﻿ECHANGE_PSY est une attaque telle que:
+le lanceur donne son statut à la cible.
+
+Exemple: un pokémon A est paralysé est lance l'attaque ECHANGE_PSY sur un pokémon B non immunisé à la paralysie et sain de statut (OK).
+Alors le pokémon A est guéri de sa paralysie et le pokémon B devient paralysé.
+
+L'attaque échoue si et seulement si le lanceur n'a pas de statut altéré, ou la cible possède déjà un statut altéré ou la cible est immunisé au statut altéré
+possédé par le lanceur.

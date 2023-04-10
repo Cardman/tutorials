@@ -1,0 +1,14 @@
+EFFET_L	L'effet affecte le lanceur.
+EFFET_A	L'effet affecte un autre pokémon que le lanceur.
+EFFET_ANTI_IMMU	L'attaque permet d'attaquer un pokémon contenant le type $1 avec une attaque de type $2
+EFFET_CLIMAT	L'attaque met en place le climat $1 (actif ou non selon les pokémons au combat) pendant 5 tours à la base.
+EFFET_DEGAT	L'attaque a une puissance de $1 et un taux de coup critique de $2.
+EFFET_DEGAT_FIXE	L'attaque inflige toujours $1 points de dégâts et donc n'inflige jamais de coup critique.
+EFFET_MULT_PUISS_ATT	Les attaques contre le lanceur de type $1 ont une puissance multipliée par $2.
+EFFET_MULT_PUISS_ATT_2	Les attaques du lanceur de type $1 ont une puissance multipliée par $2.
+EFFET_STATISTIQUE	Les statistiques $2 $1 gagne $4 cran avec une probabilité de $3
+EFFET_STATUT	L'attaque inflige un des statuts suivants $1 avec une probabilité de $2 sur $3, la loi étant $4.
+EFFET_TAUX_DEGATS	$1 gagne $2 des dégâts infligés par l'attaque.
+EFFET_TAUX_PV_MAX	$2 se voit restaurer $1 de ses pv max sous le climat $3 actif.
+EFFET_TAUX_PV_MAX_SANS	$2 se voit restaurer $1 de ses pv max sans climat actif.
+EFFET_TAUX_PV_RESTANTS	$2 perd $1 de ses pv restants.

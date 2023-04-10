@@ -1,0 +1,25 @@
+﻿ENCORE est une attaque obligeant la cible à répéter de 4 à 8 tours sa dernière attaque (celle du tour précédent),
+avec une probabilité de 1/5 que les effets s'estompent.
+Si l'attaque lancé au tour précédent ne possède plus de pp, alors ENCORE s'arrête.
+
+ENCORE échoue si et seulement si la cible n'a pas utilisé d'attaque au cours du tour précédent, ou vient d'entrer sur le terrain ou
+ou si la cible est déjà sous les effets de l'attaque ENCORE ou si
+la dernière attaque de la cible est une des suivantes:
+COPIE
+ENCORE
+GRIBOUILLE
+LUTTE
+MIMIQUE
+MORPHING
+
+Si l'attaque ciblée ne peut plus être choisie à cause d'une attaque (PROVOC, ANTI_SOIN...), alors la cible sera forcée d'utiliser LUTTE,
+jusqu'à ce que la cible ne soit plus sous les effets de l'attaque ENCORE.
+
+Si un Pokémon sous ENCORE utilise RELAIS, alors le Pokémon suivant devra utiliser la même attaque s'il la connait. 
+
+Si la cible de ENCORE a lancé REFLET_MAGIK, deux cas se distinguent
+	si le lanceur peut subir l'attaque ENCORE, alors le lanceur répète finalement l'attaque lancée juste avant ENCORE.
+	sinon rien ne passe.
+
+Si la cible ou le lanceur de ENCORE switchent, alors les effets de l'attaque ENCORE s'arrêtent.
+Si le lanceur de ENCORE tombe un peu après KO, alors les effets de l'attaque ENCORE s'arrêtent.

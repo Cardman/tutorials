@@ -1,0 +1,1 @@
+Le type de l'attaque TECHNO_BUSTER dépend du module porté.

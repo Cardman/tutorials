@@ -1,0 +1,10 @@
+﻿PIEGE_DE_ROC est une attaque telle que:
+tout adversaire entrant sur le terrain,
+à l'exception des pokémons ayant la capacité GARDE_MAGIK ou sous l'effet de LEVIKINESIE ou de VOL_MAGNETIK.
+est subi pv_max * coeff/8 pv perdus, où pv_max est le nombre de pv max du pokémon entrant, et coeff, le coefficient d'efficacité du type ROCHE
+sur les types du pokémon entrant.
+
+Les attaques ANTI_BRUME et TOUR_RAPIDE lancé par l'équipe adverse du lanceur de PIEGE_DE_ROC permettent de se débarrasser des picots lancés par l'adversaire.
+En fait, les attaques ANTI_BRUME et TOUR_RAPIDE enlève les picots posés par les combattants de l'équipe adverse.
+
+Si un des adversaires avait lancé REFLET_MAGIK alors c'est l'équipe du lanceur qui se retrouve avec des PIEGE_DE_ROC dans son camp.

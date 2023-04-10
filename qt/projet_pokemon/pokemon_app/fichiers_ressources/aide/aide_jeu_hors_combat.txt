@@ -1,0 +1,126 @@
+Les seules touches utilisables sur le clavier sont :
+\thaut: déplacer le personnage vers le haut
+\tbas: déplacer le personnage vers le bas
+\tgauche: déplacer le personnage vers la gauche
+\tdroite: déplacer le personnage vers la droite
+sinon il faut utiliser le bouton gauche de la souris.
+Si le personnage n'a pas la même orientation que la direction choisie,
+alors le personnage ne fait que de prendre la nouvelle orientation.
+
+Le menu se compose des différents boutons, un seul à la fois peut être choisi:
+\tAIDE
+\tNOUVEAU JEU
+\tBASE DE DONNEES
+\tINVENTAIRE
+\tEQUIPE
+\tSAUVEGARDER
+\tCHARGER
+\tOPTIONS
+\tJOUEUR
+\tUTILITAIRE
+
+Cliquer sur NOUVEAU JEU demande s'il faut sauvegarder la partie en cours en cours de partie jouée.
+Dans ce cas, la partie en cours est écrasée et le jeu vous demande si votre héros sera féminin ou masculin
+et le nom de votre héros.
+Il vous suffit alors de cliquer sur l'image pour indiquer le sexe de votre héros
+et de cliquer sur les touches du clavier virtuel pour indique le nom de votre héros.
+
+Cliquer sur BASE DE DONNEES vous donne le choix entre les différentes actions:
+\tPOKEMONS
+\tATTAQUES
+\tOBJETS
+\tCAPACITES
+\tDONNEES CARTOGRAPHIQUES
+
+Cliquer sur POKEMONS vous permet de choisir dans une liste avec les miniatures, les numéros et les noms des pokemons,
+la fiche du pokémon voulue.
+
+Il est possible de trier par numéro ou par nom (croissant ou décroissant) les éléments de la liste des pokémons.
+
+Cliquer sur ATTAQUES vous permet de choisir dans une liste avec les noms et les types des attaques,
+la fiche de l'attaque voulue.
+
+Il est possible de trier par type puis par nom (croissant ou décroissant) les éléments de la liste des attaques
+et de trier seulement par nom (croissant ou décroissant) les éléments de la liste des attaques.
+
+Cliquer sur OBJETS vous permet de choisir dans une liste avec les noms et les types des objets,
+la fiche de l'objet voulu.
+
+Il est possible de trier par type puis par nom (croissant ou décroissant) les éléments de la liste des objets
+et de trier seulement par nom (croissant ou décroissant) les éléments de la liste des objets.
+
+Cliquer sur CAPACITES vous permet de choisir dans une liste avec les noms des capacités,
+la fiche de la capacité voulue.
+
+Il est possible de par nom (croissant ou décroissant) les éléments de la liste des capacités.
+
+Un lieu est un ensemble de plateaux (un plateau est représenté par un rectangle graphiquement).
+
+Cliquer sur DONNEES CARTOGRAPHIQUES vous donne le choix entre les différentes actions:
+\tCARTE
+\tLIEUX
+\tLIGUES
+\tPOKEMON DE DEPART ET NOMBRE MAXIMAL D'ATTAQUES
+
+Cliquer sur CARTE vous permet de voir la minimap et les lieux pouvant y être accédés.
+
+Cliquer sur LIEUX vous permet de choisir un lieu pour choisir un des plateaux et de voir le type et le nom du lieu ainsi que
+le type et le nom des lieux voisins graphiquement.
+En choisissant un plateau,
+vous pourrez voir graphiquement l'état actuel du plateau dépendant des actions effectuées au cours de cette partie.
+Il sera possible de sélectionner une tuile du plateau et de récupérer les informations telles que:
+\tun changement éventuel de lieu et de plateau lié à cette tuile (le nom et le type du lieu et le numéro de plateau sont affichés)
+\tle type d'environnement (route, herbe...)
+\tle personnage éventuel (et son rôle)
+\tl'objet à ramasser
+\tle pokémon à ramasser
+\tUn lieu de stockage de pokémons
+\tle pokémon fixe et pouvant être combattu pour être capturé
+\tles pokémons pouvant apparaître en marchant avec le nombre de pas moyen séparant deux apparitions de pokémons sauvage consécutives
+\tles pokémons pouvant apparaître en pêchant
+\tl'orientation du muret
+\tune condition d'accès en fonction des ligues battues
+Les pokémons sauvages sont triés par ordre d'apparition si le modèle n'est pas aléatoire, par ordre de probabilité sinon.
+Les informations sur les dresseurs sont la miniature, l'image, le nom, les équipes des pokémons mis en jeu, les récompenses de base et totale
+liées à chaque équipe, la multiplicité du combat. Pour chaque équipe (qui définit un match), les pokémons sont triés par ordre de jeu.
+Si c'est un champion, d'autres informations comme les capsules technique et secrètes et le badge sont ajoutés.
+Pour chaque personnage non dresseur, son role est affiché (soigneur de pokemon, tenant de pension, move tutor (ou enseignant d'attaques), capacité de faire revivre un fossile, donneur d'objet ou de pokémon ou de capsules secrètes, vendeur d'objets ou de capsules techniques).
+Pour chaque dresseur, il vous est possible de savoir combien de fois vous l'avez battu.
+Pour chaque tenant de pension, il est possible de savoir quels pokemons sont éventuellement présents et combien il reste de pas à faire au minimum.
+Pour chaque vendeur de capsules techniques, il est possible de savoir quelles capsules sont vendues (une description de l'attaque associée est faite).
+Pour chaque vendeur d'objets, il est possible de savoir quelles objets sont vendus (une description de l'objet est faite).
+Pour chaque donneur d'objet, il est possible de savoir si vous avez ou non pris l'objet et la description de l'objet.
+Pour chaque donneur de pokémon, il est possible de savoir si vous avez ou non pris le pokémon.
+Pour chaque pokémon, le nom, le genre, le niveau, la capacité, l'objet et les attaques sont affichés.
+Il est possible de voir la fiche du pokémon, la fiche de sa capacité, la fiche de son éventuel objet, la fiche de chacune de ses attaques.
+Pour chaque objet à ramasser ou à recevoir d'un personnage, une description est faite.
+
+Cliquer sur LIGUES vous permet de choisir une ligue pour choisir un des plateaux et de voir le nom de la ligue, le plateau (hors ligue) directement lié à cette ligue et la tuile d'origine d'accès (dans la ligue) à la ligue
+En choisissant un plateau,
+vous pourrez voir graphiquement l'état actuel du plateau dépendant des actions effectuées au cours de cette partie.
+Il sera possible de sélectionner une tuile du plateau et de récupérer les informations telles que:
+\tle type d'environnement (route, herbe...)
+\tle dresseur présent
+\tla tuile à atteindre pour le plateau contenant le dresseur suivant
+Les informations sur les dresseurs sont la miniature, l'image, le nom, l'équipe des pokémons mis en jeu, la récompenses de base et totale
+liées à cette équipe, la multiplicité du combat. Les pokémons sont triés par ordre de jeu.
+Pour chaque dresseur, il vous est possible de si vous l'avez battu.
+Pour chaque pokémon, le nom, le genre, le niveau, la capacité, l'objet et les attaques sont affichés.
+Il est possible de voir la fiche du pokémon, la fiche de sa capacité, la fiche de son éventuel objet, la fiche de chacune de ses attaques.
+Pour chaque objet à ramasser ou à recevoir d'un personnage, une description est faite.
+
+Cliquer sur POKEMON DE DEPART ET NOMBRE MAXIMAL D'ATTAQUES vous permet de voir la fiche du pokémon de départ, la fiche de sa capacité, la fiche de son éventuel objet, la fiche de chacune de ses attaques; et de voir le nombre maximal d'attaque.
+
+
+Cliquer sur INVENTAIRE dans le menu principal vous affiche les types d'objets (avec les capsules), les actions dépendant du type d'objet sélectionné,
+la description de l'objet sélectionné ou la description de l'attaque associée à la capsule.
+
+Pour commencer la gestion d'objets, il vous faut cliquer sur le type d'objet, puis sur l'objet dans la liste des objets de ce type.
+Utiliser un objet se fait toujours sur un pokémon, dans ce cas il disparaît après l'utilisation.
+L'utilisation sur un pokémon ne peut se faire que si l'objet permet un soin (baie ou non) local, un boost ou une évolution.
+L'utilisation directe (sans choisir de pokémons) ne peut se faire que si l'objet permet de repousser les pokémons sauvages ou un soin global.
+Attacher un objet se fait toujours sur un pokémon, dans ce cas l'objet qui était présent sur le pokémon est rangé dans l'inventaire
+et l'objet à attacher est donné au pokémon, l'objet ne disparaît pas.
+"Annuler" annule l'utilisation sur un pokémon ou l'attachement d'un objet à un pokémon.
+"Finir" permet de revenir au jeu.
+Pour apprendre une attaque par capsule, il suffit de cliquer sur "Apprendre" après avoir sélectionnée une capsule, puis un pokémon et si le nombre d'attaques du pokémon est maximal, l'attaque à remplacer.

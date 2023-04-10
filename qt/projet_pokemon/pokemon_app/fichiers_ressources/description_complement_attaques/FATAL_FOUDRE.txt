@@ -1,0 +1,2 @@
+La précision de l'attaque FATAL_FOUDRE est de 1/2 sous le soleil.
+L'attaque FATAL_FOUDRE a 100% de précision sous la pluie et ingore les variations de précision et d'esquive.

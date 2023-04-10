@@ -1,0 +1,57 @@
+C'est très efficace !
+C'est efficace !
+C'est peu efficace...
+C'est très peu efficace...
+Aucun effet...
+Coup critique !!
+$1 lance $2 sur $3.
+$1 lance $2 sur les adversaires.
+$1 lance $2 sur tous les pokémons.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $2 est immunisé au type $4.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $2 est immunisé à l'attaque $3.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $2 possède la capacité garde-mystik et $3 n'est pas efficace contre $2.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $2 tient la baie énigma et $3 est efficace contre $2.
+$1 a échoué dans le lancer de $2 sur $3, car la précision de l'attaque $2 vaut $4.
+$1 est paralysé, $1 n'a pu lancer $2.
+$1 est confus depuis $2 tours.
+$1 s'inflige des dégâts.
+$1 n'est plus confus.
+$1 est KO.
+$1 a la trouille.
+$1 $2
+$1 est capturé!
+$1 est ajouté au pokédex.
+$1 commence à brûler.
+$1 est empoisonné.
+$1 est GRAVEMENT empoisonné.
+Vous manquez totalement de capturer $1, avec la $2.
+Mince ! $1 s'est libéré de sa $2 ...
+Cela y était presque, pour la capture de $1 avec la $2.
+Pas de chance, il manque 1 rebond pour la capture de $1 avec la $2.
+$1 gagne $2 euros en ayant battu $3.
+$1 est gelé, $1 n'a pu lancer $2.
+$1 se repose depuis $2 tours, il reste au moins $3 tours de repos et au plus $4 tours de repos.
+$1 dort depuis $2 tours, il reste au moins $3 tours de sommeil et au plus $4 tours de sommeil.
+$1 gagne $2 points d'expérience en ayant combattu $3.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $4 possède un clone.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 et $2 possèdent un clone.
+$1 n'a pas pu lancer l'attaque $2, car $1 est sous vol magnétik depuis $3 tours, il reste $4 tours avant que $1 puisse lancer l'attaque $2.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $2 a disparu, $3 affecte $2, $1 n'a pas annule-garde actif, $3 ne peut pas toucher $2 car $2 prépare l'attaque $4, $3 n'est ni PICOTS, ni PICS_TOXIK, ni PIEGE_DE_ROC, et $1 n'a pas utilisé verrouillage ou lire-esprit au tour précédent.
+$1 n'a pas pu lancer l'attaque $2, sur $3, car $1 est sous vol magnétik depuis $3 tours, $2 est de type SOL, il reste $4 tours avant que $1 puisse lancer l'attaque $2, sur $3.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $2 possède la capacité active BENET et $1 n'ignore pas BENET.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 et $2 sont de même sexe.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $4 est assexué.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 et $2 sont assexués.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $3 n'a pas d'effets.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 n'a pas utilisé stockage.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 est sous anti-soin.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 attaque avant $2.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $2 n'a pas réussi $4.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 attaque après $2, $2 a lancé $4 qui a réussi et $1 n'a ni lancé verrouillage ni lancé lire-esprit et n'a pas annule garde actif.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 attaque après $2, $2 a lancé $4 qui a réussi et $3 est une attaque de KO.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 attaque après $2, $1 est sous provoc et $3 n'inflige pas de dégâts.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 attaque après $2, $1 est sous entrave pour $3.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 attaque après $2, $1 aurait dû lancer une autre attaque que $3.
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 attaque après $2, $1 aurait dû lancer une attaque n'appartenant pas à $4, (les actuelles attaques de la cible).
+$1 n'a pas pu toucher $2, avec l'attaque $3, car $1 attaque après $2, et la gravité devient active.
+

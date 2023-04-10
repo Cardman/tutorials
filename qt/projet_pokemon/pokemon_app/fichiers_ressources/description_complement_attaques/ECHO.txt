@@ -1,0 +1,13 @@
+La puissance de l'attaque ECHO est multiplié par le nombre d'utilisations de cette attaque précédant son lancer plus un de la même équipe.
+
+Exemple: pour un combat triple,
+un pokémon A, un pokémon B, un pokémon C lancent l'attaque ECHO et sont dans la même équipe
+le pokémon C attaque après le pokémon B
+le pokémon B attaque après le pokémon A
+alors la puissance de l'attaque du pokémon B est le double de la puissance de l'attaque du pokémon A
+alors la puissance de l'attaque du pokémon C est le triple de la puissance de l'attaque du pokémon A
+
+Autre exemple:
+un pokémon A, un pokémon B lancent l'attaque ECHO et ne sont pas dans la même équipe.
+Ils sont les seuls à la lancer.
+alors la puissance de l'attaque du pokémon B vaut la puissance de l'attaque du pokémon A

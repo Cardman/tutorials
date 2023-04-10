@@ -1,0 +1,5 @@
+TITRE	Choisir un lieu ou une ligue
+ETIQUETTE_NOM	nom
+ETIQUETTE_TYPE	type
+LIGUE_SELECT	Ligue à selectionner
+VALIDER	Valider

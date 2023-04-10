@@ -1,0 +1,3 @@
+L'attaque IMPLORE permet au lanceur non porteur d'objet de prendre l'objet de la cible sauf si la cible n'en porte pas ou si la cible possède la capacité GLUE ou si la cible possède un clone.
+
+Cette attaque ne fait qu'infliger des dégâts si la cible ne porte pas d'objet ou si l'objet de la cible ne peut pas être obtenu.

@@ -1,0 +1,6 @@
+A chaque utilisation de l'attaque TAILLADE par le même lanceur, la puissance double.
+Cependant, le lanceur n'est pas bloqué sur l'attaque.
+
+Si l'attaque TAILLADE échoue la puissance de TAILLADE revient à la base pour le même lanceur.
+
+La puissance ne peut pas dépasser 160.

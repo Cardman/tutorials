@@ -1,0 +1,15 @@
+L'attaque FORCE_NATURE appelle une autre attaque en fonction de l'environnement de combat.
+
+Ce sont les pp de FORCE_NATURE sont utilisés et non l'attaque appelée.
+
+si l'environnement de combat 
+Lieu\tattaque appelée
+HAUTES_HERBES\tCANON_GRAINE
+HERBES\tCANON_GRAINE
+ROUTE\tSEISME
+DESERT\tSEISME
+ROCHE\tEBOULEMENT
+NEIGE\tBLIZZARD
+OCEAN\tHYDROCANON
+BATIMENT\tTRIPLATTAQUE
+

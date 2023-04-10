@@ -1,0 +1,2 @@
+﻿VIBRA_SOIN est une attaque telle que:
+les pv restaurés de la cible sont de 1/2 des pv max de la cible.

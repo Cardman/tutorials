@@ -1,0 +1,44 @@
+TITRE_DR	Nouveau pokémon dressé
+TITRE_SAUV	Nouveau pokémon sauvage
+TITRE_DONNE	Nouveau pokémon donné
+TITRE_LEG_FIXE	Nouveau pokémon légendaire fixe
+TITRE_DEPART	Nouveau pokémon de départ du jeu
+NOM_PK	Nom du pokémon :
+GENRE	Genre :
+NIVEAU	Niveau :
+CAPACITE	Capacité
+OBJET	Objet :
+CATEGORIE	Catégorie d'attaque :
+NOM_ATTAQUE	Nom d'attaque :
+ETIQUETTE_NOM	Nom
+ETIQUETTE_CATEGORIE	Catégorie
+ETIQUETTE_DIRECTE	Directe
+ETIQUETTE_TYPE	Type
+ETIQUETTE_PP	Points de pouvoir
+ETIQUETTE_PRECISION	Précision
+ETIQUETTE_PRIORITE	Priorité
+ETIQUETTE_PUISSANCE	Puissance
+ATTAQUES	Attaques :
+AJOUTER_ATTAQUE	Ajouter attaque
+SUPPRIMER_ATTAQUE	Supprimer attaque
+OUI	Oui
+NON	Non
+VALIDER	Valider
+TITRE_DR_2	Editer pokémon dressé
+TITRE_SAUV_2	Editer pokémon sauvage
+TITRE_DONNE_2	Editer pokémon donné
+TITRE_LEG_FIXE_2	Editer pokémon légendaire fixe
+TITRE_DEPART_2	Editer pokémon de départ du jeu
+ERREUR	Erreur
+SUCCES	Succès
+NOM_PK_INVAL	Nom de pokémon $1 invalide
+CAPACITE_PK_INVAL	Capacité $1 invalide
+GENRE_PK_INVAL	Genre $1 invalide
+OBJET_PK_INVAL	Objet $1 invalide
+INDICE_SUPPR_ATT	Indice de suppression d'attaque invalide!
+SUPPR_ATT_FINIE	Suppression d'attaque finie!
+AJOUT_ATT_FINI	Ajout d'attaque fini!
+ATTAQUE_INVAL	Attaque $1 invalide!
+ATTAQUE_DEJA_PRESENTE	Attaque $1 déjà présente!
+NB_MAX_ATTAQUES	Nombre maximal d'attaques atteint:
+ABS_ATTAQUES	Pas d'attaque!

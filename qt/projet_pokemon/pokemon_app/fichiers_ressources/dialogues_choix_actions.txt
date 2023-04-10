@@ -1,0 +1,28 @@
+$1 n'est pas un combattant, donc $1 ne peut pas lancer $2.
+$1 ne peut pas être soigné car $1 prépare $2.
+$1 ne peut pas être soigné car $1 est bloqué sur $2.
+$1 ne peut pas lancer $2.
+$1 ne peut pas être remplacé par $2, avec l'attaque $3, car $2 est KO.
+$1 n'est pas un combattant, donc $1 ne peut pas être remplacé.
+$1 est un combattant, donc $1 ne peut pas remplacer.
+$1 ne peut pas être remplacé par $2, par un switch, car $2 est KO.
+$1 ne peut pas être soigné car $1 est sous embargo depuis $3 tours.
+$1 actions sont choisies par l'utilisateur, $2 est le maximum d'actions autorisées par tour.
+$1 ne peut être soigné avec $2, car il y a $3 $2 dans l'inventaire et $4 $2 sont choisies dans l'inventaire pour le tour
+$1 ne peut pas lancer $2, car $2 n'a plus de pp.
+$1 ne peut pas lancer $2, car $1 est bloqué sur $3.
+$1 ne peut pas lancer $2, car $1 prépare l'attaque $3.
+$1 ne peut pas lancer $2, car $1 possède un clone.
+$1 ne peut pas lancer $2, car une des attaques $2 ou $3 est en cours de préparation, il reste $4 tours avant d'attaquer avec $2.
+$1 ne peut pas lancer $2, car $1 est sous anti-soin depuis $3 tours, il reste $4 tours pour l'anti-soin.
+$1 ne peut pas lancer $2, car $1 est sous provoc depuis $3 tours, il reste au moins $4 tours pour la provoc et au plus $5 pour la provoc.
+$1 ne peut pas lancer $2, car $1 est sous entrave pour l'attaque $2 depuis $3 tours par l'adversaire $4, il reste au moins $5 tours pour l'entrave et au plus $6 pour l'entrave.
+$1 ne peut pas lancer $2, car $1 est sous possessif pour l'attaque $2 par l'adversaire $3.
+$1 ne peut pas lancer $2, car $1 est sous encore pour l'attaque $3 depuis $4 tours par l'adversaire $5, il reste au moins $6 tours pour l'encore et au plus $7 pour l'encore.
+$1 ne peut pas lancer $2, car $1 est sous tourmente pour l'attaque $2 par l'adversaire $3.
+$1 ne peut pas être remplacé par un switch, car $2 a lancé une attaque empêchant le switch, et $1 ne porte ni l'objet CARAPUCE-MUE, ni l'objet BOULE FUMEE.
+$1 ne peut pas être remplacé par un switch, car $2 a la capacité marque-ombre, et $1 ne porte ni l'objet CARAPUCE-MUE, ni l'objet BOULE FUMEE.
+$1 ne peut pas être remplacé par un switch, car $2 a la capacité piège et $1 ne contient pas le type vol et ne possède pas la capacité lévitation, et $1 ne porte ni l'objet CARAPUCE-MUE, ni l'objet BOULE FUMEE.
+$1 ne peut pas être remplacé par un switch, car $2 a la capacité piège et $1 contient le type vol mais la gravité est présente depuis $3 tours et il reste $4 tours avant que la gravité ne s'arrête, et $1 ne porte ni l'objet CARAPUCE-MUE, ni l'objet BOULE FUMEE.
+$1 ne peut pas être remplacé par un switch, car $2 a la capacité piège et $1 possède la capacité lévitation mais la gravité est présente depuis $3 tours et il reste $4 tours avant que la gravité ne s'arrête, et $1 ne porte ni l'objet CARAPUCE-MUE, ni l'objet BOULE FUMEE.
+$1 ne peut pas être remplacé par un switch, car $2 a la capacité magnépiège et $1 contient le type acier, et $1 ne porte ni l'objet CARAPUCE-MUE, ni l'objet BOULE FUMEE.

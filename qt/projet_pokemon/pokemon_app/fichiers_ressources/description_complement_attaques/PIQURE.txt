@@ -1,0 +1,11 @@
+L'attaque PIQURE permet au lanceur d'utiliser la baie de la cible puis de détruire la baie de la cible tout en doublant la puissance de base de l'attaque.
+
+Si la cible possède un clone, alors la puissance de base de l'attaque n'est pas doublée et la baie de la cible n'est ni utilisée ni détruite.
+
+Si la cible a la capacité TENSION, et est un adversaire du lanceur alors la puissance de base de l'attaque est doublée mais la baie de la cible n'est ni utilisée ni détruite.
+
+Si le lanceur est sous l'effet de l'attaque EMBARGO, alors la puissance de base de l'attaque est doublée et la baie de la cible est détruite sans être utilisée par le lanceur.
+
+Si l'attaque ZONE MAGIQUE est active, alors la puissance de base de l'attaque est doublée et la baie de la cible est détruite sans être utilisée par le lanceur.
+
+Si la cible ne porte pas de baie, alors la puissance de l'attaque PIQURE n'est pas doublé.

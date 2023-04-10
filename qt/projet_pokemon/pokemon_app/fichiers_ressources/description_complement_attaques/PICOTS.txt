@@ -1,0 +1,11 @@
+﻿PICOTS est une attaque telle que:
+tout adversaire entrant sur le terrain,
+à l'exception des pokémons ayant le type VOL ou la capacité LEVITATION non soumis aux effets de GRAVITE et de ANTI_AIR,
+et à l'exception des pokémons ayant la capacité GARDE_MAGIK ou sous l'effet de LEVIKINESIE ou de VOL_MAGNETIK.
+perd pv max * (min(nb_picots,3) + 1) / 16 pv restants, où pv max est le nombre de pv max du pokémon entrant et nb_picots est le nombre de picots
+utilisé par l'équipe du lanceur.
+
+Les attaques ANTI_BRUME et TOUR_RAPIDE lancé par l'équipe adverse du lanceur de PICOTS permettent de se débarrasser des picots lancés par l'adversaire.
+En fait, les attaques ANTI_BRUME et TOUR_RAPIDE enlève les picots posés par les combattants de l'équipe adverse.
+
+Si un des adversaires avait lancé REFLET_MAGIK alors c'est l'équipe du lanceur qui se retrouve avec des PICOTS dans son camp.

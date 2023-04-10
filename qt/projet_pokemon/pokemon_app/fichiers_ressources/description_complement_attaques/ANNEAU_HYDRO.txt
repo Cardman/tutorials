@@ -1,0 +1,10 @@
+﻿ANNEAU_HYDRO est une attaque dont les effets ont lieu en fin de tour.
+Cette attaque restaure 1/16 des pv maximaux du lanceur.
+
+Si le lanceur est sous l'effet d'une attaque ANTI_SOIN,
+alors le lanceur pourra toujours utiliser ANNEAU_HYDRO, mais ne pourra voir sa vie restaurer après qu'il n'est plus sous ANTI_SOIN.
+
+Si un pokémon ayant lancé SAISIE sur le lanceur de ANNEAU_HYDRO, c'est le lanceur de SAISIE qui va bénéficier de ANNEAU_HYDRO à la place
+du lanceur de ANNEAU_HYDRO.
+
+Le switch annule le bonus de ANNEAU_HYDRO, sauf si RELAIS est utilisé.

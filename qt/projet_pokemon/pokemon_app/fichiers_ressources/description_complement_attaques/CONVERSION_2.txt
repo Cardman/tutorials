@@ -1,0 +1,7 @@
+CONVERSION_2 est une attaque de changement de type.
+Le lanceur voit son type changeant en un type résistant au type de la dernière attaque lui ayant infligé des dégâts.
+Ce nouveau type est différent.
+Ce changement de type est aléatoire uniforme.
+
+CONVERSION_2 échoue s'il n'existe aucun type ne faisant pas partie de ceux du lanceur résistant à la dernière attaque qui a infligé des dégâts au lanceur.
+CONVERSION_2 échoue si le lanceur n'a pas subi de dégâts entre le dernier envoi et le lancer de l'attaque.

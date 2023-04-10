@@ -1,0 +1,11 @@
+﻿GRAVITE est une attaque globale.
+Cette attaque possède des effets durant 5 tours.
+Cette attaque permet aux attaques SOL de toucher les pokémons ayant le type VOL ou la capacité LEVITATION.
+
+Les pokémons en tour de chargement des attaques VOL,REBOND et CHUTE_LIBRE reviennent au sol.
+Les effets de LEVIKINESIE et de VOL_MAGNETIK sont annulés.
+Les attaques LEVIKINESIE,VOL_MAGNETIK,VOL,REBOND,CHUTE_LIBRE,PIED_SAUTE,PIED_VOLTIGE et TREMPETTE échoue si elles sont lancées.
+La précison des attaques est multipliée par 8/5. Ceci ne compte pas pour un boost de précision, ni d'esquive.
+
+Les pokémons ayant le type VOL ou la capacité LEVITATION deviennent sensible aux picots et aux pics toxiks et ne peuvent pas se retirer sans utiliser
+une attaque comme RELAIS,DEMI_TOUR ou CHANGE_ECLAIR si un adversaire possède la capacité PIEGE.

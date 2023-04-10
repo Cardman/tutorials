@@ -1,0 +1,2 @@
+﻿PERMUGARDE est une attaque telle que
+le lanceur et la cible échange les boosts de défense et de défense spéciale.

@@ -1,0 +1,4 @@
+﻿Si le lanceur de l'attaque MALEDICTION possède le type SPECTRE,
+alors le lanceur sacrifie 1/2 de ses pv max, puis la cible perd 1/8 de ses pv max(sauf cas d'imunisation) jusqu'à ce qu'elle switche ou soit KO.
+
+Cet effet est transmissible par l'attaque RELAIS pour la cible de MALEDICTION.

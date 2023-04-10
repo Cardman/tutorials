@@ -1,0 +1,1 @@
+La puissance de l'attaque BULLDOBOULE double si la cible avait utilisé et réussi l'attaque LILLIPUT avant le lancer de BULLDOBOULE.

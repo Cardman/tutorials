@@ -1,0 +1,1 @@
+Si l'attaque PIED_VOLTIGE échoue ou la cible est immunisée à l'attaque PIED_VOLTIGE (par type, capacité...) alors le lanceur perd 1/8 des dégâts qu'il aurait dû infliger.

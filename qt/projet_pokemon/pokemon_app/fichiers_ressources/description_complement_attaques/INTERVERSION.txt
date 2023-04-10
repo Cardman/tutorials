@@ -1,0 +1,6 @@
+﻿INTERVERSION est une attaque permettant d'échanger les positions du lanceur et de la cible (la cible est un partenaire du lanceur).
+
+L'attaque INTERVERSION est la seule à avoir pour cible un partenaire à la fois.
+L'attaque INTERVERSION échoue si et seulement si le combat est simple ou s'il n'y a pas de partenaire.
+
+Cette attaque ne peut pas être utilisée par PHOTOCOPIE.

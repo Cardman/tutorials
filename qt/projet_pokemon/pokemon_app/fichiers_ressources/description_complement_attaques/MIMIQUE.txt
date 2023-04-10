@@ -1,0 +1,22 @@
+﻿MIMIQUE est une attaque en appelant une autre.
+Cette attaque appelle une attaque qu'a subi le lanceur autre que:
+
+ACUPRESSION
+BLABLADODO
+BOOST
+CARNAREKET
+COPIE
+ENCORE
+GRIBOUILLE
+IMITATION
+LUTTE
+MALEDICTION_2
+METRONOME
+MIMIQUE
+MORPHING
+POSSESSIF
+PRESCIENCE
+REQUIEM
+
+Pour que l'attaque MIMIQUE puisse appeler une attaque, il faut que le lanceur a subi les effets d'une attaque réussie sur lui.
+Par conséquent, une attaque ne visant que le lanceur ne peut pas être appelé par MIMIQUE.

@@ -1,0 +1,3 @@
+TITRE	Choisir un plateau
+TITRE_S	Supprimer un plateau
+VALIDER	Valider

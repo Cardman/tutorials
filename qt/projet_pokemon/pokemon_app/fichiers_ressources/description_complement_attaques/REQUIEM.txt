@@ -1,0 +1,4 @@
+﻿REQUIEM est une attaque globale.
+A la fin du 3e tour, tous les pokémons sur le terrain excepté ceux qui ont la capacité ANTI_BRUIT tombent KO.
+
+Si REQUIEM est réutilisé alors que cette attaque est active, alors le compteur tombe à 0.

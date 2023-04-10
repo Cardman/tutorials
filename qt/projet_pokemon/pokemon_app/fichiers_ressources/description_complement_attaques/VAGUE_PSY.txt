@@ -1,0 +1,2 @@
+Les dégâts de l'attaque VAGUE_PSY infligés à la cible suivent la loi aléatoire uniforme suivante:
+N * X /10 où X peut prendre une valeur aléaoire entière comprise entre 5 et 15 et N est le niveau du lanceur.

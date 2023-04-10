@@ -1,0 +1,4 @@
+﻿SOUVENIR est une attaque de sacrifice:
+en effet, le lanceur tombe KO et la cible perd 2 crans d'attaque physique et 2 crans d'attaque spéciale.
+
+L'attaque SOUVENIR échoue si et seulement si il n'existe pas de pokémon à l'arrière de l'équipe du lanceur de SOUVENIR.

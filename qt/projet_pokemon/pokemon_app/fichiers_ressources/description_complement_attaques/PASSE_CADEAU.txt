@@ -1,0 +1,5 @@
+﻿PASSE_CADEAU est une attaque telle que:
+Le lanceur donne son objet à la cible.
+
+L'attaque PASSE_CADEAU échoue si et seulement si
+le lanceur ne porte pas d'objet ou la cible porte un objet ou la cible possède un clone ou la cible a réussi l'attaque REFLET_MAGIK.

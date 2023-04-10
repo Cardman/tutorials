@@ -1,0 +1,1 @@
+La puissance de l'attaque SAUMURE double si la cible a un nombre inférieur ou égal de ses pv restants à 1/2 de ses pv max.

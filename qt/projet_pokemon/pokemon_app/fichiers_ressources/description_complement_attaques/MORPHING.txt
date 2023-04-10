@@ -1,0 +1,4 @@
+﻿MORPHING est une attaque de transformation de forme.
+Cette attaque permet au lanceur de prendre le nom, la masse, la taille, la capacité, les attaques (avec 5 PP chacune), les types et les statistiques (sans les boosts, ni les pv) de la cible.
+
+Le lanceur de MORPHING conserve sa nouvelle forme même s'il se retire. Cette forme n'est cependant conservable que pendant le combat.

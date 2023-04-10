@@ -1,0 +1,12 @@
+﻿ECHANGE est une attaque échangeant les capacités spéciales du lanceur et de la cible.
+Cette attaque désactive les capacités avant d'être échangées, puis active les capacités après être échangées.
+
+Le lanceur voit sa capacité se désactiver.
+La cible voit sa capacité se désactiver.
+Le lanceur et la cible échangent leurs capacités.
+Le lanceur voit sa nouvelle capacité (ancienne capacité de la cible) s'activer.
+Le cible voit sa nouvelle capacité (ancienne capacité du lanceur) s'activer.
+
+Si le lanceur ou la cible switchent alors les capacités spéciales redeviennent celles qui était possédées avant le combat.
+
+L'attaque ECHANGE échoue si et seulement si la cible possède la capacité GARDE_MYSTIK ou MULTI_TYPE.

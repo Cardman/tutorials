@@ -1,0 +1,25 @@
+PP:20
+TYPE:NORMAL
+CATEGORIE:AUTRE
+PRIORITE:0
+PRECISIONAT:55
+EFFET_STATUT[A,1,[CONFUSION,1]]
+FUITE_ADVERSE:VRAI
+prepa_tour:FAUX
+disparait pdt tour charg:FAUX
+AttConcTouche:
+Repet_coup:[(1,1)]
+Repet_tour:[(1,1)]
+lanceur_bloque:FAUX
+puis_mult:(1;1)
+ne_peut_pas_mettre_ko:VRAI
+puissance_fixe_base:VRAI
+Effet_SI_ECHEC:FAUX
+Effet_SI_NON_DEGAT:FAUX
+SEXE_OPPOSE:FAUX
+LANC_ENDORMI:FAUX
+ADV_ENDORMI:FAUX
+AUTRE UNIQ
+FAUX
+
+

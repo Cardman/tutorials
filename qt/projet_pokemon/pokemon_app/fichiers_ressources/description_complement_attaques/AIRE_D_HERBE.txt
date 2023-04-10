@@ -1,0 +1,5 @@
+La puissance de AIRE_D_HERBE est multipliée par le nombre de lanceurs de AIRE_D_EAU, AIRE_DE_FEU ou AIRE_D_HERBE ayant réussi leur attaque de la même équipe que le lanceur différents du lanceur. Pour la multiplication de la puissance, il n'est pas nécessaire que les autres lanceurs ne soient pas KO.
+
+Si l'attaque AIRE_DE_FEU est combinée avec l'attaque AIRE_D_HERBE pendant le même tour, alors, pendant 3 tours, les adversaires sur le terrain perdent à la fin de chaque tour 1/8 de leur pv max.
+
+Si l'attaque AIRE_D_EAU est combinée avec l'attaque AIRE_D_HERBE pendant le même tour, alors, pendant 3 tours, la vitesse des adversaires sur le terrain est calculée avec un cran de moins, sauf si le boost de vitesse est minimal, lors du calcul d'ordre d'attaque (premier, ... dernier à attaque).

@@ -1,0 +1,7 @@
+COPIE_TYPE est une attaque de changement de type.
+Cette attaque copie les types de la cible et remplace les types du lanceur.
+
+Si un pokémon lance SAISIE sur le lanceur de COPIE_TYPE, alors
+il prend les types du lanceur.
+
+Si la cible possède la capacité MULTI_TYPE, alors l'attaque COPIE_TYPE échoue.

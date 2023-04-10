@@ -1,0 +1,6 @@
+TITRE_C	Charger des données
+TITRE_S	Sauvegarder des données
+TITRE_E	Exporter les données en cours
+CHAMP_FICHIER	Nom du fichier à enregistrer/exporter
+FICHIER_EXIST	Fichier déjà existant
+ECRASER	Voulez-vous écraser le fichier\n $1 ?

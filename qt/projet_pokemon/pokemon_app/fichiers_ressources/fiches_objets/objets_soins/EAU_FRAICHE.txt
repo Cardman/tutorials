@@ -1,0 +1,3 @@
+SOIN_PV[50]
+BONHEUR[1,2]
+200

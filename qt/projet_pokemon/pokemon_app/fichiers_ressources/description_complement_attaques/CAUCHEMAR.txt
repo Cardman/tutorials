@@ -1,0 +1,8 @@
+﻿CAUCHEMAR est une attaque dont les effets ont lieu en fin de tour.
+Cette attaque ne fonctionnne que si la cible est endormie.
+La cible perd 1/4 de ses pv max.
+Les pokémons ayant GARDE_MAGIK sont immunisés aux effets de CAUCHEMAR
+
+Les effets de cauchemar s'arrêtent lorsque la cible est réveillée à la fin d'un tour.
+
+Si la cible ou le lanceur switchent, alors les effets de cauchemar s'arrêtent.

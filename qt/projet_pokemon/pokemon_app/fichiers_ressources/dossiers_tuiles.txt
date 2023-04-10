@@ -1,0 +1,12 @@
+sols_accessibles
+sable
+routes
+roches
+neige
+batiments
+shop
+ligue
+habitation
+centre_pk
+arene
+autres_obstacles

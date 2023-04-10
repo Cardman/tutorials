@@ -1,0 +1,2 @@
+La puissance des attaques de type $1 est multipliée par $2.	The power of the moves having the type $1 is multiplied by $2.
+Si un pokémon avec actuellement la capacité MULTI_TYPE tient cette plaque, alors il prend le type $3.	If a pokemon having currently the current ability MULTI_TYPE held this plate, then the set of its types becomes $3.

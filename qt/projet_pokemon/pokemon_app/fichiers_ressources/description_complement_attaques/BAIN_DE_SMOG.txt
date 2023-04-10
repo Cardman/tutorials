@@ -1,0 +1,2 @@
+BAIN_DE_SMOG est une attaque annulant les changements de statistiques (y compris l'esquive et la précision de la cible).
+L'attaque BAIN_DE_SMOG échoue si et seulement si la cible possède un clone.

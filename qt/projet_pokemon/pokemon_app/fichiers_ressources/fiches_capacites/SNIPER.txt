@@ -1,0 +1,1 @@
+MULT_DEGATS_CC[3/2]

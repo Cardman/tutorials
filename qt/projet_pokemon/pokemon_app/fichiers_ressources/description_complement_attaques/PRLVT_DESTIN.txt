@@ -1,0 +1,6 @@
+﻿PRLVT_DESTIN est une attaque telle que:
+si le lanceur tombe KO avant l'attaque suivant la prochaine attaque du lanceur de PRLVT_DESTIN, par une attaque lancée par un adversaire,
+alors le lanceur de l'attaque ayant mis KO le lanceur de PRLVT_DESTIN est KO.
+
+Ceci implique que les dégâts de fin de tour ne feront rien sur un pokémon ayant attaqué le lanceur de PRLVT_DESTIN mais n'ayant pas mis KO
+le lanceur de PRLVT_DESTIN.

@@ -1,0 +1,5 @@
+﻿GARDE_LARGE est une attaque de protection d'équipe.
+Cette attaque permet au lanceur et à son équipe (sur le terrain), d'être protégés contre les attaques multi cibles.
+
+Si un adversaire lance une attaque ne visant qu'une cible, alors l'attaque GARDE_LARGE ne bloquera pas cette attaque.
+La précision de cette attaque est la même que pour ABRI,DETECTION,PREVENTION et TENACITE.

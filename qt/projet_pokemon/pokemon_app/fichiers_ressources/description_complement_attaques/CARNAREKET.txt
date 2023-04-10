@@ -1,0 +1,13 @@
+L'attaque CARNAREKET est telle que:
+les dégâts sont infligés à la fin du 2e tour après le lancer et dépendent de la cible lors du tour de lancement
+et non du tour d'impact.
+
+Les dégâts sont calculés au lancement de l'attaque.
+
+Le calcul de précision ne vient qu'à la fin du 2e tour.
+
+L'attaque CARNAREKET ne peut pas faire de coup critique.
+
+Un PP de plus est consommé si et seulement si l'attaque CARNAREKET a réussi et la cible possède la capacité PRESSION.
+
+L'attaque CARNAREKET ne peut pas être lancée, si l'attaque PRESCIENCE est lancée mais n'a pas encore touché sa cible (y compris échoué).

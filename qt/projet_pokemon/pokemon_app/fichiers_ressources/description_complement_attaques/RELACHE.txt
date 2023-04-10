@@ -1,0 +1,5 @@
+La puissance de l'attaque RELACHE vaut 100 * nombre d'utilisation de stockage par le lanceur.
+
+Si le lanceur ne possède pas d'utilisation de stockage alors l'attaque RELACHE échoue.
+
+Le random pour la marge d'erreur sur les dégâts vaut toujours 1.

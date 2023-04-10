@@ -1,0 +1,3 @@
+TITRE	Mise à jour de la largeur
+LARGEUR	Largeur :
+VALIDER	Valider

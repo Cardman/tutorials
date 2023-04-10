@@ -1,0 +1,4 @@
+La puissance de l'attaque DON_NATUREL dépend de l'objet porté.
+Si le lanceur ne porte pas de baie alors la puissance de l'attaque est de 1.
+Si le lanceur est sous l'effet de embargo alors la puissance de l'attaque est de 1.
+Si l'attaque ZONE_MAGIQUE est active alors la puissance de l'attaque est de 1.

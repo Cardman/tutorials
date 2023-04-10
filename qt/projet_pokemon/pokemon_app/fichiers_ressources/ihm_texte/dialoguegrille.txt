@@ -1,0 +1,7 @@
+TITRE_L_H	Ajout de lignes en haut
+TITRE_C_G	Ajout de colonnes à gauche
+TITRE_L_B	Ajout de lignes en bas
+TITRE_C_D	Ajout de colonnes à droite
+NOMBRE_C	Nombre de colonnes à ajouter :
+NOMBRE_L	Nombre de lignes à ajouter :
+VALIDER	Valider

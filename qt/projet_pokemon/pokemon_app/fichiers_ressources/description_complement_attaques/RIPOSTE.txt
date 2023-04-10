@@ -1,0 +1,6 @@
+﻿RIPOSTE est une attaque pseudo offensive.
+Les dégâts infligés à la cible valent le double des dégâts des attaques physiques infligés au lanceur.
+
+Si le lanceur n'a pas subi de dégâts physiques, alors RIPOSTE échoue
+
+Cette attaque ne tient pas compte des résistances maus tient compte des immunités.

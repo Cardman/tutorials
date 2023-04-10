@@ -1,0 +1,13 @@
+ANTI_AIR est une attaque avec d'autres effets que des dégâts.
+
+Si la cible de cette attaque contient le type VOL, alors la cible devient sensible aux attaques SOL, jusqu'à ce qu'elle switche.
+Si la cible de cette attaque possède la capacité LEVITATION, alors la cible devient sensible aux attaques SOL, jusqu'à ce qu'elle switche.
+Si la cible de l'attaque ANTI_AIR est sous les effets de LEVIKINESIE ou de VOL_MAGNETIK, alors la cible ne sera plus
+sous les effets de de LEVIKINESIE ni de VOL_MAGNETIK.
+
+Si l'attaque CHUTE_LIBRE est utilisée sur la cible de ANTI_AIR par la suite, alors l'attaque CHUTE_LIBRE touchera la cible sous l'effet de ANTI_AIR, même si la cible possède le type VOL ou la capacité LEVITATION.
+
+L'attaque ANTI_AIR échoue si et seulement si la cible possède un clone ou a réussi l'attaque ATTERRISSAGE avant la tentative de lancer de l'attaque ANTI_AIR.
+
+Si l'attaque ANTI_AIR est utilisé contre un lanceur préparant l'attaque VOL,REBOND ou CHUTE_LIBRE, alors cette attaque inflige des dégâts mais n'a pas d'effet
+secondaire.

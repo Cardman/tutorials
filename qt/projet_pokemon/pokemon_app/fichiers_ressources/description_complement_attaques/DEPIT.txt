@@ -1,0 +1,12 @@
+DEPIT est une attaque de réduction de pp.
+Si la cible possède au moins 4 PP de la dernière attaque utilisée lors du tour précédent avant l'utilisation de DEPIT,
+alors la cible perd 4 PP de cette attaque,
+sinon la cible perd tous les PP de cette attaque.
+
+
+L'attaque DEPIT échoue si et seulement si la cible n'a pas utilisé d'attaque depuis son entrée sur le terrain ou n'a plus de PP pour l'attaque.
+
+Si la cible a utilisé REFLET_MAGIK
+et si le lanceur de DEPIT ne vient pas d'entrer sur le terrain
+et si le lanceur de DEPIT a lancé une attaque au tour précédent,
+alors le lanceur perd 4 PP de l'attaque utilisée lors du tour précédent.

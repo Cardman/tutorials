@@ -1,0 +1,35 @@
+﻿BLABLA_DODO est une attaque appelant une autre attaque possédée par le lanceur que:
+
+ASSISTANCE
+BABIL
+BLABLA_DODO
+BROUHAHA
+CHUTE_LIBRE
+COUD_KRANE
+COUPE_VENT
+ECLAIR_GELE
+FEU_GLACE
+INCENDIE
+LANCE_SOLEIL
+METRONOME
+MIMIQUE
+MITRA_POING
+MOI_D_ABORD
+PATIENCE
+PHOTOCOPIE
+PIQUE
+PLONGEE
+REBOND
+REPOS
+REVENANT
+TUNNEL
+VOL
+
+Si le lanceur ne possède pas d'attaques autres que les précédentes, alors BLABLA_DODO échoue.
+
+Si le lanceur est sous l'effet de PROVOC, et que le lanceur possède au moins une attaque offensive
+(physique ou spéciale ou appelant une attaque offensive, PATIENCE, EFFORT) alors le choix aléatoire uniforme (les événements sont équiprobables)
+se fera parmi les attaques offensives.
+
+Si le lanceur est sous l'effet de PROVOC, et que le lanceur ne possède pas d'attaque offensive,
+alors l'attaque BLABLA_DODO échoue.

@@ -1,0 +1,6 @@
+﻿PREVENTION est une attaque de protection d'équipe.
+Cette attaque permet au lanceur et à son équipe (sur le terrain), d'être protégés contre les attaques avec une priorité suprieure ou égale à 1,
+sauf de RUSE.
+
+Si un adversaire lance une attaque de priorité négatif ou nulle, alors l'attaque PREVENTION ne bloquera pas cette attaque.
+La précision de cette attaque est la même que pour ABRI,DETECTION,GARDE_LARGE et TENACITE.

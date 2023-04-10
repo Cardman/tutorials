@@ -1,0 +1,4 @@
+De base l'attaque possède $1 pp.
+Le type de l'attaque est $2.
+La catégorie de l'attaque est $3.
+L'attaque a une priorité de $4.

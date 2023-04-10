@@ -1,0 +1,2 @@
+La puissance de l'attaque VENGEANCE double si un membre de l'équipe du lanceur tombe KO au tour précédent le lancer
+de l'attaque VENGEANCE ou au tour du lancer de l'attaque VENGEANCE.

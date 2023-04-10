@@ -1,0 +1,5 @@
+La puissance de AIRE_DE_FEU est multipliée par le nombre de lanceurs de AIRE_D_EAU, AIRE_DE_FEU ou AIRE_D_HERBE ayant réussi leur attaque de la même équipe que le lanceur différents du lanceur. Pour la multiplication de la puissance, il n'est pas nécessaire que les autres lanceurs ne soient pas KO.
+
+Si l'attaque AIRE_DE_FEU est combinée avec l'attaque AIRE_D_EAU pendant le même tour, alors, pendant 3 tours, les probabilités des effets secondaires des attaques utilisées par l'équipe des pokémons ayant lancé les attaques AIRE_DE_FEU et AIRE_D_EAU pendant le même tour, doublent.
+
+Si l'attaque AIRE_DE_FEU est combinée avec l'attaque AIRE_D_HERBE pendant le même tour, alors, pendant 3 tours, les adversaires sur le terrain perdent à la fin de chaque tour 1/8 de leur pv max.

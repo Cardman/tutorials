@@ -1,0 +1,3 @@
+Les dégâts infligés par l'attaque FRAPPE_ATLAS valent le niveau du lanceur.
+
+L'attaque ne fait rien si la cible est immunisée à cette attaque.

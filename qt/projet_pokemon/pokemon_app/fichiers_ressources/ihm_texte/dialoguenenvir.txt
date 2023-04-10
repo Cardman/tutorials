@@ -1,0 +1,5 @@
+TITRE	Nouvel environnement
+TYPE	Type :
+LARGEUR	Largeur :
+HAUTEUR	Hauteur :
+VALIDER	Valider

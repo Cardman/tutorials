@@ -1,0 +1,11 @@
+La puissance de l'attaque BOULE_ELEK est la suivante:
+si le rapport de la vitesse actuelle de la cible sur la vitesse actuelle du lanceur
+(en prenant compte toutes les variations de vitesse) est inférieur ou égal à 1/4
+la puissance de base est de 150;
+sinon si le rapport de la vitesse actuelle de la cible sur la vitesse actuelle du lanceur
+(en prenant compte toutes les variations de vitesse) est inférieur ou égal à 1/3
+la puissance de base est de 120;
+sinon si le rapport de la vitesse actuelle de la cible sur la vitesse actuelle du lanceur
+(en prenant compte toutes les variations de vitesse) est inférieur ou égal à 1/2
+la puissance de base est de 80;
+sinon la puissance de base est de 60.

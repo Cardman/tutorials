@@ -1,0 +1,108 @@
+﻿CLONAGE est une attaque créant un clone avec 1/4 des pv max du lanceur.
+CLONAGE protége son lanceur des attaques non offensives mais infligeant un statut (y compris CONFUSION (sauf VENT_VIOLENT), AMOUR, PEUR) ou une baisse de statistiques. (y compris ESQUIVE, PRECISION)
+CLONAGE empêche son lanceur d'utiliser PATIENCE,RIPOSTE,FULMIFER,VOILE_MIROIR.
+
+CLONAGE protége également de
+
+ANTI_AIR
+ANTI_SOIN
+BAILLEMENT
+BAIN_DE_SMOG
+BALANCE
+BARRAGE
+CAUCHEMAR
+CHUTE_LIBRE
+COPIE
+DEVOREVE
+ECHANGE_PSY
+EMBARGO
+FLATTERIE
+GRIBOUILLE
+LIRE_ESPRIT
+MALEDICTION_2
+PASSE_CADEAU
+PASSE_PASSE
+RANCUNE
+REGARD_NOIR
+SOUCIGRAINE
+SUC_DIGECTIF
+TOILE
+TOURMAGIK
+VAMPIGRAINE
+VANTARDISE
+VEROUILLAGE
+
+Les attaques infligeant des dégâts touche le clone en priorité, jusqu'à ce qu'il soit cassé.
+
+L'attaque CLONAGE échoue si le lanceur possède un nombre inférieur ou égal de pv restants à ses pv max ou si le lanceur possède déjà un clone.
+
+CLONAGE bloque tous les effets de statut causés par une capacité telle que STATIK,... ou des attaques comme LASER_GLACE,... (sauf VENT_VIOLENT, qui peut rendre confus un pokémon derrière un clone)
+Synchro peut toujours infliger un changement de statut à un Pokémon cloné.
+Carnareket et Prescience infligent des dégâts au Clone. Tous les autres dégâts de fin de tour sont infligés au Pokémon cloné.
+
+Si Bâillement est lancé sur un Pokémon qui lance CLONAGE par la suite, le Pokémon s'endormira comme prévu.
+
+//CLONAGE ne bloque pas Attraction, PRLVT Destin, Entrave, Encore, Clairvoyance, Permugarde, Buée Noire, Permucoeur, Possessif, Oeil Miracle, Flair, Requiem, Permuforce, Boost, Hurlement, Imitation, Echange, Dépit, Provoc, Tourmente, Morphing ou Cyclone.
+ATTRACTION
+BOOST
+BUEE_NOIRE
+CLAIRVOYANCE
+CYCLONE
+DEPIT
+ECHANGE
+ENCORE
+ENTRAVE
+FLAIR
+HURLEMENT
+IMITATION
+MORPHING
+OEIL_MIRACLE
+PERMUCOEUR
+PERMUFORCE
+PERMUGARDE
+POSSESSIF
+PRLVT_DESTIN
+PROVOC
+REQUIEM
+TOURMENTE
+
+Si un pokémon lance SAISIE sur le lanceur de CLONAGE alors c'est le lanceur de SAISIE
+qui crée son clone, à moins d'en avoir déjà un ou d'avoir au plus 1/4 des pv max.
+
+Les attaques électriques (y compris Cage-éclair) utilisées contre un Pokémon doté d'Aborb Volt et d'un Clone actif soigneront le Pokémon derrière le Clone. De même pour les Pokémon dotés de Torche, Motorisé et Absorb Eau quand le Pokémon derrière le Clone est ciblé par l'attaque appropriée. Feu Follet active Torche derrière un Clone. Cadeau frappe le Clone si elle inflige des dégâts, mais soigne le Pokémon derrière le clone si elle soigne.
+
+Si un Pokémon caché derrière un Clone switche ou utilise Demi-Tour, le Clone subira les dégâts de Poursuite.
+
+Si un pokémon lance une attaque absorbant des PV sur un clone d'un autre pokémon,
+alors les pv restaurés au lanceur de l'attaque absorbant des PV valent: pv du clone * taux de pv indiqué sur la fiche de l'attaque absorbant des PV.
+Si lanceur de l'attaque absorbant des PV possède un clone, alors c'est le lanceur de l'attaque absorbant des PV derrière son clone qui voit ses pv restaurés.
+Exemple:
+Un pokémon A possède un clone avec 40 pv restants sur 50. Les pv restants du pokémon A sont de 120 sur 200 pv max.
+Un pokémon B avec un clone avec 30 pv restants sur 40 et des pv restants valant 100 sur 160 pv max lance une attaque absorbant des PV telle que les dégâts soient de 30 sur le clone.
+Alors le pokémon A se retrouve avec un clone avec 10 pv restants sur 50 et les pv restants du pokémon A sont de 120 sur 200 pv max,
+et le pokémon B se retrouve avec un clone avec 30 pv restants sur 40 et les pv restants du pokémon B sont de 135 sur 200 pv max.
+
+Les attaques qui absorbent des PV en absorbent lorsqu'utilisées sur un Clone.
+
+Si une attaque touchant plusieurs fois casse le Clone, les coups suivants toucheront le Pokémon qui était derrière le Clone.
+
+Lorsque le Clone est transmis par Relais, il garde ses PV mais prends le type ainsi que les défenses du nouveau Pokémon. Le Clone ne prend pas de dégâts par Picôts ou Piege de Roc, c'est le Pokémon qui les subit.
+Transmettre un Clone par Relais empêchent le Pokémon cible d'être empoisonné par les Pics Toxik.
+
+Les attaques pseudo-piégeantes (Etreinte, Claquoir, Danseflamme, Vortex Magma, Tourbi-Sable, Siphon et Ligotage) infligent leurs dégâts lorsqu'elles sont lancées, mais n'infligent pas de dégâts à la fin de chaque tour, et ne piègent pas durant 2 à 5 tours.
+
+Les dégâts dus à un Pokémon se blessant dans sa confusion sont infligés au Pokémon et non au Clone. Les dégâts de recul vont au lanceur, pas au Clone.
+
+Un Pokémon ne peut pas utiliser Riposte, Voile Miroir ou Fulmifer pour renvoyer les dégâts infligés à un Clone. Un Pokémon ne peut pas emmagasiner via Patience les dégâts infligés à un Clone.
+Un Pokémon peut renvoyer une attaque via Reflet Magik derrière un Clone, même si cette attaque échouerait sur le Clone. Avalanche et Vendetta ne sont pas boostées si le Clone subit des dégâts mais que le Pokémon n'en subit pas.
+
+Le recul de l'Orbe Vie ne s'active pas lorsqu'un Clone est attaqué, mais les 30% de puissance supplémentaires le sont. Les Baies Enigma, Pommo et Jacoba ne s'activent pas sur un Pokémon caché derrière un Clone.
+
+Effort inflige des dégâts basés sur les PV du Pokémon derrière le Clone et non pas des PV restants du Clone. Croc Fatal inflige des dégâts basés sur les PV du Pokémon et non pas sur ceux du Clone. Faux-Chage peut casser un Clone.
+
+CLONAGE empêche la perte d'objet de Sabotage. CLONAGE ne bloque pas l'effet secondaire de Tour Rapide.
+Stimulant n'a pas une puissance doublée et ne guérit pas la paralysie d'un Pokémon paralysé derrière un Clone. Reveil Force n'a pas une puissance doublée et ne réveille pas un Pokémon endormi derrière un Clone.
+
+CLONAGE bloque Intimidation, mais toutes les autres capacités spéciales ignorent CLONAGE.
+
+Le Clone peut être transmis par Relais. La cible du Relais ne perd pas 25% de ses PV. 

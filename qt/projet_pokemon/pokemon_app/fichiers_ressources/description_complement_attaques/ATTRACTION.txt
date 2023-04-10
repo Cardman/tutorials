@@ -1,0 +1,20 @@
+﻿ATTRACTION rend la cible amoureuse du lanceur.
+
+ATTRACTION échoue si et seulement si
+la cible possède la capacité BENET
+ou la cible est assexuée
+ou le lanceur est assexué
+ou le lanceur et la cible sont de même sexe
+ou un objet protégeant de l'amour est porté par la cible ne subissant pas EMBARGO et ZONE_MAGIQUE n'est pas active.
+
+Si la cible devient amoureuse du lanceur et possède l'objet NOEUD_DESTIN ne subissant pas EMBARGO et ZONE_MAGIQUE n'est pas active,
+ou le lanceur n'est pas assexué
+ou un objet protégeant de l'amour est porté par la lanceur ne subissant pas EMBARGO et ZONE_MAGIQUE n'est pas active,
+alors le lanceur devient amoureux de la cible.
+
+Si la cible a lancé REFLET_MAGIK sur le lanceur, et que l'attaque ATTRACTION peut fonctionner sur le lanceur,
+alors le lanceur devient amoureux de la cible.
+Si de plus le lanceur devient amoureux et possède l'objet NOEUD_DESTIN ne subissant pas EMBARGO et ZONE_MAGIQUE n'est pas active
+alors la cible devient amoureuse du lanceur.
+
+Les effets cessent si le lanceur ou la cible switchent.

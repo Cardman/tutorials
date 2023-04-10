@@ -1,0 +1,8 @@
+﻿MUR_LUMIERE est une attaque de réduction de dégâts pendant 5 tours (8 tours, si un des pokémons de l'équipe possède la LUMARGILE et n'est pas sous EMBARGO).
+Cette attaque permet à l'équipe du lanceur de ne subir que 1/2 des dégâts des attaques spéciales (2/3 des dégâts des attaques spéciales multi-cibles lorsqu'il y a au moins 2 cibles).
+Cependant, si un adversaire possède la capacité INFILTRATION, les dégâts ne seront pas réduits sur l'équipe protégée.
+Cependant, si un adversaire utilise l'attaque CASSE_BRIQUE ou ANTI_BRUME, les effets de MUR_LUMIERE s'estompent.
+
+Si un pokémon ayant lancé SAISIE sur le lanceur de MUR_LUMIERE, alors l'équipe du lanceur de SAISIE bénéficie des effets de MUR_LUMIERE.
+
+Si un pokémon de l'équipe protégée lance à nouveau MUR_LUMIERE, alors le compteur repasse à 0, ce qui est stratégique.

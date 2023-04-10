@@ -1,0 +1,20 @@
+TITRE	Nouvel objet
+NOM	Nom :
+TYPE	Type :
+VALIDER	Valider
+TITRE_2	Editer objet
+BALL	Ball
+BAIE	Baie
+BOOST	Boost
+FOSSILE	Fossile
+OBJET_CBT_ATTAC	Objet attachable par un pokemon et utilisable en combat
+OBJET_EVO	Objet attachable par un pokemon et permettant l'évolution
+PIERRE_EVO	Pierre évolutive
+PLAQUE	Plaque
+REPOUSSE	Repousse
+REVENTE	Revente
+SOIN_PP	Soin de points de pouvoir (pour les attaques)
+SOIN_PV_STATUT	Soin de points de vie et de statut
+SOIN_PV	Soin de points de vie
+SOIN_STATUT	Soin de statut
+SOIN_TOTAL	Soin total

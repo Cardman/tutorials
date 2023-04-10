@@ -1,0 +1,1 @@
+La puissance de l'attaque ESSORAGE vaut 1 + (120 * pv_restants de la cible / pv_max de la cible)

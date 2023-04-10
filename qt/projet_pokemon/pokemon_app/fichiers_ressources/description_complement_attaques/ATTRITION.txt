@@ -1,0 +1,2 @@
+L'attaque ATTRITION ignore les variations d'esquive de la cible et les boosts positifs de défense de la cible.
+Si les boosts de défense de la cible sont négatifs, alors ils seront pris en compte.

@@ -1,0 +1,18 @@
+TITRE	Nouvelle équipe
+ETIQUETTE_NOM	nom
+ETIQUETTE_NIVEAU	niveau
+PK_COURS	Pokémon en cours
+AJOUTER_PK	Ajouter pokémon
+EDITER_PK	Editer pokémon
+SUPPRIMER_PK	Supprimer pokémon
+INSERER_PK	Insérer pokémon
+RECOMPENSE	Récompense :
+VALIDER	Valider
+TITRE_2	Editer équipe
+ERREUR	Erreur
+EQUIPE_VIDE	Equipe vide!
+MAX_EQ	Nombre maximal de pokémons atteint!
+INDICE_INSERT_INV	Indice d'insertion invalide!
+INDICE_EDIT_INV	Indice d'édition invalide!
+INDICE_SUPPR_INV	Indice de suppression invalide!
+RECOMPENSE_INVALIDE	Valeur $1 invalide pour la récompense, à la position $2!

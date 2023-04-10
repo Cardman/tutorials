@@ -1,0 +1,6 @@
+L'attaque CASSE_BRIQUE est une attaque telle que si elle n'échoue pas alors
+les attaques MUR_LUMIERE et PROTECTION lancés par un pokémon de l'équipe adverse sont désactivées avant les dégâts infligés à la cible.
+
+Si la cible est immunisé à l'attaque CASSE_BRIQUE, et qu'elle n'échoue pas alors les attaques MUR_LUMIERE et PROTECTION lancés par un pokémon de l'équipe adverse sont désactivées.
+
+Si l'attaque CASSE_BRIQUE échoue alors les attaques MUR_LUMIERE et PROTECTION lancés par un pokémon de l'équipe adverse ne sont pas désactivées.

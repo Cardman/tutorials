@@ -1,0 +1,26 @@
+PP:20
+TYPE:NORMAL
+CATEGORIE:PHYSIQUE:D
+PRIORITE:0
+PRECISIONAT:100
+EFFET_DEGAT[A,120,0]
+EFFET_DEGAT_SUPPLEMENTAIRE[L]
+FUITE_ADVERSE:VRAI
+prepa_tour:FAUX
+disparait pdt tour charg:FAUX
+AttConcTouche:
+Repet_coup:[(1,1)]
+Repet_tour:[(2,2/3);(3,1/3)]
+lanceur_bloque:VRAI
+puis_mult:(1;1)
+ne_peut_pas_mettre_ko:FAUX
+puissance_fixe_base:VRAI
+Effet_SI_ECHEC:FAUX
+Effet_SI_NON_DEGAT:FAUX
+SEXE_OPPOSE:FAUX
+LANC_ENDORMI:FAUX
+ADV_ENDORMI:FAUX
+ADJ UNIQ
+FAUX
+LANCEUR,ATTAQUE
+CIBLE,DEFENSE

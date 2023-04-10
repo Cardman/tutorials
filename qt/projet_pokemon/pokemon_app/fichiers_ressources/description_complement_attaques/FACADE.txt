@@ -1,0 +1,1 @@
+La puissance de l'attaque FACADE double si le statut du lanceur est altéré.

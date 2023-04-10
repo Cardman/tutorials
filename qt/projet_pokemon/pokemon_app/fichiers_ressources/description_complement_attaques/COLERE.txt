@@ -1,0 +1,5 @@
+L'attaque COLERE bloque le lanceur, (il ne peut pas switcher sauf si un des pokémons adverse sur le terrain est KO en fin de tour, il ne peut pas non plus lancer une autre attaque, ni est soigné par un dresseur.) pendant 2 à 3 tours, avec une probabilité de 1/2 pour chaque événement.
+
+Dès que le lanceur n'est plus bloqué, il devient confus à moins qu'il ne soit immunisé à la confusion.
+
+Si l'attaque COLERE est choisie par BLABLADODO, alors l'attaque COLERE ne bloque pas le lanceur et ne le rendra pas confus après le lancer de l'attaque COLERE.

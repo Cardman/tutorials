@@ -1,0 +1,6 @@
+L'attaque TOUR_RAPIDE est une attaque telle que si elle n'échoue pas alors
+les picots, piege de roc et pics toxiks posés par un pokémon de l'équipe adverse sont enlevés.
+
+Si la cible est immunisé à l'attaque TOUR_RAPIDE, et qu'elle n'échoue pas alors les picots, piege de roc et pics toxiks posés par un pokémon de l'équipe adverse sont enlevés.
+
+Si l'attaque TOUR_RAPIDE échoue alors les picots, piege de roc et pics toxiks posés par un pokémon de l'équipe adverse ne sont pas enlevés.

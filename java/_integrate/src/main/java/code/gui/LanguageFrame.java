@@ -12,7 +12,7 @@ import code.stream.StreamLanguageUtil;
 public final class LanguageFrame implements SetterLanguage,AbsQuit,AbsChangeLanguage {
 
     private static final String TITLE = " ";
-    private final AbsCommonFrame commonFrame;
+//    private final AbsCommonFrame commonFrame;
     private String langue;
 
     private final String[] args;
@@ -24,7 +24,7 @@ public final class LanguageFrame implements SetterLanguage,AbsQuit,AbsChangeLang
     private final LanguageDialogButtons content;
 
     LanguageFrame(String _dir, String[] _args, SoftApplicationCore _soft, AbstractImage _icon) {
-        commonFrame = _soft.getFrames().getFrameFactory().newCommonFrame(_soft.getFrames(), null);
+//        commonFrame = _soft.getFrames().getFrameFactory().newCommonFrame(_soft.getFrames(), null);
 //        GuiBaseUtil.choose("", this, MessGuiGr.ms());
 //        commonFrame = _soft.getFrames().getFrameFactory().newCommonFrame(_soft.getFrames(), null);
         content = new LanguageDialogButtons(_soft.getFrames(),null,new AlwaysActionListenerAct());
